@@ -3,7 +3,7 @@ class CreateEvents < ActiveRecord::Migration[6.1]
     create_table :events do |t|
       t.string :title
       t.string :section
-      t.datetime :date
+      t.datetime :schedule
       t.integer :points
       t.string :passcode
 

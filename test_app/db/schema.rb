@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2022_09_12_201232) do
   create_table "events", force: :cascade do |t|
     t.string "title"
     t.string "section"
-    t.datetime "date"
+    t.datetime "schedule"
     t.integer "points"
     t.string "passcode"
     t.datetime "created_at", precision: 6, null: false
