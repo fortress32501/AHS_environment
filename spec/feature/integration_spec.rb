@@ -120,3 +120,28 @@ RSpec.describe 'Edit Events', type: :feature do
     end
 end
 
+# Sign Up/ Login Integration Test
+RSpec.describe 'Creating a User', type: :feature do
+    scenario 'valid inputs' do
+
+        # Test Sign Up
+        visit new_user_path
+        fill_in 'first_name', with: 'Jane'
+        fill_in 'last_name', with: 'Doe'
+        fill_in 'email', with: 'jane@gmail.com'
+        fill_in 'password', with: '123'
+        click_on 'Create Account'
+        expect(page).to have_content('jane@gmail.com')
+        click_on 'Sign out'
+
+        # Test Login
+        fill_in 'email', with: 'jane@gmail.com'
+        fill_in 'password', with: '123'
+        click_on 'Sign In!'
+        expect(page).to have_content('jane@gmail.com')
+    end
+end
+
+
+
+
