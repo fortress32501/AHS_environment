@@ -5,7 +5,7 @@ require 'rails_helper'
 
 RSpec.describe Event, type:  :model do
     subject do
-        described_class.new(title: '1st Meeting', section: 'General Meeting', points: 5, schedule: '2020-12-06-01-43', passcode: 'Test')
+        described_class.new(event_title: '1st Meeting', event_description: 'General Meeting', event_points: 5, event_start: '2020-12-06-01-43', event_end: '2020-12-06-02-43', event_passcode: 'Test', event_location: 'ZACH')
     end
 
     it 'is valid with valid attributes' do
@@ -18,12 +18,12 @@ RSpec.describe Event, type:  :model do
     # end
 
     it 'is invalid with out title' do
-        subject.title = nil 
+        subject.event_title = nil 
         expect(subject).not_to be_valid
     end
     
-    it 'is invalid without section' do
-        subject.section = nil
+    it 'is invalid without description' do
+        subject.event_description = nil
         expect(subject).not_to be_valid
     end
 end
