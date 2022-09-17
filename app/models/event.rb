@@ -1,5 +1,3 @@
 class Event < ApplicationRecord
-    validates :title, presence: true 
-    validates :section, presence: true
-    validates :points, numericality: {min: 0}
+    validates :event_points, :event_description, :event_passcode, :event_start, :event_end, :event_title, :event_location, presence: true
 end
