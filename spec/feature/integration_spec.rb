@@ -22,7 +22,6 @@ end
 
 
 RSpec.describe 'Show Events', type: :feature do
-
     scenario 'Show' do
         visit new_event_path
         fill_in 'Title', with: '1st Meeting'

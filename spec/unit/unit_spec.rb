@@ -37,4 +37,19 @@ RSpec.describe Event, type:  :model do
         subject.schedule = nil
         expect(subject).not_to be_valid
     end
+
+    it 'is invalid without points' do
+        subject.points = nil 
+        expect(subject).not_to be_valid 
+    end 
+
+    it 'is invalid with negative points' do
+        subject.points = -1
+        expect(subject).not_to be_valid
+    end 
+
+    it 'is invalid without passcode' do
+        subject.passcode = nil 
+        expect(subject).not_to be_valid 
+    end
 end
