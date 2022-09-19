@@ -7,9 +7,9 @@ RSpec.describe Event, type:  :model do
             event_title: '1st Meeting', 
             event_description: 'General Meeting', 
             event_points: 5, 
-            event_passcode: 'Test'
-            event_location: 'ZACH-350'
-            event_start: Date.new(2022, 9, 18, 8, 10)
+            event_passcode: 'Test',
+            event_location: 'ZACH-350',
+            event_start: Date.new(2022, 9, 18, 8, 10),
             event_end: Date.new(2022, 9, 18, 9, 0)
         )
     end
