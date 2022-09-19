@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   # http://127.0.0.1:3000/sessions/new
   
-  resources :users, only: [:new, :create, :index, :show]
+  resources :users, only: [:new, :create, :index, :show, :edit]
   resources :sessions, only: [:new, :create, :destroy]
 
 end

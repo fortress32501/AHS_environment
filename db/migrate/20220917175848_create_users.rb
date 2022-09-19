@@ -13,4 +13,3 @@ class CreateUsers < ActiveRecord::Migration[6.1]
   end
 end
 
-add_column :decommissions, :complete, :boolean, :null => false
