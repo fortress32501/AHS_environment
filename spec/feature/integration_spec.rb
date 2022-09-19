@@ -4,11 +4,11 @@ require 'rails_helper'
 RSpec.describe 'Creating an Event', type: :feature do
     scenario 'valid inputs' do
         visit new_event_path
-        fill_in 'Event title', with: '1st Meeting'
-        fill_in 'Event description', with: 'General Meeting'
-        fill_in 'Event points', with: '5'
-        fill_in 'Event passcode', with: 'Test'
-        fill_in 'Event location', with: 'ZACH'
+        fill_in 'title', with: '1st Meeting'
+        fill_in 'Event_description', with: 'General Meeting'
+        fill_in 'Event_points', with: '5'
+        fill_in 'Event_passcode', with: 'Test'
+        fill_in 'Event_location', with: 'ZACH'
         select '2020', :from => 'event_event_start_1i'
         select 'September', :from => 'event_event_start_2i'
         select '28', :from => 'event_event_start_3i'
