@@ -4,11 +4,20 @@ require 'rails_helper'
 RSpec.describe 'Creating an Event', type: :feature do
     scenario 'valid inputs' do
         visit new_event_path
-        fill_in 'Event title', with: '1st Meeting'
-        fill_in 'Event description', with: 'General Meeting'
-        fill_in 'Event points', with: '5'
-        fill_in 'Event passcode', with: 'Test'
-        fill_in 'Event location', with: 'ZACH'
+        
+        click_on 'Sign Up'
+        fill_in :first_name, with: 'test'
+        fill_in :last_name, with: 'test'
+        fill_in :email, with: 'test@test.com'
+        fill_in :password, with: 'test'
+        click_on 'Create Account'
+ 
+        visit new_event_path
+        fill_in 'title', with: '1st Meeting'
+        fill_in 'description', with: 'General Meeting'
+        fill_in 'points', with: '5'
+        fill_in 'passcode', with: 'Test'
+        fill_in 'location', with: 'ZACH'
         select '2020', :from => 'event_event_start_1i'
         select 'September', :from => 'event_event_start_2i'
         select '28', :from => 'event_event_start_3i'
@@ -35,11 +44,19 @@ RSpec.describe 'Show Events', type: :feature do
 
     scenario 'Show' do
         visit new_event_path
-        fill_in 'Event title', with: '1st Meeting'
-        fill_in 'Event description', with: 'General Meeting'
-        fill_in 'Event points', with: '5'
-        fill_in 'Event passcode', with: 'Test'
-        fill_in 'Event location', with: 'ZACH'
+        click_on 'Sign Up'
+        fill_in :first_name, with: 'test'
+        fill_in :last_name, with: 'test'
+        fill_in :email, with: 'test@test.com'
+        fill_in :password, with: 'test'
+        click_on 'Create Account'
+
+        visit new_event_path
+        fill_in 'title', with: '1st Meeting'
+        fill_in 'description', with: 'General Meeting'
+        fill_in 'points', with: '5'
+        fill_in 'passcode', with: 'Test'
+        fill_in 'location', with: 'ZACH'
         select '2020', :from => 'event_event_start_1i'
         select 'September', :from => 'event_event_start_2i'
         select '28', :from => 'event_event_start_3i'
@@ -65,11 +82,19 @@ end
 RSpec.describe 'Delete Events', type: :feature do
     scenario 'Delete' do
         visit new_event_path
-        fill_in 'Event title', with: '1st Meeting'
-        fill_in 'Event description', with: 'General Meeting'
-        fill_in 'Event points', with: '5'
-        fill_in 'Event passcode', with: 'Test'
-        fill_in 'Event location', with: 'ZACH'
+        click_on 'Sign Up'
+        fill_in :first_name, with: 'test'
+        fill_in :last_name, with: 'test'
+        fill_in :email, with: 'test@test.com'
+        fill_in :password, with: 'test'
+        click_on 'Create Account'
+
+        visit new_event_path
+        fill_in 'title', with: '1st Meeting'
+        fill_in 'description', with: 'General Meeting'
+        fill_in 'points', with: '5'
+        fill_in 'passcode', with: 'Test'
+        fill_in 'location', with: 'ZACH'
         select '2020', :from => 'event_event_start_1i'
         select 'September', :from => 'event_event_start_2i'
         select '28', :from => 'event_event_start_3i'
@@ -93,6 +118,14 @@ end
 
 RSpec.describe 'Edit Events', type: :feature do
     scenario 'Change book name' do
+        visit new_event_path
+        click_on 'Sign Up'
+        fill_in :first_name, with: 'test'
+        fill_in :last_name, with: 'test'
+        fill_in :email, with: 'test@test.com'
+        fill_in :password, with: 'test'
+        click_on 'Create Account'
+        
         visit new_event_path
         fill_in 'Event title', with: '1st Meeting'
         fill_in 'Event description', with: 'General Meeting'
@@ -119,4 +152,29 @@ RSpec.describe 'Edit Events', type: :feature do
         expect(page).not_to have_content('1st Meeting')
     end
 end
+
+# Sign Up/ Login Integration Test
+RSpec.describe 'Creating a User', type: :feature do
+    scenario 'valid inputs' do
+
+        # Test Sign Up
+        visit new_user_path
+        fill_in 'first_name', with: 'Jane'
+        fill_in 'last_name', with: 'Doe'
+        fill_in 'email', with: 'jane@gmail.com'
+        fill_in 'password', with: '123'
+        click_on 'Create Account'
+        expect(page).to have_content('jane@gmail.com')
+        click_on 'Sign out'
+
+        # Test Login
+        fill_in 'email', with: 'jane@gmail.com'
+        fill_in 'password', with: '123'
+        click_on 'Sign In!'
+        expect(page).to have_content('jane@gmail.com')
+    end
+end
+
+
+
 

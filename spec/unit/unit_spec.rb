@@ -28,6 +28,34 @@ RSpec.describe Event, type:  :model do
         expect(subject).not_to be_valid
     end
 
+end
+
+RSpec.describe User, type:  :model do
+    subject do
+        described_class.new(first_name: 'John', last_name: 'Doe', email: 'johndoe@gmail.com', password: '123', point: 0, privileges_id: 0)
+    end
+
+    it 'is valid with valid attributes' do
+        expect(subject).to be_valid
+    end
+
+    it 'is invalid without first name' do
+        subject.first_name = nil 
+        expect(subject).not_to be_valid
+    end
+    
+    it 'is invalid without last name' do
+        subject.last_name = nil
+        expect(subject).not_to be_valid
+    end
+
+    it 'is invalid without email' do
+        subject.email = nil
+        expect(subject).not_to be_valid
+    end
+end
+
+
     it 'is invalid without event points' do
         subject.event_points = nil 
         expect(subject).not_to be_valid 
@@ -58,3 +86,4 @@ RSpec.describe Event, type:  :model do
         expect(subject).not_to be_valid
     end
 end
+
