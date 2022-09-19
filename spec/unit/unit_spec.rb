@@ -1,16 +1,16 @@
 # location: spec/unit/unit_spec.rb
 require 'rails_helper'
 
-
-
 RSpec.describe Event, type:  :model do
     subject do
         described_class.new(
-            title: '1st Meeting', 
-            section: 'General Meeting', 
-            points: 5, 
-            schedule: '2020-12-06-01-43', 
-            passcode: 'Test'
+            event_title: '1st Meeting', 
+            event_description: 'General Meeting', 
+            event_points: 5, 
+            event_passcode: 'Test'
+            event_location: 'ZACH-350'
+            event_start: Date.new(2022, 9, 18, 8, 10)
+            event_end: Date.new(2022, 9, 18, 9, 0)
         )
     end
 
@@ -18,38 +18,43 @@ RSpec.describe Event, type:  :model do
         expect(subject).to be_valid
     end
 
-    # it 'is invalid with negative points' do
-    #     subject.points = -1
-    #     expect(subject).not_to be_valid
-    # end
-
-    it 'is invalid with out title' do
-        subject.title = nil 
+    it 'is invalid with out event title' do
+        subject.event_title = nil 
         expect(subject).not_to be_valid
     end
     
-    it 'is invalid without section' do
-        subject.section = nil
+    it 'is invalid without event description' do
+        subject.event_section = nil
         expect(subject).not_to be_valid
     end
 
-    it 'is invalid without schedule' do
-        subject.schedule = nil
+    it 'is invalid without event points' do
+        subject.event_points = nil 
+        expect(subject).not_to be_valid 
+    end 
+
+    it 'is invalid with negative event points' do
+        subject.event_points = -1
+        expect(subject).not_to be_valid
+    end 
+
+    it 'is invalid without an event passcode' do
+        subject.event_passcode = nil 
+        expect(subject).not_to be_valid 
+    end
+
+    it 'is invalid without an event location' do
+        subject.event_location = nil 
         expect(subject).not_to be_valid
     end
 
-    it 'is invalid without points' do
-        subject.points = nil 
-        expect(subject).not_to be_valid 
-    end 
-
-    it 'is invalid with negative points' do
-        subject.points = -1
+    it 'is invalid without en event start' do 
+        subject.event_start = nil 
         expect(subject).not_to be_valid
-    end 
+    end
 
-    it 'is invalid without passcode' do
-        subject.passcode = nil 
-        expect(subject).not_to be_valid 
+    it 'is invalid without an event end' do
+        subject.event_end = nil 
+        expect(subject).not_to be_valid
     end
 end
