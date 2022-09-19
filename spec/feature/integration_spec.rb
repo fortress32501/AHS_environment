@@ -44,6 +44,14 @@ RSpec.describe 'Show Events', type: :feature do
 
     scenario 'Show' do
         visit new_event_path
+        click_on 'Sign Up'
+        fill_in :first_name, with: 'test'
+        fill_in :last_name, with: 'test'
+        fill_in :email, with: 'test@test.com'
+        fill_in :password, with: 'test'
+        click_on 'Create Account'
+
+        visit new_event_path
         fill_in 'title', with: '1st Meeting'
         fill_in 'description', with: 'General Meeting'
         fill_in 'points', with: '5'
@@ -74,6 +82,14 @@ end
 RSpec.describe 'Delete Events', type: :feature do
     scenario 'Delete' do
         visit new_event_path
+        click_on 'Sign Up'
+        fill_in :first_name, with: 'test'
+        fill_in :last_name, with: 'test'
+        fill_in :email, with: 'test@test.com'
+        fill_in :password, with: 'test'
+        click_on 'Create Account'
+
+        visit new_event_path
         fill_in 'title', with: '1st Meeting'
         fill_in 'description', with: 'General Meeting'
         fill_in 'points', with: '5'
@@ -102,6 +118,14 @@ end
 
 RSpec.describe 'Edit Events', type: :feature do
     scenario 'Change book name' do
+        visit new_event_path
+        click_on 'Sign Up'
+        fill_in :first_name, with: 'test'
+        fill_in :last_name, with: 'test'
+        fill_in :email, with: 'test@test.com'
+        fill_in :password, with: 'test'
+        click_on 'Create Account'
+        
         visit new_event_path
         fill_in 'Event title', with: '1st Meeting'
         fill_in 'Event description', with: 'General Meeting'
