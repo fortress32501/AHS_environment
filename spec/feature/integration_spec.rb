@@ -175,6 +175,28 @@ RSpec.describe 'Creating a User', type: :feature do
     end
 end
 
-
+# Test to make sure calendar renders on page
+RSpec.describe 'Confirm Calendar', type: :feature do
+    scenario 'Calendar' do
+        visit events_path
+        click_on 'Sign Up'
+        fill_in :first_name, with: 'test'
+        fill_in :last_name, with: 'test'
+        fill_in :email, with: 'test@test.com'
+        fill_in :password, with: 'test'
+        click_on 'Create Account'
+        visit events_path
+        
+        expect(page).to have_content(Date.today.strftime("%B"))
+        expect(page).to have_content('Sun')
+        expect(page).to have_content('Mon')
+        expect(page).to have_content('Tue')
+        expect(page).to have_content('Wed')
+        expect(page).to have_content('Thu')
+        expect(page).to have_content('Fri')
+        expect(page).to have_content('Sat')
+        
+    end
+end
 
 

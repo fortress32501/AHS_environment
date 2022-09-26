@@ -40,7 +40,7 @@
 
 <!-- Render the calendar -->
 <%= month_calendar(events: @events, attribute: :event_start, end_attribute: :event_end) do |date, events| %>
-  <%= date %>
+  <%= date.to_formatted_s(:short) %>
 
   <!-- Render the events -->
   <% events.each do |event| %>

@@ -9,4 +9,8 @@ class ApplicationController < ActionController::Base
     def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
     end
+
+    # Set values for calendar
+    config.time_zone = 'Central Time (US & Canada)'
+    Date.beginning_of_week = :sunday
 end
