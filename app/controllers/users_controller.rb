@@ -25,7 +25,7 @@ class UsersController < ApplicationController
     @user = User.create(user_params)
     if @user.valid?
       session[:user_id] = @user.id
-      redirect_to @user
+      redirect_to :root
     else
       flash[:error] = "Creation failed, try again"
       redirect_to new_user_path
