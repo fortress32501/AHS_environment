@@ -37,3 +37,15 @@
 <br>
 
 <%= link_to 'New Event', new_event_path %>
+
+<!-- Render the calendar -->
+<%= month_calendar(events: @events, attribute: :event_start, end_attribute: :event_end) do |date, events| %>
+  <%= date.to_formatted_s(:short) %>
+
+  <!-- Render the events -->
+  <% events.each do |event| %>
+    <div style="border-style: solid;">
+      <%= link_to event.event_title, event %>
+    </div>
+  <% end %>
+<% end %>
