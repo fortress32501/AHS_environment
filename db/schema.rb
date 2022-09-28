@@ -32,8 +32,8 @@ ActiveRecord::Schema.define(version: 2022_09_17_175848) do
     t.string "last_name"
     t.string "email"
     t.string "password_digest"
-    t.integer "point"
-    t.integer "privileges_id"
+    t.integer "point", default: 0
+    t.integer "privileges_id", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

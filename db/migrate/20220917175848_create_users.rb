@@ -5,8 +5,8 @@ class CreateUsers < ActiveRecord::Migration[6.1]
       t.string :last_name
       t.string :email
       t.string :password_digest
-      t.integer :point
-      t.integer :privileges_id
+      t.integer :point, :default => 0
+      t.integer :privileges_id, :default => 0
 
       t.timestamps
     end

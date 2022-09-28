@@ -13,27 +13,30 @@
 
   <div class="field">
     <%= form.label :first_name %>
-    <%= form.text_field :first_name, id:"first_name" %>
+    <%= form.text_field :first_name %>
   </div>
 
   <div class="field">
     <%= form.label :last_name %>
-    <%= form.text_field :last_name, id:"last_name" %>
+    <%= form.text_field :last_name %>
   </div>
 
   <div class="field">
     <%= form.label :email %>
-    <%= form.text_field :email, id:"email" %>
+    <%= form.text_field :email %>
   </div>
 
   <div class="field">
-    <%= form.label :password %>
-    <%= form.text_field :password, id:"password" %>
+    <%= form.label :point %>
+    <%= form.number_field :point %>
   </div>
 
-
+  <div class="field">
+    <%= form.label :privileges_id %>
+    <%= form.number_field :privileges_id, id:"privileges_id" %>
+  </div>
 
   <div class="actions">
-    <%= form.submit "Create Account"%>
+    <%= form.submit "submit" %>
   </div>
 <% end %>

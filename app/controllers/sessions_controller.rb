@@ -9,11 +9,15 @@ class SessionsController < ApplicationController
     @user = User.find_by(email: session_params[:email])
     if @user && @user.authenticate(session_params[:password])
       session[:user_id] = @user.id
-      redirect_to @user
+      # if email and password matches, redirect to homepage
+      redirect_to :root
     else
-      flash[:notice] = "Login is invalid!"
+      flash[:notice] = "Login failed! Please check your email or password."
       redirect_to new_session_path
     end
+  end
+
+  def delete
   end
 
   def destroy
