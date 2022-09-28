@@ -209,7 +209,7 @@ RSpec.describe 'Edit user', type: :feature do
         fill_in 'Last name', with: 'Doe'
         fill_in 'Email', with: 'jane@gmail.com'
         fill_in 'Point', with: '2'
-        fill_in 'privileges_id', with: '1'
+        fill_in 'is_admin', with: 'false'
         click_on 'submit'
 
         visit users_path
@@ -217,7 +217,7 @@ RSpec.describe 'Edit user', type: :feature do
         expect(page).to have_content('Jane')
         expect(page).to have_content('Doe')
         expect(page).to have_content('2')
-        expect(page).to have_content('1')
+        expect(page).to have_content('false')
         expect(page).not_to have_content('0')
     end
 end
