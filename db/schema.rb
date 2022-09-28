@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_17_175848) do
+ActiveRecord::Schema.define(version: 2022_09_28_175122) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "attendances", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "event_id"
+    t.integer "points"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "events", force: :cascade do |t|
     t.integer "event_points"
@@ -32,8 +40,8 @@ ActiveRecord::Schema.define(version: 2022_09_17_175848) do
     t.string "last_name"
     t.string "email"
     t.string "password_digest"
-    t.integer "point"
-    t.integer "privileges_id"
+    t.integer "point", default: 0
+    t.integer "privileges_id", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

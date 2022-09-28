@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :attendances
   root to: "sessions#new"
 
   resources :events

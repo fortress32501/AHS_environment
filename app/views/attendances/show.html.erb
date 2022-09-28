@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= User.where(id: @attendance.user_id).last.first_name %>
+  <%= User.where(id: @attendance.user_id).last.last_name %>
+  
+</p>
+
+<p>
+  <strong>User Email:</strong>
+  <%= User.where(id: @attendance.user_id).last.email %>
+
+</p>
+
+<p>
+  <strong>Event:</strong>
+  <%= Event.where(id: @attendance.event_id).last.event_title %>
+</p>
+
+<p>
+  <strong>Points:</strong>
+  <%= @attendance.points %>
+</p>
+
+<%= link_to 'Edit', edit_attendance_path(@attendance) %> |
+<%= link_to 'Back', attendances_path %>
