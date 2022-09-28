@@ -85,4 +85,38 @@ RSpec.describe User, type:  :model do
 end
 
 
+# location: spec/unit/unit_spec.rb
+require 'rails_helper'
+
+RSpec.describe Attendance, type:  :model do
+
+
+    subject do
+        described_class.new(user_id: 1 ,event_id: 1,password: "Test", points: 5)
+    end
+
+
+    it 'is valid with valid attributes' do
+        expect(subject).not_to be_valid
+    end
+
+    it 'is valid with no password or points' do
+        subject.points = nil
+        subject.password = nil
+        expect(subject).not_to be_valid
+    end
+
+    it 'is invalid with out user/ cannot have an invalid user' do
+        subject.user_id = 56
+        expect(subject).not_to be_valid
+    end
+
+    it 'is invalid with nonexistant event' do
+        subject.event_id = 400
+        expect(subject).not_to be_valid
+    end
+
+end
+
+
 
