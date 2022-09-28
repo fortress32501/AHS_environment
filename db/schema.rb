@@ -41,8 +41,10 @@ ActiveRecord::Schema.define(version: 2022_09_28_191508) do
     t.string "password_digest"
     t.integer "point", default: 0
     t.boolean "is_admin", default: false
+    t.bigint "ranking_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["ranking_id"], name: "index_users_on_ranking_id"
   end
 
 end
