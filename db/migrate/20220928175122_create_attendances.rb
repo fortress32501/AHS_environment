@@ -4,6 +4,7 @@ class CreateAttendances < ActiveRecord::Migration[6.1]
       t.integer :user_id
       t.integer :event_id
       t.integer :points
+      t.string  :password
 
       t.timestamps
     end

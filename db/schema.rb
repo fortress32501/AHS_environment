@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2022_09_28_175122) do
     t.integer "user_id"
     t.integer "event_id"
     t.integer "points"
+    t.string "password"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

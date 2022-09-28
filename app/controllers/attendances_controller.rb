@@ -21,7 +21,7 @@ class AttendancesController < ApplicationController
 
   # POST /attendances or /attendances.json
   def create
-    @attendance = Attendance.find(attendance_params[:user_id], attendance_params[:event_id])
+    @attendance = Attendance.find_by(user_id: attendance_params[:user_id], event_id: attendance_params[:event_id])
 
     #only run if the attendance value doesn't exist
     if @attendance.nil?
@@ -36,15 +36,18 @@ class AttendancesController < ApplicationController
       @user.point = @user.point + @event.event_points
       @attendance.points = @event.event_points
       
-      
       respond_to do |format|
-        if @attendance.save and @user.save
-          format.html { redirect_to attendance_url(@attendance), notice: "Attendance was successfully created." }
-          format.json { render :show, status: :created, location: @attendance }
+        if (@event.event_passcode == attendance_params[:password])
+          if @attendance.save and @user.save and 
+            format.html { redirect_to attendance_url(@attendance), notice: "Attendance was successfully created." }
+            format.json { render :show, status: :created, location: @attendance }
           
-        else
-          format.html { render :new, status: :unprocessable_entity }
-          format.json { render json: @attendance.errors, status: :unprocessable_entity }
+          else
+            format.html { render :new, status: :unprocessable_entity }
+            format.json { render json: @attendance.errors, status: :unprocessable_entity }
+          end
+        else 
+          format.html { redirect_to new_attendance_path, notice: "Password incorrect"}
         end
       end
 
@@ -52,7 +55,7 @@ class AttendancesController < ApplicationController
     #If attendance already exists goes here 
     else 
       respond_to do |format|
-        format.html {redirect_to attendances_path, notice: "Attendance already exists" }
+        format.html {redirect_to events_path, notice: "Your attendance has already been taken" }
       end
     end
   end
@@ -88,6 +91,6 @@ class AttendancesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def attendance_params
-      params.require(:attendance).permit(:user_id, :event_id, :points)
+      params.require(:attendance).permit(:user_id, :event_id, :points, :password)
     end
 end
