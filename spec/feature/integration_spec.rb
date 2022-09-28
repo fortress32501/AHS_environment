@@ -222,7 +222,6 @@ RSpec.describe 'Edit user', type: :feature do
     end
 end
 
-
 # Delete user 
 RSpec.describe 'Delete user', type: :feature do
     scenario 'valid inputs' do
@@ -236,5 +235,30 @@ RSpec.describe 'Delete user', type: :feature do
         click_on 'Destroy'
         expect(page).not_to have_content('Jane')
         expect(page).not_to have_content('jane@gmail.com')
+    end
+end
+
+# Test to make sure calendar renders on page
+RSpec.describe 'Confirm Calendar', type: :feature do
+    scenario 'Calendar' do
+
+        visit events_path
+        click_on 'Sign Up'
+        fill_in 'First name', with: 'test'
+        fill_in 'Last name', with: 'test'
+        fill_in 'Email', with: 'test@test.com'
+        fill_in 'Password', with: 'test'
+        click_on 'Create Account'
+        visit events_path
+        
+        expect(page).to have_content(Date.today.strftime("%B"))
+        expect(page).to have_content('Sun')
+        expect(page).to have_content('Mon')
+        expect(page).to have_content('Tue')
+        expect(page).to have_content('Wed')
+        expect(page).to have_content('Thu')
+        expect(page).to have_content('Fri')
+        expect(page).to have_content('Sat')
+        
     end
 end
