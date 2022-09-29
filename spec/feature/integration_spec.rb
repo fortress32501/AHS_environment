@@ -266,8 +266,7 @@ end
 
 RSpec.describe 'Attendance Testing', type: :feature do
     scenario 'valid inputs' do
-        visit new_event_path
-        
+            
         click_on 'Sign Up'
         fill_in :first_name, with: 'test'
         fill_in :last_name, with: 'test'
