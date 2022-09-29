@@ -267,12 +267,14 @@ end
 RSpec.describe 'Attendance Testing', type: :feature do
     scenario 'valid inputs' do
             
+        visit events_path
         click_on 'Sign Up'
-        fill_in :first_name, with: 'test'
-        fill_in :last_name, with: 'test'
-        fill_in :email, with: 'test@test.com'
-        fill_in :password, with: 'test'
+        fill_in 'First name', with: 'test'
+        fill_in 'Last name', with: 'test'
+        fill_in 'Email', with: 'test@test.com'
+        fill_in 'Password', with: 'test'
         click_on 'Create Account'
+        
  
         visit new_event_path
         fill_in 'title', with: '1st Meeting'
