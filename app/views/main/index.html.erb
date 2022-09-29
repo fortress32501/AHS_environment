@@ -1,0 +1,3 @@
+<%= content_tag :h1, current_user&.welcome %>
+<h1> This is homepage </h1>
+<%= link_to "Sign out", session_path(current_user.id), method:"delete" %>

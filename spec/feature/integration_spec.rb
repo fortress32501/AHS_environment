@@ -4,12 +4,11 @@ require 'rails_helper'
 RSpec.describe 'Creating an Event', type: :feature do
     scenario 'valid inputs' do
         visit new_event_path
-        
         click_on 'Sign Up'
-        fill_in :first_name, with: 'test'
-        fill_in :last_name, with: 'test'
-        fill_in :email, with: 'test@test.com'
-        fill_in :password, with: 'test'
+        fill_in 'First name', with: 'test'
+        fill_in 'Last name', with: 'test'
+        fill_in 'Email', with: 'test@test.com'
+        fill_in 'Password', with: 'test'
         click_on 'Create Account'
  
         visit new_event_path
@@ -45,10 +44,10 @@ RSpec.describe 'Show Events', type: :feature do
     scenario 'Show' do
         visit new_event_path
         click_on 'Sign Up'
-        fill_in :first_name, with: 'test'
-        fill_in :last_name, with: 'test'
-        fill_in :email, with: 'test@test.com'
-        fill_in :password, with: 'test'
+        fill_in 'First name', with: 'test'
+        fill_in 'Last name', with: 'test'
+        fill_in 'Email', with: 'test@test.com'
+        fill_in 'Password', with: 'test'
         click_on 'Create Account'
 
         visit new_event_path
@@ -83,10 +82,10 @@ RSpec.describe 'Delete Events', type: :feature do
     scenario 'Delete' do
         visit new_event_path
         click_on 'Sign Up'
-        fill_in :first_name, with: 'test'
-        fill_in :last_name, with: 'test'
-        fill_in :email, with: 'test@test.com'
-        fill_in :password, with: 'test'
+        fill_in 'First name', with: 'test'
+        fill_in 'Last name', with: 'test'
+        fill_in 'Email', with: 'test@test.com'
+        fill_in 'Password', with: 'test'
         click_on 'Create Account'
 
         visit new_event_path
@@ -117,13 +116,13 @@ RSpec.describe 'Delete Events', type: :feature do
 end
 
 RSpec.describe 'Edit Events', type: :feature do
-    scenario 'Change book name' do
+    scenario 'Edit' do
         visit new_event_path
         click_on 'Sign Up'
-        fill_in :first_name, with: 'test'
-        fill_in :last_name, with: 'test'
-        fill_in :email, with: 'test@test.com'
-        fill_in :password, with: 'test'
+        fill_in 'First name', with: 'test'
+        fill_in 'Last name', with: 'test'
+        fill_in 'Email', with: 'test@test.com'
+        fill_in 'Password', with: 'test'
         click_on 'Create Account'
         
         visit new_event_path
@@ -159,31 +158,96 @@ RSpec.describe 'Creating a User', type: :feature do
 
         # Test Sign Up
         visit new_user_path
-        fill_in 'first_name', with: 'Jane'
-        fill_in 'last_name', with: 'Doe'
-        fill_in 'email', with: 'jane@gmail.com'
-        fill_in 'password', with: '123'
+        fill_in 'First name', with: 'Jane'
+        fill_in 'Last name', with: 'Doe'
+        fill_in 'Email', with: 'jane@gmail.com'
+        fill_in 'Password', with: '123'
         click_on 'Create Account'
-        expect(page).to have_content('jane@gmail.com')
+        expect(page).to have_content('Jane')
+        expect(page).to have_content('Doe')
         click_on 'Sign out'
-
+        
         # Test Login
-        fill_in 'email', with: 'jane@gmail.com'
-        fill_in 'password', with: '123'
+        fill_in 'Email', with: 'jane@gmail.com'
+        fill_in 'Password', with: '123'
         click_on 'Sign In!'
+        expect(page).to have_content('Jane')
+    end
+end
+
+# Show user 
+RSpec.describe 'Show user', type: :feature do
+    scenario 'valid inputs' do
+        visit new_user_path
+        fill_in 'First name', with: 'Jane'
+        fill_in 'Last name', with: 'Doe'
+        fill_in 'Email', with: 'jane@gmail.com'
+        fill_in 'Password', with: '123'
+        click_on 'Create Account'
+
+        visit users_path
+        click_on 'Show'
+        expect(page).to have_content('Jane')
+        expect(page).to have_content('Doe')
         expect(page).to have_content('jane@gmail.com')
+    end
+end
+
+# Edit user 
+RSpec.describe 'Edit user', type: :feature do
+    scenario 'valid inputs' do
+        visit new_user_path
+        fill_in 'First name', with: 'Jane'
+        fill_in 'Last name', with: 'Doe'
+        fill_in 'Email', with: 'jane@gmail.com'
+        fill_in 'Password', with: '123'
+        click_on 'Create Account'
+
+        visit users_path
+        click_on 'Edit'
+        fill_in 'First name', with: 'Jane'
+        fill_in 'Last name', with: 'Doe'
+        fill_in 'Email', with: 'jane@gmail.com'
+        fill_in 'Point', with: '2'
+        fill_in 'is_admin', with: 'false'
+        click_on 'submit'
+
+        visit users_path
+        click_on 'Show'
+        expect(page).to have_content('Jane')
+        expect(page).to have_content('Doe')
+        expect(page).to have_content('2')
+        expect(page).to have_content('false')
+        expect(page).not_to have_content('0')
+    end
+end
+
+# Delete user 
+RSpec.describe 'Delete user', type: :feature do
+    scenario 'valid inputs' do
+        visit new_user_path
+        fill_in 'First name', with: 'Jane'
+        fill_in 'Last name', with: 'Doe'
+        fill_in 'Email', with: 'jane@gmail.com'
+        fill_in 'Password', with: '123'
+        click_on 'Create Account'
+        visit users_path
+        click_on 'Destroy'
+        expect(page).not_to have_content('Jane')
+        expect(page).not_to have_content('jane@gmail.com')
     end
 end
 
 # Test to make sure calendar renders on page
 RSpec.describe 'Confirm Calendar', type: :feature do
     scenario 'Calendar' do
+
         visit events_path
         click_on 'Sign Up'
-        fill_in :first_name, with: 'test'
-        fill_in :last_name, with: 'test'
-        fill_in :email, with: 'test@test.com'
-        fill_in :password, with: 'test'
+        fill_in 'First name', with: 'test'
+        fill_in 'Last name', with: 'test'
+        fill_in 'Email', with: 'test@test.com'
+        fill_in 'Password', with: 'test'
         click_on 'Create Account'
         visit events_path
         
@@ -244,3 +308,4 @@ RSpec.describe 'Attendance Testing', type: :feature do
         expect(page).to have_content("Events")
     end
 end
+

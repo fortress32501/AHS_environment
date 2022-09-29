@@ -26,7 +26,7 @@ class UsersController < ApplicationController
     if @user.valid?
       
       session[:user_id] = @user.id
-      redirect_to @user
+      redirect_to :root
     else
       flash[:error] = "Creation failed, try again"
       redirect_to new_user_path
@@ -64,6 +64,6 @@ class UsersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :email, :password, :point, :privileges_id)
+      params.require(:user).permit(:first_name, :last_name, :email, :password, :point, :is_admin)
     end
 end

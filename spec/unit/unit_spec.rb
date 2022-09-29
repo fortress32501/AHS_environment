@@ -61,7 +61,7 @@ end
 
 RSpec.describe User, type:  :model do
     subject do
-        described_class.new(first_name: 'John', last_name: 'Doe', email: 'johndoe@gmail.com', password: '123', point: 0, privileges_id: 0)
+        described_class.new(first_name: 'John', last_name: 'Doe', email: 'johndoe@gmail.com', password: '123', point: 0, is_admin: false)
     end
 
     it 'is valid with valid attributes' do
