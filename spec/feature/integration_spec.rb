@@ -262,3 +262,51 @@ RSpec.describe 'Confirm Calendar', type: :feature do
         
     end
 end
+
+
+RSpec.describe 'Attendance Testing', type: :feature do
+    scenario 'valid inputs' do
+            
+        visit events_path
+        click_on 'Sign Up'
+        fill_in 'First name', with: 'test'
+        fill_in 'Last name', with: 'test'
+        fill_in 'Email', with: 'test@test.com'
+        fill_in 'Password', with: 'test'
+        click_on 'Create Account'
+        
+ 
+        visit new_event_path
+        fill_in 'title', with: '1st Meeting'
+        fill_in 'description', with: 'General Meeting'
+        fill_in 'points', with: '5'
+        fill_in 'passcode', with: 'Test'
+        fill_in 'location', with: 'ZACH'
+        select '2020', :from => 'event_event_start_1i'
+        select 'September', :from => 'event_event_start_2i'
+        select '28', :from => 'event_event_start_3i'
+        select '01', :from => 'event_event_start_4i'
+        select '43', :from => 'event_event_start_5i'
+        select '2020', :from => 'event_event_end_1i'
+        select 'September', :from => 'event_event_end_2i'
+        select '28', :from => 'event_event_end_3i'
+        select '02', :from => 'event_event_end_4i'
+        select '43', :from => 'event_event_end_5i'
+        click_on 'Create Event'
+
+        # prep completed test sign in to event
+        click_on 'Sign In For Event'
+        fill_in 'attendance_password', with: 'Test'
+        select '1st Meeting', :from => 'attendance_event_id'
+        
+        click_on 'Create Attendance'
+        expect(page).to have_content('Attendance was successfully created')
+        expect(page).to have_content('test test')
+        expect(page).to have_content('1st Meeting')
+        expect(page).to have_content('5')
+        #test show page
+        click_on 'Back'
+        expect(page).to have_content("Events")
+    end
+end
+
