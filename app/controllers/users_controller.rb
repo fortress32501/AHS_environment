@@ -35,7 +35,7 @@ class UsersController < ApplicationController
       end
     else 
       respond_to do |format|
-        format.html {redirect_to :root, notice: "User with that Email already exists"}
+        format.html {redirect_to new_session_path, notice: "User with that Email already exists"}
       end
     end
   end
