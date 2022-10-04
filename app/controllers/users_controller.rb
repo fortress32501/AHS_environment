@@ -26,7 +26,6 @@ class UsersController < ApplicationController
     if @user.nil?
       @user = User.create(user_params)
       if @user.valid?
-        
         session[:user_id] = @user.id
         redirect_to :root
       else
