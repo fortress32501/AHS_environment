@@ -307,6 +307,25 @@ RSpec.describe 'Attendance Testing', type: :feature do
         #test show page
         click_on 'Back'
         expect(page).to have_content("Events")
+
+
+
+        # Now test Event Password must be correct
+        visit new_attendance_path
+        fill_in 'attendance_password', with: 'fgf'
+        select '1st Meeting', :from => 'attendance_event_id'
+
+        click_on 'Create Attendance'
+        expect(page).not_to have_content('Attendance was successfully created')
+
+
+        # Now test attendnace already exists
+        visit new_attendance_path
+        fill_in 'attendance_password', with: 'Test'
+        expect(page).not_to have_content('Attendance was successfully created')
+        
+        
+
     end
 end
 
