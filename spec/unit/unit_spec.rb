@@ -118,5 +118,26 @@ RSpec.describe Attendance, type:  :model do
 
 end
 
+RSpec.describe AdminRequest, type: :model do 
+    # let(:user) {User.new(id: 1, first_name: "caleb", last_name: "terry", email: "email@email.com")}
+    user = User.new(id: 1, first_name: "caleb", last_name: "terry", email: "email@email.com", password: "thisIsAPassword7")
 
+    subject do 
+        # user = User.new(id: 1, first_name: "caleb", last_name: "terry", email: "email@email.com", password: "randompassword")
+        described_class.new(id: 1, user_id: user.id, request_status: "APPROVED")
+    end
 
+    it 'is valid with valid attributes' do 
+        expect(subject).to be_valid
+    end 
+
+    it 'is invalid without user_id' do
+        subject.user_id = nil 
+        expect(subject).not_to be_valid 
+    end
+
+    it 'is invalid without request_status' do
+        subject.user_id = nil 
+        expect(subject).not_to be_valid 
+    end
+end
