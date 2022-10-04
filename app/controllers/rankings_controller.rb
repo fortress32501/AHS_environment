@@ -4,6 +4,9 @@ class RankingsController < ApplicationController
   # GET /rankings or /rankings.json
   def index
     @rankings = Ranking.all
+    # SELECT first_name, email,point FROM Users ORDER BY point desc;
+    # @list_rankings = User.select(:first_name, :last_name, :email, :point).order(point: :desc).limit(10)
+    @list_rankings = User.select(:first_name, :last_name, :email, :point).order(point: :desc)
   end
 
   # GET /rankings/1 or /rankings/1.json
