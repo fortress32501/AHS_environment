@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+  resources :admin_requests
   resources :attendances
   resources :rankings
   root to: "main#index"
