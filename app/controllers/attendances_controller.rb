@@ -22,16 +22,13 @@ class AttendancesController < ApplicationController
   # POST /attendances or /attendances.json
   def create
     @attendance = Attendance.find_by(user_id: attendance_params[:user_id], event_id: attendance_params[:event_id])
-
+    @user = User.find_by(id: attendance_params[:user_id])
+    @event = Event.find_by(id: attendance_params[:event_id])
     #only run if the attendance value doesn't exist
-    if @attendance.nil?
+    if (@attendance.nil? and !(@user.nil? or @event.nil?))
       #Create new attendance
       @attendance = Attendance.new(attendance_params)
-
-      #Find user and event
-      @user = User.find(@attendance.user_id)
-      @event = Event.find(@attendance.event_id)
-
+      
       # User point update
       @user.point = @user.point + @event.event_points
       @attendance.points = @event.event_points
@@ -47,15 +44,20 @@ class AttendancesController < ApplicationController
             format.json { render json: @attendance.errors, status: :unprocessable_entity }
           end
         else 
-          format.html { redirect_to new_attendance_path, notice: "Password incorrect"}
+          format.html { redirect_to new_attendance_path, notice: 'Password Incorrect' }
         end
       end
 
-
-    #If attendance already exists goes here 
+      #If attendance already exists goes here 
     else 
       respond_to do |format|
-        format.html {redirect_to events_path, notice: "Your attendance has already been taken" }
+        if (@event.nil?)
+          format.html {redirect_to new_attendance_path, notice: "Select an Event"}
+        elsif (@user.nil?)
+          format.html {redirect_to new_session_path, notice: "Please Sign in"}
+        else 
+          format.html {redirect_to events_path, notice: "Your attendance has already been taken" }
+        end
       end
     end
   end
