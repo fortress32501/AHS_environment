@@ -307,6 +307,7 @@ RSpec.describe 'Attendance Testing', type: :feature do
         #test show page
         click_on 'Back'
         expect(page).to have_content("Events")
+<<<<<<< HEAD
         
         
         
@@ -326,6 +327,8 @@ RSpec.describe 'Attendance Testing', type: :feature do
         
         
         
+=======
+>>>>>>> parent of 7b0a20a (confirm_user_exists code dump)
     end
 end
 
