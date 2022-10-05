@@ -329,3 +329,129 @@ RSpec.describe 'Attendance Testing', type: :feature do
     end
 end
 
+RSpec.describe 'Creating an EventType', type: :feature do
+    scenario 'valid inputs' do
+        visit new_event_type_path
+        click_on 'Sign Up'
+        fill_in 'First name', with: 'test'
+        fill_in 'Last name', with: 'test'
+        fill_in 'Email', with: 'test@test.com'
+        fill_in 'Password', with: 'test'
+        click_on 'Create Account'
+ 
+        visit new_event_type_path
+        fill_in 'Type name', with: 'type1'
+        fill_in 'Description', with: 'General Meeting'
+        click_on 'Create Event type'
+        visit event_types_path
+        expect(page).to have_content('type1')
+        expect(page).to have_content('General Meeting')
+        expect(page).to have_content('#000000')
+    end
+end
+
+RSpec.describe 'Showing an EventType', type: :feature do
+    scenario 'valid inputs' do
+        visit new_event_type_path
+        click_on 'Sign Up'
+        fill_in 'First name', with: 'test'
+        fill_in 'Last name', with: 'test'
+        fill_in 'Email', with: 'test@test.com'
+        fill_in 'Password', with: 'test'
+        click_on 'Create Account'
+ 
+        visit new_event_type_path
+        fill_in 'Type name', with: 'type1'
+        fill_in 'Description', with: 'General Meeting'
+        click_on 'Create Event type'
+        visit event_types_path
+        click_on 'Show'
+        expect(page).to have_content('type1')
+        expect(page).to have_content('General Meeting')
+        expect(page).to have_content('#000000')
+        visit events_path
+        expect(page).to have_content('type1')
+        expect(page).to have_content('General Meeting')
+        expect(page).to have_content('#000000')
+    end
+end
+
+RSpec.describe 'Showing an EventType', type: :feature do
+    scenario 'show' do
+        visit new_event_type_path
+        click_on 'Sign Up'
+        fill_in 'First name', with: 'test'
+        fill_in 'Last name', with: 'test'
+        fill_in 'Email', with: 'test@test.com'
+        fill_in 'Password', with: 'test'
+        click_on 'Create Account'
+ 
+        visit new_event_type_path
+        fill_in 'Type name', with: 'type1'
+        fill_in 'Description', with: 'General Meeting'
+        click_on 'Create Event type'
+        visit event_types_path
+        click_on 'Show'
+        expect(page).to have_content('type1')
+        expect(page).to have_content('General Meeting')
+        expect(page).to have_content('#000000')
+    end
+end
+
+RSpec.describe 'Deleting an EventType', type: :feature do
+    scenario 'delete' do
+        visit new_event_type_path
+        click_on 'Sign Up'
+        fill_in 'First name', with: 'test'
+        fill_in 'Last name', with: 'test'
+        fill_in 'Email', with: 'test@test.com'
+        fill_in 'Password', with: 'test'
+        click_on 'Create Account'
+ 
+        visit new_event_type_path
+        fill_in 'Type name', with: 'type1'
+        fill_in 'Description', with: 'General Meeting'
+        click_on 'Create Event type'
+        visit event_types_path
+        click_on 'Destroy'
+        expect(page).not_to have_content('type1')
+        expect(page).not_to have_content('General Meeting')
+        expect(page).not_to have_content('#000000')
+        visit events_path
+        expect(page).not_to have_content('type1')
+        expect(page).not_to have_content('General Meeting')
+        expect(page).not_to have_content('#000000')
+    end
+end
+
+RSpec.describe 'Updating an EventType', type: :feature do
+    scenario 'update' do
+        visit new_event_type_path
+        click_on 'Sign Up'
+        fill_in 'First name', with: 'test'
+        fill_in 'Last name', with: 'test'
+        fill_in 'Email', with: 'test@test.com'
+        fill_in 'Password', with: 'test'
+        click_on 'Create Account'
+ 
+        visit new_event_type_path
+        fill_in 'Type name', with: 'type1'
+        fill_in 'Description', with: 'General Meeting'
+        click_on 'Create Event type'
+        visit event_types_path
+        click_on 'Edit'
+        fill_in 'Type name', with: 'type2'
+        fill_in 'Description', with: 'different'
+        click_on 'Update Event type'
+        visit event_types_path
+        expect(page).not_to have_content('type1')
+        expect(page).not_to have_content('General Meeting')
+        expect(page).to have_content('type2')
+        expect(page).to have_content('different')
+        visit events_path
+        expect(page).not_to have_content('type1')
+        expect(page).not_to have_content('General Meeting')
+        expect(page).to have_content('type2')
+        expect(page).to have_content('different')
+    end
+end

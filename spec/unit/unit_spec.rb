@@ -10,7 +10,8 @@ RSpec.describe Event, type:  :model do
             event_passcode: 'Test',
             event_location: 'ZACH-350',
             event_start: DateTime.new(2022, 9, 18, 8, 10),
-            event_end: DateTime.new(2022, 9, 18, 9, 0)
+            event_end: DateTime.new(2022, 9, 18, 9, 0),
+            event_type_id: '1'
         )
     end
 
@@ -56,6 +57,11 @@ RSpec.describe Event, type:  :model do
     it 'is invalid without an event end' do
         subject.event_end = nil 
         expect(subject).not_to be_valid
+    end
+
+    it 'is valid without a event_type_id' do
+        subject.event_type_id = nil 
+        expect(subject).to be_valid
     end
 end
 
@@ -118,5 +124,30 @@ RSpec.describe Attendance, type:  :model do
 
 end
 
+#Unit tests for event type
+RSpec.describe EventType, type: :model do
+    subject do
+        described_class.new(type_name: "test", description: "test", color: "#FFFFFF")
+    end
+
+    it 'is valid with valid attributes' do
+        expect(subject).to be_valid
+    end
+
+    it 'is invalid without type_name' do
+        subject.type_name = nil
+        expect(subject).not_to be_valid
+    end
+
+    it 'is invalid without description' do
+        subject.description = nil
+        expect(subject).not_to be_valid
+    end
+
+    it 'is invalid without color' do
+        subject.color = nil
+        expect(subject).not_to be_valid
+    end
+end
 
 
