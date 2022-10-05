@@ -118,5 +118,28 @@ RSpec.describe Attendance, type:  :model do
 
 end
 
+RSpec.describe Ranking, type:  :model do
+
+
+    subject do
+        described_class.new(title: "Diamond", point_total: 5)
+    end
+
+    it 'is valid with valid attributes' do
+        expect(subject).to be_valid
+    end
+
+    it 'is valid with no points' do
+        subject.point_total = nil
+        expect(subject).to be_valid
+    end
+
+    it 'is invalid with out title' do
+        subject.title = nil
+        expect(subject).to be_valid
+    end
+
+end
+
 
 
