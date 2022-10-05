@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Event Types</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th><div style="width:200px;">Color</div></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @event_types.each do |event_type| %>
+      <tr>
+        <td><%= event_type.type_name %></td>
+        <td><%= event_type.description %></td>
+        <td> 
+          <div style="width:200px; white-space: nowrap;">
+            <div style="width:10px; height:10px; background-color: <%=event_type.color%>; display: inline-block;"></div>
+            <div style="display: inline-block;"><%= event_type.color %></div>
+          </div>
+        </td>
+        <td><%= link_to 'Show', event_type %></td>
+        <td><%= link_to 'Edit', edit_event_type_path(event_type) %></td>
+        <td><%= link_to 'Destroy', event_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Event Type', new_event_type_path %>
+
+<br>
+
+<%= link_to 'Calendar', events_path %>

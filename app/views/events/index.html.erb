@@ -12,6 +12,7 @@
       <th>Event end</th>
       <th>Event title</th>
       <th>Event location</th>
+      <th>Event type</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -26,6 +27,7 @@
         <td><%= event.event_end %></td>
         <td><%= event.event_title %></td>
         <td><%= event.event_location %></td>
+        <td><%= get_event_type(event) %></td>
         <td><%= link_to 'Show', event %></td>
         <td><%= link_to 'Edit', edit_event_path(event) %></td>
         <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -42,10 +44,47 @@
 <%= month_calendar(events: @events, attribute: :event_start, end_attribute: :event_end) do |date, events| %>
   <%= date.to_formatted_s(:short) %>
 
-  <!-- Render the events -->
+  <!-- Render the events and gets colors and makes it half transparent -->
   <% events.each do |event| %>
-    <div style="border-style: solid;">
-      <%= link_to event.event_title, event %>
+    <div class="card" style="background-color: <%=get_event_color(event)%>;">
+      <div class="card-body">
+        <p class="card-text" style="text-align: center;"> <%= link_to event.event_title, event %></p>
+      </div>
     </div>
   <% end %>
 <% end %>
+
+<!--Renders the table for the Event Types-->
+<br>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th><div style="width:200px;">Color</div></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @event_types.each do |event_type| %>
+      <tr>
+        <td><%= event_type.type_name %></td>
+        <td><%= event_type.description %></td>
+        <td> 
+          <div style="width:200px; white-space: nowrap;">
+            <div style="width:10px; height:10px; background-color: <%=event_type.color%>; display: inline-block;"></div>
+            <div style="display: inline-block;"><%= event_type.color %></div>
+          </div>
+        </td>
+        <td><%= link_to 'Show', event_type %></td>
+        <td><%= link_to 'Edit', edit_event_type_path(event_type) %></td>
+        <td><%= link_to 'Destroy', event_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Event Type', new_event_type_path %>
