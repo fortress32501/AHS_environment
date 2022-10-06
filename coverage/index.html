@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2022-10-05T00:05:53+00:00">2022-10-05T00:05:53+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2022-10-06T21:36:30+00:00">2022-10-06T21:36:30+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -23,7 +23,7 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="yellow">
-  88.83%
+  88.75%
 </span>
 
      </span>
@@ -43,11 +43,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>1012</b> relevant lines,
+    <b>1013</b> relevant lines,
     <span class="green"><b>899</b> lines covered</span> and
-    <span class="red"><b>113</b> lines missed. </span>
+    <span class="red"><b>114</b> lines missed. </span>
     (<span class="yellow">
-  88.83%
+  88.75%
 </span>
 )
   </div>
@@ -116,12 +116,12 @@
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#fcde2db1a8a30870305fe3a55c939ccb45ef1302" class="src_link" title="app/controllers/rankings_controller.rb">app/controllers/rankings_controller.rb</a></td>
-            <td class="red strong cell--number t-file__coverage">35.29 %</td>
-            <td class="cell--number">73</td>
-            <td class="cell--number">34</td>
+            <td class="red strong cell--number t-file__coverage">34.29 %</td>
+            <td class="cell--number">87</td>
+            <td class="cell--number">35</td>
             <td class="cell--number">12</td>
-            <td class="cell--number">22</td>
-            <td class="cell--number">0.35</td>
+            <td class="cell--number">23</td>
+            <td class="cell--number">0.34</td>
             
           </tr>
         
@@ -3032,7 +3032,7 @@
     <h3>app/controllers/rankings_controller.rb</h3>
     <h4>
       <span class="red">
-  35.29%
+  34.29%
 </span>
 
       lines covered
@@ -3041,9 +3041,9 @@
     
 
     <div class="t-line-summary">
-      <b>34</b> relevant lines.
+      <b>35</b> relevant lines.
       <span class="green"><b>12</b> lines covered</span> and
-      <span class="red"><b>22</b> lines missed.</span>
+      <span class="red"><b>23</b> lines missed.</span>
     </div>
 
     
@@ -3142,13 +3142,13 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="9">
+          <li class="never" data-hits="" data-linenumber="9">
             
             
 
             
 
-            <code class="ruby">    @list_rankings = User.select(:first_name, :last_name, :email, :point).order(point: :desc)</code>
+            <code class="ruby">    # @list_rankings = User.select(:first_name, :last_name, :email, :point).order(point: :desc)</code>
           </li>
         </div>
       
@@ -3159,7 +3159,7 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">      # SELECT </code>
           </li>
         </div>
       
@@ -3170,7 +3170,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">      # 1+(SELECT count(*) </code>
           </li>
         </div>
       
@@ -3181,18 +3181,18 @@
 
             
 
-            <code class="ruby">  # GET /rankings/1 or /rankings/1.json</code>
+            <code class="ruby">      # from (select point from Users GROUP BY point) as A </code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="13">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="13">
+            
             
 
             
 
-            <code class="ruby">  def show</code>
+            <code class="ruby">      # WHERE A.point &gt; B.point) as RNK,</code>
           </li>
         </div>
       
@@ -3203,18 +3203,18 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">      # first_name, email, point FROM Users as B ORDER BY point desc;</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="15">
+          <li class="missed" data-hits="0" data-linenumber="15">
             
             
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">      query = &lt;&lt;-SQL </code>
           </li>
         </div>
       
@@ -3225,29 +3225,29 @@
 
             
 
-            <code class="ruby">  # GET /rankings/new</code>
+            <code class="ruby">      SELECT </code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="17">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="17">
+            
             
 
             
 
-            <code class="ruby">  def new</code>
+            <code class="ruby">      1+(SELECT count(*) </code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="18">
+          <li class="never" data-hits="" data-linenumber="18">
             
             
 
             
 
-            <code class="ruby">    @ranking = Ranking.new</code>
+            <code class="ruby">      from (select point from Users GROUP BY point) as A </code>
           </li>
         </div>
       
@@ -3258,7 +3258,7 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">      WHERE A.point &gt; B.point) as rnk,</code>
           </li>
         </div>
       
@@ -3269,7 +3269,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">      first_name, last_name, email, point FROM Users as B ORDER BY point desc</code>
           </li>
         </div>
       
@@ -3280,29 +3280,29 @@
 
             
 
-            <code class="ruby">  # GET /rankings/1/edit</code>
+            <code class="ruby">    SQL</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="22">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="22">
+            
             
 
             
 
-            <code class="ruby">  def edit</code>
+            <code class="ruby">    </code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="23">
+          <li class="missed" data-hits="0" data-linenumber="23">
             
             
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">    @list_rankings = ActiveRecord::Base.connection.execute(query)</code>
           </li>
         </div>
       
@@ -3313,7 +3313,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -3324,29 +3324,29 @@
 
             
 
-            <code class="ruby">  # POST /rankings or /rankings.json</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="26">
+          <li class="never" data-hits="" data-linenumber="26">
+            
+            
+
+            
+
+            <code class="ruby">  # GET /rankings/1 or /rankings/1.json</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="27">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">  def create</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="27">
-            
-            
-
-            
-
-            <code class="ruby">    @ranking = Ranking.new(ranking_params)</code>
+            <code class="ruby">  def show</code>
           </li>
         </div>
       
@@ -3357,40 +3357,40 @@
 
             
 
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="29">
+            
+            
+
+            
+
             <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="29">
+          <li class="never" data-hits="" data-linenumber="30">
             
             
 
             
 
-            <code class="ruby">    respond_to do |format|</code>
+            <code class="ruby">  # GET /rankings/new</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="30">
-            
-            
-
-            
-
-            <code class="ruby">      if @ranking.save</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="31">
-            
+          <li class="covered" data-hits="1" data-linenumber="31">
+            <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">        format.html { redirect_to ranking_url(@ranking), notice: &quot;Ranking was successfully created.&quot; }</code>
+            <code class="ruby">  def new</code>
           </li>
         </div>
       
@@ -3401,7 +3401,7 @@
 
             
 
-            <code class="ruby">        format.json { render :show, status: :created, location: @ranking }</code>
+            <code class="ruby">    @ranking = Ranking.new</code>
           </li>
         </div>
       
@@ -3412,40 +3412,40 @@
 
             
 
-            <code class="ruby">      else</code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="34">
+          <li class="never" data-hits="" data-linenumber="34">
             
             
 
             
 
-            <code class="ruby">        format.html { render :new, status: :unprocessable_entity }</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="35">
+          <li class="never" data-hits="" data-linenumber="35">
             
             
 
             
 
-            <code class="ruby">        format.json { render json: @ranking.errors, status: :unprocessable_entity }</code>
+            <code class="ruby">  # GET /rankings/1/edit</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="36">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="36">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">      end</code>
+            
+
+            <code class="ruby">  def edit</code>
           </li>
         </div>
       
@@ -3456,7 +3456,7 @@
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -3467,7 +3467,7 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -3478,40 +3478,40 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">  # POST /rankings or /rankings.json</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="40">
-            
-            
-
-            
-
-            <code class="ruby">  # PATCH/PUT /rankings/1 or /rankings/1.json</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="41">
+          <li class="covered" data-hits="1" data-linenumber="40">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">  def update</code>
+            <code class="ruby">  def create</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="42">
+          <li class="missed" data-hits="0" data-linenumber="41">
             
             
 
             
 
-            <code class="ruby">    respond_to do |format|</code>
+            <code class="ruby">    @ranking = Ranking.new(ranking_params)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="42">
+            
+            
+
+            
+
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -3522,7 +3522,7 @@
 
             
 
-            <code class="ruby">      if @ranking.update(ranking_params)</code>
+            <code class="ruby">    respond_to do |format|</code>
           </li>
         </div>
       
@@ -3533,7 +3533,7 @@
 
             
 
-            <code class="ruby">        format.html { redirect_to ranking_url(@ranking), notice: &quot;Ranking was successfully updated.&quot; }</code>
+            <code class="ruby">      if @ranking.save</code>
           </li>
         </div>
       
@@ -3544,12 +3544,23 @@
 
             
 
-            <code class="ruby">        format.json { render :show, status: :ok, location: @ranking }</code>
+            <code class="ruby">        format.html { redirect_to ranking_url(@ranking), notice: &quot;Ranking was successfully created.&quot; }</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="46">
+          <li class="missed" data-hits="0" data-linenumber="46">
+            
+            
+
+            
+
+            <code class="ruby">        format.json { render :show, status: :created, location: @ranking }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="47">
             
             
 
@@ -3560,18 +3571,18 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="47">
+          <li class="missed" data-hits="0" data-linenumber="48">
             
             
 
             
 
-            <code class="ruby">        format.html { render :edit, status: :unprocessable_entity }</code>
+            <code class="ruby">        format.html { render :new, status: :unprocessable_entity }</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="48">
+          <li class="missed" data-hits="0" data-linenumber="49">
             
             
 
@@ -3582,7 +3593,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="49">
+          <li class="never" data-hits="" data-linenumber="50">
             
             
 
@@ -3593,24 +3604,13 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="50">
-            
-            
-
-            
-
-            <code class="ruby">    end</code>
-          </li>
-        </div>
-      
-        <div>
           <li class="never" data-hits="" data-linenumber="51">
             
             
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
@@ -3621,7 +3621,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -3632,45 +3632,34 @@
 
             
 
-            <code class="ruby">  # DELETE /rankings/1 or /rankings/1.json</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="54">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">  def destroy</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="55">
-            
-            
-
-            
-
-            <code class="ruby">    @ranking.destroy</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="56">
-            
-            
-
-            
-
             <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="57">
+          <li class="never" data-hits="" data-linenumber="54">
+            
+            
+
+            
+
+            <code class="ruby">  # PATCH/PUT /rankings/1 or /rankings/1.json</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="55">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def update</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="56">
             
             
 
@@ -3681,13 +3670,24 @@
         </div>
       
         <div>
+          <li class="missed" data-hits="0" data-linenumber="57">
+            
+            
+
+            
+
+            <code class="ruby">      if @ranking.update(ranking_params)</code>
+          </li>
+        </div>
+      
+        <div>
           <li class="missed" data-hits="0" data-linenumber="58">
             
             
 
             
 
-            <code class="ruby">      format.html { redirect_to rankings_url, notice: &quot;Ranking was successfully destroyed.&quot; }</code>
+            <code class="ruby">        format.html { redirect_to ranking_url(@ranking), notice: &quot;Ranking was successfully updated.&quot; }</code>
           </li>
         </div>
       
@@ -3698,7 +3698,7 @@
 
             
 
-            <code class="ruby">      format.json { head :no_content }</code>
+            <code class="ruby">        format.json { render :show, status: :ok, location: @ranking }</code>
           </li>
         </div>
       
@@ -3709,40 +3709,40 @@
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby">      else</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="61">
+          <li class="missed" data-hits="0" data-linenumber="61">
             
             
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">        format.html { render :edit, status: :unprocessable_entity }</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="62">
+          <li class="missed" data-hits="0" data-linenumber="62">
             
             
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">        format.json { render json: @ranking.errors, status: :unprocessable_entity }</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="63">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="63">
+            
             
 
             
 
-            <code class="ruby">  private</code>
+            <code class="ruby">      end</code>
           </li>
         </div>
       
@@ -3753,45 +3753,23 @@
 
             
 
-            <code class="ruby">    # Use callbacks to share common setup or constraints between actions.</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="65">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    def set_ranking</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="66">
-            
-            
-
-            
-
-            <code class="ruby">      @ranking = Ranking.find(params[:id])</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="67">
-            
-            
-
-            
-
             <code class="ruby">    end</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="68">
+          <li class="never" data-hits="" data-linenumber="65">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="66">
             
             
 
@@ -3802,24 +3780,46 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="69">
+          <li class="never" data-hits="" data-linenumber="67">
             
             
 
             
 
-            <code class="ruby">    # Only allow a list of trusted parameters through.</code>
+            <code class="ruby">  # DELETE /rankings/1 or /rankings/1.json</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="70">
+          <li class="covered" data-hits="1" data-linenumber="68">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">    def ranking_params</code>
+            <code class="ruby">  def destroy</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="69">
+            
+            
+
+            
+
+            <code class="ruby">    @ranking.destroy</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="70">
+            
+            
+
+            
+
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -3830,12 +3830,34 @@
 
             
 
-            <code class="ruby">      params.require(:ranking).permit(:title, :point_total)</code>
+            <code class="ruby">    respond_to do |format|</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="72">
+          <li class="missed" data-hits="0" data-linenumber="72">
+            
+            
+
+            
+
+            <code class="ruby">      format.html { redirect_to rankings_url, notice: &quot;Ranking was successfully destroyed.&quot; }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="73">
+            
+            
+
+            
+
+            <code class="ruby">      format.json { head :no_content }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="74">
             
             
 
@@ -3846,7 +3868,139 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="73">
+          <li class="never" data-hits="" data-linenumber="75">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="76">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="77">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  private</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="78">
+            
+            
+
+            
+
+            <code class="ruby">    # Use callbacks to share common setup or constraints between actions.</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="79">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    def set_ranking</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="80">
+            
+            
+
+            
+
+            <code class="ruby">      @ranking = Ranking.find(params[:id])</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="81">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="82">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="83">
+            
+            
+
+            
+
+            <code class="ruby">    # Only allow a list of trusted parameters through.</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="84">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    def ranking_params</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="85">
+            
+            
+
+            
+
+            <code class="ruby">      params.require(:ranking).permit(:title, :point_total)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="86">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="87">
             
             
 

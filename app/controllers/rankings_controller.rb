@@ -6,7 +6,21 @@ class RankingsController < ApplicationController
     @rankings = Ranking.all
     # SELECT first_name, email,point FROM Users ORDER BY point desc;
     # @list_rankings = User.select(:first_name, :last_name, :email, :point).order(point: :desc).limit(10)
-    @list_rankings = User.select(:first_name, :last_name, :email, :point).order(point: :desc)
+    # @list_rankings = User.select(:first_name, :last_name, :email, :point).order(point: :desc)
+      # SELECT 
+      # 1+(SELECT count(*) 
+      # from (select point from Users GROUP BY point) as A 
+      # WHERE A.point > B.point) as RNK,
+      # first_name, email, point FROM Users as B ORDER BY point desc;
+      query = <<-SQL 
+      SELECT 
+      1+(SELECT count(*) 
+      from (select point from Users GROUP BY point) as A 
+      WHERE A.point > B.point) as rnk,
+      first_name, last_name, email, point FROM Users as B ORDER BY point desc
+    SQL
+    
+    @list_rankings = ActiveRecord::Base.connection.execute(query)
   end
 
   # GET /rankings/1 or /rankings/1.json
