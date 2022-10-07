@@ -97,6 +97,11 @@ class EventsController < ApplicationController
     end
   end
 
+  def dilute_color(color)
+    color + "88"
+  end
+
   helper_method :get_event_type
   helper_method :get_event_color
+  helper_method :dilute_color
 end
