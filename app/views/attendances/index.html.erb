@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Attendances</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>User Email</th>
+      <th>Event</th>
+      <th>Points</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @attendances.each do |attendance| %>
+      <tr>
+        <td><%= User.where(id: attendance.user_id).last.last_name %>, <%= User.where(id: attendance.user_id).last.first_name %> </td>
+        <td><%= User.where(id: attendance.user_id).last.email %></td>
+        <td><%= Event.where(id: attendance.event_id).last.event_title %></td>
+        <td><%= attendance.points %></td>
+        <td><%= link_to 'Show', attendance %></td>
+        <td><%= link_to 'Edit', edit_attendance_path(attendance) %></td>
+        <td><%= link_to 'Destroy', attendance, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Attendance', new_attendance_path %>

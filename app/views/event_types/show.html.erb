@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Type name:</strong>
+  <%= @event_type.type_name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @event_type.description %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <div style="width:200px; white-space: nowrap;">
+     <div style="width:10px; height:10px; background-color: <%=@event_type.color%>; display: inline-block;"></div>
+     <div style="display: inline-block;"><%= @event_type.color %></div>
+   </div>
+</p>
+
+<%= link_to 'Edit', edit_event_type_path(@event_type) %> |
+<%= link_to 'Back', event_types_path %>

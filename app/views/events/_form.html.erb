@@ -46,6 +46,12 @@
     <%= form.text_field :event_location %>
   </div>
 
+  <!-- Makes the event_type_id a dropdown of options in EventType-->
+  <div class="field">
+    <%= form.label :event_type_id %>
+    <%= form.select :event_type_id, EventType.order(:type_name).map { |event_type| [event_type.type_name, event_type.id] }, include_blank: true, id: "id_of_the_event_type_select_box" %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
