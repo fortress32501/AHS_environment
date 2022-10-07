@@ -119,12 +119,20 @@ RSpec.describe Attendance, type:  :model do
 end
 
 RSpec.describe AdminRequest, type: :model do 
-    # let(:user) {User.new(id: 1, first_name: "caleb", last_name: "terry", email: "email@email.com")}
-    user = User.new(id: 1, first_name: "caleb", last_name: "terry", email: "email@email.com", password: "thisIsAPassword7")
-
+    before(:each) do
+        @user = User.create!(
+            id: 1,
+            first_name: "testUser",
+            last_name: "1",
+            email: "testUser1@email.com",
+            password: "testUser1!Hello",
+            point: 0,
+            is_admin: false
+        )
+    end
+    
     subject do 
-        # user = User.new(id: 1, first_name: "caleb", last_name: "terry", email: "email@email.com", password: "randompassword")
-        described_class.new(id: 1, user_id: user.id, request_status: "APPROVED")
+        described_class.new(id: 1, user_id: @user.id, request_status: "APPROVED")
     end
 
     it 'is valid with valid attributes' do 

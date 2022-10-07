@@ -2,6 +2,26 @@ require 'rails_helper'
 
 RSpec.describe "admin_requests/index", type: :view do
   before(:each) do
+    @user2 = assign(:user, User.create!(
+        id: 2,
+        first_name: "testUser",
+        last_name: "2",
+        email: "testUser1@email.com",
+        password: "testUser1!Hello",
+        point: 0,
+        is_admin: false
+    ))
+
+    @user3 = assign(:user, User.create!(
+        id: 3,
+        first_name: "testUser",
+        last_name: "3",
+        email: "testUser1@email.com",
+        password: "testUser1!Hello",
+        point: 0,
+        is_admin: false
+    ))
+
     assign(:admin_requests, [
       AdminRequest.create!(
         user_id: 2,
