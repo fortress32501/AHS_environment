@@ -1,11 +1,6 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Event points:</strong>
-  <%= @event.event_points %>
-</p>
-
-<p>
   <strong>Event description:</strong>
   <%= @event.event_description %>
 </p>
@@ -35,6 +30,23 @@
   <%= @event.event_location %>
 </p>
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
+
+<p>
+  <strong>Event type:</strong>
+  <div style="width:200px; white-space: nowrap;">
+    <div style="width:10px; height:10px; background-color: <%=get_event_color(@event)%>; display: inline-block;"></div>
+    <div style="display: inline-block;"><%= get_event_color(@event) %></div>
+  </div>
+  </p>
+
+<% if current_user&.is_admin? %>
+  <p>
+    <strong>Event points:</strong>
+    <%= @event.event_points %>
+  </p>
+<% end %>
+
+<%= link_to 'Edit', edit_event_path(@event) if current_user&.is_admin? %> |
+
 <%= link_to 'Back', events_path %>
 <%= link_to 'Sign In For Event', new_attendance_path %>
