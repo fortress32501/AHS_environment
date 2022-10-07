@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+  resources :event_types
   resources :attendances
   resources :rankings
   root to: "main#index"

@@ -4,6 +4,7 @@ class EventsController < ApplicationController
   # GET /events or /events.json
   def index
     @events = Event.all
+    @event_types = EventType.all
   end
 
   # GET /events/1 or /events/1.json
@@ -21,7 +22,17 @@ class EventsController < ApplicationController
 
   # POST /events or /events.json
   def create
-    @event = Event.new(event_params)
+    @event = Event.create!(params[:event].permit(:event_points, :event_description, :event_passcode, :event_start, :event_end, :event_title, :event_location, :event_type_id))
+      #event_params
+      #event_points: event_params[:event_points],
+      #event_description: event_params[:event_description],
+      #event_passcode: event_params[:event_passcode],
+      #event_start: event_params[:event_start],
+      #event_end: event_params[:event_end],
+      #event_title: event_params[:event_title],
+      #event_location: event_params[:event_location],
+      #event_type_id: event_params[:event_type_id]
+    #)
 
     respond_to do |format|
       if @event.save
@@ -65,6 +76,32 @@ class EventsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def event_params
-      params.require(:event).permit(:event_points, :event_description, :event_passcode, :event_start, :event_end, :event_title, :event_location)
+      params.require(:event).permit(:event_points, :event_description, :event_passcode, :event_start, :event_end, :event_title, :event_location, :event_type_id)
     end
+
+  def get_event_type(event)
+    temp = EventType.find_by(id: event.event_type_id)
+    if temp
+      temp.type_name
+    else
+      "None"
+    end
+  end
+
+  def get_event_color(event)
+    temp = EventType.find_by(id: event.event_type_id)
+    if temp
+      temp.color + "88"
+    else
+      "FFFFFF88"
+    end
+  end
+
+  def dilute_color(color)
+    color + "88"
+  end
+
+  helper_method :get_event_type
+  helper_method :get_event_color
+  helper_method :dilute_color
 end

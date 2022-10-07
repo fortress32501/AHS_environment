@@ -29,6 +29,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'bootsnap', '>= 1.4.4', require: false
 
 gem 'rexml'
+gem 'seed_dump'
 
 # Gem for Calendar setup
 gem "simple_calendar", "~> 2.0"
