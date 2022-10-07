@@ -541,6 +541,28 @@ RSpec.describe 'Creating an Event without EventType', type: :feature do
         expect(page).to have_content('1st Meeting')
         expect(page).to have_content('General Meeting')
         expect(page).to have_content('5')
+
+        #test show page
+        #click_on 'Back'
+        #expect(page).to have_content("Events")
+
+        
+         # Now test Event Password must be correct
+
+        #visit new_attendance_path
+        #fill_in 'attendance_password', with: 'fgf'
+        #select '1st Meeting', :from => 'attendance_event_id'
+
+        #click_on 'Create Attendance'
+        #expect(page).not_to have_content('Attendance was successfully created')
+
+
+        # Now test attendnace already exists
+        #visit new_attendance_path
+        #fill_in 'attendance_password', with: 'Test'
+        #expect(page).not_to have_content('Attendance was successfully created')
+
+
         expect(page).to have_content('Test')
         expect(page).to have_content('ZACH')
         expect(page).to have_content('2020-09-28')
@@ -553,5 +575,6 @@ RSpec.describe 'Creating an Event without EventType', type: :feature do
         expect(page).to have_content('type1')
         expect(page).to have_content('test type')
         expect(page).to have_content('#000000')
+
     end
 end
