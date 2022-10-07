@@ -9,4 +9,5 @@ class Ranking < ApplicationRecord
         first_name, last_name, email, point FROM Users as B ORDER BY point desc")
         list_rankings = ActiveRecord::Base.connection.execute(sql)
     end
+    
 end
