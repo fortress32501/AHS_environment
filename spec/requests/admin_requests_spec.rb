@@ -41,8 +41,8 @@ RSpec.describe "/admin_requests", type: :request do
     end
   end
 
+  # NOTE: need to figure out how this works???
   describe "GET /new" do
-    skip("not yet implemented")
     it "renders a successful response" do
       get new_admin_request_url
       expect(response).to be_successful
