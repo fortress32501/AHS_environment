@@ -2,6 +2,7 @@
 require 'rails_helper'
 
 RSpec.describe Event, type:  :model do
+
     subject do
         described_class.new(
             event_title: '1st Meeting', 
@@ -63,65 +64,59 @@ RSpec.describe Event, type:  :model do
         subject.event_type_id = nil 
         expect(subject).to be_valid
     end
+
 end
 
 RSpec.describe User, type:  :model do
-    subject do
-        described_class.new(first_name: 'John', last_name: 'Doe', email: 'johndoe@gmail.com', password: '123', point: 0, is_admin: false)
-    end
+  subject do
+    described_class.new(first_name: 'John', last_name: 'Doe', email: 'johndoe@gmail.com', password: '123', point: 0, is_admin: false)
+  end
 
-    it 'is valid with valid attributes' do
-        expect(subject).to be_valid
-    end
+  it 'is valid with valid attributes' do
+    expect(subject).to be_valid
+  end
 
-    it 'is invalid without first name' do
-        subject.first_name = nil 
-        expect(subject).not_to be_valid
-    end
-    
-    it 'is invalid without last name' do
-        subject.last_name = nil
-        expect(subject).not_to be_valid
-    end
+  it 'is invalid without first name' do
+    subject.first_name = nil 
+    expect(subject).not_to be_valid
+  end
 
-    it 'is invalid without email' do
-        subject.email = nil
-        expect(subject).not_to be_valid
-    end
+  
+  it 'is invalid without last name' do
+    subject.last_name = nil
+    expect(subject).not_to be_valid
+  end
+
+  it 'is invalid without email' do
+    subject.email = nil
+    expect(subject).not_to be_valid
+  end
 end
 
-
-# location: spec/unit/unit_spec.rb
-require 'rails_helper'
-
 RSpec.describe Attendance, type:  :model do
+  subject do
+      described_class.new(user_id: 1 ,event_id: 1,password: "Test", points: 5)
+  end  
 
+  it 'is valid with valid attributes' do
+    expect(subject).not_to be_valid
+  end  
 
-    subject do
-        described_class.new(user_id: 1 ,event_id: 1,password: "Test", points: 5)
-    end
+  it 'is valid with no password or points' do
+    subject.points = nil
+    subject.password = nil
+    expect(subject).not_to be_valid
+  end  
 
+  it 'is invalid with out user/ cannot have an invalid user' do
+    subject.user_id = 56
+    expect(subject).not_to be_valid
+  end  
 
-    it 'is valid with valid attributes' do
-        expect(subject).not_to be_valid
-    end
-
-    it 'is valid with no password or points' do
-        subject.points = nil
-        subject.password = nil
-        expect(subject).not_to be_valid
-    end
-
-    it 'is invalid with out user/ cannot have an invalid user' do
-        subject.user_id = 56
-        expect(subject).not_to be_valid
-    end
-
-    it 'is invalid with nonexistant event' do
-        subject.event_id = 400
-        expect(subject).not_to be_valid
-    end
-
+  it 'is invalid with nonexistant event' do
+    subject.event_id = 400
+    expect(subject).not_to be_valid
+  end
 end
 
 #Unit tests for event type
