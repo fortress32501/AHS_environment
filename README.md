@@ -2,7 +2,7 @@
 
 ## Introduction ##
 
-Application Description
+This is a web application built for use by the Texas A&M University's Alexander Hamilton Society. The app is intended to help the organization better track evetns and member participation.
 
 ## Requirements ##
 
@@ -12,8 +12,6 @@ This code has been run and tested on:
 * Rails - 6.1.4.1
 * Ruby Gems - Listed in `Gemfile`
 * PostgreSQL - 13.3 
-* Nodejs - v16.9.1
-* Yarn - 1.22.11
 
 
 ## External Deps  ##
