@@ -25,5 +25,34 @@
 </table>
 
 <br>
+<table>
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last name</th>
+      <th>Email</th>
+      <th>Points</th>
+      <th>Rank</th>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <% @list_rankings.each do |row| %>
+        <tr>
+          <td><%= row['first_name'] %></td>
+          <td><%= row['last_name']  %></td>
+          <td><%= row['email']  %></td>
+          <td><%= row['point']  %></td>
+          <td><%= row['rnk']  %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>  
+
+</table>
+
+
+<br>
 
 <%= link_to 'New Ranking', new_ranking_path %>
