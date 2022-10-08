@@ -4,6 +4,8 @@ class RankingsController < ApplicationController
   # GET /rankings or /rankings.json
   def index
     @rankings = Ranking.all
+    
+    @list_rankings = Ranking.get_ranking_list
   end
 
   # GET /rankings/1 or /rankings/1.json
