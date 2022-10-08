@@ -1,4 +1,4 @@
-<%= form_with(model: user) do |form| %>
+<!--<%= form_with(model: user) do |form| %>
   <% if user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -31,14 +31,22 @@
     <%= form.number_field :point %>
   </div>
 
-  <div class="field">
+  <!--<div class="field">
     <%= form.label :is_admin %>
     <%= form.select :is_admin, ['false', 'true'] %>
   </div>
 
-
-
   <div class="actions">
     <%= form.submit "submit" %>
   </div>
-<% end %>
+<% end %>-->
+
+<div class="product-card">
+  <%= form_with model: user do |f| %>
+    <div class="mt2">
+      <%= f.number_field :point %>
+      <%= f.button class: "btn btn-primary btn-sm"%>
+      <%= link_to "Cancel", users_path, class: "btn btn-secondary btn-sm" %>
+    </div>
+  <% end %>
+</div>
