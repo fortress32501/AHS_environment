@@ -202,7 +202,7 @@ RSpec.describe 'Edit user', type: :feature do
     fill_in 'Last name', with: 'Doe'
     fill_in 'Email', with: 'jane@gmail.com'
     fill_in 'Point', with: '2'
-    fill_in 'is_admin', with: 'false'
+    select 'false', :from => 'user_is_admin'
     click_on 'submit'  
     visit users_path
     click_on 'Show'
