@@ -44,6 +44,7 @@
 <div class="product-card">
   <%= form_with model: user do |f| %>
     <div class="mt2">
+      <%= f.label :point, class:"invisible"%>
       <%= f.number_field :point %>
       <%= f.button class: "btn btn-primary btn-sm"%>
       <%= link_to "Cancel", users_path, class: "btn btn-secondary btn-sm" %>
