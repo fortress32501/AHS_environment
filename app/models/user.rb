@@ -12,5 +12,12 @@ class User < ApplicationRecord
     def is_admin?
       self.is_admin
     end
-
+    
+    def role?
+      if is_admin?
+        "Admin"
+      else
+        "Member"
+      end
+    end
 end
