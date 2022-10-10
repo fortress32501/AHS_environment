@@ -1,5 +1,7 @@
 class Ranking < ApplicationRecord
     has_many :user
+    validates :title, presence: true
+    validates :point_total, presence: true
     def self.get_ranking_list
         sql = ("
         SELECT 
