@@ -41,10 +41,10 @@ RSpec.describe "/admin_requests", type: :request do
     end
   end
 
-  # NOTE: need to figure out how this works???
   describe "GET /new" do
     it "renders a successful response" do
-      get new_admin_request_url
+      admin_request = AdminRequest.create! valid_attributes
+      get new_admin_request_url(admin_request)
       expect(response).to be_successful
     end
   end
