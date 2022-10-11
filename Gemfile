@@ -40,6 +40,8 @@ group :development, :test do
 
   # for creating dynamic objects when testing
   gem 'factory_girl_rails'
+  # gives randomized items for testing
+  gem 'faker'
 end
 
 group :development do
