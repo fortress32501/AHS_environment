@@ -10,7 +10,7 @@
 
   <tbody>
     <%# Display attendance history of user %> 
-    <% Attendance.includes(:event).where(attendances: { user_id: current_user.id }).each do |attendance| %>
+    <% current_user.attendance_history.order('event_start DESC').each do |attendance| %>
       <tr>
         <td><%= link_to Event.where(id: attendance.event_id).last.event_title, event_path(attendance.event_id) %></td>
         <td><%= Event.where(id: attendance.event_id).last.event_start.to_s(:short) %> to <%= Event.where(id: attendance.event_id).last.event_end.to_s(:short) %></td>
@@ -18,3 +18,5 @@
     <% end %>
   </tbody>
 </table>
+
+<%= link_to 'Back', :back %>

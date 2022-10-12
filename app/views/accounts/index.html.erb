@@ -1,4 +1,4 @@
-<%# source: https://mdbootstrap.com/docs/standard/extended/profiles/ %>
+<!-- source: https://mdbootstrap.com/docs/standard/extended/profiles/ -->
 <section class="vh-100" style="background-color: white;">
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
@@ -26,26 +26,73 @@
                     <p class="text-muted"><%= current_user.role? %></p>
                   </div>
                 </div>
-                <h6>Attendance point</h6>
-                <hr class="mt-0 mb-4">
-                <div class="row pt-1">
-                  <div class="col-6 mb-3">
-                    <h6>event</h6>
-                    <p class="text-muted">Lorem ipsum</p>
+                <% if !current_user.is_admin? %>
+                  <h6>Attendance point: <%= current_user.user_points %></h6>
+                  <hr class="mt-0 mb-4">
+                <% end %>
+                <% if !current_user.is_admin? %>
+                  <h6>Recent Events Attended</h6>
+                  <hr class="mt-0 mb-4">
+                  <div class="row pt-1">
+                    <div class="col mb-3">
+                    <!-- table for events -->
+                      <table class="table-sm">
+                        <thead>
+                          <tr>
+                            <th>Event</th>
+                            <th>Date</th>
+                          </tr>
+                        </thead>
+
+                        <tbody>
+                          <% current_user.attendance_history.limit(3).each do |attendance| %>
+                            <tr>
+                              <td><p class="text-muted"><%= link_to Event.where(id: attendance.event_id).last.event_title, event_path(attendance.event_id) %></p> </td>
+                              <td><p class="text-muted"><%= Event.where(id: attendance.event_id).last.event_start.to_s(:short) %> to <%= Event.where(id: attendance.event_id).last.event_end.to_s(:short) %></p></td>
+                            </tr>
+                          <% end %>
+                        </tbody>
+                      </table>
+                    </div>
                   </div>
-                  <div class="col-6 mb-3">
-                    <h6>time</h6>
-                    <p class="text-muted">Dolor sit amet</p>
+                <% end %>
+
+                <% if current_user.is_admin? %>
+                  <h6>Upcoming Events</h6>
+                  <hr class="mt-0 mb-4">
+                  <div class="row pt-1">
+                    <div class="col mb-3">
+                    <!-- table for events -->
+                      <table class="table-sm">
+                        <thead>
+                          <tr>
+                            <th>Event</th>
+                            <th>Date</th>
+                          </tr>
+                        </thead>
+
+                        <tbody>
+                          <% Event.order('event_start DESC').limit(3).each do |event| %>
+                            <tr>
+                              <td><p class="text-muted"><%= event.event_title %></p> </td>
+                              <td><p class="text-muted"><%= event.event_start.to_s(:short) %> to <%= event.   event_end.to_s(:short) %></p></td>
+                            </tr>
+                          <% end %>
+                        </tbody>
+                      </table>
+                    </div>
                   </div>
-                </div>
+                <% end %>
+
+
                 <div class="d-flex justify-content-start">
                   <a href="#!"><i class="fab fa-facebook-f fa-lg me-3"></i></a>
                   <a href="#!"><i class="fab fa-twitter fa-lg me-3"></i></a>
                   <a href="#!"><i class="fab fa-instagram fa-lg"></i></a>
                 </div>
               </div>
-              <%= link_to 'Attendance history', history_path %> |
-              <%= link_to 'Back', root_path %>
+              <%= link_to 'Attendance history', history_path, class: "btn btn-default" %> |
+              <%= link_to 'Back', :back, class: "btn btn-default" %>
             </div>
           </div>
         </div>

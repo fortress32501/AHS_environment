@@ -15,13 +15,8 @@
  *= require simple_calendar
  */
 @import "bootstrap/scss/bootstrap";
-
-.nav_logo
-{
-  width: 10px;
-  height: 20px;
-}
-
+@import "font-awesome";
+// source: https://mdbootstrap.com/docs/standard/extended/profiles/ 
 .gradient-custom {
   /* fallback for old browsers */
   background: #f6d365;
