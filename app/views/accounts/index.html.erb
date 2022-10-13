@@ -29,8 +29,6 @@
                 <% if !current_user.is_admin? %>
                   <h6>Attendance point: <%= current_user.user_points %></h6>
                   <hr class="mt-0 mb-4">
-                <% end %>
-                <% if !current_user.is_admin? %>
                   <h6>Recent Events Attended</h6>
                   <hr class="mt-0 mb-4">
                   <div class="row pt-1">
@@ -91,7 +89,13 @@
                   <a href="#!"><i class="fab fa-instagram fa-lg"></i></a>
                 </div>
               </div>
-              <%= link_to 'Attendance history', history_path, class: "btn btn-default" %> |
+
+              <% if !current_user.is_admin? %>
+                <%= link_to 'full attendance history', history_path, class: "btn btn-default" %> |
+              <% end %>
+              <% if current_user.is_admin? %>
+                <%= link_to 'full event lists', events_path, class: "btn btn-default" %> |
+              <% end %>
               <%= link_to 'Back', :back, class: "btn btn-default" %>
             </div>
           </div>
