@@ -12,4 +12,4 @@ import "bootstrap"
 Rails.start()
 ActiveStorage.start()
 
-import "controllers"
+//import "controllers"
