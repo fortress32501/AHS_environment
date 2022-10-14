@@ -44,7 +44,7 @@ class AttendancesController < ApplicationController
             format.json { render json: @attendance.errors, status: :unprocessable_entity }
           end
         else 
-          format.html { redirect_to new_attendance_path, notice: 'Password Incorrect' }
+          format.html { redirect_to new_attendance_path(eventID: @event.id), notice: 'Password Incorrect' }
         end
       end
 
@@ -52,7 +52,7 @@ class AttendancesController < ApplicationController
     else 
       respond_to do |format|
         if (@event.nil?)
-          format.html {redirect_to new_attendance_path, notice: "Select an Event"}
+          format.html {redirect_to new_attendance_path(eventID: @event.id), notice: "Select an Event"}
         elsif (@user.nil?)
           format.html {redirect_to new_session_path, notice: "Please Sign in"}
         else 
