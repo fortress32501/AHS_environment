@@ -1,11 +1,14 @@
 <nav class="navbar navbar-light bg-light justify-content-between">
-  <div class="container-fluid">
-    <%= link_to "/", :class=>"navbar-brand" do %> 
+    <!-- Logo -->
+    <%= link_to "/", :class=>"navbar-brand ps-4" do %> 
         <%= image_tag("ahs_logo.png", width: "7%", height: "7%") %>
         Alexander Hamilton Society
     <% end %>  
+    
+    <!-- Navbar links -->
     <% if session.include? :user_id %>
-      <ul class="nav justify-content-end">
+      <ul class="nav justify-content-end pe-4">
+      
         <li class="nav-item">
           <a class="nav-link active" href="#">Active</a>
         </li>
@@ -21,6 +24,5 @@
           <% end %>
         </li>
       </ul> 
-    <% end %>  
-  <div>
+    <% end %> 
 </nav>
