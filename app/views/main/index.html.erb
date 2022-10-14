@@ -2,7 +2,7 @@
 <h1> This is homepage </h1>
 <%= link_to "Sign out", session_path(current_user.id), method:"delete" %>
 <%= link_to "Events", events_path %>
-
+<%= link_to "Account", accounts_path %>
 
 <br>
 <% if current_user.is_admin %>

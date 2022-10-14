@@ -1,0 +1,106 @@
+<!-- source: https://mdbootstrap.com/docs/standard/extended/profiles/ -->
+<section class="vh-100" style="background-color: white;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-lg-6 mb-4 mb-lg-0">
+        <div class="card mb-3" style="border-radius: .5rem;">
+          <div class="row g-0">
+            <div class="col-md-4 gradient-custom text-center text-white"
+              style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
+              <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp"
+                alt="Avatar" class="img-fluid my-5" style="width: 80px;" />
+              <h2> <%= current_user.first_name %> <%= current_user.last_name %></h2>
+              <i class="far fa-edit mb-5"></i>
+            </div>
+            <div class="col-md-8">
+              <div class="card-body p-4">
+                <h6>Information</h6>
+                <hr class="mt-0 mb-4">
+                <div class="row pt-1">
+                  <div class="col-6 mb-3">
+                    <h6>Email</h6>
+                    <p class="text-muted"><%= current_user.email %></p>
+                  </div>
+                  <div class="col-6 mb-3">
+                    <h6>Role</h6>
+                    <p class="text-muted"><%= current_user.role? %></p>
+                  </div>
+                </div>
+                <% if !current_user.is_admin? %>
+                  <h6>Attendance point: <%= current_user.user_points %></h6>
+                  <hr class="mt-0 mb-4">
+                  <h6>Recent Events Attended</h6>
+                  <hr class="mt-0 mb-4">
+                  <div class="row pt-1">
+                    <div class="col mb-3">
+                    <!-- table for events -->
+                      <table class="table-sm">
+                        <thead>
+                          <tr>
+                            <th>Event</th>
+                            <th>Date</th>
+                          </tr>
+                        </thead>
+
+                        <tbody>
+                          <% current_user.attendance_history.limit(3).each do |attendance| %>
+                            <tr>
+                              <td><p class="text-muted"><%= link_to Event.where(id: attendance.event_id).last.event_title, event_path(attendance.event_id) %></p> </td>
+                              <td><p class="text-muted"><%= Event.where(id: attendance.event_id).last.event_start.to_s(:short) %> to <%= Event.where(id: attendance.event_id).last.event_end.to_s(:short) %></p></td>
+                            </tr>
+                          <% end %>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                <% end %>
+
+                <% if current_user.is_admin? %>
+                  <h6>Upcoming Events</h6>
+                  <hr class="mt-0 mb-4">
+                  <div class="row pt-1">
+                    <div class="col mb-3">
+                    <!-- table for events -->
+                      <table class="table-sm">
+                        <thead>
+                          <tr>
+                            <th>Event</th>
+                            <th>Date</th>
+                          </tr>
+                        </thead>
+
+                        <tbody>
+                          <% Event.order('event_start DESC').limit(3).each do |event| %>
+                            <tr>
+                              <td><p class="text-muted"><%= event.event_title %></p> </td>
+                              <td><p class="text-muted"><%= event.event_start.to_s(:short) %> to <%= event.   event_end.to_s(:short) %></p></td>
+                            </tr>
+                          <% end %>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                <% end %>
+
+
+                <div class="d-flex justify-content-start">
+                  <a href="#!"><i class="fab fa-facebook-f fa-lg me-3"></i></a>
+                  <a href="#!"><i class="fab fa-twitter fa-lg me-3"></i></a>
+                  <a href="#!"><i class="fab fa-instagram fa-lg"></i></a>
+                </div>
+              </div>
+
+              <% if !current_user.is_admin? %>
+                <%= link_to 'full attendance history', history_path, class: "btn btn-default" %> |
+              <% end %>
+              <% if current_user.is_admin? %>
+                <%= link_to 'full event lists', events_path, class: "btn btn-default" %> |
+              <% end %>
+              <%= link_to 'Back', :back, class: "btn btn-default" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
