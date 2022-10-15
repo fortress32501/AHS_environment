@@ -24,4 +24,8 @@ Rails.application.routes.draw do
   # get "/users/update", to: "sessions#new"
   # get "/users/new", to: "sessions#new"
   # get "/users/show", to: "sessions#new"
+
+  # route to account page
+  get "/accounts", to: "accounts#index"
+  get "/history", to: "history#index"
 end
