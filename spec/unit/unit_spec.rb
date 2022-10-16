@@ -132,7 +132,7 @@ RSpec.describe AdminRequest, type: :model do
     end
     
     subject do 
-        described_class.new(id: 1, user_id: @user.id, request_status: "APPROVED")
+        described_class.new(id: 1, user_id: @user.id, request_status: "REQUESTED", request_reason: "new officer in org")
     end
 
     it 'is valid with valid attributes' do 
@@ -145,7 +145,12 @@ RSpec.describe AdminRequest, type: :model do
     end
 
     it 'is invalid without request_status' do
-        subject.user_id = nil 
+        subject.request_status = nil 
         expect(subject).not_to be_valid 
+    end
+
+    it 'is invalid without request_reason' do
+        subject.request_reason = nil
+        expect(subject).not_to be_valid
     end
 end

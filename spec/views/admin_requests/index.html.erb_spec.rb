@@ -23,11 +23,13 @@ RSpec.describe "admin_requests/index", type: :view do
     assign(:admin_requests, [
       AdminRequest.create!(
         user_id: @test_user1.id,
-        request_status: "REQUESTED"
+        request_status: "REQUESTED",
+        request_reason: "new officer in org"
       ),
       AdminRequest.create!(
         user_id: @test_user2.id,
-        request_status: "APPROVED"
+        request_status: "APPROVED",
+        request_reason: "new officer in da org"
       )
     ])
   end
@@ -40,5 +42,8 @@ RSpec.describe "admin_requests/index", type: :view do
     # request status'
     assert_select "tr>td", text: "REQUESTED".to_s, count: 1
     assert_select "tr>td", text: "APPROVED".to_s, count: 1
+    # request reasons
+    assert_select "tr>td", text: "new officer in org".to_s, count: 1
+    assert_select "tr>td", text: "new officer in da org".to_s, count: 1
   end
 end

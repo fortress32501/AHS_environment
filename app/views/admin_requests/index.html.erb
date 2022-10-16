@@ -16,6 +16,7 @@
       <tr>
         <td><%= admin_request.user_id %></td>
         <td><%= admin_request.request_status %></td>
+        <td><%= admin_request.request_reason %></td>
         <td><%= link_to 'Show', admin_request %></td>
         <td><%= link_to 'Edit', edit_admin_request_path(admin_request) %></td>
         <td><%= link_to 'Destroy', admin_request, method: :delete, data: { confirm: 'Are you sure?' } %></td>

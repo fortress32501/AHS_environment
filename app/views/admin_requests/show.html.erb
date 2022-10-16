@@ -10,5 +10,11 @@
   <%= @admin_request.request_status %>
 </p>
 
+<p>
+  <strong>Request reason:</strong>
+  <%= @admin_request.request_reason %>
+</p>
+
+
 <%= link_to 'Edit', edit_admin_request_path(@admin_request) %> |
 <%= link_to 'Back', admin_requests_path %>
