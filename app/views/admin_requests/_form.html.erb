@@ -20,6 +20,11 @@
     <%= form.hidden_field :request_status,  :value => "REQUESTED"%>
   </div>
 
+  <div>
+    <%= form.label :request_reason %>
+    <%= form.text_field :request_reason %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
