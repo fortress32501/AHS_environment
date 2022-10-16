@@ -19,7 +19,7 @@ RSpec.describe "admin_requests/show", type: :view do
 
   it "renders attributes in <p>" do
     render
-    expect(rendered).to match(/2/)
+    expect(rendered).to match(@test_user.id.to_s)
     expect(rendered).to match(/Request Status/)
   end
 end
