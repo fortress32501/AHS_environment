@@ -69,3 +69,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
 gem 'rubocop'
+gem "turbo-rails" # for inline editing
+gem "font-awesome-sass", "~> 6.2.0"
