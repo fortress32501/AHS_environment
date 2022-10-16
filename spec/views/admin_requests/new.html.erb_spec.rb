@@ -4,7 +4,7 @@ RSpec.describe "admin_requests/new", type: :view do
   before(:each) do
     assign(:admin_request, AdminRequest.new(
       user_id: 1,
-      request_status: "MyString"
+      request_status: "REQUESTED"
     ))
   end
 

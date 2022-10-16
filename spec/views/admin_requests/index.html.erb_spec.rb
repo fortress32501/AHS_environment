@@ -2,41 +2,43 @@ require 'rails_helper'
 
 RSpec.describe "admin_requests/index", type: :view do
   before(:each) do
-    @user2 = assign(:user, User.create!(
-        id: 2,
-        first_name: "testUser",
-        last_name: "2",
-        email: "testUser1@email.com",
-        password: "testUser1!Hello",
+    @test_user1 = assign(:user, User.create!(
+        first_name: Faker::Name.name,
+        last_name: Faker::Name.name,
+        email: Faker::Internet.email,
+        password: Faker::Internet.password,
         point: 0,
-        is_admin: false
+        is_admin: false,
     ))
 
-    @user3 = assign(:user, User.create!(
-        id: 3,
-        first_name: "testUser",
-        last_name: "3",
-        email: "testUser1@email.com",
-        password: "testUser1!Hello",
+    @test_user2 = assign(:user, User.create!(
+        first_name: Faker::Name.name,
+        last_name: Faker::Name.name,
+        email: Faker::Internet.email,
+        password: Faker::Internet.password,
         point: 0,
-        is_admin: false
+        is_admin: false,
     ))
 
     assign(:admin_requests, [
       AdminRequest.create!(
-        user_id: 2,
-        request_status: "Request Status"
+        user_id: @test_user1.id,
+        request_status: "REQUESTED"
       ),
       AdminRequest.create!(
-        user_id: 2,
-        request_status: "Request Status"
+        user_id: @test_user2.id,
+        request_status: "APPROVED"
       )
     ])
   end
 
   it "renders a list of admin_requests" do
     render
-    assert_select "tr>td", text: 2.to_s, count: 2
-    assert_select "tr>td", text: "Request Status".to_s, count: 2
+    # user id's for request
+    assert_select "tr>td", text: @test_user1.id.to_s, count: 1
+    assert_select "tr>td", text: @test_user2.id.to_s, count: 1
+    # request status'
+    assert_select "tr>td", text: "REQUESTED".to_s, count: 1
+    assert_select "tr>td", text: "APPROVED".to_s, count: 1
   end
 end

@@ -39,7 +39,7 @@ group :development, :test do
   gem 'rspec-rails'
 
   # for creating dynamic objects when testing
-  gem 'factory_girl_rails'
+  gem 'factory_girl_rails', :require => false
   # gives randomized items for testing
   gem 'faker'
 end
