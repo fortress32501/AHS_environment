@@ -11,14 +11,13 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.number_field :user_id %>
+  <div class = "filed">
+    User: <%= current_user.email %>
+    <%= form.hidden_field :user_id,  :value => current_user.id%>
   </div>
 
-  <div class="field">
-    <%= form.label :request_status %>
-    <%= form.text_field :request_status %>
+  <div class = "filed">
+    <%= form.hidden_field :request_status,  :value => "REQUESTED"%>
   </div>
 
   <div class="actions">
