@@ -314,12 +314,12 @@ RSpec.describe Ranking, type:  :model do
 
     it 'is valid with no points' do
         subject.point_total = nil
-        expect(subject).to be_valid
+        expect(subject).not_to be_valid
     end
 
     it 'is invalid with out title' do
         subject.title = nil
-        expect(subject).to be_valid
+        expect(subject).not_to be_valid
     end
 
 end
