@@ -187,7 +187,6 @@ RSpec.describe 'Show user', type: :feature do
     expect(page).to have_content('jane@gmail.com')
   end
 end
-
 # Edit user 
 RSpec.describe 'Edit user', type: :feature do
   scenario 'valid inputs' do
@@ -213,7 +212,8 @@ RSpec.describe 'Edit user', type: :feature do
     expect(page).to have_content('false')
     expect(page).not_to have_content('0')
   end
-end"""
+end
+
 
 # Delete user 
 RSpec.describe 'Delete user', type: :feature do
@@ -230,7 +230,7 @@ RSpec.describe 'Delete user', type: :feature do
     expect(page).not_to have_content('jane@gmail.com')
   end
 end
-
+"""
 #Edit user points
 RSpec.describe 'Edit user points', type: :feature do
   scenario 'valid inputs' do
