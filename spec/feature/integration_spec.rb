@@ -160,6 +160,7 @@ RSpec.describe 'Creating a User', type: :feature do
     click_on 'Create Account'
     expect(page).to have_content('Jane')
     expect(page).to have_content('Doe')
+    click_on 'account'
     click_on 'Sign out'
     
     # Test Login
@@ -612,6 +613,55 @@ RSpec.describe 'Creating an Event without EventType', type: :feature do
         expect(page).to have_content('#000000')
 
     end
+end
+
+
+RSpec.describe 'User viewable point testing', type: :feature do
+  scenario 'valid inputs' do
+    # Signup    
+    visit events_path
+    click_on 'Sign Up'
+    fill_in 'First name', with: 'test'
+    fill_in 'Last name', with: 'test'
+    fill_in 'Email', with: 'test@test.com'
+    fill_in 'Password', with: 'test'
+    click_on 'Create Account'
+    
+    # Create event
+    click_on 'Events'
+    click_on 'New Event'
+    fill_in 'title', with: '1st Meeting'
+    fill_in 'description', with: 'General Meeting'
+    fill_in 'points', with: '5'
+    fill_in 'passcode', with: 'Test'
+    fill_in 'location', with: 'ZACH'
+    select '2022', :from => 'event_event_start_1i'
+    select 'September', :from => 'event_event_start_2i'
+    select '28', :from => 'event_event_start_3i'
+    select '01', :from => 'event_event_start_4i'
+    select '43', :from => 'event_event_start_5i'
+    select Date.today.year, :from => 'event_event_end_1i'                     # year
+    select Date::MONTHNAMES[Date.today.month] , :from => 'event_event_end_2i' # month
+    select Date.today.day, :from => 'event_event_end_3i'                      # date
+    select '02', :from => 'event_event_end_4i'
+    select '43', :from => 'event_event_end_5i'
+    click_on 'Create Event'  
+    
+    # Create attendance
+    click_on 'Sign In For Event'
+    fill_in 'attendance_password', with: 'Test'
+    click_on 'Create Attendance'
+
+    # Go to account page
+    click_on 'account'
+    expect(page).to have_content('Attendance points')
+    expect(page).to have_content('Attendance points: 5')
+    expect(page).not_to have_content('Attendance points: 0')  
+    
+    # Test attendance history
+    click_on 'full attendance history'
+    expect(page).to have_content('1st Meeting')
+  end
 end
 
 RSpec.describe 'Creating an Admin Request', type: :feature do
