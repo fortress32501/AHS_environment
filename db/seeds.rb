@@ -29,3 +29,6 @@ EventType.create!([
 User.create!([
   {first_name: "Test", last_name: "Test", email: "test@gmail.com", password_digest: "$2a$12$7wDlUndiAVVpEMSStsZkA./R8PMWYE3okaP7gVJkSXI00vdslmQZG", point: 0, is_admin: true, ranking_id: nil}
 ])
+User.create!([
+  {first_name: "Pear", last_name: "Ratano", email: "pear@gmail.com", password: "123", point: 0, is_admin: true, ranking_id: nil}
+])

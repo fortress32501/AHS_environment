@@ -27,7 +27,7 @@
                   </div>
                 </div>
                 <% if !current_user.is_admin? %>
-                  <h6>Attendance point: <%= current_user.user_points %></h6>
+                  <h6>Attendance points: <%= current_user.user_points %></h6>
                   <hr class="mt-0 mb-4">
                   <h6>Recent Events Attended</h6>
                   <hr class="mt-0 mb-4">
@@ -72,8 +72,8 @@
                         <tbody>
                           <% Event.order('event_start DESC').limit(3).each do |event| %>
                             <tr>
-                              <td><p class="text-muted"><%= event.event_title %></p> </td>
-                              <td><p class="text-muted"><%= event.event_start.to_s(:short) %> to <%= event.   event_end.to_s(:short) %></p></td>
+                              <td><p class="text-muted"><%= link_to event.event_title, event_path(event.id) %></p> </td>
+                              <td><p class="text-muted"><%= event.event_start.to_s(:short) %> to <%= event.event_end.to_s(:short) %></p></td>
                             </tr>
                           <% end %>
                         </tbody>
@@ -96,7 +96,8 @@
               <% if current_user.is_admin? %>
                 <%= link_to 'full event lists', events_path, class: "btn btn-default" %> |
               <% end %>
-              <%= link_to 'Back', :back, class: "btn btn-default" %>
+              <%= link_to 'Back', :back, class: "btn btn-default" %> |
+              <%= link_to "Sign out", session_path(current_user.id), method:"delete" %>
             </div>
           </div>
         </div>
