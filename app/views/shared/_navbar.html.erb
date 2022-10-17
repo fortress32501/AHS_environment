@@ -1,8 +1,28 @@
-<nav class="navbar navbar-light bg-light">
-  <div class="container-fluid">
-    <%= link_to '/', :class=>'navbar-brand' do %> 
-        <%= image_tag 'logo.jpg' %>
+<nav class="navbar navbar-light bg-light justify-content-between">
+    <!-- Logo -->
+    <%= link_to "/", :class=>"navbar-brand ps-4" do %> 
+        <%= image_tag("ahs_logo.png", width: "7%", height: "7%") %>
         Alexander Hamilton Society
-    <% end %>        
-  </div>
+    <% end %>  
+    
+    <!-- Navbar links -->
+    <% if session.include? :user_id %>
+      <ul class="nav justify-content-end pe-4">
+      
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Active</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <%= link_to accounts_path, :class=>"btn btn-default" do %>
+            <i class="fa-solid fa-circle-user" aria-hidden="true"></i>
+          <% end %>
+        </li>
+      </ul> 
+    <% end %> 
 </nav>

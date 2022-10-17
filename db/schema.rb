@@ -32,6 +32,14 @@ ActiveRecord::Schema.define(version: 2022_10_16_231247) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "event_types", force: :cascade do |t|
+    t.string "type_name"
+    t.string "description"
+    t.string "color"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "events", force: :cascade do |t|
     t.integer "event_points"
     t.string "event_description"
@@ -42,6 +50,7 @@ ActiveRecord::Schema.define(version: 2022_10_16_231247) do
     t.string "event_location"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "event_type_id"
   end
 
   create_table "rankings", force: :cascade do |t|

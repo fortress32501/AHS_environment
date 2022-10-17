@@ -2,3 +2,19 @@
 <h1> This is homepage </h1>
 <%= link_to "Sign out", session_path(current_user.id), method:"delete" %>
 <%= link_to "Events", events_path %>
+<%= link_to "Account", accounts_path %>
+
+<br>
+<% if current_user.is_admin %>
+<%= link_to 'New Ranking', new_ranking_path %>
+<% else %>
+    <p>Not Admin </p>
+<% end %>
+
+<br>
+<% if current_user.is_admin %>
+<%= link_to 'Ranking List', rankings_path %>
+<% else %>
+    <p>Not Admin </p>
+<% end %>
+
