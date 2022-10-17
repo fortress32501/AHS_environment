@@ -25,5 +25,5 @@ EventType.create!([
   {type_name: "Event Type 1", description: "Event Description 1", color: "#0400f5"}
 ])
 User.create!([
-  {first_name: "Test", last_name: "Test", email: "test@gmail.com", password_digest: "$2a$12$7wDlUndiAVVpEMSStsZkA./R8PMWYE3okaP7gVJkSXI00vdslmQZG", point: 0, is_admin: false, ranking_id: nil}
+  {first_name: "Test", last_name: "Test", email: "test@gmail.com", password_digest: "$2a$12$7wDlUndiAVVpEMSStsZkA./R8PMWYE3okaP7gVJkSXI00vdslmQZG", point: 0, is_admin: true, ranking_id: nil}
 ])
