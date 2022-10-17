@@ -38,6 +38,11 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails'
+
+  # for creating dynamic objects when testing
+  gem 'factory_girl_rails', :require => false
+  # gives randomized items for testing
+  gem 'faker'
 end
 
 group :development do

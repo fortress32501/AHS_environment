@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/AHS_app/Documents/AHS_app/AHS_environment/spec/feature/integration_spec.rb": {
+      "/csce431/ahs/AHS_environment/spec/feature/integration_spec.rb": {
         "lines": [
           null,
           1,
@@ -583,7 +583,13 @@
           1,
           1,
           1,
+          1,
+          1,
+          1,
+          1,
+          1,
           null,
+          1,
           null,
           null,
           null,
@@ -609,20 +615,113 @@
           1,
           1,
           1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
           1,
           null,
           1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
           null,
           1,
           1,
           1,
           1,
           null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
           null,
           null
         ]
       },
-      "/AHS_app/Documents/AHS_app/AHS_environment/spec/rails_helper.rb": {
+      "/csce431/ahs/AHS_environment/spec/rails_helper.rb": {
         "lines": [
           null,
           1,
@@ -630,6 +729,8 @@
           1,
           null,
           1,
+          1,
+          null,
           1,
           null,
           null,
@@ -690,7 +791,7 @@
           null
         ]
       },
-      "/AHS_app/Documents/AHS_app/AHS_environment/config/environment.rb": {
+      "/csce431/ahs/AHS_environment/config/environment.rb": {
         "lines": [
           null,
           1,
@@ -699,7 +800,7 @@
           1
         ]
       },
-      "/AHS_app/Documents/AHS_app/AHS_environment/config/application.rb": {
+      "/csce431/ahs/AHS_environment/config/application.rb": {
         "lines": [
           1,
           null,
@@ -729,7 +830,7 @@
           null
         ]
       },
-      "/AHS_app/Documents/AHS_app/AHS_environment/config/boot.rb": {
+      "/csce431/ahs/AHS_environment/config/boot.rb": {
         "lines": [
           1,
           null,
@@ -737,7 +838,7 @@
           1
         ]
       },
-      "/AHS_app/Documents/AHS_app/AHS_environment/config/environments/test.rb": {
+      "/csce431/ahs/AHS_environment/config/environments/test.rb": {
         "lines": [
           1,
           null,
@@ -801,7 +902,7 @@
           null
         ]
       },
-      "/AHS_app/Documents/AHS_app/AHS_environment/config/initializers/application_controller_renderer.rb": {
+      "/csce431/ahs/AHS_environment/config/initializers/application_controller_renderer.rb": {
         "lines": [
           null,
           null,
@@ -813,7 +914,7 @@
           null
         ]
       },
-      "/AHS_app/Documents/AHS_app/AHS_environment/config/initializers/assets.rb": {
+      "/csce431/ahs/AHS_environment/config/initializers/assets.rb": {
         "lines": [
           null,
           null,
@@ -831,7 +932,7 @@
           null
         ]
       },
-      "/AHS_app/Documents/AHS_app/AHS_environment/config/initializers/backtrace_silencers.rb": {
+      "/csce431/ahs/AHS_environment/config/initializers/backtrace_silencers.rb": {
         "lines": [
           null,
           null,
@@ -843,7 +944,7 @@
           1
         ]
       },
-      "/AHS_app/Documents/AHS_app/AHS_environment/config/initializers/content_security_policy.rb": {
+      "/csce431/ahs/AHS_environment/config/initializers/content_security_policy.rb": {
         "lines": [
           null,
           null,
@@ -877,7 +978,7 @@
           null
         ]
       },
-      "/AHS_app/Documents/AHS_app/AHS_environment/config/initializers/cookies_serializer.rb": {
+      "/csce431/ahs/AHS_environment/config/initializers/cookies_serializer.rb": {
         "lines": [
           null,
           null,
@@ -886,7 +987,7 @@
           1
         ]
       },
-      "/AHS_app/Documents/AHS_app/AHS_environment/config/initializers/filter_parameter_logging.rb": {
+      "/csce431/ahs/AHS_environment/config/initializers/filter_parameter_logging.rb": {
         "lines": [
           null,
           null,
@@ -896,7 +997,7 @@
           null
         ]
       },
-      "/AHS_app/Documents/AHS_app/AHS_environment/config/initializers/inflections.rb": {
+      "/csce431/ahs/AHS_environment/config/initializers/inflections.rb": {
         "lines": [
           null,
           null,
@@ -916,7 +1017,7 @@
           null
         ]
       },
-      "/AHS_app/Documents/AHS_app/AHS_environment/config/initializers/mime_types.rb": {
+      "/csce431/ahs/AHS_environment/config/initializers/mime_types.rb": {
         "lines": [
           null,
           null,
@@ -924,7 +1025,7 @@
           null
         ]
       },
-      "/AHS_app/Documents/AHS_app/AHS_environment/config/initializers/permissions_policy.rb": {
+      "/csce431/ahs/AHS_environment/config/initializers/permissions_policy.rb": {
         "lines": [
           null,
           null,
@@ -939,7 +1040,7 @@
           null
         ]
       },
-      "/AHS_app/Documents/AHS_app/AHS_environment/config/initializers/wrap_parameters.rb": {
+      "/csce431/ahs/AHS_environment/config/initializers/wrap_parameters.rb": {
         "lines": [
           null,
           null,
@@ -957,7 +1058,7 @@
           null
         ]
       },
-      "/AHS_app/Documents/AHS_app/AHS_environment/config/routes.rb": {
+      "/csce431/ahs/AHS_environment/config/routes.rb": {
         "lines": [
           1,
           null,
@@ -966,6 +1067,7 @@
           1,
           1,
           1,
+          1,
           null,
           null,
           1,
@@ -985,10 +1087,20 @@
           null,
           null,
           null,
+          null,
+          null,
+          1,
+          1,
           null
         ]
       },
-      "/AHS_app/Documents/AHS_app/AHS_environment/app/helpers/application_helper.rb": {
+      "/csce431/ahs/AHS_environment/app/helpers/admin_requests_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/csce431/ahs/AHS_environment/app/helpers/application_helper.rb": {
         "lines": [
           1,
           1,
@@ -1002,119 +1114,113 @@
           null
         ]
       },
-      "/AHS_app/Documents/AHS_app/AHS_environment/app/helpers/attendances_helper.rb": {
+      "/csce431/ahs/AHS_environment/app/helpers/attendances_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/AHS_app/Documents/AHS_app/AHS_environment/app/helpers/event_types_helper.rb": {
+      "/csce431/ahs/AHS_environment/app/helpers/event_types_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/AHS_app/Documents/AHS_app/AHS_environment/app/helpers/events_helper.rb": {
+      "/csce431/ahs/AHS_environment/app/helpers/events_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/AHS_app/Documents/AHS_app/AHS_environment/app/helpers/rankings_helper.rb": {
+      "/csce431/ahs/AHS_environment/app/helpers/rankings_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/AHS_app/Documents/AHS_app/AHS_environment/app/helpers/sessions_helper.rb": {
+      "/csce431/ahs/AHS_environment/app/helpers/sessions_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/AHS_app/Documents/AHS_app/AHS_environment/app/helpers/users_helper.rb": {
+      "/csce431/ahs/AHS_environment/app/helpers/users_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/AHS_app/Documents/AHS_app/AHS_environment/spec/helpers/attendances_helper_spec.rb": {
+      "/csce431/ahs/AHS_environment/spec/support/factory_girl.rb": {
         "lines": [
           1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
           null,
           1,
           1,
           null
         ]
       },
-      "/AHS_app/Documents/AHS_app/AHS_environment/spec/helpers/event_types_helper_spec.rb": {
+      "/csce431/ahs/AHS_environment/spec/factories/user_spec_factory.rb": {
         "lines": [
           1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/csce431/ahs/AHS_environment/app/models/user.rb": {
+        "lines": [
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          22,
+          null,
+          null,
+          null,
+          1,
+          44,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          0,
           null,
           null,
           null,
           null,
+          1,
+          0,
           null,
           null,
           null,
+          1,
+          0,
           null,
           null,
           null,
-          null,
+          null
+        ]
+      },
+      "/csce431/ahs/AHS_environment/app/models/application_record.rb": {
+        "lines": [
           1,
           1,
           null
         ]
       },
-      "/AHS_app/Documents/AHS_app/AHS_environment/spec/helpers/events_helper_spec.rb": {
-        "lines": [
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          1,
-          null
-        ]
-      },
-      "/AHS_app/Documents/AHS_app/AHS_environment/spec/helpers/rankings_helper_spec.rb": {
-        "lines": [
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          1,
-          null
-        ]
-      },
-      "/AHS_app/Documents/AHS_app/AHS_environment/spec/helpers/sessions_helper_spec.rb": {
+      "/csce431/ahs/AHS_environment/spec/helpers/admin_requests_helper_spec.rb": {
         "lines": [
           1,
           null,
@@ -1133,7 +1239,7 @@
           null
         ]
       },
-      "/AHS_app/Documents/AHS_app/AHS_environment/spec/helpers/users_helper_spec.rb": {
+      "/csce431/ahs/AHS_environment/spec/helpers/attendances_helper_spec.rb": {
         "lines": [
           1,
           null,
@@ -1152,7 +1258,102 @@
           null
         ]
       },
-      "/AHS_app/Documents/AHS_app/AHS_environment/spec/models/attendance_spec.rb": {
+      "/csce431/ahs/AHS_environment/spec/helpers/event_types_helper_spec.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/csce431/ahs/AHS_environment/spec/helpers/events_helper_spec.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/csce431/ahs/AHS_environment/spec/helpers/rankings_helper_spec.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/csce431/ahs/AHS_environment/spec/helpers/sessions_helper_spec.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/csce431/ahs/AHS_environment/spec/helpers/users_helper_spec.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/csce431/ahs/AHS_environment/spec/models/admin_request_spec.rb": {
         "lines": [
           1,
           null,
@@ -1161,23 +1362,15 @@
           null
         ]
       },
-      "/AHS_app/Documents/AHS_app/AHS_environment/app/models/attendance.rb": {
+      "/csce431/ahs/AHS_environment/app/models/admin_request.rb": {
         "lines": [
           1,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/AHS_app/Documents/AHS_app/AHS_environment/app/models/application_record.rb": {
-        "lines": [
           1,
           1,
           null
         ]
       },
-      "/AHS_app/Documents/AHS_app/AHS_environment/spec/models/event_spec.rb": {
+      "/csce431/ahs/AHS_environment/spec/models/attendance_spec.rb": {
         "lines": [
           1,
           null,
@@ -1186,16 +1379,16 @@
           null
         ]
       },
-      "/AHS_app/Documents/AHS_app/AHS_environment/app/models/event.rb": {
+      "/csce431/ahs/AHS_environment/app/models/attendance.rb": {
         "lines": [
           1,
           1,
           1,
-          1,
+          null,
           null
         ]
       },
-      "/AHS_app/Documents/AHS_app/AHS_environment/spec/models/event_type_spec.rb": {
+      "/csce431/ahs/AHS_environment/spec/models/event_spec.rb": {
         "lines": [
           1,
           null,
@@ -1204,15 +1397,16 @@
           null
         ]
       },
-      "/AHS_app/Documents/AHS_app/AHS_environment/app/models/event_type.rb": {
+      "/csce431/ahs/AHS_environment/app/models/event.rb": {
         "lines": [
+          1,
           1,
           1,
           1,
           null
         ]
       },
-      "/AHS_app/Documents/AHS_app/AHS_environment/spec/models/ranking_spec.rb": {
+      "/csce431/ahs/AHS_environment/spec/models/event_type_spec.rb": {
         "lines": [
           1,
           null,
@@ -1221,7 +1415,24 @@
           null
         ]
       },
-      "/AHS_app/Documents/AHS_app/AHS_environment/app/models/ranking.rb": {
+      "/csce431/ahs/AHS_environment/app/models/event_type.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/csce431/ahs/AHS_environment/spec/models/ranking_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/csce431/ahs/AHS_environment/app/models/ranking.rb": {
         "lines": [
           1,
           1,
@@ -1238,7 +1449,7 @@
           null
         ]
       },
-      "/AHS_app/Documents/AHS_app/AHS_environment/spec/models/user_spec.rb": {
+      "/csce431/ahs/AHS_environment/spec/models/user_spec.rb": {
         "lines": [
           1,
           null,
@@ -1247,27 +1458,143 @@
           null
         ]
       },
-      "/AHS_app/Documents/AHS_app/AHS_environment/app/models/user.rb": {
+      "/csce431/ahs/AHS_environment/spec/requests/admin_requests_spec.rb": {
         "lines": [
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          11,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null,
+          1,
+          1,
+          1,
+          0,
+          0,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          0,
+          0,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          0,
+          0,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          0,
+          0,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          0,
+          null,
+          null,
           null,
           1,
           1,
           1,
           1,
           null,
-          1,
-          18,
-          null,
           null,
           null,
           1,
-          40,
+          1,
+          0,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          0,
+          null,
+          null,
+          1,
+          1,
+          0,
+          0,
+          0,
+          null,
+          null,
+          1,
+          1,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          0,
+          0,
+          null,
+          null,
+          null,
+          1,
+          1,
+          0,
+          0,
           null,
           null,
           null
         ]
       },
-      "/AHS_app/Documents/AHS_app/AHS_environment/spec/requests/attendances_spec.rb": {
+      "/csce431/ahs/AHS_environment/spec/requests/attendances_spec.rb": {
         "lines": [
           null,
           null,
@@ -1402,7 +1729,7 @@
           null
         ]
       },
-      "/AHS_app/Documents/AHS_app/AHS_environment/spec/requests/event_types_spec.rb": {
+      "/csce431/ahs/AHS_environment/spec/requests/event_types_spec.rb": {
         "lines": [
           1,
           null,
@@ -1537,7 +1864,7 @@
           null
         ]
       },
-      "/AHS_app/Documents/AHS_app/AHS_environment/spec/requests/events_spec.rb": {
+      "/csce431/ahs/AHS_environment/spec/requests/events_spec.rb": {
         "lines": [
           1,
           null,
@@ -1672,7 +1999,7 @@
           null
         ]
       },
-      "/AHS_app/Documents/AHS_app/AHS_environment/spec/requests/rankings_spec.rb": {
+      "/csce431/ahs/AHS_environment/spec/requests/rankings_spec.rb": {
         "lines": [
           1,
           null,
@@ -1807,7 +2134,7 @@
           null
         ]
       },
-      "/AHS_app/Documents/AHS_app/AHS_environment/spec/requests/sessions_spec.rb": {
+      "/csce431/ahs/AHS_environment/spec/requests/sessions_spec.rb": {
         "lines": [
           1,
           null,
@@ -1836,7 +2163,7 @@
           null
         ]
       },
-      "/AHS_app/Documents/AHS_app/AHS_environment/spec/requests/users_spec.rb": {
+      "/csce431/ahs/AHS_environment/spec/requests/users_spec.rb": {
         "lines": [
           1,
           null,
@@ -1971,7 +2298,7 @@
           null
         ]
       },
-      "/AHS_app/Documents/AHS_app/AHS_environment/spec/routing/attendances_routing_spec.rb": {
+      "/csce431/ahs/AHS_environment/spec/routing/admin_requests_routing_spec.rb": {
         "lines": [
           1,
           null,
@@ -2013,7 +2340,139 @@
           null
         ]
       },
-      "/AHS_app/Documents/AHS_app/AHS_environment/app/controllers/attendances_controller.rb": {
+      "/csce431/ahs/AHS_environment/app/controllers/admin_requests_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          1,
+          7,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          5,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          5,
+          null,
+          5,
+          5,
+          10,
+          5,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          2,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          7,
+          null,
+          null,
+          null,
+          1,
+          5,
+          null,
+          null
+        ]
+      },
+      "/csce431/ahs/AHS_environment/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          161,
+          null,
+          null,
+          1,
+          151,
+          null,
+          null
+        ]
+      },
+      "/csce431/ahs/AHS_environment/spec/routing/attendances_routing_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/csce431/ahs/AHS_environment/app/controllers/attendances_controller.rb": {
         "lines": [
           1,
           1,
@@ -2115,23 +2574,7 @@
           null
         ]
       },
-      "/AHS_app/Documents/AHS_app/AHS_environment/app/controllers/application_controller.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null,
-          1,
-          129,
-          null,
-          null,
-          1,
-          121,
-          null,
-          null
-        ]
-      },
-      "/AHS_app/Documents/AHS_app/AHS_environment/spec/routing/event_types_routing_spec.rb": {
+      "/csce431/ahs/AHS_environment/spec/routing/event_types_routing_spec.rb": {
         "lines": [
           1,
           null,
@@ -2173,7 +2616,7 @@
           null
         ]
       },
-      "/AHS_app/Documents/AHS_app/AHS_environment/app/controllers/event_types_controller.rb": {
+      "/csce431/ahs/AHS_environment/app/controllers/event_types_controller.rb": {
         "lines": [
           1,
           1,
@@ -2247,7 +2690,7 @@
           null
         ]
       },
-      "/AHS_app/Documents/AHS_app/AHS_environment/spec/routing/events_routing_spec.rb": {
+      "/csce431/ahs/AHS_environment/spec/routing/events_routing_spec.rb": {
         "lines": [
           1,
           null,
@@ -2289,7 +2732,7 @@
           null
         ]
       },
-      "/AHS_app/Documents/AHS_app/AHS_environment/app/controllers/events_controller.rb": {
+      "/csce431/ahs/AHS_environment/app/controllers/events_controller.rb": {
         "lines": [
           1,
           1,
@@ -2382,11 +2825,11 @@
           null,
           null,
           1,
-          33,
-          33,
+          42,
+          42,
           2,
           null,
-          31,
+          40,
           null,
           null,
           null,
@@ -2400,7 +2843,7 @@
           null
         ]
       },
-      "/AHS_app/Documents/AHS_app/AHS_environment/spec/routing/rankings_routing_spec.rb": {
+      "/csce431/ahs/AHS_environment/spec/routing/rankings_routing_spec.rb": {
         "lines": [
           1,
           null,
@@ -2442,7 +2885,7 @@
           null
         ]
       },
-      "/AHS_app/Documents/AHS_app/AHS_environment/app/controllers/rankings_controller.rb": {
+      "/csce431/ahs/AHS_environment/app/controllers/rankings_controller.rb": {
         "lines": [
           1,
           1,
@@ -2518,7 +2961,7 @@
           null
         ]
       },
-      "/AHS_app/Documents/AHS_app/AHS_environment/spec/routing/users_routing_spec.rb": {
+      "/csce431/ahs/AHS_environment/spec/routing/users_routing_spec.rb": {
         "lines": [
           1,
           null,
@@ -2560,7 +3003,7 @@
           null
         ]
       },
-      "/AHS_app/Documents/AHS_app/AHS_environment/app/controllers/users_controller.rb": {
+      "/csce431/ahs/AHS_environment/app/controllers/users_controller.rb": {
         "lines": [
           1,
           1,
@@ -2576,7 +3019,7 @@
           null,
           null,
           1,
-          18,
+          22,
           null,
           null,
           null,
@@ -2586,12 +3029,12 @@
           null,
           null,
           1,
-          17,
-          17,
-          17,
-          17,
-          17,
-          17,
+          21,
+          21,
+          21,
+          21,
+          21,
+          21,
           null,
           0,
           0,
@@ -2631,13 +3074,169 @@
           null,
           null,
           1,
-          36,
+          44,
           null,
           null
         ]
       },
-      "/AHS_app/Documents/AHS_app/AHS_environment/spec/unit/unit_spec.rb": {
+      "/csce431/ahs/AHS_environment/spec/unit/unit_spec.rb": {
         "lines": [
+          null,
+          1,
+          null,
+          1,
+          1,
+          8,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          4,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          1,
+          4,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          4,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          4,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
           null,
           1,
           null,
@@ -2811,7 +3410,156 @@
           null
         ]
       },
-      "/AHS_app/Documents/AHS_app/AHS_environment/spec/views/attendances/edit.html.erb_spec.rb": {
+      "/csce431/ahs/AHS_environment/spec/views/admin_requests/edit.html.erb_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/csce431/ahs/AHS_environment/spec/views/admin_requests/index.html.erb_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/csce431/ahs/AHS_environment/spec/views/admin_requests/new.html.erb_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/csce431/ahs/AHS_environment/spec/views/admin_requests/show.html.erb_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/csce431/ahs/AHS_environment/spec/views/attendances/edit.html.erb_spec.rb": {
         "lines": [
           null,
           null,
@@ -2839,7 +3587,7 @@
           null
         ]
       },
-      "/AHS_app/Documents/AHS_app/AHS_environment/spec/views/attendances/index.html.erb_spec.rb": {
+      "/csce431/ahs/AHS_environment/spec/views/attendances/index.html.erb_spec.rb": {
         "lines": [
           null,
           null,
@@ -2868,7 +3616,7 @@
           null
         ]
       },
-      "/AHS_app/Documents/AHS_app/AHS_environment/spec/views/attendances/new.html.erb_spec.rb": {
+      "/csce431/ahs/AHS_environment/spec/views/attendances/new.html.erb_spec.rb": {
         "lines": [
           null,
           null,
@@ -2897,7 +3645,7 @@
           null
         ]
       },
-      "/AHS_app/Documents/AHS_app/AHS_environment/spec/views/attendances/show.html.erb_spec.rb": {
+      "/csce431/ahs/AHS_environment/spec/views/attendances/show.html.erb_spec.rb": {
         "lines": [
           null,
           null,
@@ -2919,64 +3667,7 @@
           null
         ]
       },
-      "/AHS_app/Documents/AHS_app/AHS_environment/spec/views/event_types/edit.html.erb_spec.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          1,
-          null,
-          1,
-          null,
-          1,
-          null,
-          1,
-          null,
-          1,
-          null,
-          null,
-          null
-        ]
-      },
-      "/AHS_app/Documents/AHS_app/AHS_environment/spec/views/event_types/index.html.erb_spec.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/AHS_app/Documents/AHS_app/AHS_environment/spec/views/event_types/new.html.erb_spec.rb": {
+      "/csce431/ahs/AHS_environment/spec/views/event_types/edit.html.erb_spec.rb": {
         "lines": [
           1,
           null,
@@ -3004,7 +3695,64 @@
           null
         ]
       },
-      "/AHS_app/Documents/AHS_app/AHS_environment/spec/views/event_types/show.html.erb_spec.rb": {
+      "/csce431/ahs/AHS_environment/spec/views/event_types/index.html.erb_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/csce431/ahs/AHS_environment/spec/views/event_types/new.html.erb_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/csce431/ahs/AHS_environment/spec/views/event_types/show.html.erb_spec.rb": {
         "lines": [
           1,
           null,
@@ -3026,7 +3774,7 @@
           null
         ]
       },
-      "/AHS_app/Documents/AHS_app/AHS_environment/spec/views/events/edit.html.erb_spec.rb": {
+      "/csce431/ahs/AHS_environment/spec/views/events/edit.html.erb_spec.rb": {
         "lines": [
           1,
           null,
@@ -3082,278 +3830,12 @@
           null
         ]
       },
-      "/AHS_app/Documents/AHS_app/AHS_environment/spec/views/events/index.html.erb_spec.rb": {
+      "/csce431/ahs/AHS_environment/spec/views/events/index.html.erb_spec.rb": {
         "lines": [
           null,
           null,
           null,
           null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/AHS_app/Documents/AHS_app/AHS_environment/spec/views/events/new.html.erb_spec.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          1,
-          null,
-          1,
-          null,
-          1,
-          null,
-          1,
-          null,
-          1,
-          null,
-          1,
-          null,
-          1,
-          null,
-          1,
-          null,
-          1,
-          null,
-          1,
-          null,
-          1,
-          null,
-          1,
-          null,
-          1,
-          null,
-          1,
-          null,
-          1,
-          null,
-          1,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/AHS_app/Documents/AHS_app/AHS_environment/spec/views/events/show.html.erb_spec.rb": {
-        "lines": [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/AHS_app/Documents/AHS_app/AHS_environment/spec/views/rankings/edit.html.erb_spec.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          1,
-          null,
-          1,
-          null,
-          1,
-          null,
-          1,
-          null,
-          null,
-          null
-        ]
-      },
-      "/AHS_app/Documents/AHS_app/AHS_environment/spec/views/rankings/index.html.erb_spec.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/AHS_app/Documents/AHS_app/AHS_environment/spec/views/rankings/new.html.erb_spec.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          1,
-          null,
-          1,
-          null,
-          1,
-          null,
-          1,
-          null,
-          null,
-          null
-        ]
-      },
-      "/AHS_app/Documents/AHS_app/AHS_environment/spec/views/rankings/show.html.erb_spec.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/AHS_app/Documents/AHS_app/AHS_environment/spec/views/sessions/create.html.erb_spec.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          1,
-          null
-        ]
-      },
-      "/AHS_app/Documents/AHS_app/AHS_environment/spec/views/sessions/destroy.html.erb_spec.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          1,
-          null
-        ]
-      },
-      "/AHS_app/Documents/AHS_app/AHS_environment/spec/views/sessions/new.html.erb_spec.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          1,
-          null
-        ]
-      },
-      "/AHS_app/Documents/AHS_app/AHS_environment/spec/views/users/edit.html.erb_spec.rb": {
-        "lines": [
           null,
           null,
           null,
@@ -3389,7 +3871,273 @@
           null
         ]
       },
-      "/AHS_app/Documents/AHS_app/AHS_environment/spec/views/users/index.html.erb_spec.rb": {
+      "/csce431/ahs/AHS_environment/spec/views/events/new.html.erb_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/csce431/ahs/AHS_environment/spec/views/events/show.html.erb_spec.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/csce431/ahs/AHS_environment/spec/views/rankings/edit.html.erb_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/csce431/ahs/AHS_environment/spec/views/rankings/index.html.erb_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/csce431/ahs/AHS_environment/spec/views/rankings/new.html.erb_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/csce431/ahs/AHS_environment/spec/views/rankings/show.html.erb_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/csce431/ahs/AHS_environment/spec/views/sessions/create.html.erb_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/csce431/ahs/AHS_environment/spec/views/sessions/destroy.html.erb_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/csce431/ahs/AHS_environment/spec/views/sessions/new.html.erb_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/csce431/ahs/AHS_environment/spec/views/users/edit.html.erb_spec.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/csce431/ahs/AHS_environment/spec/views/users/index.html.erb_spec.rb": {
         "lines": [
           1,
           null,
@@ -3427,7 +4175,7 @@
           null
         ]
       },
-      "/AHS_app/Documents/AHS_app/AHS_environment/spec/views/users/new.html.erb_spec.rb": {
+      "/csce431/ahs/AHS_environment/spec/views/users/new.html.erb_spec.rb": {
         "lines": [
           null,
           null,
@@ -3464,7 +4212,7 @@
           null
         ]
       },
-      "/AHS_app/Documents/AHS_app/AHS_environment/spec/views/users/show.html.erb_spec.rb": {
+      "/csce431/ahs/AHS_environment/spec/views/users/show.html.erb_spec.rb": {
         "lines": [
           null,
           null,
@@ -3492,7 +4240,7 @@
           null
         ]
       },
-      "/AHS_app/Documents/AHS_app/AHS_environment/app/controllers/sessions_controller.rb": {
+      "/csce431/ahs/AHS_environment/app/controllers/sessions_controller.rb": {
         "lines": [
           1,
           1,
@@ -3526,16 +4274,16 @@
           null
         ]
       },
-      "/AHS_app/Documents/AHS_app/AHS_environment/app/controllers/main_controller.rb": {
+      "/csce431/ahs/AHS_environment/app/controllers/main_controller.rb": {
         "lines": [
           1,
           1,
-          18,
+          22,
           null,
           null
         ]
       }
     },
-    "timestamp": 1665263496
+    "timestamp": 1666045611
   }
 }

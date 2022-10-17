@@ -85,6 +85,13 @@ GEM
     diff-lcs (1.5.0)
     docile (1.4.0)
     erubi (1.11.0)
+    factory_girl (4.9.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.9.0)
+      factory_girl (~> 4.9.0)
+      railties (>= 3.0.0)
+    faker (2.23.0)
+      i18n (>= 1.8.11, < 2)
     ffi (1.15.5)
     font-awesome-sass (6.2.0)
       sassc (~> 2.0)
@@ -270,6 +277,8 @@ DEPENDENCIES
   brakeman
   byebug
   capybara (>= 3.26)
+  factory_girl_rails
+  faker
   font-awesome-sass (~> 6.2.0)
   jbuilder (~> 2.7)
   listen (~> 3.3)

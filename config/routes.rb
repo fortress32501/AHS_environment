@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+  resources :admin_requests
   resources :event_types
   resources :attendances
   resources :rankings
