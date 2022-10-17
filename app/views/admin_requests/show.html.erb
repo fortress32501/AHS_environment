@@ -15,6 +15,11 @@
   <%= @admin_request.request_reason %>
 </p>
 
+<p>
+  <strong>Requested at:</strong>
+  <%= @admin_request.created_at %>
+</p>
+
 
 <%= link_to 'Edit', edit_admin_request_path(@admin_request) %> |
 <%= link_to 'Back', admin_requests_path %>
