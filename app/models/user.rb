@@ -33,7 +33,8 @@ class User < ApplicationRecord
   end
 
   def assign_ranking
-    ranking_found = Ranking.where("point_total <= #{self.point}").order(point_total: :desc)
+    # ranking_found = Ranking.where("point_total <= #{self.point}").order(point_total: :desc)
+    ranking_found = Ranking.where("point_total <= ?", self.point ).order(point_total: :desc)
     
     if ranking_found.empty? 
       # nothing to do
