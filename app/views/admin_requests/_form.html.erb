@@ -1,0 +1,31 @@
+<%= form_with(model: admin_request) do |form| %>
+  <% if admin_request.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(admin_request.errors.count, "error") %> prohibited this admin_request from being saved:</h2>
+
+      <ul>
+        <% admin_request.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class = "filed">
+    User: <%= current_user.email %>
+    <%= form.hidden_field :user_id,  :value => current_user.id%>
+  </div>
+
+  <div class = "filed">
+    <%= form.hidden_field :request_status,  :value => "REQUESTED"%>
+  </div>
+
+  <div>
+    <%= form.label :request_reason %>
+    <%= form.text_field :request_reason %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
