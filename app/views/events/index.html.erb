@@ -61,7 +61,14 @@
   <table class="table" style="width: 200px;">
     <thead>
       <tr>
-        <th scope="col">Event Types</th>
+        <th scope="col">
+        <div style="white-space: nowrap;">
+          Event Types
+          <% if current_user.is_admin %>
+        |   <div style="text-align: right; display: inline-block;"> <%= link_to 'Manage', event_types_url %></div>
+          <% end %>
+        </div>
+        </th>
       </tr>
     </thead>
     <tbody>
@@ -79,5 +86,3 @@
     </tbody>
   </table>
 </div>
-
-<%= link_to 'New Event Type', new_event_type_path %>
