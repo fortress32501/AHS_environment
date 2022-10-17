@@ -23,18 +23,21 @@
             <div style="display: inline-block;"><%= event_type.color %></div>
           </div>
         </td>
+        
         <td><%= link_to 'Show', event_type %></td>
-        <td><%= link_to 'Edit', edit_event_type_path(event_type) %></td>
-        <td><%= link_to 'Destroy', event_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if current_user.is_admin %>
+          <td><%= link_to 'Edit', edit_event_type_path(event_type) %></td>
+          <td><%= link_to 'Destroy', event_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Event Type', new_event_type_path %>
-
+<% if current_user.is_admin %>
+  <%= link_to 'New Event Type', new_event_type_path %>
+<% end %>
 <br>
 
 <%= link_to 'Calendar', events_path %>
