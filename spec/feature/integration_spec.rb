@@ -160,7 +160,7 @@ RSpec.describe 'Creating a User', type: :feature do
     click_on 'Create Account'
     expect(page).to have_content('Jane')
     expect(page).to have_content('Doe')
-    click_on 'Sign out'
+    click_on 'Sign Out'
     
     # Test Login
     fill_in 'Email', with: 'jane@gmail.com'
@@ -213,7 +213,7 @@ RSpec.describe 'Edit user', type: :feature do
     expect(page).to have_content('false')
     expect(page).not_to have_content('0')
   end
-end"""
+end
 
 # Delete user 
 RSpec.describe 'Delete user', type: :feature do
@@ -229,7 +229,7 @@ RSpec.describe 'Delete user', type: :feature do
     expect(page).not_to have_content('Jane')
     expect(page).not_to have_content('jane@gmail.com')
   end
-end
+end"""
 
 #Edit user points
 RSpec.describe 'Edit user points', type: :feature do
