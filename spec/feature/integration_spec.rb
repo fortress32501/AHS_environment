@@ -160,6 +160,7 @@ RSpec.describe 'Creating a User', type: :feature do
     click_on 'Create Account'
     expect(page).to have_content('Jane')
     expect(page).to have_content('Doe')
+    click_on 'account'
     click_on 'Sign Out'
     
     # Test Login
@@ -578,6 +579,13 @@ RSpec.describe 'Creating an Event without EventType', type: :feature do
         expect(page).to have_content('1st Meeting')
         expect(page).to have_content('General Meeting')
         expect(page).to have_content('5')
+        expect(page).to have_content('Test')
+        expect(page).to have_content('ZACH')
+        expect(page).to have_content('2020-09-28')
+        expect(page).to have_content('01:43')
+        expect(page).to have_content('type1')
+        # When a EventType isn't chosen
+        expect(page).to have_content('None')
 
         #test show page
         #click_on 'Back'
@@ -599,15 +607,6 @@ RSpec.describe 'Creating an Event without EventType', type: :feature do
         #fill_in 'attendance_password', with: 'Test'
         #expect(page).not_to have_content('Attendance was successfully created')
 
-
-        expect(page).to have_content('Test')
-        expect(page).to have_content('ZACH')
-        expect(page).to have_content('2020-09-28')
-        expect(page).to have_content('01:43')
-        expect(page).to have_content('type1')
-        # When a EventType isn't chosen
-        expect(page).to have_content('None')
-
         visit event_types_path
         expect(page).to have_content('type1')
         expect(page).to have_content('test type')
@@ -615,3 +614,154 @@ RSpec.describe 'Creating an Event without EventType', type: :feature do
 
     end
 end
+
+
+RSpec.describe 'User viewable point testing', type: :feature do
+  scenario 'valid inputs' do
+    # Signup    
+    visit events_path
+    click_on 'Sign Up'
+    fill_in 'First name', with: 'test'
+    fill_in 'Last name', with: 'test'
+    fill_in 'Email', with: 'test@test.com'
+    fill_in 'Password', with: 'test'
+    click_on 'Create Account'
+    
+    # Create event
+    click_on 'Events'
+    click_on 'New Event'
+    fill_in 'title', with: '1st Meeting'
+    fill_in 'description', with: 'General Meeting'
+    fill_in 'points', with: '5'
+    fill_in 'passcode', with: 'Test'
+    fill_in 'location', with: 'ZACH'
+    select '2022', :from => 'event_event_start_1i'
+    select 'September', :from => 'event_event_start_2i'
+    select '28', :from => 'event_event_start_3i'
+    select '01', :from => 'event_event_start_4i'
+    select '43', :from => 'event_event_start_5i'
+    select Date.today.year, :from => 'event_event_end_1i'                     # year
+    select Date::MONTHNAMES[Date.today.month] , :from => 'event_event_end_2i' # month
+    select Date.today.day, :from => 'event_event_end_3i'                      # date
+    select '02', :from => 'event_event_end_4i'
+    select '43', :from => 'event_event_end_5i'
+    click_on 'Create Event'  
+    
+    # Create attendance
+    click_on 'Sign In For Event'
+    fill_in 'attendance_password', with: 'Test'
+    click_on 'Create Attendance'
+
+    # Go to account page
+    click_on 'account'
+    expect(page).to have_content('Attendance points')
+    expect(page).to have_content('Attendance points: 5')
+    expect(page).not_to have_content('Attendance points: 0')  
+    
+    # Test attendance history
+    click_on 'full attendance history'
+    expect(page).to have_content('1st Meeting')
+  end
+end
+
+RSpec.describe 'Creating an Admin Request', type: :feature do
+    scenario 'valid inputs' do
+        visit new_admin_request_path
+        click_on 'Sign Up'
+        fill_in 'First name', with: 'test'
+        fill_in 'Last name', with: 'test'
+        fill_in 'Email', with: 'test@test.com'
+        fill_in 'Password', with: 'test'
+        click_on 'Create Account'
+ 
+        visit new_admin_request_path
+        fill_in 'Request reason', with: 'new officer: test'
+        click_on 'Create Admin request'
+        visit admin_requests_path
+        expect(page).to have_content('REQUESTED')
+        expect(page).to have_content('new officer: test')
+        # need to figure out how to see what the date the request ^^ was generated
+        # this would vary with every time the test case is run
+        # expect(page).to have_content('2020-09-28')
+        # expect(page).to have_content('01:43')
+    end
+
+    scenario 'valid inputs for multiple' do
+        visit new_admin_request_path
+        click_on 'Sign Up'
+        fill_in 'First name', with: 'test'
+        fill_in 'Last name', with: 'test'
+        fill_in 'Email', with: 'test@test.com'
+        fill_in 'Password', with: 'test'
+        click_on 'Create Account'
+
+        visit new_admin_request_path
+        fill_in 'Request reason', with: 'new officer: test'
+        click_on 'Create Admin request'
+        visit admin_requests_path
+        expect(page).to have_content('REQUESTED')
+        expect(page).to have_content('new officer: test')
+        # need to figure out how to see what the date the request ^^ was generated
+        # this would vary with every time the test case is run
+        # expect(page).to have_content('2020-09-28')
+        # expect(page).to have_content('01:43')
+
+        visit new_admin_request_path
+        fill_in 'Request reason', with: 'new officer: test 2'
+        click_on 'Create Admin request'
+        visit admin_requests_path
+        # make sure they are both there, not just the new one created 
+        expect(page).to have_content('REQUESTED')
+        expect(page).to have_content('new officer: test')
+        expect(page).to have_content('REQUESTED')
+        expect(page).to have_content('new officer: test 2')
+    end
+end
+
+
+RSpec.describe 'Show Admin Requests', type: :feature do
+    scenario 'Show' do
+        visit new_admin_request_path
+        click_on 'Sign Up'
+        fill_in 'First name', with: 'test'
+        fill_in 'Last name', with: 'test'
+        fill_in 'Email', with: 'test@test.com'
+        fill_in 'Password', with: 'test'
+        click_on 'Create Account'
+
+        visit new_admin_request_path
+        fill_in 'Request reason', with: 'new officer: test'
+        click_on 'Create Admin request'
+        visit admin_requests_path
+        click_on 'Show'
+        expect(page).to have_content('REQUESTED')
+        expect(page).to have_content('new officer: test')
+        # need to figure out how to see what the date the request ^^ was generated
+        # this would vary with every time the test case is run
+        # expect(page).to have_content('2020-09-28')
+        # expect(page).to have_content('01:43')
+    end
+end
+
+RSpec.describe 'Delete Admin Requests', type: :feature do
+    scenario 'Delete' do
+        visit new_admin_request_path
+        click_on 'Sign Up'
+        fill_in 'First name', with: 'test'
+        fill_in 'Last name', with: 'test'
+        fill_in 'Email', with: 'test@test.com'
+        fill_in 'Password', with: 'test'
+        click_on 'Create Account'
+
+        visit new_admin_request_path
+        fill_in 'Request reason', with: 'new officer: test'
+        click_on 'Create Admin request'
+        visit admin_requests_path
+        click_on 'Destroy'
+    
+        visit admin_requests_path
+        expect(page).not_to have_content('REQUESTED')
+        expect(page).not_to have_content('new officer: test')
+    end
+end
+
