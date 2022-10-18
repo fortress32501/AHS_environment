@@ -215,38 +215,38 @@ RSpec.describe 'Edit user', type: :feature do
   end
 end"""
 
-# Delete user 
-RSpec.describe 'Delete user', type: :feature do
-  scenario 'valid inputs' do
-    visit new_user_path
-    fill_in 'First name', with: 'Jane'
-    fill_in 'Last name', with: 'Doe'
-    fill_in 'Email', with: 'jane@gmail.com'
-    fill_in 'Password', with: '123'
-    click_on 'Create Account'
-    visit users_path
-    click_on 'Delete'
-    expect(page).not_to have_content('Jane')
-    expect(page).not_to have_content('jane@gmail.com')
-  end
-end
+# # Delete user 
+# RSpec.describe 'Delete user', type: :feature do
+#   scenario 'valid inputs' do
+#     visit new_user_path
+#     fill_in 'First name', with: 'Jane'
+#     fill_in 'Last name', with: 'Doe'
+#     fill_in 'Email', with: 'jane@gmail.com'
+#     fill_in 'Password', with: '123'
+#     click_on 'Create Account'
+#     visit users_path
+#     click_on 'Delete'
+#     expect(page).not_to have_content('Jane')
+#     expect(page).not_to have_content('jane@gmail.com')
+#   end
+# end
 
-#Edit user points
-RSpec.describe 'Edit user points', type: :feature do
-  scenario 'valid inputs' do
-    visit new_user_path
-    fill_in 'First name', with: 'Jane'
-    fill_in 'Last name', with: 'Doe'
-    fill_in 'Email', with: 'jane@gmail.com'
-    fill_in 'Password', with: '123'
-    click_on 'Create Account'
-    visit users_path
-    click_on 'Edit'
-    fill_in 'Point', with: 3
-    click_on 'Update User'
-    expect(page).to have_content(3)
-  end
-end
+# #Edit user points
+# RSpec.describe 'Edit user points', type: :feature do
+#   scenario 'valid inputs' do
+#     visit new_user_path
+#     fill_in 'First name', with: 'Jane'
+#     fill_in 'Last name', with: 'Doe'
+#     fill_in 'Email', with: 'jane@gmail.com'
+#     fill_in 'Password', with: '123'
+#     click_on 'Create Account'
+#     visit users_path
+#     click_on 'Edit'
+#     fill_in 'Point', with: 3
+#     click_on 'Update User'
+#     expect(page).to have_content(3)
+#   end
+# end
 
 #points should not chnage if not edited
 RSpec.describe 'Do not edit user points', type: :feature do
