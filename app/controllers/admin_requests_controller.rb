@@ -1,5 +1,5 @@
 class AdminRequestsController < ApplicationController
-  before_action :set_admin_request, only: %i[ show edit update destroy ]
+  before_action :set_admin_request, only: %i[ show edit review approve deny update destroy ]
 
   # GET /admin_requests or /admin_requests.json
   def index
@@ -17,6 +17,23 @@ class AdminRequestsController < ApplicationController
 
   # GET /admin_requests/1/edit
   def edit
+  end
+
+  # GET /admin_requests/1/review
+  def review
+    puts "\n\n\n\n\n\n\n\n"
+  end
+
+  # GET /admin_requests/1/approve
+  def approve
+    @admin_request.approve
+    redirect_to admin_requests_path
+  end
+
+  # GET /admin_requests/1/deny
+  def deny
+    @admin_request.deny
+    redirect_to admin_requests_path
   end
 
   # POST /admin_requests or /admin_requests.json
