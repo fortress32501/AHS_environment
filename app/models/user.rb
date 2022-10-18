@@ -32,5 +32,19 @@ class User < ApplicationRecord
     @user_points = self.attendance_history.sum(:event_points)
   end
 
+  def assign_ranking
+    # ranking_found = Ranking.where("point_total <= #{self.point}").order(point_total: :desc)
+    ranking_found = Ranking.where("point_total <= ?", self.point ).order(point_total: :desc)
+    
+    if ranking_found.empty? 
+      # nothing to do
+    else 
+      # update ranking
+      self.update(ranking_id: ranking_found.ids.at(0))
+    end
+
+    # "Ranking is : #{self.ranking_id} !!"
+  end
+
   
 end

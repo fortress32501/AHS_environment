@@ -13,12 +13,12 @@
 
   <div class="field">
     <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.text_field :title , autofocus: true, placeholder: "Title", :required => 'required'  %>
   </div>
 
   <div class="field">
     <%= form.label :point_total %>
-    <%= form.number_field :point_total %>
+    <%= form.number_field :point_total,  autofocus: true, placeholder: "Point Total", :required => 'required'  %>
   </div>
 
   

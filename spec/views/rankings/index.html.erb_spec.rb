@@ -19,7 +19,7 @@ RSpec.describe "rankings/index", type: :view do
         email: "Email",
         password_digest: "Password Digest",
         point: 2,
-        is_admin: false
+        is_admin: true
       ),
       User.create!(
         first_name: "First Name",
@@ -27,7 +27,7 @@ RSpec.describe "rankings/index", type: :view do
         email: "Email",
         password_digest: "Password Digest",
         point: 2,
-        is_admin: false
+        is_admin: true
       )
     ])
   end
