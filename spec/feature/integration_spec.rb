@@ -188,7 +188,6 @@ RSpec.describe 'Show user', type: :feature do
     expect(page).to have_content('jane@gmail.com')
   end
 end
-
 # Edit user 
 RSpec.describe 'Edit user', type: :feature do
   scenario 'valid inputs' do
@@ -215,6 +214,7 @@ RSpec.describe 'Edit user', type: :feature do
     expect(page).not_to have_content('0')
   end
 end
+
 
 # Delete user 
 RSpec.describe 'Delete user', type: :feature do
@@ -248,6 +248,7 @@ RSpec.describe 'Edit user points', type: :feature do
     expect(page).to have_content(3)
   end
 end
+
 
 #points should not chnage if not edited
 RSpec.describe 'Do not edit user points', type: :feature do
@@ -764,4 +765,115 @@ RSpec.describe 'Delete Admin Requests', type: :feature do
         expect(page).not_to have_content('new officer: test')
     end
 end
+
+
+
+# Test to make sure ranking page renders on page
+RSpec.describe 'Show Ranking', type: :feature do
+  scenario 'show' do 
+    
+    visit rankings_path
+    click_on 'Sign Up'
+    fill_in 'First name', with: 'test'
+    fill_in 'Last name', with: 'test'
+    fill_in 'Email', with: 'test@test.com'
+    fill_in 'Password', with: 'test'
+    click_on 'Create Account'
+    visit rankings_path
+    
+    expect(page).to have_content('Rankings')
+    expect(page).to have_content('New Ranking')
+    expect(page).to have_content('Title')
+    expect(page).to have_content('Point total')
+
+  end
+end
+
+# Test to create ranking
+RSpec.describe 'Create Ranking', type: :feature do
+  scenario 'valid inputs' do 
+    
+    visit rankings_path
+    click_on 'Sign Up'
+    fill_in 'First name', with: 'test'
+    fill_in 'Last name', with: 'test'
+    fill_in 'Email', with: 'test@test.com'
+    fill_in 'Password', with: 'test'
+    click_on 'Create Account'
+
+    visit new_ranking_path
+    fill_in 'Title', with: 'test ranking'
+    fill_in 'Point total', with: '150'
+    click_on 'Create Ranking'
+    visit rankings_path
+
+    expect(page).to have_content('Rankings')
+    expect(page).to have_content('New Ranking')
+    expect(page).to have_content('Title')
+    expect(page).to have_content('Point total')
+    expect(page).to have_content('150')
+    expect(page).to have_content('test ranking')
+  
+  end
+end
+
+# Test to update ranking
+RSpec.describe 'Create Ranking', type: :feature do
+  scenario 'valid inputs' do 
+    
+    visit rankings_path
+    click_on 'Sign Up'
+    fill_in 'First name', with: 'test'
+    fill_in 'Last name', with: 'test'
+    fill_in 'Email', with: 'test@test.com'
+    fill_in 'Password', with: 'test'
+    click_on 'Create Account'
+
+    visit new_ranking_path
+    fill_in 'Title', with: 'test ranking'
+    fill_in 'Point total', with: '150'
+    click_on 'Create Ranking'
+    
+    visit rankings_path
+    click_on 'Edit'
+    fill_in 'Title', with: 'test ranking 1'
+    fill_in 'Point total', with: '50'
+    click_on 'Update Ranking'
+    visit rankings_path
+
+    expect(page).to have_content('Rankings')
+    expect(page).to have_content('New Ranking')
+    expect(page).to have_content('Title')
+    expect(page).to have_content('Point total')
+    expect(page).to have_content('50')
+    expect(page).to have_content('test ranking 1')
+  
+  end
+end
+
+# Test to update ranking
+RSpec.describe 'Create Ranking', type: :feature do
+  scenario 'valid inputs' do 
+    
+    visit rankings_path
+    click_on 'Sign Up'
+    fill_in 'First name', with: 'test'
+    fill_in 'Last name', with: 'test'
+    fill_in 'Email', with: 'test@test.com'
+    fill_in 'Password', with: 'test'
+    click_on 'Create Account'
+
+    visit new_ranking_path
+    fill_in 'Title', with: 'test ranking'
+    fill_in 'Point total', with: '150'
+    click_on 'Create Ranking'
+    
+    visit rankings_path
+    click_on 'Destroy'
+    
+    expect(page).not_to have_content('150')
+    expect(page).not_to have_content('test ranking')
+  
+  end
+ end
 
