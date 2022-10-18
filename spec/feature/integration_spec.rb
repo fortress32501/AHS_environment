@@ -161,7 +161,7 @@ RSpec.describe 'Creating a User', type: :feature do
     expect(page).to have_content('Jane')
     expect(page).to have_content('Doe')
     click_on 'account'
-    click_on 'Sign out'
+    click_on 'Sign Out'
     
     # Test Login
     fill_in 'Email', with: 'jane@gmail.com'
@@ -213,40 +213,42 @@ RSpec.describe 'Edit user', type: :feature do
     expect(page).to have_content('false')
     expect(page).not_to have_content('0')
   end
+end
+
+
+# Delete user 
+RSpec.describe 'Delete user', type: :feature do
+  scenario 'valid inputs' do
+    visit new_user_path
+    fill_in 'First name', with: 'Jane'
+    fill_in 'Last name', with: 'Doe'
+    fill_in 'Email', with: 'jane@gmail.com'
+    fill_in 'Password', with: '123'
+    click_on 'Create Account'
+    visit users_path
+    click_on 'Delete'
+    expect(page).not_to have_content('Jane')
+    expect(page).not_to have_content('jane@gmail.com')
+  end
 end"""
 
-# # Delete user 
-# RSpec.describe 'Delete user', type: :feature do
-#   scenario 'valid inputs' do
-#     visit new_user_path
-#     fill_in 'First name', with: 'Jane'
-#     fill_in 'Last name', with: 'Doe'
-#     fill_in 'Email', with: 'jane@gmail.com'
-#     fill_in 'Password', with: '123'
-#     click_on 'Create Account'
-#     visit users_path
-#     click_on 'Delete'
-#     expect(page).not_to have_content('Jane')
-#     expect(page).not_to have_content('jane@gmail.com')
-#   end
-# end
+#Edit user points
+RSpec.describe 'Edit user points', type: :feature do
+  scenario 'valid inputs' do
+    visit new_user_path
+    fill_in 'First name', with: 'Jane'
+    fill_in 'Last name', with: 'Doe'
+    fill_in 'Email', with: 'jane@gmail.com'
+    fill_in 'Password', with: '123'
+    click_on 'Create Account'
+    visit users_path
+    click_on 'Edit'
+    fill_in 'Point', with: 3
+    click_on 'Update User'
+    expect(page).to have_content(3)
+  end
+end
 
-# #Edit user points
-# RSpec.describe 'Edit user points', type: :feature do
-#   scenario 'valid inputs' do
-#     visit new_user_path
-#     fill_in 'First name', with: 'Jane'
-#     fill_in 'Last name', with: 'Doe'
-#     fill_in 'Email', with: 'jane@gmail.com'
-#     fill_in 'Password', with: '123'
-#     click_on 'Create Account'
-#     visit users_path
-#     click_on 'Edit'
-#     fill_in 'Point', with: 3
-#     click_on 'Update User'
-#     expect(page).to have_content(3)
-#   end
-# end
 
 #points should not chnage if not edited
 RSpec.describe 'Do not edit user points', type: :feature do
@@ -765,6 +767,7 @@ RSpec.describe 'Delete Admin Requests', type: :feature do
 end
 
 
+
 # Test to make sure ranking page renders on page
 RSpec.describe 'Show Ranking', type: :feature do
   scenario 'show' do 
@@ -873,3 +876,4 @@ RSpec.describe 'Create Ranking', type: :feature do
   
   end
  end
+

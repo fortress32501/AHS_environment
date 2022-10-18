@@ -1,20 +1,5 @@
 <%= content_tag :h1, current_user&.welcome %>
-<h1> This is homepage </h1>
+<h1> Welcome to Alexander Hamilton Society </h1>
 
-<%= link_to "Events", events_path %>
-<%= link_to "Account", accounts_path %>
 
-<br>
-<% if current_user.is_admin %>
-<%= link_to 'New Ranking', new_ranking_path %>
-<% else %>
-    <p>Not Admin </p>
-<% end %>
-
-<br>
-<% if current_user.is_admin %>
-<%= link_to 'Ranking List', rankings_path %>
-<% else %>
-    <p>Not Admin </p>
-<% end %>
 
