@@ -29,11 +29,20 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'bootsnap', '>= 1.4.4', require: false
 
 gem 'rexml'
+gem 'seed_dump'
+
+# Gem for Calendar setup
+gem "simple_calendar", "~> 2.0"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails'
+
+  # for creating dynamic objects when testing
+  gem 'factory_girl_rails', :require => false
+  # gives randomized items for testing
+  gem 'faker'
 end
 
 group :development do
@@ -65,3 +74,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
 gem 'rubocop'
+gem "turbo-rails" # for inline editing
+gem "font-awesome-sass", "~> 6.2.0"

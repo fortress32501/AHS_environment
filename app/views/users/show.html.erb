@@ -1,2 +1,37 @@
-<%= content_tag :h1, current_user&.welcome %>
-<%= link_to "Sign out", session_path, method:"delete" %>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @user.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @user.last_name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong>Point:</strong>
+  <%= @user.point %>
+</p>
+
+<p>
+  <strong>is_admin:</strong>
+  <%= @user.is_admin %>
+</p>
+
+<p>
+  <strong>ranking_id:</strong>
+  <%= @user.ranking_id %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
+<%= link_to "Events", events_path %>

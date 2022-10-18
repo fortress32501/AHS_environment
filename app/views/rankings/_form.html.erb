@@ -1,0 +1,29 @@
+<%= form_with(model: ranking) do |form| %>
+  <% if ranking.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(ranking.errors.count, "error") %> prohibited this ranking from being saved:</h2>
+
+      <ul>
+        <% ranking.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title , autofocus: true, placeholder: "Title", :required => 'required'  %>
+  </div>
+
+  <div class="field">
+    <%= form.label :point_total %>
+    <%= form.number_field :point_total,  autofocus: true, placeholder: "Point Total", :required => 'required'  %>
+  </div>
+
+  
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

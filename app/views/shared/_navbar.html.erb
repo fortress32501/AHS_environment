@@ -1,0 +1,40 @@
+<nav class="navbar navbar-light bg-light justify-content-between">
+    <!-- Logo -->
+    <%= link_to "/", :class=>"navbar-brand ps-4" do %> 
+        <%= image_tag("ahs_logo.png", width: "7%", height: "7%") %>
+        Alexander Hamilton Society
+    <% end %>  
+    
+    <!-- Navbar links -->
+    <% if session.include? :user_id %>
+      <ul class="nav justify-content-end pe-4">
+        </li>
+          <li class="nav-item">
+            <%= button_to "Home", '/', :method => "get", :class=>"btn btn-default" %>
+          </li>
+        <% if current_user.is_admin? %>
+          <li class="nav-item">
+            <%= button_to "Members", users_path, :method => "get", :class=>"btn btn-default" %>
+          </li>
+          <li class="nav-item">
+            <%= button_to "Events", events_path, :method => "get", :class=>"btn btn-default" %>
+          </li>
+          <li class="nav-item">
+            <%= button_to "Rankings", rankings_path, :method => "get", :class=>"btn btn-default" %>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= button_to "Events", events_path, :method => "get", :class=>"btn btn-default" %>
+          </li>
+        <% end %>
+        <li class="nav-item">
+          <%= button_to "Sign Out", session_path(current_user.id), method:"delete", :class=>"btn btn-default" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to accounts_path, :class=>"btn btn-default", :id=>"account" do %>
+            <i class="fa-solid fa-circle-user" aria-hidden="true"></i>
+          <% end %>
+        </li>
+      </ul> 
+    <% end %> 
+</nav>

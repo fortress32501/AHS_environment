@@ -12,6 +12,7 @@
       <th>Event end</th>
       <th>Event title</th>
       <th>Event location</th>
+      <th>Event type</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -26,6 +27,7 @@
         <td><%= event.event_end %></td>
         <td><%= event.event_title %></td>
         <td><%= event.event_location %></td>
+        <td><%= get_event_type(event) %></td>
         <td><%= link_to 'Show', event %></td>
         <td><%= link_to 'Edit', edit_event_path(event) %></td>
         <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -37,3 +39,50 @@
 <br>
 
 <%= link_to 'New Event', new_event_path %>
+
+<!-- Render the calendar -->
+<%= month_calendar(events: @events, attribute: :event_start, end_attribute: :event_end) do |date, events| %>
+  <%= date.to_formatted_s(:short) %>
+
+  <!-- Render the events and gets colors and makes it half transparent -->
+  <% events.each do |event| %>
+    <div class="card" style="background-color: <%=get_event_color(event)%>;">
+      <div class="card-body">
+        <p class="card-text" style="text-align: center;"> <%= link_to event.event_title, event %></p>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+
+<!--Renders the table for the Event Types-->
+<!-- Styling is for the color box -->
+<br>
+<div class="table-responsive">
+  <table class="table" style="width: 200px;">
+    <thead>
+      <tr>
+        <th scope="col">
+        <div style="white-space: nowrap;">
+          Event Types
+          <% if current_user.is_admin %>
+        |   <div style="text-align: right; display: inline-block;"> <%= link_to 'Manage', event_types_url %></div>
+          <% end %>
+        </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr>
+        <td>Generic Event</td>
+      </tr>
+      <% @event_types.each do |event_type| %>
+        <tr>
+          <td style="background-color: <%=dilute_color(event_type.color)%>;">
+          <%= event_type.type_name %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

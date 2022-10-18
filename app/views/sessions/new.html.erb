@@ -1,12 +1,24 @@
-<% if flash[:notice] %>
-  <%= content_tag :h1, flash[:notice] %>
-<% else %>
-  <%= content_tag :h1, "Please Log in" %>
-<% end %>
-<%= form_with url: sessions_path do |f| %>
-  <%= f.text_field :email %><br>
-  <%= f.password_field :password%><br>
-  <%= link_to "Sign Up", new_user_path %>
-  <%= f.submit "Sign In!" %>
-<% end %>
+<div class="d-flex flex-column align-items-center justify-content-center">
+  <div>
+    <% if flash[:notice] %>
+      <%= content_tag :h2, flash[:notice] %>
+    <% else %>
+      <%= content_tag :h2, "Please Log in" %>
+    <% end %>
+  </div>
+  <div>
+    <%= form_with url: sessions_path do |f| %>
+      <div class="field">
+        <%= f.label :email %>
+        <%= f.text_field :email %>
+      </div>
+      <div class="field">
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+      </div>
+      <%= link_to "Sign Up", new_user_path %>
+      <%= f.submit "Sign In!" %>
+    <% end %>
+  </div>
+</div>
 

@@ -10,10 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_17_175848) do
+ActiveRecord::Schema.define(version: 2022_10_16_231247) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "admin_requests", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "request_status"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "request_reason"
+  end
+
+  create_table "attendances", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "event_id"
+    t.integer "points"
+    t.string "password"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "event_types", force: :cascade do |t|
+    t.string "type_name"
+    t.string "description"
+    t.string "color"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "events", force: :cascade do |t|
     t.integer "event_points"
@@ -25,6 +50,14 @@ ActiveRecord::Schema.define(version: 2022_09_17_175848) do
     t.string "event_location"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "event_type_id"
+  end
+
+  create_table "rankings", force: :cascade do |t|
+    t.string "title"
+    t.integer "point_total"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -32,10 +65,12 @@ ActiveRecord::Schema.define(version: 2022_09_17_175848) do
     t.string "last_name"
     t.string "email"
     t.string "password_digest"
-    t.integer "point"
-    t.integer "privileges_id"
+    t.integer "point", default: 0
+    t.boolean "is_admin", default: false
+    t.bigint "ranking_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["ranking_id"], name: "index_users_on_ranking_id"
   end
 
 end

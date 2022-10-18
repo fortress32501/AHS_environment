@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
 
-  root to: "sessions#new"
+
+  resources :admin_requests
+  resources :event_types
+  resources :attendances
+  resources :rankings
+  root to: "main#index"
+
 
   resources :events
 
@@ -9,8 +15,9 @@ Rails.application.routes.draw do
 
   # http://127.0.0.1:3000/sessions/new
   
-  resources :users, only: [:new, :create, :index, :show, :edit]
-  resources :sessions, only: [:new, :create, :destroy]
+  resources :users, only: [:new, :create, :index, :show, :edit, :update, :destroy]
+  resources :sessions, only: [:new, :create, :destroy, :delete]
+  
   get "/sessions/create", to: "sessions#new"  
   get "/sessions/destroy", to: "sessions#new"
   get "/users/edit", to: "sessions#new"
@@ -18,4 +25,8 @@ Rails.application.routes.draw do
   # get "/users/update", to: "sessions#new"
   # get "/users/new", to: "sessions#new"
   # get "/users/show", to: "sessions#new"
+
+  # route to account page
+  get "/accounts", to: "accounts#index"
+  get "/history", to: "history#index"
 end
