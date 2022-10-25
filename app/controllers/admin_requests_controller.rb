@@ -135,9 +135,6 @@ class AdminRequestsController < ApplicationController
 
     def has_admin_request
       @has_request = (AdminRequest.all.select{ |req| req.user_id == current_user.id }.length() > 0) ? true : false
-      puts "\n\n\n"
-      puts @has_request 
-      puts "\n\n\n"
     end
 
     # Only allow a list of trusted parameters through.
