@@ -134,7 +134,12 @@ class AdminRequestsController < ApplicationController
     end
 
     def has_admin_request
-      @has_request = (AdminRequest.all.select{ |req| req.user_id == current_user.id }.length() > 0) ? true : false
+      # the current user has a request IF 1) a request matches their user id AND 2) is in the REQUESTED state
+      @has_request = AdminRequest.all.select{ 
+        |req| 
+          req.user_id == current_user.id &&
+          req.request_status == "REQUESTED"
+      }.length() > 0 ? true : false
     end
 
     # Only allow a list of trusted parameters through.
