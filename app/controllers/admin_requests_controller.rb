@@ -1,5 +1,6 @@
 class AdminRequestsController < ApplicationController
   before_action :set_admin_request, only: %i[ show edit review approve deny update destroy ]
+  before_action :has_admin_request, only: %i[ index new create ]
 
   # GET /admin_requests or /admin_requests.json
   def index
@@ -22,6 +23,11 @@ class AdminRequestsController < ApplicationController
         redirect_to admin_requests_path
     end
 
+    # each user can only create 1 admin request
+    if (@has_request)
+        redirect_to admin_requests_path
+    end
+
     @admin_request = AdminRequest.new
   end
 
@@ -36,8 +42,12 @@ class AdminRequestsController < ApplicationController
   # GET /admin_requests/1/approve
   def approve
     # only admins should be able to approve/view a request
+    if (!current_user.is_admin) 
+        redirect_to admin_requests_path
+    end
+
     # request must also be in the "REQUESTED" state to be approved
-    if (!current_user.is_admin || @admin_request.request_status != "REQUESTED") 
+    if (@admin_request.request_status != "REQUESTED")
         redirect_to admin_requests_path
     end
 
@@ -48,8 +58,12 @@ class AdminRequestsController < ApplicationController
   # GET /admin_requests/1/deny
   def deny
     # only admins should be able to deny/view a request
+    if (!current_user.is_admin) 
+        redirect_to admin_requests_path
+    end
+
     # request must also be in the "REQUESTED" state to be denied
-    if (!current_user.is_admin || @admin_request.request_status != "REQUESTED") 
+    if (@admin_request.request_status != "REQUESTED")
         redirect_to admin_requests_path
     end
 
@@ -61,6 +75,11 @@ class AdminRequestsController < ApplicationController
   def create
     # admins should not be able to create a request
     if (current_user.is_admin) 
+        redirect_to admin_requests_path
+    end
+
+    # each user can only create 1 admin request
+    if (@has_request)
         redirect_to admin_requests_path
     end
 
@@ -112,6 +131,13 @@ class AdminRequestsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_admin_request
       @admin_request = AdminRequest.find(params[:id])
+    end
+
+    def has_admin_request
+      @has_request = (AdminRequest.all.select{ |req| req.user_id == current_user.id }.length() > 0) ? true : false
+      puts "\n\n\n"
+      puts @has_request 
+      puts "\n\n\n"
     end
 
     # Only allow a list of trusted parameters through.

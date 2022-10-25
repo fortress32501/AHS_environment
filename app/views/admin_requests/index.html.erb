@@ -39,6 +39,7 @@
 <br>
 
 <!--cannot request admin status if you're already an admin-->
-<% if (!current_user.is_admin) %>
+<!--also cannot request if you've already requested it-->
+<% if (!current_user.is_admin && !@has_request) %>
     <%= link_to 'New Admin Request', new_admin_request_path %>
 <% end %>
