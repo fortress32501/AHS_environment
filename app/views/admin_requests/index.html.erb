@@ -38,4 +38,7 @@
 
 <br>
 
-<%= link_to 'New Admin Request', new_admin_request_path %>
+<!--cannot request admin status if you're already an admin-->
+<% if (!current_user.is_admin) %>
+    <%= link_to 'New Admin Request', new_admin_request_path %>
+<% end %>
