@@ -1,8 +1,7 @@
-<nav class="navbar navbar-light bg-light justify-content-between">
+<nav class="navbar navbar-dark ahs_navbar justify-content-between">
     <!-- Logo -->
-    <%= link_to "/", :class=>"navbar-brand ps-4" do %> 
-        <%= image_tag("ahs_logo.png", width: "7%", height: "7%") %>
-        Alexander Hamilton Society
+    <%= link_to "/", :class=>"navbar-brand ps-4 no_hover" do %> 
+        <%= image_tag("AHS_logo.png", width: "70%", height: "70%") %>
     <% end %>  
     
     <!-- Navbar links -->
@@ -10,29 +9,29 @@
       <ul class="nav justify-content-end pe-4">
         </li>
           <li class="nav-item">
-            <%= button_to "Home", '/', :method => "get", :class=>"btn btn-default" %>
+            <%= button_to "Home", '/', :method => "get", :class=>"btn btn-default ahs_text" %>
           </li>
         <% if current_user.is_admin? %>
           <li class="nav-item">
-            <%= button_to "Members", users_path, :method => "get", :class=>"btn btn-default" %>
+            <%= button_to "Members", users_path, :method => "get", :class=>"btn btn-default ahs_text" %>
           </li>
           <li class="nav-item">
-            <%= button_to "Events", events_path, :method => "get", :class=>"btn btn-default" %>
+            <%= button_to "Events", events_path, :method => "get", :class=>"btn btn-default ahs_text" %>
           </li>
           <li class="nav-item">
-            <%= button_to "Rankings", rankings_path, :method => "get", :class=>"btn btn-default" %>
+            <%= button_to "Rankings", rankings_path, :method => "get", :class=>"btn btn-default ahs_text" %>
           </li>
         <% else %>
           <li class="nav-item">
-            <%= button_to "Events", events_path, :method => "get", :class=>"btn btn-default" %>
+            <%= button_to "Events", events_path, :method => "get", :class=>"btn btn-default ahs_text" %>
           </li>
         <% end %>
         <li class="nav-item">
-          <%= button_to "Sign Out", session_path(current_user.id), method:"delete", :class=>"btn btn-default" %>
+          <%= button_to "Sign Out", session_path(current_user.id), method:"delete", :class=>"btn btn-default ahs_text" %>
         </li>
         <li class="nav-item">
-          <%= link_to accounts_path, :class=>"btn btn-default", :id=>"account" do %>
-            <i class="fa-solid fa-circle-user" aria-hidden="true"></i>
+          <%= link_to accounts_path, :class=>"btn btn-default ahs_text", :id=>"account" do %>
+            <i class="fa-solid fa-circle-user fa-2xl" aria-hidden="true"></i>
           <% end %>
         </li>
       </ul> 
