@@ -17,27 +17,51 @@ class AdminRequestsController < ApplicationController
 
   # GET /admin_requests/new
   def new
+    # only users should be able to generate admin requests
+    if (current_user.is_admin) 
+        redirect_to admin_requests_path
+    end
+
     @admin_request = AdminRequest.new
   end
 
   # GET /admin_requests/1/edit
   def edit
+    # should only be able to edit request if they made it
+    if (current_user.id != @admin_request.user_id) 
+        redirect_to admin_requests_path
+    end
   end
 
   # GET /admin_requests/1/approve
   def approve
+    # only admins should be able to approve/view a request
+    if (!current_user.is_admin) 
+        redirect_to admin_requests_path
+    end
+
     @admin_request.approve
     redirect_to admin_requests_path
   end
 
   # GET /admin_requests/1/deny
   def deny
+    # only admins should be able to deny/view a request
+    if (!current_user.is_admin) 
+        redirect_to admin_requests_path
+    end
+
     @admin_request.deny
     redirect_to admin_requests_path
   end
 
   # POST /admin_requests or /admin_requests.json
   def create
+    # admins should not be able to create a request
+    if (current_user.is_admin) 
+        redirect_to admin_requests_path
+    end
+
     @admin_request = AdminRequest.new(admin_request_params)
 
     respond_to do |format|
@@ -53,6 +77,11 @@ class AdminRequestsController < ApplicationController
 
   # PATCH/PUT /admin_requests/1 or /admin_requests/1.json
   def update
+    # should only be able to edit request if they made it
+    if (current_user.id != @admin_request.user_id) 
+        redirect_to admin_requests_path
+    end
+
     respond_to do |format|
       if @admin_request.update(admin_request_params)
         format.html { redirect_to admin_request_url(@admin_request), notice: "Admin request was successfully updated." }
@@ -66,12 +95,15 @@ class AdminRequestsController < ApplicationController
 
   # DELETE /admin_requests/1 or /admin_requests/1.json
   def destroy
-    @admin_request.destroy
+    # no one should be able to destroy a request
+    redirect_to admin_requests_path
 
-    respond_to do |format|
-      format.html { redirect_to admin_requests_url, notice: "Admin request was successfully destroyed." }
-      format.json { head :no_content }
-    end
+    # @admin_request.destroy
+
+    # respond_to do |format|
+    #   format.html { redirect_to admin_requests_url, notice: "Admin request was successfully destroyed." }
+    #   format.json { head :no_content }
+    # end
   end
 
   private
