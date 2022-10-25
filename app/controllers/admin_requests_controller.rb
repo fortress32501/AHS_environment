@@ -36,7 +36,8 @@ class AdminRequestsController < ApplicationController
   # GET /admin_requests/1/approve
   def approve
     # only admins should be able to approve/view a request
-    if (!current_user.is_admin) 
+    # request must also be in the "REQUESTED" state to be approved
+    if (!current_user.is_admin || @admin_request.request_status != "REQUESTED") 
         redirect_to admin_requests_path
     end
 
@@ -47,7 +48,8 @@ class AdminRequestsController < ApplicationController
   # GET /admin_requests/1/deny
   def deny
     # only admins should be able to deny/view a request
-    if (!current_user.is_admin) 
+    # request must also be in the "REQUESTED" state to be denied
+    if (!current_user.is_admin || @admin_request.request_status != "REQUESTED") 
         redirect_to admin_requests_path
     end
 
