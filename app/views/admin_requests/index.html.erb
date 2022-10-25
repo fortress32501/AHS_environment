@@ -15,19 +15,23 @@
 
   <tbody>
     <% @admin_requests.each do |admin_request| %>
-      <tr>
-        <td><%= admin_request.user_id %></td>
-        <td><%= admin_request.request_status %></td>
-        <td><%= admin_request.request_reason %></td>
-        <td><%= admin_request.created_at %></td>
-        <% if current_user.is_admin %>
-            <td><%= link_to 'Review', admin_request %></td>
-        <% end %>
-        <!-- regular users should only be able to edit their own requests -->
-        <% if !current_user.is_admin && admin_request.user_id == current_user.id %>
-            <td><%= link_to 'Edit', edit_admin_request_path(admin_request) %></td>
-        <% end %>
-      </tr>
+      <!--only display if admin OR if user and is users admin request-->
+      <% if (current_user.is_admin || current_user.id == admin_request.user_id) %>
+        <tr>
+            <td><%= admin_request.user_id %></td>
+            <td><%= admin_request.request_status %></td>
+            <td><%= admin_request.request_reason %></td>
+            <td><%= admin_request.created_at %></td>
+            <!--should only be able to review the request if is an admin-->
+            <% if (current_user.is_admin) %>
+                <td><%= link_to 'Review', admin_request %></td>
+            <% end %>
+            <!--should only be able to edit if this is the current users request-->
+            <% if (current_user.id == admin_request.user_id) %>
+                <td><%= link_to 'Edit', edit_admin_request_path(admin_request) %></td>
+            <% end %>
+        </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>
