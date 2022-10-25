@@ -1,5 +1,8 @@
-<h1>New Admin Request</h1>
+<!--should only be able to create admin request if not already an admin-->
+<% if (!current_user.is_admin) %>
+    <h1>New Admin Request</h1>
 
-<%= render 'form', admin_request: @admin_request %>
+    <%= render 'form', admin_request: @admin_request %>
 
-<%= link_to 'Back', admin_requests_path %>
+    <%= link_to 'Back', admin_requests_path %>
+<% end %>

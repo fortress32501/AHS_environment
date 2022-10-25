@@ -8,6 +8,11 @@ class AdminRequestsController < ApplicationController
 
   # GET /admin_requests/1 or /admin_requests/1.json
   def show
+    # this is the review page for admin requests
+    # => should only be viewed by admins
+    if (!current_user.is_admin) 
+        redirect_to admin_requests_path
+    end
   end
 
   # GET /admin_requests/new
