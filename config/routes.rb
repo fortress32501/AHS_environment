@@ -26,8 +26,7 @@ Rails.application.routes.draw do
   # get "/users/new", to: "sessions#new"
   # get "/users/show", to: "sessions#new"
 
-  # route to review admin requests
-  get "/admin_requests/:id/review", to: "admin_requests#review", as: "review"
+  # routes for admin requests
   get "/admin_requests/:id/approve", to: "admin_requests#approve", as: "approve"
   get "/admin_requests/:id/deny", to: "admin_requests#deny", as: "deny"
 

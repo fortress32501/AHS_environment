@@ -19,11 +19,6 @@ class AdminRequestsController < ApplicationController
   def edit
   end
 
-  # GET /admin_requests/1/review
-  def review
-    puts "\n\n\n\n\n\n\n\n"
-  end
-
   # GET /admin_requests/1/approve
   def approve
     @admin_request.approve

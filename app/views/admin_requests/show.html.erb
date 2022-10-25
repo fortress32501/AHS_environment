@@ -20,6 +20,6 @@
   <%= @admin_request.created_at %>
 </p>
 
-<%= link_to 'Review Request', review_path(@admin_request) %> |
-<%= link_to 'Edit', edit_admin_request_path(@admin_request) %> |
+<%= link_to 'Approve', approve_path(@admin_request) %> |
+<%= link_to 'Deny', deny_path(@admin_request) %> |
 <%= link_to 'Back', admin_requests_path %>
