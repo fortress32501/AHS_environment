@@ -1,6 +1,8 @@
-<h1>Editing Admin Request</h1>
+<!--should only be able to edit if is current users request-->
+<% if (current_user.id == @admin_request.user_id) %>
+    <h1>Editing Admin Request</h1>
 
-<%= render 'form', admin_request: @admin_request %>
+    <%= render 'form', admin_request: @admin_request %>
 
-<%= link_to 'Show', @admin_request %> |
-<%= link_to 'Back', admin_requests_path %>
+    <%= link_to 'Back', admin_requests_path %>
+<% end %>
