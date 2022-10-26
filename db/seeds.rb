@@ -17,6 +17,7 @@ Ranking.create(title: "Diamond", point_total: "1000")
 Ranking.create(title: "Gold", point_total: "700")
 Ranking.create(title: "Silver", point_total: "500")
 Ranking.create(title: "Bronze", point_total: "100")
+Ranking.create(title: "Iron", point_total: "0")
 
 
 Event.create!([
