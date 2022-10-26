@@ -37,6 +37,11 @@ class AdminRequestsController < ApplicationController
     if (current_user.id != @admin_request.user_id) 
         redirect_to admin_requests_path
     end
+
+    # should only be able to edit requests that are in the REQUESTED state
+    if (@admin_request.request_status != "REQUESTED")
+        redirect_to admin_requests_path
+    end
   end
 
   # GET /admin_requests/1/approve
@@ -118,13 +123,6 @@ class AdminRequestsController < ApplicationController
   def destroy
     # no one should be able to destroy a request
     redirect_to admin_requests_path
-
-    # @admin_request.destroy
-
-    # respond_to do |format|
-    #   format.html { redirect_to admin_requests_url, notice: "Admin request was successfully destroyed." }
-    #   format.json { head :no_content }
-    # end
   end
 
   private
