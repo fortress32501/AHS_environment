@@ -4,12 +4,24 @@ class UsersController < ApplicationController
   # GET /users/1 or /users/1.json
   def show
     current_user.assign_ranking
+    if !current_user.is_admin
+      respond_to do |format|
+        format.html { redirect_to accounts_path, notice: "You do not have access to show other users. You can request Administrator Access through Administrator request page." }
+        format.json { head :no_content }
+      end
+    end
   end
   
   # GET /users or /users.json
   def index
     @users = User.all.order('point DESC')
     current_user.assign_ranking
+    if !current_user.is_admin
+      respond_to do |format|
+        format.html { redirect_to accounts_path, notice: "You do not have access to see other users. You can request Administrator Access through Administrator request page." }
+        format.json { head :no_content }
+      end
+    end
   end
   
   # GET /users/new
@@ -20,6 +32,12 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    if !current_user.is_admin
+      respond_to do |format|
+        format.html { redirect_to accounts_path, notice: "You do not have access to edit other users. You can request Administrator Access through Administrator request page." }
+        format.json { head :no_content }
+      end
+    end
   end
 
   # POST /users or /users.json
@@ -56,8 +74,13 @@ class UsersController < ApplicationController
     @user.destroy
 
     respond_to do |format|
-      format.html { redirect_to users_url, notice: "User was successfully destroyed." }
-      format.json { head :no_content }
+      if !current_user.is_admin
+        format.html { redirect_to accounts_path, notice: "You do not have access to destroy other users. You can request Administrator Access through Administrator request page." }
+        format.json { head :no_content }
+      else  
+        format.html { redirect_to users_url, notice: "User was successfully destroyed." }
+        format.json { head :no_content }
+      end
     end
   end
 

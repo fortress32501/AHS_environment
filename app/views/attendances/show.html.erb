@@ -23,5 +23,7 @@
   <%= @attendance.points %>
 </p>
 
+<% if current_user.is_admin %>
 <%= link_to 'Edit', edit_attendance_path(@attendance) %> |
+<% end %>
 <%= link_to 'Back', events_path %>
