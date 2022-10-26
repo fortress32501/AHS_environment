@@ -13,10 +13,10 @@
 # User.create(first_name: "James", last_name: "White", email: "james@email.com", password: "1234", point: "800", is_admin: false)
 
 
-# Ranking.create(title: "Diamond", point_total: "1000")
-# Ranking.create(title: "Gold", point_total: "700")
-# Ranking.create(title: "Silver", point_total: "500")
-# Ranking.create(title: "Bronze", point_total: "100")
+Ranking.create(title: "Diamond", point_total: "1000")
+Ranking.create(title: "Gold", point_total: "700")
+Ranking.create(title: "Silver", point_total: "500")
+Ranking.create(title: "Bronze", point_total: "100")
 
 
 Event.create!([

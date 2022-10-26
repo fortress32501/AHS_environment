@@ -27,3 +27,111 @@
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1))
 }
+
+// blue color: #364459
+// yellow color: #bfb87d
+// text color: rgba(26,26,26,.86)
+// text font: EB Garamond
+// text blue color: #425b76
+
+.intro {
+  text-align: center;
+  font-family: "EB Garamond";
+}
+
+h1 {
+  color: #bfb87d;
+  font-family: "EB Garamond";
+
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0px;
+  text-transform: none;
+  line-height: 1.2em;
+
+  display: block;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+h2 {
+  color: #425b76;
+  font-family: "EB Garamond";
+
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0px;
+  text-transform: none;
+  line-height: 1.2em;
+
+  display: block;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+p {
+  font-weight: 400;
+  font-family: "EB Garamond";
+
+  font-style: normal;
+  font-size: 18px;
+  letter-spacing: .06px;
+  line-height: 1.5em;
+  color: rgba(26,26,26,.86);
+}
+
+// https://dev.to/dcodeyt/creating-beautiful-html-tables-with-css-428l
+.table-style {
+  border-radius: 15px;
+  margin: 25px 0;
+  font-size: 0.9em;
+  font-family: "EB Garamond";
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  border-collapse: collapse;
+
+}
+.table-style thead tr {
+  background-color: #425b76 ;
+  color: #ffffff;
+  text-align: left;
+}
+.table-style th,
+.table-style td {
+    padding: 12px 15px;
+    font-family: "EB Garamond";
+}
+// gets shading for every other line 
+.table-style tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+// top left border curve
+.table-style thead tr th:first-child {
+  border-radius: 15px 0px 0px 0px;
+}
+// top right border curve
+.table-style thead tr th:last-child {
+  border-radius: 0px 15px 0px 0px;
+}
+// bottom left border curve
+.table-style tr:last-child td:first-child {
+  border-radius: 0px 0px 0px 15px;
+}
+// bottom right border curve
+.table-style tr:last-child td:last-child {
+  border-radius: 0px 0px 15px 0px;
+}
+// change color when hovering over row
+.table-style tr:hover td {
+  background-color: #596b7e8d ;
+}
+
+//class="sqs-button-element--primary"
+
+//class="sqs-block-button-element--small sqs-button-element--tertiary sqs-block-button-element"
+
