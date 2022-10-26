@@ -141,12 +141,23 @@ p {
   font-size: 1.0em;
   font-family: "EB Garamond";
   margin: 1% 2%;
+  // line-height: inherit;
   cursor: pointer;
 }
 
-a{
+a.button-style{
   // color: var(--bs-link-color);
   text-decoration: none;
+  line-height: inherit;
+  color: white;
+  padding: 8px 10px;
+}
+input.button-style {
+  line-height: none;
+}
+
+input {
+  line-height: none;
 }
 
 

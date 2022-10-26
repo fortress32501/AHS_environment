@@ -47,7 +47,7 @@
         <td><%= ranking.point_total %></td>
         <td ><%= link_to 'Show', ranking , class: "button-style"%></td>
         <td ><%= link_to 'Edit', edit_ranking_path(ranking), class: "button-style"%></td>
-        <td ><%= link_to 'Destroy', ranking, method: :delete, data: { confirm: 'Are you sure?' } , class: "button-style"%></td>
+        <td ><%= button_to 'Destroy', ranking, method: :delete, data: { confirm: 'Are you sure?' } , class: "button-style"%></td>
       </tr>
     <% end %>
   </tbody>

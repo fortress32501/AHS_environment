@@ -45,6 +45,16 @@ class User < ApplicationRecord
 
     # "Ranking is : #{self.ranking_id} !!"
   end
+  def get_ranking_title
+    # ranking_found = Ranking.where("point_total <= #{self.point}").order(point_total: :desc)
+    # SELECT title FROM Rankings Join Users On Rankings.id=2;
+    title_found = Ranking.where(id: self.ranking_id).first
+    if title_found == nil
+      # nothing to do
+    else 
+      "#{ title_found.title }"
+    end
+  end
 
   
 end
