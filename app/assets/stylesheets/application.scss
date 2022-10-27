@@ -29,11 +29,11 @@
 }
 
 // Navigation bar
-.ahs_navbar {
+.ahs-color {
   background: #364459;
 }
 
-.ahs_text {
+.ahs-text {
   color: #f5f8fc !important;
   font-family: EB Garamond;
   font-weight: 400;
@@ -45,6 +45,17 @@
   line-height: 1em;
 }
 
-.no_hover:hover {
+.no-hover:hover {
   background-color: transparent;
+}
+
+.social-button {
+  border-radius: 50%;
+  color: white !important;
+  text-align: center; 
+  text-decoration: none;
+}
+
+.container-fluid{
+  padding: 0 !important;
 }
