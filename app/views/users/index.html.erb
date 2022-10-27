@@ -34,23 +34,23 @@
 <%= link_to 'New User', new_user_path %>-->
 <div>
   <h1> Users <h1>
-  <br/>
+  <br>
 </div>
 <div>
-<%= button_to "Rank", users_path, :method => "get", class: "btn btn-secondary justify-content-end"%>
-<br/>
-<table class='table'>
-  <thead>
-    <tr>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col" >Point</th>
-      <th scope="col">Ranking</th>
-      <th scope="col">Edit</th>
-      <th scope="col">Delete</th>
-    </tr>
-  </thead>
-  <tbody>
-    <%= render @users %>
-  </tbody>
+  <%= button_to "Rank", users_path, :method => "get", class: "btn btn-secondary justify-content-end"%>
+  <br>
+  <table class='table'>
+    <thead>
+      <tr>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col" >Point</th>
+        <th scope="col">Ranking</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render partial: @users %>
+    </tbody>
 </div>
