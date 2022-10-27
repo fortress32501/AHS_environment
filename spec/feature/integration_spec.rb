@@ -171,7 +171,7 @@ RSpec.describe 'Creating a User', type: :feature do
   end
 end
 
-"""
+
 # Show user 
 RSpec.describe 'Show user', type: :feature do
   scenario 'valid inputs' do
@@ -181,13 +181,13 @@ RSpec.describe 'Show user', type: :feature do
     fill_in 'Email', with: 'jane@gmail.com'
     fill_in 'Password', with: '123'
     click_on 'Create Account'  
-    visit users_path
-    click_on 'Show'
+    visit accounts_path
     expect(page).to have_content('Jane')
     expect(page).to have_content('Doe')
     expect(page).to have_content('jane@gmail.com')
   end
 end
+
 # Edit user 
 RSpec.describe 'Edit user', type: :feature do
   scenario 'valid inputs' do
@@ -197,21 +197,16 @@ RSpec.describe 'Edit user', type: :feature do
     fill_in 'Email', with: 'jane@gmail.com'
     fill_in 'Password', with: '123'
     click_on 'Create Account'  
-    visit users_path
-    click_on 'Edit'
-    fill_in 'First name', with: 'Jane'
-    fill_in 'Last name', with: 'Doe'
-    fill_in 'Email', with: 'jane@gmail.com'
-    fill_in 'Point', with: '2'
-    select 'false', :from => 'user_is_admin'
-    click_on 'submit'  
-    visit users_path
-    click_on 'Show'
-    expect(page).to have_content('Jane')
+    visit accounts_path
+    click_on 'Edit Profile'
+    fill_in 'First name', with: 'Doe'
+    fill_in 'Last name', with: 'John'
+    fill_in 'Email', with: 'john@gmail.com'
+    click_on 'Update'  
+    visit accounts_path
+    expect(page).to have_content('John')
     expect(page).to have_content('Doe')
-    expect(page).to have_content('2')
-    expect(page).to have_content('false')
-    expect(page).not_to have_content('0')
+    expect(page).not_to have_content('Jane')
   end
 end
 
@@ -225,12 +220,13 @@ RSpec.describe 'Delete user', type: :feature do
     fill_in 'Email', with: 'jane@gmail.com'
     fill_in 'Password', with: '123'
     click_on 'Create Account'
-    visit users_path
-    click_on 'Delete'
+    visit accounts_path
+    click_on 'Delete Account'
     expect(page).not_to have_content('Jane')
     expect(page).not_to have_content('jane@gmail.com')
   end
-end"""
+end
+
 
 #Edit user points
 RSpec.describe 'Edit user points', type: :feature do
