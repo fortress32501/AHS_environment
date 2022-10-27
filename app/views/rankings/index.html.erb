@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Rankings</h1>
+<h1>User Rankings</h1>
 
 <table class="table-style">
   <thead>
@@ -31,6 +31,9 @@
 
 <br>
 
+<h1>Ranking Types</h1> 
+
+
 <table class="table-style">
   <thead>
     <tr>
@@ -53,6 +56,10 @@
   </tbody>
 </table>
 
+<div class="d-flex justify-content-center">
+  <%= link_to 'New Ranking', new_ranking_path, class: "button-style-blue" %>
+</div>
+
 <br>
 
-<%= link_to 'New Ranking', new_ranking_path %>
+

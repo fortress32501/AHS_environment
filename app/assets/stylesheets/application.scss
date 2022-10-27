@@ -16,6 +16,8 @@
  */
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome";
+@import 'table';
+@import 'button';
 // source: https://mdbootstrap.com/docs/standard/extended/profiles/ 
 .gradient-custom {
   /* fallback for old browsers */
@@ -57,7 +59,7 @@ h1 {
 }
 
 h2 {
-  color: #425b76;
+  color: #364459;
   font-family: "EB Garamond";
 
   font-weight: 400;
@@ -84,84 +86,14 @@ p {
   color: rgba(26,26,26,.86);
 }
 
-// https://dev.to/dcodeyt/creating-beautiful-html-tables-with-css-428l
-.table-style {
-  border-radius: 15px;
-  margin: 25px 0;
-  font-size: 0.9em;
-  font-family: "EB Garamond";
-  min-width: 400px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-  border-collapse: collapse;
 
-}
-.table-style thead tr {
-  background-color: #425b76 ;
-  color: #ffffff;
-  text-align: left;
-}
-.table-style th,
-.table-style td {
-    padding: 12px 15px;
-    font-family: "EB Garamond";
-}
-// gets shading for every other line 
-.table-style tbody tr:nth-of-type(even) {
-  background-color: #f3f3f3;
-}
-
-// top left border curve
-.table-style thead tr th:first-child {
-  border-radius: 15px 0px 0px 0px;
-}
-// top right border curve
-.table-style thead tr th:last-child {
-  border-radius: 0px 15px 0px 0px;
-}
-// bottom left border curve
-.table-style tr:last-child td:first-child {
-  border-radius: 0px 0px 0px 15px;
-}
-// bottom right border curve
-.table-style tr:last-child td:last-child {
-  border-radius: 0px 0px 15px 0px;
-}
-// change color when hovering over row
-.table-style tr:hover td {
-  background-color: #596b7e8d ;
-}
-
-.button-style {
-  border-radius: 30px;
-  background-color: rgba(156, 156, 156, 0.9);
-  border: none;
-  color: white;
-  padding: 5px 10px;
-  text-align: center;
-  font-size: 1.0em;
-  font-family: "EB Garamond";
-  margin: 1% 2%;
-  // line-height: inherit;
-  cursor: pointer;
-}
-
-a.button-style{
-  // color: var(--bs-link-color);
+a {
   text-decoration: none;
-  line-height: inherit;
-  color: white;
-  padding: 8px 10px;
-}
-input.button-style {
-  line-height: none;
+  font-family: "EB Garamond";
 }
 
-input {
-  line-height: none;
+.blue-box {
+  background-color: #364459;
 }
 
-
-//class="sqs-button-element--primary"
-
-//class="sqs-block-button-element--small sqs-button-element--tertiary sqs-block-button-element"
 

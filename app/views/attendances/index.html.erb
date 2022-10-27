@@ -2,7 +2,7 @@
 
 <h1>Attendances</h1>
 
-<table>
+<table class="table-style">
   <thead>
     <tr>
       <th>User</th>
@@ -20,14 +20,16 @@
         <td><%= User.where(id: attendance.user_id).last.email %></td>
         <td><%= Event.where(id: attendance.event_id).last.event_title %></td>
         <td><%= attendance.points %></td>
-        <td><%= link_to 'Show', attendance %></td>
-        <td><%= link_to 'Edit', edit_attendance_path(attendance) %></td>
-        <td><%= link_to 'Destroy', attendance, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', attendance, class: "button-style" %></td>
+        <td><%= link_to 'Edit', edit_attendance_path(attendance), class: "button-style" %></td>
+        <td><%= link_to 'Destroy', attendance, method: :delete, data: { confirm: 'Are you sure?' }, class: "button-style" %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
+<div class="d-flex justify-content-center">
+  <%= link_to 'New Attendance', new_attendance_path, class: "button-style-blue" %>
+</div>
 
-<%= link_to 'New Attendance', new_attendance_path %>
