@@ -12,7 +12,12 @@ class AdminRequestsController < ApplicationController
     # this is the review page for admin requests
     # => should only be viewed by admins
     if (!current_user.is_admin) 
-        redirect_to admin_requests_path
+        respond_to do |format|
+            format.html { redirect_to admin_requests_path, notice: "You do not have access to review requests." }
+            format.json { head :no_content }
+        end
+
+        return
     end
   end
 
@@ -20,12 +25,22 @@ class AdminRequestsController < ApplicationController
   def new
     # only users should be able to generate admin requests
     if (current_user.is_admin) 
-        redirect_to admin_requests_path
+        respond_to do |format|
+            format.html { redirect_to admin_requests_path, notice: "You do not have access to create requests. You are already an admin." }
+            format.json { head :no_content }
+        end
+
+        return
     end
 
     # each user can only create 1 admin request
     if (@has_request)
-        redirect_to admin_requests_path
+        respond_to do |format|
+            format.html { redirect_to admin_requests_path, notice: "You do not have access to create requests. You can only have one in progress at a time." }
+            format.json { head :no_content }
+        end
+
+        return
     end
 
     @admin_request = AdminRequest.new
@@ -35,12 +50,22 @@ class AdminRequestsController < ApplicationController
   def edit
     # should only be able to edit request if they made it
     if (current_user.id != @admin_request.user_id) 
-        redirect_to admin_requests_path
+        respond_to do |format|
+            format.html { redirect_to admin_requests_path, notice: "You can only edit your requests." }
+            format.json { head :no_content }
+        end
+
+        return
     end
 
     # should only be able to edit requests that are in the REQUESTED state
     if (@admin_request.request_status != "REQUESTED")
-        redirect_to admin_requests_path
+        respond_to do |format|
+            format.html { redirect_to admin_requests_path, notice: "You can only edit requests that are currently REQUESTED." }
+            format.json { head :no_content }
+        end
+
+        return
     end
   end
 
@@ -48,44 +73,80 @@ class AdminRequestsController < ApplicationController
   def approve
     # only admins should be able to approve/view a request
     if (!current_user.is_admin) 
-        redirect_to admin_requests_path
+        respond_to do |format|
+            format.html { redirect_to admin_requests_path, notice: "You do not have access to approve requests. You are not an admin." }
+            format.json { head :no_content }
+        end
+
+        return
     end
 
     # request must also be in the "REQUESTED" state to be approved
     if (@admin_request.request_status != "REQUESTED")
-        redirect_to admin_requests_path
+        respond_to do |format|
+            format.html { redirect_to admin_requests_path, notice: "You do not have access to approve that request. It has already been processed." }
+            format.json { head :no_content }
+        end
+
+        return
     end
 
     @admin_request.approve
-    redirect_to admin_requests_path
+    respond_to do |format|
+        format.html { redirect_to admin_requests_path, notice: "The request has been approved." }
+        format.json { head :no_content }
+    end
   end
 
   # GET /admin_requests/1/deny
   def deny
     # only admins should be able to deny/view a request
     if (!current_user.is_admin) 
-        redirect_to admin_requests_path
+        respond_to do |format|
+            format.html { redirect_to admin_requests_path, notice: "You do not have access to deny requests. You are not an admin." }
+            format.json { head :no_content }
+        end
+
+        return
     end
 
     # request must also be in the "REQUESTED" state to be denied
     if (@admin_request.request_status != "REQUESTED")
-        redirect_to admin_requests_path
+        respond_to do |format|
+            format.html { redirect_to admin_requests_path, notice: "You do not have access to deny that request. It has already been processed." }
+            format.json { head :no_content }
+        end
+
+        return
     end
 
     @admin_request.deny
-    redirect_to admin_requests_path
+    respond_to do |format|
+        format.html { redirect_to admin_requests_path, notice: "The request has been denied." }
+        format.json { head :no_content }
+    end
   end
 
   # POST /admin_requests or /admin_requests.json
   def create
     # admins should not be able to create a request
     if (current_user.is_admin) 
-        redirect_to admin_requests_path
+        respond_to do |format|
+            format.html { redirect_to admin_requests_path, notice: "You do not have access to create requests. You are already an admin." }
+            format.json { head :no_content }
+        end
+
+        return
     end
 
     # each user can only create 1 admin request
     if (@has_request)
-        redirect_to admin_requests_path
+        respond_to do |format|
+            format.html { redirect_to admin_requests_path, notice: "You do not have access to create more requests. You are currently have a request in progress." }
+            format.json { head :no_content }
+        end
+
+        return
     end
 
     @admin_request = AdminRequest.new(admin_request_params)
@@ -105,7 +166,12 @@ class AdminRequestsController < ApplicationController
   def update
     # should only be able to edit request if they made it
     if (current_user.id != @admin_request.user_id) 
-        redirect_to admin_requests_path
+        respond_to do |format|
+            format.html { redirect_to admin_requests_path, notice: "You do not have access to edit this request." }
+            format.json { head :no_content }
+        end
+
+        return
     end
 
     respond_to do |format|
@@ -122,7 +188,10 @@ class AdminRequestsController < ApplicationController
   # DELETE /admin_requests/1 or /admin_requests/1.json
   def destroy
     # no one should be able to destroy a request
-    redirect_to admin_requests_path
+    respond_to do |format|
+        format.html { redirect_to admin_requests_path, notice: "You do not have access to delete requests." }
+        format.json { head :no_content }
+    end
   end
 
   private
