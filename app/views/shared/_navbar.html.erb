@@ -1,4 +1,4 @@
-<nav class="navbar navbar-light navbar-expand-lg bg-light justify-content-between">
+<nav class="navbar navbar-expand-lg navbar-dark justify-content-between" style="background-color:#36455c;">
     <!-- Logo --> 
         <!--<%= image_tag("ahs_logo.png", width: "7%", height: "7%") %>
         Alexander Hamilton Society-->
@@ -7,7 +7,7 @@
       alt="AHS"
       width="220" 
       height="73"
-      class="navbar-brand align-top">
+      class="align-top">
     </a>
     <!-- Navbar links -->
     <% if session.include? :user_id %>
@@ -17,35 +17,35 @@
         data-bs-toggle="collapse"
         data-bs-target="#navmenu"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span class="navbar-toggler-icon" style="color:#fff;"></span>
       </button>
       <div class="collapse navbar-collapse" id="navmenu">
         <ul class="navbar-nav ms-auto">
           </li>
             <li class="nav-item">
-              <%= button_to "Home", '/', :method => "get", :class=>"btn btn-default" %>
+              <%= button_to "Home", '/', :method => "get", :class=>"btn btn-default", :style=>"color:#fff;" %>
             </li>
           <% if current_user.is_admin? %>
             <li class="nav-item">
-              <%= button_to "Members", users_path, :method => "get", :class=>"btn btn-default" %>
+              <%= button_to "Members", users_path, :method => "get", :class=>"btn btn-default", :style=>"color:#fff;" %>
             </li>
             <li class="nav-item">
-              <%= button_to "Events", events_path, :method => "get", :class=>"btn btn-default" %>
+              <%= button_to "Events", events_path, :method => "get", :class=>"btn btn-default", :style=>"color:#fff;" %>
             </li>
             <li class="nav-item">
-              <%= button_to "Rankings", rankings_path, :method => "get", :class=>"btn btn-default" %>
+              <%= button_to "Rankings", rankings_path, :method => "get", :class=>"btn btn-default", :style=>"color:#fff;" %>
             </li>
           <% else %>
             <li class="nav-item">
-              <%= button_to "Events", events_path, :method => "get", :class=>"btn btn-default" %>
+              <%= button_to "Events", events_path, :method => "get", :class=>"btn btn-default", :style=>"color:#fff;" %>
             </li>
           <% end %>
           <li class="nav-item">
-            <%= button_to "Sign Out", session_path(current_user.id), method:"delete", :class=>"btn btn-default" %>
+            <%= button_to "Sign Out", session_path(current_user.id), method:"delete", :class=>"btn btn-default", :style=>"color:#fff;" %>
           </li>
           <li class="nav-item">
             <%= link_to accounts_path, :class=>"btn btn-default", :id=>"account" do %>
-              <i class="fa-solid fa-circle-user fa-lg" aria-hidden="true"></i>
+              <i class="fa-solid fa-circle-user fa-lg" aria-hidden="true" style="color:#fff;"></i>
             <% end %>
           </li>
         </ul> 
