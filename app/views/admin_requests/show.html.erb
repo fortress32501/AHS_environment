@@ -20,6 +20,9 @@
   <%= @admin_request.created_at %>
 </p>
 
-
-<%= link_to 'Edit', edit_admin_request_path(@admin_request) %> |
+<!--should only give option to Approve/Deny if the request has not yet been processed-->
+<% if (@admin_request.request_status == "REQUESTED") %>
+    <%= link_to 'Approve', approve_path(@admin_request) %> |
+    <%= link_to 'Deny', deny_path(@admin_request) %> |
+<% end %>
 <%= link_to 'Back', admin_requests_path %>

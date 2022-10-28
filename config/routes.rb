@@ -34,6 +34,10 @@ Rails.application.routes.draw do
   # get "/users/new", to: "sessions#new"
   # get "/users/show", to: "sessions#new"
 
+  # routes for admin requests
+  get "/admin_requests/:id/approve", to: "admin_requests#approve", as: "approve"
+  get "/admin_requests/:id/deny", to: "admin_requests#deny", as: "deny"
+
   # route to account page
   get "/accounts", to: "accounts#index"
   get "/history", to: "history#index"
