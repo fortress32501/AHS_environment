@@ -46,7 +46,6 @@ class User < ApplicationRecord
 
     # "Ranking is : #{self.ranking_id} !!"
   end
-
 end
 
   

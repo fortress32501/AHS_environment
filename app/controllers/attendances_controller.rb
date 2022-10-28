@@ -73,8 +73,13 @@ class AttendancesController < ApplicationController
       # If attendance already exists goes here
     else
       respond_to do |format|
-        format.html {redirect_to events_path, notice: "Your attendance has already been taken" }
-
+        if @event.nil?
+          format.html { redirect_to(new_attendance_path(eventID: @event.id), notice: 'Select an Event') }
+        elsif @user.nil?
+          format.html { redirect_to(new_session_path, notice: 'Please Sign in') }
+        else
+          format.html { redirect_to(events_path, notice: 'Your attendance has already been taken') }
+        end
       end
     end
   end
