@@ -4,12 +4,12 @@ require 'rails_helper'
 RSpec.describe 'Creating an Event', type: :feature do
   scenario 'valid inputs' do
     visit new_event_path
-    click_on 'Sign Up'
+    click_on 'SIGN UP'
     fill_in 'First name', with: 'test'
     fill_in 'Last name', with: 'test'
     fill_in 'Email', with: 'test@test.com'
     fill_in 'Password', with: 'test'
-    click_on 'Create Account'
+    click_on 'submit'
  
     visit new_event_path
     fill_in 'title', with: '1st Meeting'
@@ -42,12 +42,12 @@ end
 RSpec.describe 'Show Events', type: :feature do
   scenario 'Show' do
     visit new_event_path
-    click_on 'Sign Up'
+    click_on 'SIGN UP'
     fill_in 'First name', with: 'test'
     fill_in 'Last name', with: 'test'
     fill_in 'Email', with: 'test@test.com'
     fill_in 'Password', with: 'test'
-    click_on 'Create Account'  
+    click_on 'submit'  
     visit new_event_path
     fill_in 'title', with: '1st Meeting'
     fill_in 'description', with: 'General Meeting'
@@ -84,7 +84,7 @@ RSpec.describe 'Delete Events', type: :feature do
     visit new_event_path
     fill_in 'Email', with: 'test@gmail.com'
     fill_in 'Password', with: 'Test'
-    click_on 'Sign In'
+    click_on 'SIGN IN'
     visit new_event_path
     fill_in 'title', with: '1st Meeting'
     fill_in 'description', with: 'General Meeting'
@@ -119,7 +119,7 @@ RSpec.describe 'Edit Events', type: :feature do
     visit new_event_path
     fill_in 'Email', with: 'test@gmail.com'
     fill_in 'Password', with: 'Test'
-    click_on 'Sign In'
+    click_on 'SIGN IN'
     
     visit new_event_path
     fill_in 'Event title', with: '1st Meeting'
@@ -148,16 +148,16 @@ RSpec.describe 'Edit Events', type: :feature do
   end
 end
 
-# Sign Up/ Login Integration Test
+# SIGN UP/ Login Integration Test
 RSpec.describe 'Creating a User', type: :feature do
   scenario 'valid inputs' do  
-    # Test Sign Up
+    # Test SIGN UP
     visit new_user_path
     fill_in 'First name', with: 'Jane'
     fill_in 'Last name', with: 'Doe'
     fill_in 'Email', with: 'jane@gmail.com'
     fill_in 'Password', with: '123'
-    click_on 'Create Account'
+    click_on 'submit'
     expect(page).to have_content('Jane')
     expect(page).to have_content('Doe')
     click_on 'account'
@@ -166,7 +166,7 @@ RSpec.describe 'Creating a User', type: :feature do
     # Test Login
     fill_in 'Email', with: 'jane@gmail.com'
     fill_in 'Password', with: '123'
-    click_on 'Sign In!'
+    click_on 'SIGN IN'
     expect(page).to have_content('Jane')
   end
 end
@@ -180,7 +180,7 @@ RSpec.describe 'Show user', type: :feature do
     fill_in 'Last name', with: 'Doe'
     fill_in 'Email', with: 'jane@gmail.com'
     fill_in 'Password', with: '123'
-    click_on 'Create Account'  
+    click_on 'submit'  
     visit accounts_path
     expect(page).to have_content('Jane')
     expect(page).to have_content('Doe')
@@ -196,7 +196,7 @@ RSpec.describe 'Edit user', type: :feature do
     fill_in 'Last name', with: 'Doe'
     fill_in 'Email', with: 'jane@gmail.com'
     fill_in 'Password', with: '123'
-    click_on 'Create Account'  
+    click_on 'submit'  
     visit accounts_path
     click_on 'Edit Profile'
     fill_in 'First name', with: 'Doe'
@@ -219,7 +219,7 @@ RSpec.describe 'Delete user', type: :feature do
     fill_in 'Last name', with: 'Doe'
     fill_in 'Email', with: 'jane@gmail.com'
     fill_in 'Password', with: '123'
-    click_on 'Create Account'
+    click_on 'submit'
     visit accounts_path
     click_on 'Delete Account'
     expect(page).not_to have_content('Jane')
@@ -236,7 +236,7 @@ RSpec.describe 'Edit user points', type: :feature do
     fill_in 'Last name', with: 'Doe'
     fill_in 'Email', with: 'jane@gmail.com'
     fill_in 'Password', with: '123'
-    click_on 'Create Account'
+    click_on 'submit'
     visit users_path
     click_on 'Edit'
     fill_in 'Point', with: 3
@@ -254,7 +254,7 @@ RSpec.describe 'Do not edit user points', type: :feature do
     fill_in 'Last name', with: 'Doe'
     fill_in 'Email', with: 'jane@gmail.com'
     fill_in 'Password', with: '123'
-    click_on 'Create Account'
+    click_on 'submit'
     visit users_path
     click_on 'Edit'
     fill_in 'Point', with: 3
@@ -269,12 +269,12 @@ end
 RSpec.describe 'Confirm Calendar', type: :feature do
   scenario 'Calendar' do  
     visit events_path
-    click_on 'Sign Up'
+    click_on 'SIGN UP'
     fill_in 'First name', with: 'test'
     fill_in 'Last name', with: 'test'
     fill_in 'Email', with: 'test@test.com'
     fill_in 'Password', with: 'test'
-    click_on 'Create Account'
+    click_on 'submit'
     visit events_path
     
     expect(page).to have_content(Date.today.strftime("%B"))
@@ -292,12 +292,12 @@ end
 RSpec.describe 'Attendance Testing', type: :feature do
   scenario 'valid inputs' do   
     visit events_path
-    click_on 'Sign Up'
+    click_on 'SIGN UP'
     fill_in 'First name', with: 'test'
     fill_in 'Last name', with: 'test'
     fill_in 'Email', with: 'test@test.com'
     fill_in 'Password', with: 'test'
-    click_on 'Create Account'
+    click_on 'submit'
     
 
     visit new_event_path
@@ -317,7 +317,7 @@ RSpec.describe 'Attendance Testing', type: :feature do
     select '02', :from => 'event_event_end_4i'
     select '43', :from => 'event_event_end_5i'
     click_on 'Create Event'  
-    # prep completed test sign in to event
+    # prep completed test SIGN IN to event
     click_on 'Sign In For Event'
     fill_in 'attendance_password', with: 'Test'
     select '1st Meeting', :from => 'attendance_event_id'
@@ -355,7 +355,7 @@ RSpec.describe 'Event Point Testing', type: :feature do
     visit new_event_path
     fill_in 'Email', with: 'test@gmail.com'
     fill_in 'Password', with: 'Test'
-    click_on 'Sign In'
+    click_on 'SIGN IN'
     
     # Create event
     click_on 'Events'
@@ -394,7 +394,7 @@ RSpec.describe 'Creating an EventType', type: :feature do
         
         fill_in 'Email', with: 'test@gmail.com'
         fill_in 'Password', with: 'Test'
-        click_on 'Sign In'
+        click_on 'SIGN IN'
  
         visit new_event_type_path
         fill_in 'Type name', with: 'type1'
@@ -416,7 +416,7 @@ RSpec.describe 'Showing an EventType', type: :feature do
         visit new_event_type_path
         fill_in 'Email', with: 'test@gmail.com'
         fill_in 'Password', with: 'Test'
-        click_on 'Sign In'
+        click_on 'SIGN IN'
  
         visit new_event_type_path
         fill_in 'Type name', with: 'type1'
@@ -441,7 +441,7 @@ RSpec.describe 'Deleting an EventType', type: :feature do
       visit new_event_type_path
       fill_in 'Email', with: 'test@gmail.com'
       fill_in 'Password', with: 'Test'
-      click_on 'Sign In'
+      click_on 'SIGN IN'
       visit new_event_type_path
       fill_in 'Type name', with: 'type1'
       fill_in 'Description', with: 'General Meeting'
@@ -465,7 +465,7 @@ RSpec.describe 'Updating an EventType', type: :feature do
         visit new_event_type_path
         fill_in 'Email', with: 'test@gmail.com'
         fill_in 'Password', with: 'Test'
-        click_on 'Sign In'
+        click_on 'SIGN IN'
  
         visit new_event_type_path
         fill_in 'Type name', with: 'type1'
@@ -496,7 +496,7 @@ RSpec.describe 'Creating an Event with EventType', type: :feature do
         visit new_event_type_path
         fill_in 'Email', with: 'test@gmail.com'
         fill_in 'Password', with: 'Test'
-        click_on 'Sign In'
+        click_on 'SIGN IN'
         
         visit new_event_type_path
         fill_in 'Type name', with: 'type1'
@@ -547,7 +547,7 @@ RSpec.describe 'Creating an Event without EventType', type: :feature do
         visit new_event_type_path
         fill_in 'Email', with: 'test@gmail.com'
         fill_in 'Password', with: 'Test'
-        click_on 'Sign In'
+        click_on 'SIGN IN'
         
         visit new_event_type_path
         fill_in 'Type name', with: 'type1'
@@ -621,7 +621,7 @@ RSpec.describe 'User viewable point testing', type: :feature do
     visit new_event_type_path
     fill_in 'Email', with: 'test@gmail.com'
     fill_in 'Password', with: 'Test'
-    click_on 'Sign In'
+    click_on 'SIGN IN'
     
     # Create event
     click_on 'Events'
@@ -646,17 +646,17 @@ RSpec.describe 'User viewable point testing', type: :feature do
     click_on 'account'
     click_on 'Sign out'
 
-    click_on 'Sign Up'
+    click_on 'SIGN UP'
     fill_in 'First name', with: 'test'
     fill_in 'Last name', with: 'test'
     fill_in 'Email', with: 'test@test.com'
     fill_in 'Password', with: 'test'
-    click_on 'Create Account'
+    click_on 'submit'
 
     click_on 'Events'
     visit new_attendance_path(1)
     # Create attendance
-    #click_on 'Sign In For Event'
+    #click_on 'SIGN IN For Event'
     fill_in 'attendance_password', with: 'Test'
     click_on 'Create Attendance'
 
@@ -675,12 +675,12 @@ end
 RSpec.describe 'Creating an Admin Request', type: :feature do
     scenario 'valid inputs' do
         visit new_admin_request_path
-        click_on 'Sign Up'
+        click_on 'SIGN UP'
         fill_in 'First name', with: 'test'
         fill_in 'Last name', with: 'test'
         fill_in 'Email', with: 'test@test.com'
         fill_in 'Password', with: 'test'
-        click_on 'Create Account'
+        click_on 'submit'
  
         visit new_admin_request_path
         fill_in 'Request reason', with: 'new officer: test'
@@ -696,12 +696,12 @@ RSpec.describe 'Creating an Admin Request', type: :feature do
 
     scenario 'valid inputs for multiple' do
         visit new_admin_request_path
-        click_on 'Sign Up'
+        click_on 'SIGN UP'
         fill_in 'First name', with: 'test'
         fill_in 'Last name', with: 'test'
         fill_in 'Email', with: 'test@test.com'
         fill_in 'Password', with: 'test'
-        click_on 'Create Account'
+        click_on 'submit'
 
         visit new_admin_request_path
         fill_in 'Request reason', with: 'new officer: test'
@@ -730,12 +730,12 @@ end
 RSpec.describe 'Show Admin Requests', type: :feature do
     scenario 'Show' do
         visit new_admin_request_path
-        click_on 'Sign Up'
+        click_on 'SIGN UP'
         fill_in 'First name', with: 'test'
         fill_in 'Last name', with: 'test'
         fill_in 'Email', with: 'test@test.com'
         fill_in 'Password', with: 'test'
-        click_on 'Create Account'
+        click_on 'submit'
 
         visit new_admin_request_path
         fill_in 'Request reason', with: 'new officer: test'
@@ -754,12 +754,12 @@ end
 RSpec.describe 'Delete Admin Requests', type: :feature do
     scenario 'Delete' do
         visit new_admin_request_path
-        click_on 'Sign Up'
+        click_on 'SIGN UP'
         fill_in 'First name', with: 'test'
         fill_in 'Last name', with: 'test'
         fill_in 'Email', with: 'test@test.com'
         fill_in 'Password', with: 'test'
-        click_on 'Create Account'
+        click_on 'submit'
 
         visit new_admin_request_path
         fill_in 'Request reason', with: 'new officer: test'
@@ -780,12 +780,12 @@ RSpec.describe 'Show Ranking', type: :feature do
   scenario 'show' do 
     
     visit rankings_path
-    click_on 'Sign Up'
+    click_on 'SIGN UP'
     fill_in 'First name', with: 'test'
     fill_in 'Last name', with: 'test'
     fill_in 'Email', with: 'test@test.com'
     fill_in 'Password', with: 'test'
-    click_on 'Create Account'
+    click_on 'submit'
     visit rankings_path
     
     expect(page).to have_content('Rankings')
@@ -801,12 +801,12 @@ RSpec.describe 'Create Ranking', type: :feature do
   scenario 'valid inputs' do 
     
     visit rankings_path
-    click_on 'Sign Up'
+    click_on 'SIGN UP'
     fill_in 'First name', with: 'test'
     fill_in 'Last name', with: 'test'
     fill_in 'Email', with: 'test@test.com'
     fill_in 'Password', with: 'test'
-    click_on 'Create Account'
+    click_on 'submit'
 
     visit new_ranking_path
     fill_in 'Title', with: 'test ranking'
@@ -829,12 +829,12 @@ RSpec.describe 'Create Ranking', type: :feature do
   scenario 'valid inputs' do 
     
     visit rankings_path
-    click_on 'Sign Up'
+    click_on 'SIGN UP'
     fill_in 'First name', with: 'test'
     fill_in 'Last name', with: 'test'
     fill_in 'Email', with: 'test@test.com'
     fill_in 'Password', with: 'test'
-    click_on 'Create Account'
+    click_on 'submit'
 
     visit new_ranking_path
     fill_in 'Title', with: 'test ranking'
@@ -863,12 +863,12 @@ RSpec.describe 'Create Ranking', type: :feature do
   scenario 'valid inputs' do 
     
     visit rankings_path
-    click_on 'Sign Up'
+    click_on 'SIGN UP'
     fill_in 'First name', with: 'test'
     fill_in 'Last name', with: 'test'
     fill_in 'Email', with: 'test@test.com'
     fill_in 'Password', with: 'test'
-    click_on 'Create Account'
+    click_on 'submit'
 
     visit new_ranking_path
     fill_in 'Title', with: 'test ranking'
