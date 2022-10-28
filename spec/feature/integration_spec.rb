@@ -77,14 +77,14 @@ RSpec.describe 'Show Events', type: :feature do
 end
 
 RSpec.describe 'Delete Events', type: :feature do
+  before(:each) do
+    load "#{Rails.root}/db/seeds_test.rb" 
+  end  
   scenario 'Delete' do
     visit new_event_path
-    click_on 'Sign Up'
-    fill_in 'First name', with: 'test'
-    fill_in 'Last name', with: 'test'
-    fill_in 'Email', with: 'test@test.com'
-    fill_in 'Password', with: 'test'
-    click_on 'Create Account'  
+    fill_in 'Email', with: 'test@gmail.com'
+    fill_in 'Password', with: 'Test'
+    click_on 'Sign In'
     visit new_event_path
     fill_in 'title', with: '1st Meeting'
     fill_in 'description', with: 'General Meeting'
@@ -112,14 +112,14 @@ RSpec.describe 'Delete Events', type: :feature do
 end
 
 RSpec.describe 'Edit Events', type: :feature do
+  before(:each) do
+    load "#{Rails.root}/db/seeds_test.rb" 
+  end  
   scenario 'Edit' do
     visit new_event_path
-    click_on 'Sign Up'
-    fill_in 'First name', with: 'test'
-    fill_in 'Last name', with: 'test'
-    fill_in 'Email', with: 'test@test.com'
-    fill_in 'Password', with: 'test'
-    click_on 'Create Account'
+    fill_in 'Email', with: 'test@gmail.com'
+    fill_in 'Password', with: 'Test'
+    click_on 'Sign In'
     
     visit new_event_path
     fill_in 'Event title', with: '1st Meeting'
@@ -160,7 +160,8 @@ RSpec.describe 'Creating a User', type: :feature do
     click_on 'Create Account'
     expect(page).to have_content('Jane')
     expect(page).to have_content('Doe')
-    click_on 'Sign out'
+    click_on 'account'
+    click_on 'Sign Out'
     
     # Test Login
     fill_in 'Email', with: 'jane@gmail.com'
@@ -170,7 +171,7 @@ RSpec.describe 'Creating a User', type: :feature do
   end
 end
 
-"""
+
 # Show user 
 RSpec.describe 'Show user', type: :feature do
   scenario 'valid inputs' do
@@ -180,8 +181,7 @@ RSpec.describe 'Show user', type: :feature do
     fill_in 'Email', with: 'jane@gmail.com'
     fill_in 'Password', with: '123'
     click_on 'Create Account'  
-    visit users_path
-    click_on 'Show'
+    visit accounts_path
     expect(page).to have_content('Jane')
     expect(page).to have_content('Doe')
     expect(page).to have_content('jane@gmail.com')
@@ -197,23 +197,19 @@ RSpec.describe 'Edit user', type: :feature do
     fill_in 'Email', with: 'jane@gmail.com'
     fill_in 'Password', with: '123'
     click_on 'Create Account'  
-    visit users_path
-    click_on 'Edit'
-    fill_in 'First name', with: 'Jane'
-    fill_in 'Last name', with: 'Doe'
-    fill_in 'Email', with: 'jane@gmail.com'
-    fill_in 'Point', with: '2'
-    select 'false', :from => 'user_is_admin'
-    click_on 'submit'  
-    visit users_path
-    click_on 'Show'
-    expect(page).to have_content('Jane')
+    visit accounts_path
+    click_on 'Edit Profile'
+    fill_in 'First name', with: 'Doe'
+    fill_in 'Last name', with: 'John'
+    fill_in 'Email', with: 'john@gmail.com'
+    click_on 'Update'  
+    visit accounts_path
+    expect(page).to have_content('John')
     expect(page).to have_content('Doe')
-    expect(page).to have_content('2')
-    expect(page).to have_content('false')
-    expect(page).not_to have_content('0')
+    expect(page).not_to have_content('Jane')
   end
-end"""
+end
+
 
 # Delete user 
 RSpec.describe 'Delete user', type: :feature do
@@ -224,12 +220,13 @@ RSpec.describe 'Delete user', type: :feature do
     fill_in 'Email', with: 'jane@gmail.com'
     fill_in 'Password', with: '123'
     click_on 'Create Account'
-    visit users_path
-    click_on 'Delete'
+    visit accounts_path
+    click_on 'Delete Account'
     expect(page).not_to have_content('Jane')
     expect(page).not_to have_content('jane@gmail.com')
   end
 end
+
 
 #Edit user points
 RSpec.describe 'Edit user points', type: :feature do
@@ -247,6 +244,7 @@ RSpec.describe 'Edit user points', type: :feature do
     expect(page).to have_content(3)
   end
 end
+
 
 #points should not chnage if not edited
 RSpec.describe 'Do not edit user points', type: :feature do
@@ -349,15 +347,15 @@ RSpec.describe 'Attendance Testing', type: :feature do
 end
 
 RSpec.describe 'Event Point Testing', type: :feature do
+  before(:each) do
+    load "#{Rails.root}/db/seeds_test.rb" 
+  end 
   scenario 'valid inputs' do
     # Signup    
-    visit events_path
-    click_on 'Sign Up'
-    fill_in 'First name', with: 'test'
-    fill_in 'Last name', with: 'test'
-    fill_in 'Email', with: 'test@test.com'
-    fill_in 'Password', with: 'test'
-    click_on 'Create Account'
+    visit new_event_path
+    fill_in 'Email', with: 'test@gmail.com'
+    fill_in 'Password', with: 'Test'
+    click_on 'Sign In'
     
     # Create event
     click_on 'Events'
@@ -381,21 +379,22 @@ RSpec.describe 'Event Point Testing', type: :feature do
     # Test hidden event point and edit link
     click_on 'Back'
     click_on '1st Meeting', match: :first
-    expect(page).not_to have_content('Event points')
-    expect(page).not_to have_content('Edit')     
+    expect(page).to have_content('Event points')
+    expect(page).to have_content('Edit')     
   end
 end
 
 # Integration test for creating an event type
 RSpec.describe 'Creating an EventType', type: :feature do
+  before(:each) do
+    load "#{Rails.root}/db/seeds_test.rb" 
+  end  
     scenario 'valid inputs' do
         visit new_event_type_path
-        click_on 'Sign Up'
-        fill_in 'First name', with: 'test'
-        fill_in 'Last name', with: 'test'
-        fill_in 'Email', with: 'test@test.com'
-        fill_in 'Password', with: 'test'
-        click_on 'Create Account'
+        
+        fill_in 'Email', with: 'test@gmail.com'
+        fill_in 'Password', with: 'Test'
+        click_on 'Sign In'
  
         visit new_event_type_path
         fill_in 'Type name', with: 'type1'
@@ -410,14 +409,14 @@ end
 
 # Integration test for showing an event type
 RSpec.describe 'Showing an EventType', type: :feature do
+  before(:each) do
+    load "#{Rails.root}/db/seeds_test.rb" 
+  end  
     scenario 'valid inputs' do
         visit new_event_type_path
-        click_on 'Sign Up'
-        fill_in 'First name', with: 'test'
-        fill_in 'Last name', with: 'test'
-        fill_in 'Email', with: 'test@test.com'
-        fill_in 'Password', with: 'test'
-        click_on 'Create Account'
+        fill_in 'Email', with: 'test@gmail.com'
+        fill_in 'Password', with: 'Test'
+        click_on 'Sign In'
  
         visit new_event_type_path
         fill_in 'Type name', with: 'type1'
@@ -435,39 +434,38 @@ end
 
 # Integration test for deleting an event type
 RSpec.describe 'Deleting an EventType', type: :feature do
-    scenario 'delete' do
-        visit new_event_type_path
-        click_on 'Sign Up'
-        fill_in 'First name', with: 'test'
-        fill_in 'Last name', with: 'test'
-        fill_in 'Email', with: 'test@test.com'
-        fill_in 'Password', with: 'test'
-        click_on 'Create Account'
- 
-        visit new_event_type_path
-        fill_in 'Type name', with: 'type1'
-        fill_in 'Description', with: 'General Meeting'
-        click_on 'Create Event type'
-        visit event_types_path
-        click_on 'Destroy'
-        expect(page).not_to have_content('type1')
-        expect(page).not_to have_content('General Meeting')
-        expect(page).not_to have_content('#000000')
-        visit events_path
-        expect(page).not_to have_content('type1')
-    end
+  before(:each) do
+      load "#{Rails.root}/db/seeds_test.rb" 
+  end
+  scenario 'delete' do
+      visit new_event_type_path
+      fill_in 'Email', with: 'test@gmail.com'
+      fill_in 'Password', with: 'Test'
+      click_on 'Sign In'
+      visit new_event_type_path
+      fill_in 'Type name', with: 'type1'
+      fill_in 'Description', with: 'General Meeting'
+      click_on 'Create Event type'
+      visit event_types_path
+      click_on 'Destroy'
+      expect(page).not_to have_content('type1')
+      expect(page).not_to have_content('General Meeting')
+      expect(page).not_to have_content('#000000')
+      visit events_path
+      expect(page).not_to have_content('type1')
+  end
 end
 
 # Integration test for updating an event type
 RSpec.describe 'Updating an EventType', type: :feature do
+  before(:each) do
+    load "#{Rails.root}/db/seeds_test.rb" 
+  end  
     scenario 'update' do
         visit new_event_type_path
-        click_on 'Sign Up'
-        fill_in 'First name', with: 'test'
-        fill_in 'Last name', with: 'test'
-        fill_in 'Email', with: 'test@test.com'
-        fill_in 'Password', with: 'test'
-        click_on 'Create Account'
+        fill_in 'Email', with: 'test@gmail.com'
+        fill_in 'Password', with: 'Test'
+        click_on 'Sign In'
  
         visit new_event_type_path
         fill_in 'Type name', with: 'type1'
@@ -491,14 +489,14 @@ end
 
 # Integration test between event type and event
 RSpec.describe 'Creating an Event with EventType', type: :feature do
+  before(:each) do
+    load "#{Rails.root}/db/seeds_test.rb" 
+  end  
     scenario 'valid inputs' do
         visit new_event_type_path
-        click_on 'Sign Up'
-        fill_in 'First name', with: 'test'
-        fill_in 'Last name', with: 'test'
-        fill_in 'Email', with: 'test@test.com'
-        fill_in 'Password', with: 'test'
-        click_on 'Create Account'
+        fill_in 'Email', with: 'test@gmail.com'
+        fill_in 'Password', with: 'Test'
+        click_on 'Sign In'
         
         visit new_event_type_path
         fill_in 'Type name', with: 'type1'
@@ -542,14 +540,14 @@ RSpec.describe 'Creating an Event with EventType', type: :feature do
 end
 
 RSpec.describe 'Creating an Event without EventType', type: :feature do
+  before(:each) do
+    load "#{Rails.root}/db/seeds_test.rb" 
+  end  
     scenario 'valid inputs' do
         visit new_event_type_path
-        click_on 'Sign Up'
-        fill_in 'First name', with: 'test'
-        fill_in 'Last name', with: 'test'
-        fill_in 'Email', with: 'test@test.com'
-        fill_in 'Password', with: 'test'
-        click_on 'Create Account'
+        fill_in 'Email', with: 'test@gmail.com'
+        fill_in 'Password', with: 'Test'
+        click_on 'Sign In'
         
         visit new_event_type_path
         fill_in 'Type name', with: 'type1'
@@ -612,6 +610,66 @@ RSpec.describe 'Creating an Event without EventType', type: :feature do
         expect(page).to have_content('#000000')
 
     end
+end
+
+
+RSpec.describe 'User viewable point testing', type: :feature do
+  before(:each) do
+    load "#{Rails.root}/db/seeds_test.rb" 
+  end 
+  scenario 'valid inputs' do
+    visit new_event_type_path
+    fill_in 'Email', with: 'test@gmail.com'
+    fill_in 'Password', with: 'Test'
+    click_on 'Sign In'
+    
+    # Create event
+    click_on 'Events'
+    click_on 'New Event'
+    fill_in 'title', with: '1st Meeting'
+    fill_in 'description', with: 'General Meeting'
+    fill_in 'points', with: '5'
+    fill_in 'passcode', with: 'Test'
+    fill_in 'location', with: 'ZACH'
+    select '2022', :from => 'event_event_start_1i'
+    select 'September', :from => 'event_event_start_2i'
+    select '28', :from => 'event_event_start_3i'
+    select '01', :from => 'event_event_start_4i'
+    select '43', :from => 'event_event_start_5i'
+    select Date.today.year, :from => 'event_event_end_1i'                     # year
+    select Date::MONTHNAMES[Date.today.month] , :from => 'event_event_end_2i' # month
+    select Date.today.day, :from => 'event_event_end_3i'                      # date
+    select '02', :from => 'event_event_end_4i'
+    select '43', :from => 'event_event_end_5i'
+    click_on 'Create Event'  
+    
+    click_on 'account'
+    click_on 'Sign out'
+
+    click_on 'Sign Up'
+    fill_in 'First name', with: 'test'
+    fill_in 'Last name', with: 'test'
+    fill_in 'Email', with: 'test@test.com'
+    fill_in 'Password', with: 'test'
+    click_on 'Create Account'
+
+    click_on 'Events'
+    visit new_attendance_path(1)
+    # Create attendance
+    #click_on 'Sign In For Event'
+    fill_in 'attendance_password', with: 'Test'
+    click_on 'Create Attendance'
+
+    # Go to account page
+    click_on 'account'
+    expect(page).to have_content('Attendance points')
+    expect(page).to have_content('Attendance points: 5')
+    expect(page).not_to have_content('Attendance points: 0')  
+    
+    # Test attendance history
+    click_on 'full attendance history'
+    expect(page).to have_content('1st Meeting')
+  end
 end
 
 RSpec.describe 'Creating an Admin Request', type: :feature do
@@ -701,3 +759,113 @@ RSpec.describe 'Review Admin Requests', type: :feature do
         # expect(page).to have_content('01:43')
     end
 end
+
+# Test to make sure ranking page renders on page
+RSpec.describe 'Show Ranking', type: :feature do
+  scenario 'show' do 
+    
+    visit rankings_path
+    click_on 'Sign Up'
+    fill_in 'First name', with: 'test'
+    fill_in 'Last name', with: 'test'
+    fill_in 'Email', with: 'test@test.com'
+    fill_in 'Password', with: 'test'
+    click_on 'Create Account'
+    visit rankings_path
+    
+    expect(page).to have_content('Rankings')
+    expect(page).to have_content('New Ranking')
+    expect(page).to have_content('Title')
+    expect(page).to have_content('Point total')
+
+  end
+end
+
+# Test to create ranking
+RSpec.describe 'Create Ranking', type: :feature do
+  scenario 'valid inputs' do 
+    
+    visit rankings_path
+    click_on 'Sign Up'
+    fill_in 'First name', with: 'test'
+    fill_in 'Last name', with: 'test'
+    fill_in 'Email', with: 'test@test.com'
+    fill_in 'Password', with: 'test'
+    click_on 'Create Account'
+
+    visit new_ranking_path
+    fill_in 'Title', with: 'test ranking'
+    fill_in 'Point total', with: '150'
+    click_on 'Create Ranking'
+    visit rankings_path
+
+    expect(page).to have_content('Rankings')
+    expect(page).to have_content('New Ranking')
+    expect(page).to have_content('Title')
+    expect(page).to have_content('Point total')
+    expect(page).to have_content('150')
+    expect(page).to have_content('test ranking')
+  
+  end
+end
+
+# Test to update ranking
+RSpec.describe 'Create Ranking', type: :feature do
+  scenario 'valid inputs' do 
+    
+    visit rankings_path
+    click_on 'Sign Up'
+    fill_in 'First name', with: 'test'
+    fill_in 'Last name', with: 'test'
+    fill_in 'Email', with: 'test@test.com'
+    fill_in 'Password', with: 'test'
+    click_on 'Create Account'
+
+    visit new_ranking_path
+    fill_in 'Title', with: 'test ranking'
+    fill_in 'Point total', with: '150'
+    click_on 'Create Ranking'
+    
+    visit rankings_path
+    click_on 'Edit'
+    fill_in 'Title', with: 'test ranking 1'
+    fill_in 'Point total', with: '50'
+    click_on 'Update Ranking'
+    visit rankings_path
+
+    expect(page).to have_content('Rankings')
+    expect(page).to have_content('New Ranking')
+    expect(page).to have_content('Title')
+    expect(page).to have_content('Point total')
+    expect(page).to have_content('50')
+    expect(page).to have_content('test ranking 1')
+  
+  end
+end
+
+# Test to update ranking
+RSpec.describe 'Create Ranking', type: :feature do
+  scenario 'valid inputs' do 
+    
+    visit rankings_path
+    click_on 'Sign Up'
+    fill_in 'First name', with: 'test'
+    fill_in 'Last name', with: 'test'
+    fill_in 'Email', with: 'test@test.com'
+    fill_in 'Password', with: 'test'
+    click_on 'Create Account'
+
+    visit new_ranking_path
+    fill_in 'Title', with: 'test ranking'
+    fill_in 'Point total', with: '150'
+    click_on 'Create Ranking'
+    
+    visit rankings_path
+    click_on 'Destroy'
+    
+    expect(page).not_to have_content('150')
+    expect(page).not_to have_content('test ranking')
+  
+  end
+ end
+

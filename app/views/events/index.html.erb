@@ -29,16 +29,19 @@
         <td><%= event.event_location %></td>
         <td><%= get_event_type(event) %></td>
         <td><%= link_to 'Show', event %></td>
-        <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if current_user.is_admin %>
+          <td><%= link_to 'Edit', edit_event_path(event) %></td>
+          <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Event', new_event_path %>
+<% if current_user.is_admin %>
+  <%= link_to 'New Event', new_event_path %>
+<% end %>
 
 <!-- Render the calendar -->
 <%= month_calendar(events: @events, attribute: :event_start, end_attribute: :event_end) do |date, events| %>

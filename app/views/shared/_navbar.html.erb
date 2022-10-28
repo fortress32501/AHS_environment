@@ -1,28 +1,54 @@
-<nav class="navbar navbar-light bg-light justify-content-between">
-    <!-- Logo -->
-    <%= link_to "/", :class=>"navbar-brand ps-4" do %> 
-        <%= image_tag("ahs_logo.png", width: "7%", height: "7%") %>
-        Alexander Hamilton Society
-    <% end %>  
-    
+<nav class="navbar navbar-expand-lg navbar-dark justify-content-between" style="background-color:#36455c;">
+    <!-- Logo --> 
+        <!--<%= image_tag("ahs_logo.png", width: "7%", height: "7%") %>
+        Alexander Hamilton Society-->
+    <a href="/">
+    <img src="https://images.squarespace-cdn.com/content/v1/5776c5663e00bef2de055fae/1592604468557-PLDJ337IQQM6PRSBYOBK/Logo%2B2019.jpg?format=1500w"
+      alt="AHS"
+      width="220" 
+      height="73"
+      class="align-top">
+    </a>
     <!-- Navbar links -->
     <% if session.include? :user_id %>
-      <ul class="nav justify-content-end pe-4">
-      
-        <li class="nav-item">
-          <a class="nav-link active" href="#">Active</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-          <%= link_to accounts_path, :class=>"btn btn-default" do %>
-            <i class="fa-solid fa-circle-user" aria-hidden="true"></i>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navmenu"
+        >
+          <span class="navbar-toggler-icon" style="color:#fff;"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ms-auto">
+          </li>
+            <li class="nav-item">
+              <%= button_to "Home", '/', :method => "get", :class=>"btn btn-default", :style=>"color:#fff;" %>
+            </li>
+          <% if current_user.is_admin? %>
+            <li class="nav-item">
+              <%= button_to "Members", users_path, :method => "get", :class=>"btn btn-default", :style=>"color:#fff;" %>
+            </li>
+            <li class="nav-item">
+              <%= button_to "Events", events_path, :method => "get", :class=>"btn btn-default", :style=>"color:#fff;" %>
+            </li>
+            <li class="nav-item">
+              <%= button_to "Rankings", rankings_path, :method => "get", :class=>"btn btn-default", :style=>"color:#fff;" %>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <%= button_to "Events", events_path, :method => "get", :class=>"btn btn-default", :style=>"color:#fff;" %>
+            </li>
           <% end %>
-        </li>
-      </ul> 
+          <li class="nav-item">
+            <%= button_to "Sign Out", session_path(current_user.id), method:"delete", :class=>"btn btn-default", :style=>"color:#fff;" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to accounts_path, :class=>"btn btn-default", :id=>"account" do %>
+              <i class="fa-solid fa-circle-user fa-lg" aria-hidden="true" style="color:#fff;"></i>
+            <% end %>
+          </li>
+        </ul> 
+      </div>
     <% end %> 
 </nav>

@@ -14,13 +14,21 @@ Rails.application.routes.draw do
   # root "events#index"
 
   # http://127.0.0.1:3000/sessions/new
+  resources :users do
+    member do
+      get 'profile'
+      patch :update_profile
+      put :update_profile
+    end
+  end
   
-  resources :users, only: [:new, :create, :index, :show, :edit, :update, :destroy]
+  #resources :users, only: [:new, :create, :index, :show, :edit, :update, :destroy]
   resources :sessions, only: [:new, :create, :destroy, :delete]
   
   get "/sessions/create", to: "sessions#new"  
   get "/sessions/destroy", to: "sessions#new"
   get "/users/edit", to: "sessions#new"
+  #get "/users/edit/profile", to: "users#profile"
   # get "/users/destroy", to: "sessions#new"
   # get "/users/update", to: "sessions#new"
   # get "/users/new", to: "sessions#new"
