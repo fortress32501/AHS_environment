@@ -101,3 +101,39 @@ RSpec.describe 'Delete Admin Requests', type: :feature do
         expect(page).not_to have_content('new officer: test')
     end
 end
+
+RSpec.describe 'Review Admin Requests', type: :feature do
+    scenario 'Review' do
+        visit new_admin_request_path
+        click_on 'Sign Up'
+        fill_in 'First name', with: 'test'
+        fill_in 'Last name', with: 'test'
+        fill_in 'Email', with: 'test@test.com'
+        fill_in 'Password', with: 'test'
+        click_on 'Create Account'
+
+        # create admin request from user
+        visit new_admin_request_path
+        fill_in 'Request reason', with: 'new officer: test'
+        click_on 'Create Admin request'
+        
+        # sign in as admin user
+        visit new_session_path
+        fill_in 'Email', with: 'test@gmail.com'
+        fill_in 'Password', with: 'Test'
+        click_on 'Sign In!'
+
+        # check to make sure the request can be reviewed
+        visit admin_requests_path
+        # having problem with the Review link displaying
+            # currently not able to find it
+            # might be something to do with "current_user"
+        # click_on 'Review'
+        expect(page).to have_content('REQUESTED')
+        expect(page).to have_content('new officer: test')
+        # need to figure out how to see what the date the request ^^ was generated
+        # this would vary with every time the test case is run
+        # expect(page).to have_content('2020-09-28')
+        # expect(page).to have_content('01:43')
+    end
+end
