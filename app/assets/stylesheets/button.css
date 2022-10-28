@@ -56,4 +56,24 @@ a.button-style-grey{
 /* // color: var(--bs-link-color); */
     color: white;
 }
+
+.button-style-white {
+    border-radius: 30px;
+    background-color: white;
+    border: none;
+    color: #364459;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 1.0em;
+    font-family: "EB Garamond";
+    margin: 1% 2%;
+    cursor: pointer;
+    width: auto;
+    font-weight: bold;
+}
+a.button-style-white{
+    /* // color: var(--bs-link-color); */
+        color: #364459;
+        
+    }
   
