@@ -10,7 +10,7 @@
               <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp"
                 alt="Avatar" class="img-fluid my-5" style="width: 80px;" />
               <h2> <%= current_user.first_name %> <%= current_user.last_name %></h2>
-              <i class="far fa-edit mb-5"></i>
+              <%= link_to " Edit Profile", profile_user_path(current_user), class: "far fa-edit mb-5", id: "Edit Profile"%>
             </div>
             <div class="col-md-8">
               <div class="card-body p-4">
@@ -96,8 +96,9 @@
               <% if current_user.is_admin? %>
                 <%= link_to 'full event lists', events_path, class: "btn btn-default" %> |
               <% end %>
-              <%= link_to 'Back', :back, class: "btn btn-default" %> |
-              <%= link_to "Sign out", session_path(current_user.id), method:"delete" %>
+              <%= link_to 'Back', :root, class: "btn btn-default" %> |
+              <%= link_to "Sign out", session_path(current_user.id), method:"delete" %>  |  
+              <%= link_to 'Delete Account', current_user, method: :delete, data: { confirm: 'Are you sure?' } %>
             </div>
           </div>
         </div>
