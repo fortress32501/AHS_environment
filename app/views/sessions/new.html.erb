@@ -1,24 +1,46 @@
-<div class="d-flex flex-column align-items-center justify-content-center">
-  <div>
-    <% if flash[:notice] %>
-      <%= content_tag :h2, flash[:notice] %>
-    <% else %>
-      <%= content_tag :h2, "Please Log in" %>
-    <% end %>
-  </div>
-  <div>
-    <%= form_with url: sessions_path do |f| %>
-      <div class="field">
-        <%= f.label :email %>
-        <%= f.text_field :email %>
-      </div>
-      <div class="field">
-        <%= f.label :password %>
-        <%= f.password_field :password %>
-      </div>
-      <%= link_to "Sign Up", new_user_path %>
-      <%= f.submit "Sign In!" %>
-    <% end %>
-  </div>
-</div>
 
+<section class="container-fluid vh-100">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-xl-10">
+      
+        <div class="card" style="border-radius: 1rem;">
+          <div class="row g-0">
+            <div class="d-flex align-items-center">
+              
+              <!-- card -->
+              <div class="card-body p-4 p-lg-5 text-black">
+                <div class="d-flex flex-column flex-row align-items-center justify-content-center">
+                  
+                  <!-- Sign in form -->
+                  <div>
+                    <% if flash[:notice] %>
+                      <%= content_tag :h2, flash[:notice] %>
+                    <% else %>
+                      <%= content_tag :h2, "Please Log in" %>
+                    <% end %>
+                  </div>
+                  <div>
+                    <%= form_with url: sessions_path do |f| %>
+                      <div class="field">
+                        <%= f.label :email %>
+                        <%= f.text_field :email %>
+                      </div>
+                      <div class="field">
+                        <%= f.label :password %>
+                        <%= f.password_field :password %>
+                      </div>
+                      <%= link_to "Sign Up", new_user_path %>
+                      <%= f.submit "Sign In!" %>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

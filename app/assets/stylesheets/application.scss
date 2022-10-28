@@ -27,3 +27,48 @@
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1))
 }
+
+// Navigation bar
+.ahs-color {
+  background: #364459;
+}
+
+.ahs-text {
+  color: #f5f8fc !important;
+  font-family: EB Garamond;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase; 
+  text-decoration: none;
+  line-height: 1em;
+}
+
+.no-hover:hover {
+  background-color: transparent;
+}
+
+.social-button {
+  border-radius: 50%;
+  color: white !important;
+  text-align: center; 
+  text-decoration: none;
+}
+
+// i.fab:hover {
+//   color: #364459 !important;
+// }
+
+.neon-blue:hover {
+  background-color: #4cc9f0;
+  -webkit-box-shadow: 10px 10px 99px 6px rgba(76,201,240,1);
+  -moz-box-shadow: 10px 10px 99px 6px rgba(76,201,240,1);
+  box-shadow: 10px 10px 99px 6px rgba(76,201,240,1);
+}
+
+
+
+
+
+
