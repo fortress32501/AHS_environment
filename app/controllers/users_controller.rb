@@ -4,12 +4,24 @@ class UsersController < ApplicationController
   # GET /users/1 or /users/1.json
   def show
     current_user.assign_ranking
+    if !current_user.is_admin
+      respond_to do |format|
+        format.html { redirect_to accounts_path, notice: "You do not have access to show other users. You can request Administrator Access through Administrator request page." }
+        format.json { head :no_content }
+      end
+    end
   end
   
   # GET /users or /users.json
   def index
     @users = User.all.order('point DESC')
     current_user.assign_ranking
+    if !current_user.is_admin
+      respond_to do |format|
+        format.html { redirect_to accounts_path, notice: "You do not have access to see other users. You can request Administrator Access through Administrator request page." }
+        format.json { head :no_content }
+      end
+    end
   end
   
   # GET /users/new
@@ -20,6 +32,15 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    if !current_user.is_admin
+      respond_to do |format|
+        format.html { redirect_to accounts_path, notice: "You do not have access to edit other users. You can request Administrator Access through Administrator request page." }
+        format.json { head :no_content }
+      end
+    end
+  end
+
+  def profile
   end
 
   # POST /users or /users.json
@@ -51,13 +72,27 @@ class UsersController < ApplicationController
     end
   end
 
+  def update_profile
+    @user = User.find(params[:id])
+    if @user.update(user_params)
+      redirect_to accounts_path
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   # DELETE /users/1 or /users/1.json
   def destroy
-    @user.destroy
-
     respond_to do |format|
-      format.html { redirect_to users_url, notice: "User was successfully destroyed." }
-      format.json { head :no_content }
+      if !current_user.is_admin
+        format.html { redirect_to accounts_path, notice: "You do not have access to destroy other users. You can request Administrator Access through Administrator request page." }
+        format.json { head :no_content }
+      else 
+        @user.destroy
+        session[:user_id] = nil
+        flash[:notice] = "Your account was successfullly deleted."
+        redirect_to new_session_path
+      end
     end
   end
 
