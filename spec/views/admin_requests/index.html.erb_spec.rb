@@ -1,40 +1,45 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe "admin_requests/index", type: :view do
-  before(:each) do
+RSpec.describe('admin_requests/index', type: :view) do
+  before do
     @test_user1 = assign(:user, User.create!(
-        first_name: Faker::Name.name,
-        last_name: Faker::Name.name,
-        email: Faker::Internet.email,
-        password: Faker::Internet.password,
-        point: 0,
-        is_admin: false,
-    ))
+                                  first_name: Faker::Name.name,
+                                  last_name: Faker::Name.name,
+                                  email: Faker::Internet.email,
+                                  password: Faker::Internet.password,
+                                  point: 0,
+                                  is_admin: false
+                                )
+    )
 
     @test_user2 = assign(:user, User.create!(
-        first_name: Faker::Name.name,
-        last_name: Faker::Name.name,
-        email: Faker::Internet.email,
-        password: Faker::Internet.password,
-        point: 0,
-        is_admin: false,
-    ))
+                                  first_name: Faker::Name.name,
+                                  last_name: Faker::Name.name,
+                                  email: Faker::Internet.email,
+                                  password: Faker::Internet.password,
+                                  point: 0,
+                                  is_admin: false
+                                )
+    )
 
     assign(:admin_requests, [
       AdminRequest.create!(
         user_id: @test_user1.id,
-        request_status: "REQUESTED",
-        request_reason: "new officer in org"
+        request_status: 'REQUESTED',
+        request_reason: 'new officer in org'
       ),
       AdminRequest.create!(
         user_id: @test_user2.id,
-        request_status: "APPROVED",
-        request_reason: "new officer in da org"
+        request_status: 'APPROVED',
+        request_reason: 'new officer in da org'
       )
-    ])
+    ]
+    )
   end
 
-  it "renders a list of admin_requests" do
+  it 'renders a list of admin_requests' do
     # render
     # # user id's for request
     # assert_select "tr>td", text: @test_user1.id.to_s, count: 1

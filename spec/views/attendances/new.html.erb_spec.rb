@@ -1,8 +1,9 @@
-#require 'rails_helper'
+# frozen_string_literal: true
+# require 'rails_helper'
 
-#RSpec.describe "attendances/new", type: :view do
- # before(:each) do
-  #  assign(:attendance, Attendance.new(
+# RSpec.describe "attendances/new", type: :view do
+# before(:each) do
+#  assign(:attendance, Attendance.new(
 #      user_id: 1,
 #      event_id: 1,
 #      points: 1,
@@ -17,9 +18,9 @@
 
 #      assert_select "input[name=?]", "attendance[user_id]"
 
- #     assert_select "input[name=?]", "attendance[event_id]"
+#     assert_select "input[name=?]", "attendance[event_id]"
 
 #      assert_select "input[name=?]", "attendance[points]"
 #    end
 #  end
-#end
+# end
