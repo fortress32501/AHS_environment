@@ -2,6 +2,11 @@
 // present in this directory. You're encouraged to place your actual application logic in
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
+// https://stackoverflow.com/questions/4423314/link-to-delete-url-is-not-working
+
+// = require jquery
+// = require jquery_ujs
+// = require_tree .
 
 import Rails from "@rails/ujs"
 import "@hotwired/turbo-rails"
@@ -11,5 +16,7 @@ import "bootstrap"
 
 Rails.start()
 ActiveStorage.start()
+
+
 
 //import "controllers"

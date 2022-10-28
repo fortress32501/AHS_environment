@@ -11,8 +11,7 @@ RSpec.describe 'Creating a User', type: :feature do
       fill_in 'Email', with: 'jane@gmail.com'
       fill_in 'Password', with: '123'
       click_on 'Create Account'
-      expect(page).to have_content('Jane')
-      expect(page).to have_content('Doe')
+      expect(page).to have_content('Welcome')
       click_on 'account'
       click_on 'Sign Out'
       
@@ -20,7 +19,7 @@ RSpec.describe 'Creating a User', type: :feature do
       fill_in 'Email', with: 'jane@gmail.com'
       fill_in 'Password', with: '123'
       click_on 'Sign In!'
-      expect(page).to have_content('Jane')
+      expect(page).to have_content('Welcome')
     end
   end
   
