@@ -1,0 +1,47 @@
+/* .contain-blue-box{
+  max-width: 700px;
+  margin: 170px auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  color: #364459;
+  margin-left: auto;
+  margin-right: auto;
+} */
+.blue-box{
+  width: 90%;
+  background: #364459;
+  border-radius: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0px 4px 10px 1px rgba(0,0,0,0.1);
+  padding-top: 6%;
+  padding-bottom: 6%;
+}
+.center-box {
+    width: 70%;
+    background: #364459;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-text {
+    color:white;
+    font-family: "EB Garamond";
+}
+label.form-text {
+    color:white;
+    font-family: "EB Garamond";
+    font-size: 1.4em;
+}
+
+.form-input{
+  width: 100%;
+  border-radius: 25px;
+  height: 70%;
+}
+
+.last-row-pad{
+  padding-top: 20px;
+  padding-bottom:20px;
+}
+

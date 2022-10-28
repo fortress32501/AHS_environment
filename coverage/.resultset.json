@@ -4645,21 +4645,32 @@
           null,
           1,
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
           2,
           2,
           2,
           1,
 =======
+>>>>>>> origin
           11,
           11,
           11,
           11,
+<<<<<<< HEAD
+          null,
+          11,
+          null,
+          0,
+          0,
+=======
 >>>>>>> test
           null,
           11,
           null,
           1,
           1,
+>>>>>>> origin
           null,
           null,
           null,
@@ -4674,17 +4685,30 @@
           null
         ]
       },
+<<<<<<< HEAD
+      "/csce431/AHS_environment/app/controllers/main_controller.rb": {
+        "lines": [
+          1,
+          1,
+          27,
+          27,
+=======
       "/AHS_app/AHS_environment/app/controllers/main_controller.rb": {
         "lines": [
           1,
           1,
           30,
           30,
+>>>>>>> origin
           null,
           null
         ]
       },
+<<<<<<< HEAD
+      "/csce431/AHS_environment/db/seeds_test.rb": {
+=======
       "/AHS_app/AHS_environment/db/seeds_test.rb": {
+>>>>>>> origin
         "lines": [
           null,
           null,
@@ -4711,11 +4735,27 @@
           null
         ]
       },
+<<<<<<< HEAD
+      "/csce431/AHS_environment/app/controllers/accounts_controller.rb": {
+=======
       "/AHS_app/AHS_environment/app/controllers/accounts_controller.rb": {
+>>>>>>> origin
         "lines": [
           1,
           1,
           null,
+<<<<<<< HEAD
+          null,
+          null
+        ]
+      },
+      "/csce431/AHS_environment/app/controllers/history_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+=======
           null
         ]
       },
@@ -4729,15 +4769,20 @@
           1,
           1,
 >>>>>>> test
+>>>>>>> origin
           null,
           null
         ]
       }
     },
 <<<<<<< HEAD
+    "timestamp": 1666822858
+=======
+<<<<<<< HEAD
     "timestamp": 1666904892
 =======
     "timestamp": 1666835191
 >>>>>>> test
+>>>>>>> origin
   }
 }

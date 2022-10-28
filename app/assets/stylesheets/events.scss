@@ -1,3 +1,28 @@
 // Place all the styles related to the Events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+.event-table {
+    overflow-x: auto;
+}
+
+.calendar-title {
+    text-align: center;
+    font-family: "EB Garamond";
+    color: #bfb87d;
+    font-size: 25px;
+}
+
+.calendar-heading a{
+    border-radius: 30px;
+    background-color: rgba(156, 156, 156, 0.9);
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    font-size: 1.0em;
+    font-family: "EB Garamond";
+    margin: 1% 2%;
+    cursor: pointer;
+}
