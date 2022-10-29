@@ -16,12 +16,12 @@
     <%= render partial: "shared/navbar" %>
 
     <!-- Contents go here -->
-    <div class="container .align-item-center min-vh-100">
+    <div class="container .align-item-center">
       <%= yield %>
     </div>
 
     <!-- footer -->
-    <%= render partial: "shared/footer" %>
+    <%= render partial: "shared/footer" unless action_name == "/sessions/new" %>
 
   </body>
   
