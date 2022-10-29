@@ -14,28 +14,33 @@ class EventsController < ApplicationController
   # GET /events/new
   def new
     @event = Event.new
+    if !current_user.is_admin
+      respond_to do |format|
+        format.html { redirect_to events_url, notice: "You do not have access to new. You can request Administrator Access through Administrator request page." }
+        format.json { head :no_content }
+      end
+    end
   end
 
   # GET /events/1/edit
   def edit
+    if !current_user.is_admin
+      respond_to do |format|
+        format.html { redirect_to events_url, notice: "You do not have access to edit. You can request Administrator Access through Administrator request page." }
+        format.json { head :no_content }
+      end
+    end
   end
 
   # POST /events or /events.json
   def create
     @event = Event.create!(params[:event].permit(:event_points, :event_description, :event_passcode, :event_start, :event_end, :event_title, :event_location, :event_type_id))
-      #event_params
-      #event_points: event_params[:event_points],
-      #event_description: event_params[:event_description],
-      #event_passcode: event_params[:event_passcode],
-      #event_start: event_params[:event_start],
-      #event_end: event_params[:event_end],
-      #event_title: event_params[:event_title],
-      #event_location: event_params[:event_location],
-      #event_type_id: event_params[:event_type_id]
-    #)
 
     respond_to do |format|
-      if @event.save
+      if !current_user.is_admin
+        format.html { redirect_to events_url, notice: "You do not have access to create. You can request Administrator Access through Administrator request page." }
+        format.json { head :no_content }
+      elsif @event.save
         format.html { redirect_to event_url(@event), notice: "Event was successfully created." }
         format.json { render :show, status: :created, location: @event }
       else
@@ -48,7 +53,10 @@ class EventsController < ApplicationController
   # PATCH/PUT /events/1 or /events/1.json
   def update
     respond_to do |format|
-      if @event.update(event_params)
+      if !current_user.is_admin
+        format.html { redirect_to event_types_url, notice: "You do not have access to update. You can request Administrator Access through Administrator request page." }
+        format.json { head :no_content }
+      elsif @event.update(event_params)
         format.html { redirect_to event_url(@event), notice: "Event was successfully updated." }
         format.json { render :show, status: :ok, location: @event }
       else
@@ -63,8 +71,13 @@ class EventsController < ApplicationController
     @event.destroy
 
     respond_to do |format|
-      format.html { redirect_to events_url, notice: "Event was successfully destroyed." }
-      format.json { head :no_content }
+      if !current_user.is_admin
+        format.html { redirect_to events_url, notice: "You do not have access to destroy. You can request Administrator Access through Administrator request page." }
+        format.json { head :no_content }
+      else
+        format.html { redirect_to events_url, notice: "Event was successfully destroyed." }
+        format.json { head :no_content }
+      end
     end
   end
 

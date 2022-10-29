@@ -18,5 +18,7 @@
    </div>
 </p>
 
+<% if current_user.is_admin %>
 <%= link_to 'Edit', edit_event_type_path(@event_type) %> |
+<% end %>
 <%= link_to 'Back', event_types_path %>

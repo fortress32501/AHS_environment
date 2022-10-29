@@ -6,19 +6,43 @@ class RankingsController < ApplicationController
     @rankings = Ranking.all
     
     @list_rankings = Ranking.get_ranking_list
+    if !current_user.is_admin
+      respond_to do |format|
+        format.html { redirect_to events_url, notice: "You do not have access to rankings. You can request Administrator Access through Administrator request page." }
+        format.json { head :no_content }
+        end
+    end
   end
 
   # GET /rankings/1 or /rankings/1.json
   def show
+    if !current_user.is_admin
+      respond_to do |format|
+        format.html { redirect_to events_url, notice: "You do not have access to show. You can request Administrator Access through Administrator request page." }
+        format.json { head :no_content }
+      end
+    end
   end
 
   # GET /rankings/new
   def new
     @ranking = Ranking.new
+    if !current_user.is_admin
+      respond_to do |format|
+        format.html { redirect_to events_url, notice: "You do not have access to create rankings. You can request Administrator Access through Administrator request page." }
+        format.json { head :no_content }
+      end
+    end
   end
 
   # GET /rankings/1/edit
   def edit
+    if !current_user.is_admin
+      respond_to do |format|
+        format.html { redirect_to events_url, notice: "You do not have access to edit rankings. You can request Administrator Access through Administrator request page." }
+        format.json { head :no_content }
+      end
+    end
   end
 
   # POST /rankings or /rankings.json
@@ -26,7 +50,10 @@ class RankingsController < ApplicationController
     @ranking = Ranking.new(ranking_params)
 
     respond_to do |format|
-      if @ranking.save
+      if !current_user.is_admin
+        format.html { redirect_to evens_url, notice: "You do not have access to create rankings. You can request Administrator Access through Administrator request page." }
+        format.json { head :no_content }
+      elsif @ranking.save
         format.html { redirect_to ranking_url(@ranking), notice: "Ranking was successfully created." }
         format.json { render :show, status: :created, location: @ranking }
       else
@@ -39,7 +66,10 @@ class RankingsController < ApplicationController
   # PATCH/PUT /rankings/1 or /rankings/1.json
   def update
     respond_to do |format|
-      if @ranking.update(ranking_params)
+      if !current_user.is_admin
+        format.html { redirect_to events_url, notice: "You do not have access to update rankings. You can request Administrator Access through Administrator request page." }
+        format.json { head :no_content }
+      elsif @ranking.update(ranking_params)
         format.html { redirect_to ranking_url(@ranking), notice: "Ranking was successfully updated." }
         format.json { render :show, status: :ok, location: @ranking }
       else
@@ -54,8 +84,13 @@ class RankingsController < ApplicationController
     @ranking.destroy
 
     respond_to do |format|
-      format.html { redirect_to rankings_url, notice: "Ranking was successfully destroyed." }
-      format.json { head :no_content }
+      if !current_user.is_admin
+        format.html { redirect_to events_url, notice: "You do not have access to destroy rankings. You can request Administrator Access through Administrator request page." }
+        format.json { head :no_content }
+      else
+        format.html { redirect_to rankings_url, notice: "Ranking was successfully destroyed." }
+        format.json { head :no_content }
+      end
     end
   end
 
