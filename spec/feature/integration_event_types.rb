@@ -11,7 +11,7 @@ RSpec.describe 'Creating an EventType', type: :feature do
           
           fill_in 'Email', with: 'test@gmail.com'
           fill_in 'Password', with: 'Test'
-          click_on 'Sign In'
+          click_on 'sign in'
    
           visit new_event_type_path
           fill_in 'Type name', with: 'type1'
@@ -33,7 +33,7 @@ RSpec.describe 'Creating an EventType', type: :feature do
           visit new_event_type_path
           fill_in 'Email', with: 'test@gmail.com'
           fill_in 'Password', with: 'Test'
-          click_on 'Sign In'
+          click_on 'sign in'
    
           visit new_event_type_path
           fill_in 'Type name', with: 'type1'
@@ -58,7 +58,7 @@ RSpec.describe 'Creating an EventType', type: :feature do
         visit new_event_type_path
         fill_in 'Email', with: 'test@gmail.com'
         fill_in 'Password', with: 'Test'
-        click_on 'Sign In'
+        click_on 'sign in'
         visit new_event_type_path
         fill_in 'Type name', with: 'type1'
         fill_in 'Description', with: 'General Meeting'
@@ -82,7 +82,7 @@ RSpec.describe 'Creating an EventType', type: :feature do
           visit new_event_type_path
           fill_in 'Email', with: 'test@gmail.com'
           fill_in 'Password', with: 'Test'
-          click_on 'Sign In'
+          click_on 'sign in'
    
           visit new_event_type_path
           fill_in 'Type name', with: 'type1'
@@ -113,7 +113,7 @@ RSpec.describe 'Creating an EventType', type: :feature do
           visit new_event_type_path
           fill_in 'Email', with: 'test@gmail.com'
           fill_in 'Password', with: 'Test'
-          click_on 'Sign In'
+          click_on 'sign in'
           
           visit new_event_type_path
           fill_in 'Type name', with: 'type1'
@@ -164,7 +164,7 @@ RSpec.describe 'Creating an EventType', type: :feature do
           visit new_event_type_path
           fill_in 'Email', with: 'test@gmail.com'
           fill_in 'Password', with: 'Test'
-          click_on 'Sign In'
+          click_on 'sign in'
           
           visit new_event_type_path
           fill_in 'Type name', with: 'type1'

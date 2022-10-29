@@ -118,6 +118,7 @@ a {
   background-color: transparent;
 }
 
+// Footer
 .social-button {
   border-radius: 50%;
   color: white !important;
@@ -125,16 +126,26 @@ a {
   text-decoration: none;
 }
 
-// i.fab:hover {
-//   color: #364459 !important;
-// }
-
 .neon-blue:hover {
   background-color: #4cc9f0;
   -webkit-box-shadow: 10px 10px 99px 6px rgba(76,201,240,1);
   -moz-box-shadow: 10px 10px 99px 6px rgba(76,201,240,1);
   box-shadow: 10px 10px 99px 6px rgba(76,201,240,1);
 }
+
+.neon-blue-button:hover {
+  background-color: #62afdf !important;
+}
+
+// body
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+
+
+
 
 
 

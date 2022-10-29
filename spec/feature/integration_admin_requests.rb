@@ -4,12 +4,12 @@ require 'rails_helper'
 RSpec.describe 'Creating an Admin Request', type: :feature do
     scenario 'valid inputs' do
         visit new_admin_request_path
-        click_on 'Sign Up'
+        click_on 'sign up'
         fill_in 'First name', with: 'test'
         fill_in 'Last name', with: 'test'
         fill_in 'Email', with: 'test@test.com'
         fill_in 'Password', with: 'test'
-        click_on 'Create Account'
+        click_on 'submit'
  
         visit new_admin_request_path
         fill_in 'Request reason', with: 'new officer: test'
@@ -25,12 +25,12 @@ RSpec.describe 'Creating an Admin Request', type: :feature do
 
     scenario 'valid inputs for multiple' do
         visit new_admin_request_path
-        click_on 'Sign Up'
+        click_on 'sign up'
         fill_in 'First name', with: 'test'
         fill_in 'Last name', with: 'test'
         fill_in 'Email', with: 'test@test.com'
         fill_in 'Password', with: 'test'
-        click_on 'Create Account'
+        click_on 'submit'
 
         visit new_admin_request_path
         fill_in 'Request reason', with: 'new officer: test'
@@ -59,12 +59,12 @@ end
 RSpec.describe 'Show Admin Requests', type: :feature do
     scenario 'Show' do
         visit new_admin_request_path
-        click_on 'Sign Up'
+        click_on 'sign up'
         fill_in 'First name', with: 'test'
         fill_in 'Last name', with: 'test'
         fill_in 'Email', with: 'test@test.com'
         fill_in 'Password', with: 'test'
-        click_on 'Create Account'
+        click_on 'submit'
 
         visit new_admin_request_path
         fill_in 'Request reason', with: 'new officer: test'
@@ -83,12 +83,12 @@ end
 RSpec.describe 'Delete Admin Requests', type: :feature do
     scenario 'Delete' do
         visit new_admin_request_path
-        click_on 'Sign Up'
+        click_on 'sign up'
         fill_in 'First name', with: 'test'
         fill_in 'Last name', with: 'test'
         fill_in 'Email', with: 'test@test.com'
         fill_in 'Password', with: 'test'
-        click_on 'Create Account'
+        click_on 'submit'
 
         visit new_admin_request_path
         fill_in 'Request reason', with: 'new officer: test'
@@ -105,12 +105,12 @@ end
 RSpec.describe 'Review Admin Requests', type: :feature do
     scenario 'Review' do
         visit new_admin_request_path
-        click_on 'Sign Up'
+        click_on 'sign up'
         fill_in 'First name', with: 'test'
         fill_in 'Last name', with: 'test'
         fill_in 'Email', with: 'test@test.com'
         fill_in 'Password', with: 'test'
-        click_on 'Create Account'
+        click_on 'submit'
 
         # create admin request from user
         visit new_admin_request_path
@@ -121,7 +121,7 @@ RSpec.describe 'Review Admin Requests', type: :feature do
         visit new_session_path
         fill_in 'Email', with: 'test@gmail.com'
         fill_in 'Password', with: 'Test'
-        click_on 'Sign In!'
+        click_on 'sign in'
 
         # check to make sure the request can be reviewed
         visit admin_requests_path
