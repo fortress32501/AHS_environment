@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TestApp</title>
+    <title>Alexander Hamilton Society</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -12,9 +12,17 @@
   </head>
   
   <body>
+    <!-- Navbar -->
     <%= render partial: "shared/navbar" %>
-    <div class="container .align-items-center">
+
+    <!-- Contents go here -->
+    <div class="container .align-item-center min-vh-100">
       <%= yield %>
     </div>
+
   </body>
+
+  <!-- footer -->
+  <%= render partial: "shared/footer" %>
+  
 </html>

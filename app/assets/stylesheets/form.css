@@ -56,3 +56,11 @@ label.form-text {
   font-weight: bold;
 }
 
+.contain-blue-box{
+  flex-grow: 1;
+}
+
+footer{
+  flex-grow: 0;
+}
+
