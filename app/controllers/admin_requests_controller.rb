@@ -1,6 +1,7 @@
 class AdminRequestsController < ApplicationController
   before_action :set_admin_request, only: %i[ show edit review approve deny update destroy ]
   before_action :has_admin_request, only: %i[ index new create ]
+  before_action :set_current_user, all:
 
   # GET /admin_requests or /admin_requests.json
   def index
@@ -207,6 +208,10 @@ class AdminRequestsController < ApplicationController
           req.user_id == current_user.id &&
           req.request_status == "REQUESTED"
       }.length() > 0 ? true : false
+    end
+
+    def set_current_user
+        @current_user = current_user
     end
 
     # Only allow a list of trusted parameters through.

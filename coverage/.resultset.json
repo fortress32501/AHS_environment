@@ -3,7 +3,6 @@
     "coverage": {
       "/AHS_app/AHS_environment/spec/feature/integration_access_spec.rb": {
         "lines": [
-          null,
           1,
           null,
           1,
@@ -1760,6 +1759,8 @@
       "/AHS_app/AHS_environment/app/models/admin_request.rb": {
         "lines": [
           1,
+          null,
+          1,
           1,
           1,
           null,
@@ -3002,10 +3003,6 @@
           null,
           1,
           null,
-          0,
-          0,
-          0,
-          0,
           null,
           null,
           0,
@@ -3221,6 +3218,8 @@
           1,
           null,
           null,
+          1,
+          1,
           null,
           1,
           5,
@@ -5094,10 +5093,21 @@
       "/AHS_app/AHS_environment/app/controllers/sessions_controller.rb": {
         "lines": [
           1,
+          null,
+          1,
           1,
           1,
           null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           1,
+          null,
+          null,
           null,
           null,
           null,
