@@ -13,12 +13,27 @@ require 'rails_helper'
 # sticking to rails and rspec-rails APIs to keep things simple and stable.
 
 RSpec.describe "/admin_requests", type: :request do
-  
+  before(:each) do
+      @test_user1 = User.create!(
+        first_name: Faker::Name.name,
+        last_name: Faker::Name.name,
+        email: Faker::Internet.email,
+        password: Faker::Internet.password,
+        point: 0,
+        is_admin: false,
+      )
+  end
+
   # This should return the minimal set of attributes required to create a valid
   # AdminRequest. As you add validations to AdminRequest, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    skip("add a hash of attributes valid for your model")
+    Hash[
+      :user_id => @test_user1.id,
+      :request_status => "REQUESTED",
+      :request_reason => "new admin"
+    ]
   }
 
   let(:invalid_attributes) {
