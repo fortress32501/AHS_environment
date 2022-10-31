@@ -12,8 +12,8 @@
   <% end %>
 
   <div class = "filed">
-    User: <%= current_user.email %>
-    <%= form.hidden_field :user_id,  :value => current_user.id%>
+    User: <%= @current_user.email %>
+    <%= form.hidden_field :user_id,  :value => @current_user.id%>
   </div>
 
   <div class = "filed">
