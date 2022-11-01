@@ -6,23 +6,17 @@ class UsersController < ApplicationController
   # GET /users/1 or /users/1.json
   def show
     current_user.assign_ranking
-    if !current_user.is_admin
-      respond_to do |format|
-        format.html { redirect_to accounts_path, notice: "You do not have access to show other users. You can request Administrator Access through Administrator request page." }
-        format.json { head :no_content }
-      end
-    end
   end
   
   # GET /users or /users.json
   def index
-    @users = User.all.order('point DESC')
-    current_user.assign_ranking
-    if !current_user.is_admin
-      respond_to do |format|
-        format.html { redirect_to accounts_path, notice: "You do not have access to see other users. You can request Administrator Access through Administrator request page." }
-        format.json { head :no_content }
-      end
+    
+    if current_user.is_admin
+      @users = User.all.order('point DESC')
+      current_user.assign_ranking
+    elsif
+      @users = User.where(id: current_user.id)
+      current_user.assign_ranking
     end
   end
   
@@ -36,7 +30,7 @@ class UsersController < ApplicationController
   def edit
     if !current_user.is_admin
       respond_to do |format|
-        format.html { redirect_to accounts_path, notice: "You do not have access to edit other users. You can request Administrator Access through Administrator request page." }
+        format.html { redirect_to users_path, notice: "You do not have access to edit other users. You can request Administrator Access through Administrator request page." }
         format.json { head :no_content }
       end
     end
@@ -85,15 +79,19 @@ class UsersController < ApplicationController
 
   # DELETE /users/1 or /users/1.json
   def destroy
-    respond_to do |format|
-      if !current_user.is_admin
-        format.html { redirect_to accounts_path, notice: "You do not have access to destroy other users. You can request Administrator Access through Administrator request page." }
+    if current_user.id == @user.id
+      @user.destroy
+      session[:user_id] = nil
+      flash[:notice] = "Your account was successfullly deleted."
+      redirect_to new_session_path
+    elsif current_user.is_admin
+      @user.destroy
+      flash[:notice] = "Account was successfullly deleted."
+      redirect_to users_path
+    else 
+      respond_to do |format|
+        format.html { redirect_to events_path, notice: "You do not have access to destroy other users. You can request Administrator Access through Administrator request page." }
         format.json { head :no_content }
-      else 
-        @user.destroy
-        session[:user_id] = nil
-        flash[:notice] = "Your account was successfullly deleted."
-        redirect_to new_session_path
       end
     end
   end
