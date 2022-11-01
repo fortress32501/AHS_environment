@@ -56,17 +56,16 @@
   <!-- Render the events and gets colors and makes it half transparent -->
   <% events.each do |event| %>
     <div class="card" style="background-color: <%=get_event_color(event)%>;">
-      <div class="card-body">
-        <p class="card-text" style="text-align: center;"> <%= link_to event.event_title, event %></p>
-      </div>
+        <p class="card-text"> <%= link_to event.event_title, event %></p>
     </div>
+    <div style="padding-bottom:5px;"></div>
   <% end %>
 <% end %>
 
 <!--Renders the table for the Event Types-->
 <!-- Styling is for the color box -->
 <br>
-<div class="container" >
+<div class="container">
   <table class="table-style" >
     <thead>
       <tr>
@@ -74,7 +73,7 @@
         <div style="white-space: nowrap;">
           Event Types
           <% if current_user.is_admin %>
-        |   <div style="text-align: right; display: inline-block;"> <%= link_to 'Manage', event_types_url, class: "button-style-blue" %></div>
+        |   <div style="text-align:right; display: inline-block;"> <%= link_to 'Manage', event_types_url, class: "button-style-blue" %></div>
           <% end %>
         </div>
         </th>
