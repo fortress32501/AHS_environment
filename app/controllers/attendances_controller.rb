@@ -5,10 +5,7 @@ class AttendancesController < ApplicationController
   def index
     @attendances = Attendance.all
     if !current_user.is_admin
-      respond_to do |format|
-        format.html { redirect_to events_url, notice: "You do not have access to see attendances. You can request Administrator Access through Administrator request page." }
-        format.json { head :no_content }
-      end
+      redirect_to events_url, notice: "You do not have access to see attendances. You can request Administrator Access through Administrator request page."
     end
   end
 
@@ -24,10 +21,7 @@ class AttendancesController < ApplicationController
   # GET /attendances/1/edit
   def edit
     if !current_user.is_admin
-      respond_to do |format|
-        format.html { redirect_to events_url, notice: "You do not have access to edit this attendance. You can request Administrator Access through Administrator request page." }
-        format.json { head :no_content }
-      end
+      redirect_to events_url, notice: "You do not have access to edit this attendance. You can request Administrator Access through Administrator request page."
     end
   end
 
@@ -78,8 +72,7 @@ class AttendancesController < ApplicationController
   def update
     respond_to do |format|
       if !current_user.is_admin
-        format.html { redirect_to events_url, notice: "You do not have access to update this attendance. You can request Administrator Access through Administrator request page." }
-        format.json { head :no_content }
+        redirect_to events_url, notice: "You do not have access to update this attendance. You can request Administrator Access through Administrator request page."
       elsif @attendance.update(attendance_params)
         format.html { redirect_to attendance_url(@attendance), notice: "Attendance was successfully updated." }
         format.json { render :show, status: :ok, location: @attendance }
@@ -96,8 +89,7 @@ class AttendancesController < ApplicationController
     
     respond_to do |format|
       if !current_user.is_admin
-        format.html { redirect_to events_url, notice: "You do not have access to destroy. You can request Administrator Access through Administrator request page." }
-        format.json { head :no_content }
+        redirect_to events_url, notice: "You do not have access to destroy. You can request Administrator Access through Administrator request page."
       else
         format.html { redirect_to attendances_url, notice: "Attendance was successfully destroyed." }
         format.json { head :no_content }

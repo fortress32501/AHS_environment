@@ -29,10 +29,7 @@ class UsersController < ApplicationController
   # GET /users/1/edit
   def edit
     if !current_user.is_admin
-      respond_to do |format|
-        format.html { redirect_to users_path, notice: "You do not have access to edit other users. You can request Administrator Access through Administrator request page." }
-        format.json { head :no_content }
-      end
+      redirect_to users_path, notice: "You do not have access to edit other users. You can request Administrator Access through Administrator request page."
     end
   end
 
@@ -52,9 +49,7 @@ class UsersController < ApplicationController
         redirect_to new_user_path
       end
     else 
-      respond_to do |format|
         format.html {redirect_to new_session_path, notice: "User with that Email already exists"}
-      end
     end
   end
 
@@ -89,10 +84,7 @@ class UsersController < ApplicationController
       flash[:notice] = "Account was successfullly deleted."
       redirect_to users_path
     else 
-      respond_to do |format|
-        format.html { redirect_to events_path, notice: "You do not have access to destroy other users. You can request Administrator Access through Administrator request page." }
-        format.json { head :no_content }
-      end
+      redirect_to events_path, notice: "You do not have access to destroy other users. You can request Administrator Access through Administrator request page."
     end
   end
 

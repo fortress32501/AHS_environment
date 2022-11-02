@@ -15,20 +15,14 @@ class EventsController < ApplicationController
   def new
     @event = Event.new
     if !current_user.is_admin
-      respond_to do |format|
-        format.html { redirect_to events_url, notice: "You do not have access to new. You can request Administrator Access through Administrator request page." }
-        format.json { head :no_content }
-      end
+      redirect_to events_url, notice: "You do not have access to new. You can request Administrator Access through Administrator request page."
     end
   end
 
   # GET /events/1/edit
   def edit
     if !current_user.is_admin
-      respond_to do |format|
-        format.html { redirect_to events_url, notice: "You do not have access to edit. You can request Administrator Access through Administrator request page." }
-        format.json { head :no_content }
-      end
+      redirect_to events_url, notice: "You do not have access to edit. You can request Administrator Access through Administrator request page."
     end
   end
 
@@ -38,8 +32,7 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       if !current_user.is_admin
-        format.html { redirect_to events_url, notice: "You do not have access to create. You can request Administrator Access through Administrator request page." }
-        format.json { head :no_content }
+        redirect_to events_url, notice: "You do not have access to create. You can request Administrator Access through Administrator request page."
       elsif @event.save
         format.html { redirect_to event_url(@event), notice: "Event was successfully created." }
         format.json { render :show, status: :created, location: @event }
@@ -54,8 +47,7 @@ class EventsController < ApplicationController
   def update
     respond_to do |format|
       if !current_user.is_admin
-        format.html { redirect_to event_types_url, notice: "You do not have access to update. You can request Administrator Access through Administrator request page." }
-        format.json { head :no_content }
+        redirect_to event_types_url, notice: "You do not have access to update. You can request Administrator Access through Administrator request page."
       elsif @event.update(event_params)
         format.html { redirect_to event_url(@event), notice: "Event was successfully updated." }
         format.json { render :show, status: :ok, location: @event }
@@ -72,8 +64,7 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       if !current_user.is_admin
-        format.html { redirect_to events_url, notice: "You do not have access to destroy. You can request Administrator Access through Administrator request page." }
-        format.json { head :no_content }
+        redirect_to events_url, notice: "You do not have access to destroy. You can request Administrator Access through Administrator request page."
       else
         format.html { redirect_to events_url, notice: "Event was successfully destroyed." }
         format.json { head :no_content }
