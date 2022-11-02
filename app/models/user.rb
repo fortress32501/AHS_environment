@@ -43,6 +43,7 @@ class User < ApplicationRecord
       # update ranking
       update!(ranking_id: ranking_found.ids.at(0))
     end
+
     # "Ranking is : #{self.ranking_id} !!"
   end
 end
