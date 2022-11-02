@@ -1,6 +1,7 @@
-#require 'rails_helper'
+# frozen_string_literal: true
+# require 'rails_helper'
 
-#RSpec.describe "attendances/show", type: :view do
+# RSpec.describe "attendances/show", type: :view do
 #  before(:each) do
 #    @attendance = assign(:attendance, Attendance.create!(
 #      user_id: 2,
@@ -15,4 +16,4 @@
 #    expect(rendered).to match(/3/)
 #    expect(rendered).to match(/4/)
 #  end
-#end
+# end

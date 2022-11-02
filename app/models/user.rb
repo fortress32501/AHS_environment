@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 
 class User < ApplicationRecord
   has_secure_password
@@ -5,45 +6,46 @@ class User < ApplicationRecord
   validates :first_name, :last_name, :email, presence: true
   # https://medium.com/@rmeji1/creating-a-login-with-simple-auth-using-ruby-on-rails-7dd95a03cb7a
   def welcome
-    "Hello, #{self.first_name} #{self.last_name} !"
+    "Hello, #{first_name} #{last_name} !"
   end
 
   # Check if current user is an admin
   def is_admin?
-    self.is_admin
+    is_admin
   end
-  
-  # Display role type 
+
+  # Display role type
   def role?
     if is_admin?
-      "Admin"
+      'Admin'
     else
-      "Member"
+      'Member'
     end
   end
 
   # join attendance table with event table
   def attendance_history
-    @attendance_history = Attendance.joins(:event).where(attendances: { user_id: self.id }).order('event_start DESC')
+    @attendance_history = Attendance.joins(:event).where(attendances: { user_id: id }).order('event_start DESC')
   end
 
   # calculate attendance point of user
   def user_points
-    @user_points = self.attendance_history.sum(:event_points)
+    @user_points = attendance_history.sum(:event_points)
   end
 
   def assign_ranking
     # ranking_found = Ranking.where("point_total <= #{self.point}").order(point_total: :desc)
-    ranking_found = Ranking.where("point_total <= ?", self.point ).order(point_total: :desc)
-    
-    if ranking_found.empty? 
+    ranking_found = Ranking.where('point_total <= ?', point).order(point_total: :desc)
+
+    if ranking_found.empty?
       # nothing to do
-    else 
+    else
       # update ranking
-      self.update(ranking_id: ranking_found.ids.at(0))
+      update!(ranking_id: ranking_found.ids.at(0))
     end
     # "Ranking is : #{self.ranking_id} !!"
   end
+<<<<<<< HEAD
   
   # https://stackoverflow.com/questions/45252984/how-to-update-specific-column-in-a-activerecord-on-rails
   def update_all_rankings(value)
@@ -84,4 +86,6 @@ class User < ApplicationRecord
   end
 
   
+=======
+>>>>>>> edf4dc9130a10ab7a8efcc53d3a317d2d888176d
 end
