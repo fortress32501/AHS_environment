@@ -72,8 +72,7 @@ class AttendancesController < ApplicationController
       # If attendance already exists goes here
     else
       respond_to do |format|
-        format.html {redirect_to events_path, notice: "Your attendance has already been taken" }
-
+        format.html { redirect_to(events_path, notice: 'Your attendance has already been taken') }
       end
     end
   end
