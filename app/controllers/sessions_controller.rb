@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   skip_before_action :require_login, only: [:create, :new]
-  layout 'login_signup', only: :new
+  layout 'screen_size', only: :new
 
   def new
   end
