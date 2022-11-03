@@ -10,7 +10,7 @@ RSpec.describe 'Creating a User', type: :feature do
       fill_in 'Last name', with: 'Doe'
       fill_in 'Email', with: 'jane@gmail.com'
       fill_in 'Password', with: '123'
-      click_on 'Create Account'
+      click_on 'submit'
       expect(page).to have_content('Welcome')
       click_on 'account'
       click_on 'Sign Out'
@@ -18,7 +18,7 @@ RSpec.describe 'Creating a User', type: :feature do
       # Test Login
       fill_in 'Email', with: 'jane@gmail.com'
       fill_in 'Password', with: '123'
-      click_on 'Sign In!'
+      click_on 'sign in'
       expect(page).to have_content('Welcome')
     end
   end
@@ -31,7 +31,7 @@ RSpec.describe 'Show user', type: :feature do
     fill_in 'Last name', with: 'Doe'
     fill_in 'Email', with: 'jane@gmail.com'
     fill_in 'Password', with: '123'
-    click_on 'Create Account'  
+    click_on 'submit'  
     visit accounts_path
     expect(page).to have_content('Jane')
     expect(page).to have_content('Doe')
@@ -47,7 +47,7 @@ RSpec.describe 'Edit user', type: :feature do
     fill_in 'Last name', with: 'Doe'
     fill_in 'Email', with: 'jane@gmail.com'
     fill_in 'Password', with: '123'
-    click_on 'Create Account'  
+    click_on 'submit'  
     visit accounts_path
     click_on 'Edit Profile'
     fill_in 'First name', with: 'Doe'
@@ -70,7 +70,7 @@ RSpec.describe 'Delete user', type: :feature do
     fill_in 'Last name', with: 'Doe'
     fill_in 'Email', with: 'jane@gmail.com'
     fill_in 'Password', with: '123'
-    click_on 'Create Account'
+    click_on 'submit'
     visit accounts_path
     click_on 'Delete Account'
     expect(page).not_to have_content('Jane')
@@ -87,7 +87,7 @@ RSpec.describe 'Edit user points', type: :feature do
     fill_in 'Last name', with: 'Doe'
     fill_in 'Email', with: 'jane@gmail.com'
     fill_in 'Password', with: '123'
-    click_on 'Create Account'
+    click_on 'submit'
     visit users_path
     click_on 'Edit'
     fill_in 'Point', with: 3
@@ -105,7 +105,7 @@ RSpec.describe 'Do not edit user points', type: :feature do
     fill_in 'Last name', with: 'Doe'
     fill_in 'Email', with: 'jane@gmail.com'
     fill_in 'Password', with: '123'
-    click_on 'Create Account'
+    click_on 'submit'
     visit users_path
     click_on 'Edit'
     fill_in 'Point', with: 3
@@ -126,7 +126,7 @@ end
       visit new_event_path
       fill_in 'Email', with: 'test@gmail.com'
       fill_in 'Password', with: 'Test'
-      click_on 'Sign In'
+      click_on 'sign in'
       visit users_path
       click_on 'Edit'
       fill_in 'Point', with: 3
@@ -145,7 +145,7 @@ end
       visit new_event_type_path
       fill_in 'Email', with: 'test@gmail.com'
       fill_in 'Password', with: 'Test'
-      click_on 'Sign In'
+      click_on 'sign in'
       
       # Create event
       click_on 'Events'
@@ -170,12 +170,12 @@ end
       click_on 'account'
       click_on 'Sign out'
   
-      click_on 'Sign Up'
+      click_on 'sign up'
       fill_in 'First name', with: 'test'
       fill_in 'Last name', with: 'test'
       fill_in 'Email', with: 'test@test.com'
       fill_in 'Password', with: 'test'
-      click_on 'Create Account'
+      click_on 'submit'
   
       click_on 'Events'
       visit new_attendance_path(1)

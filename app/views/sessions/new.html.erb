@@ -1,37 +1,46 @@
 
-<section class="container-fluid vh-100">
-  <div class="container py-5 h-100">
-    <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col col-xl-10">
-      
-        <div class="card" style="border-radius: 1rem;">
+<section class="login-container">
+  <div class="container h-100" style="padding-top: 0rem; margin-top: 0rem;">
+  <hr class="mb-4 break-line" />
+    <div class="row d-flex justify-content-center align-items-center custom-card h-100">
+      <div class="col col-xl-5">
+        <!-- card -->
+        <div class="card login-card" style="border-radius: 1rem;">
           <div class="row g-0">
             <div class="d-flex align-items-center">
               
-              <!-- card -->
-              <div class="card-body p-4 p-lg-5 text-black">
+              <!-- card body -->
+              <div class="card-body p-4 p-lg-5 text-black ahs-text">
                 <div class="d-flex flex-column flex-row align-items-center justify-content-center">
                   
                   <!-- Sign in form -->
                   <div>
                     <% if flash[:notice] %>
-                      <%= content_tag :h2, flash[:notice] %>
-                    <% else %>
-                      <%= content_tag :h2, "Please Log in" %>
-                    <% end %>
+                      <%= content_tag :h2, flash[:notice], class: "ahs-text" %>
+                    <% end %>                      
                   </div>
-                  <div>
+                  
+                  <div class="col-md-9">
+                    <%= content_tag :h1, "Log in", class: "ahs-text login-title" %>
                     <%= form_with url: sessions_path do |f| %>
-                      <div class="field">
-                        <%= f.label :email %>
-                        <%= f.text_field :email %>
+                      <div class="field ahs-text">
+                        <%= f.label :email, "Email Address" %>
+                        <%= f.text_field :email,  
+                        class: "form-control form-control-lg login-field mt-2" %>
                       </div>
-                      <div class="field">
-                        <%= f.label :password %>
-                        <%= f.password_field :password %>
+                      <div class="field ahs-text">
+                        <%= f.label :password, "Password" %>
+                        <%= f.password_field :password, 
+                        class: "form-control form-control-lg login-field mt-2" %>
                       </div>
-                      <%= link_to "Sign Up", new_user_path %>
-                      <%= f.submit "Sign In!" %>
+                      <br>
+                      <div class="d-grid gap-2">
+                        <%= f.submit "sign in", class: "btn btn-primary btn-lg btn-block ahs-text custom-button thick neon-blue neon-blue-button", style: "color: black !important;" %>
+                        <div class="divider d-flex align-items-center my-2">
+                          <p class="text-center fw-bold mx-3 mb-0 ahs-text">OR</p>
+                        </div>
+                        <%= link_to "sign up", new_user_path, class: "btn btn-primary btn-lg btn-block link-to-color ahs-text custom-button thick neon-blue neon-blue-button mb-4" , style: "color: black !important;" %>
+                      </div>
                     <% end %>
                   </div>
                 </div>

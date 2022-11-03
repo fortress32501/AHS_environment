@@ -11,7 +11,7 @@ RSpec.describe 'Show Ranking', type: :feature do
       visit new_event_path
       fill_in 'Email', with: 'test@gmail.com'
       fill_in 'Password', with: 'Test'
-      click_on 'Sign In'
+      click_on 'sign in'
       visit rankings_path
       
       expect(page).to have_content('Rankings')
@@ -32,7 +32,7 @@ RSpec.describe 'Show Ranking', type: :feature do
       visit rankings_path
       fill_in 'Email', with: 'test@gmail.com'
       fill_in 'Password', with: 'Test'
-      click_on 'Sign In'
+      click_on 'sign in'
   
       visit new_ranking_path
       fill_in 'Title', with: 'test ranking'
@@ -60,7 +60,7 @@ RSpec.describe 'Show Ranking', type: :feature do
       visit rankings_path
       fill_in 'Email', with: 'test@gmail.com'
       fill_in 'Password', with: 'Test'
-      click_on 'Sign In'
+      click_on 'sign in'
   
       visit new_ranking_path
       fill_in 'Title', with: 'test ranking'
@@ -94,7 +94,7 @@ RSpec.describe 'Show Ranking', type: :feature do
       visit rankings_path
       fill_in 'Email', with: 'test@gmail.com'
       fill_in 'Password', with: 'Test'
-      click_on 'Sign In'
+      click_on 'sign in'
   
       visit new_ranking_path
       fill_in 'Title', with: 'test ranking'

@@ -1,43 +1,129 @@
-<div class="d-flex flex-column align-items-center justify-content-center">
-  <h1>New User</h1>
-  <%= form_with(model: user) do |form| %>
-    <% if user.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+  <section class="login-container">
+  <div class="container h-100" style="padding-top: 0rem; margin-top: 0rem;">
+  <hr class="mb-4 break-line" />
+    <div class="row d-flex justify-content-center align-items-center custom-card h-100">
+      <div class="col col-xl-5">
+        <!-- card -->
+        <div class="card login-card" style="border-radius: 1rem;">
+          <div class="row g-0">
+            <div class="d-flex align-items-center">
+
+              <!-- card body -->
+              <div class="card-body p-4 p-lg-5 text-black ahs-text">
+                <div class="d-flex flex-column flex-row align-items-center justify-content-center">
+
+                  <!-- Sign in form -->
+                  <div>
+                    <% if flash[:notice] %>
+                      <%= content_tag :h2, flash[:notice], class: "ahs-text" %>
+                    <% end %>                      
+                  </div>
+
+                  <div class="col-md-9">
+                    <%= content_tag :h1, "Create Account", class: "ahs-text login-title mb-4", style: "font-size: 30px !important" %>
+                    <%= form_with(model: user) do |form| %>
+                      <% if user.errors.any? %>
+                        <div id="error_explanation">
+                          <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+                    
+                          <ul>
+                            <% user.errors.each do |error| %>
+                              <li><%= error.full_message %></li>
+                            <% end %>
+                          </ul>
+                        </div>
+                      <% end %>
+                            
+                      <div class="field ahs-text">
+                        <%= form.label :first_name %>
+                        <%= form.text_field :first_name,  
+                        class: "form-control login-field mt-2"  %>
+                      </div>
+                            
+                      <div class="field ahs-text">
+                        <%= form.label :last_name %>
+                        <%= form.text_field :last_name,  
+                        class: "form-control login-field mt-2"  %>
+                      </div>
+                            
+                      <div class="field ahs-text">
+                        <%= form.label :email %>
+                        <%= form.text_field :email,  
+                        class: "form-control login-field mt-2"  %>
+                      </div>
+                            
+                      <div class="field ahs-text mb-2">
+                        <%= form.label :password %>
+                        <%= form.text_field :password,  
+                        class: "form-control login-field mt-2"  %>
+                      </div>
+                            
+                            
+                      <div class="actions mt-4", style="text-align: center;">
+                        <%= form.submit "submit", class: "btn btn-primary btn-lg btn-block ahs-text custom-button thick neon-blue neon-blue-button", 
+                        style: "color: black !important; font-size: 20px;" %>
+                      </div>
+                      <div style="text-align: center;">
+                        <%= link_to 'Back to log in', users_path, class: "no-hover link-to-color" %>
+                      </div>
+                    <% end %>
+                    
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
   
-        <ul>
-          <% user.errors.each do |error| %>
-            <li><%= error.full_message %></li>
-          <% end %>
-        </ul>
+
+
+  <!--<div class="d-flex flex-column align-items-center justify-content-center">
+    <h1>New User</h1>
+    <%= form_with(model: user) do |form| %>
+      <% if user.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+    
+          <ul>
+            <% user.errors.each do |error| %>
+              <li><%= error.full_message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+            
+      <div class="field">
+        <%= form.label :first_name %>
+        <%= form.text_field :first_name %>
+      </div>
+            
+      <div class="field">
+        <%= form.label :last_name %>
+        <%= form.text_field :last_name %>
+      </div>
+            
+      <div class="field">
+        <%= form.label :email %>
+        <%= form.text_field :email %>
+      </div>
+            
+      <div class="field">
+        <%= form.label :password %>
+        <%= form.text_field :password %>
+      </div>
+            
+            
+      <div class="actions">
+        <%= form.submit "Create Account"%>
       </div>
     <% end %>
-  
-    <div class="field">
-      <%= form.label :first_name %>
-      <%= form.text_field :first_name %>
-    </div>
-  
-    <div class="field">
-      <%= form.label :last_name %>
-      <%= form.text_field :last_name %>
-    </div>
-  
-    <div class="field">
-      <%= form.label :email %>
-      <%= form.text_field :email %>
-    </div>
-  
-    <div class="field">
-      <%= form.label :password %>
-      <%= form.text_field :password %>
-    </div>
+    <%= link_to 'Back', users_path %>
+  </div>-->
 
-
-    <div class="actions">
-      <%= form.submit "Create Account"%>
-    </div>
-  <% end %>
-  <%= link_to 'Back', users_path %>
-</div>
   

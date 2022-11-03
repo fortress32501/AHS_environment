@@ -9,7 +9,7 @@ RSpec.describe 'Creating an Event', type: :feature do
     visit new_event_path
     fill_in 'Email', with: 'test@gmail.com'
     fill_in 'Password', with: 'Test'
-    click_on 'Sign In'
+    click_on 'sign in'
  
     visit new_event_path
     fill_in 'title', with: '1st Meeting'
@@ -47,7 +47,7 @@ RSpec.describe 'Show Events', type: :feature do
     visit new_event_path
     fill_in 'Email', with: 'test@gmail.com'
     fill_in 'Password', with: 'Test'
-    click_on 'Sign In' 
+    click_on 'sign in' 
     visit new_event_path
     fill_in 'title', with: '1st Meeting'
     fill_in 'description', with: 'General Meeting'
@@ -84,7 +84,7 @@ RSpec.describe 'Delete Events', type: :feature do
     visit new_event_path
     fill_in 'Email', with: 'test@gmail.com'
     fill_in 'Password', with: 'Test'
-    click_on 'Sign In'
+    click_on 'sign in'
     visit new_event_path
     fill_in 'title', with: '1st Meeting'
     fill_in 'description', with: 'General Meeting'
@@ -119,7 +119,7 @@ RSpec.describe 'Edit Events', type: :feature do
     visit new_event_path
     fill_in 'Email', with: 'test@gmail.com'
     fill_in 'Password', with: 'Test'
-    click_on 'Sign In'
+    click_on 'sign in'
     
     visit new_event_path
     fill_in 'Event title', with: '1st Meeting'
@@ -152,12 +152,12 @@ end
 RSpec.describe 'Confirm Calendar', type: :feature do
     scenario 'Calendar' do  
       visit events_path
-      click_on 'Sign Up'
+      click_on 'sign up'
       fill_in 'First name', with: 'test'
       fill_in 'Last name', with: 'test'
       fill_in 'Email', with: 'test@test.com'
       fill_in 'Password', with: 'test'
-      click_on 'Create Account'
+      click_on 'submit'
       visit events_path
       
       expect(page).to have_content(Date.today.strftime("%B"))
@@ -180,7 +180,7 @@ RSpec.describe 'Event Point Testing', type: :feature do
       visit new_event_path
       fill_in 'Email', with: 'test@gmail.com'
       fill_in 'Password', with: 'Test'
-      click_on 'Sign In'
+      click_on 'sign in'
       
       # Create event
       click_on 'Events'
@@ -217,7 +217,7 @@ RSpec.describe 'Event Point Testing', type: :feature do
       visit events_path
       fill_in 'Email', with: 'test@gmail.com'
       fill_in 'Password', with: 'Test'
-      click_on 'Sign In'
+      click_on 'sign in'
       
   
       visit new_event_path
