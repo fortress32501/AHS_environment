@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   skip_before_action :require_login, only: [:new, :create]
   before_action :set_user, only: %i[ show edit update destroy ]
-  layout 'login_signup', only: :new
+  layout 'screen_size', only: :new
   
   # GET /users/1 or /users/1.json
   def show
