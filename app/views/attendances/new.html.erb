@@ -3,7 +3,13 @@
 <%= render 'form', attendance: @attendance %>
 
 <p id="notice"><%= notice %></p>
-<p><em>If the page does not change, Confirm event selection and password are correct</em></p>
+<div class="d-flex justify-content-center">
+    <p><em>If the page does not change, Confirm event selection and password are correct</em></p>
+</div>
+
 
 <br><br>
-<%= link_to 'Back', events_path %>
+<div class="d-flex justify-content-center">
+    <%= link_to 'Back', events_path, class: 'button-style-blue' %>
+</div>
+

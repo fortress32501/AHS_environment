@@ -11,48 +11,76 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :event_points %>
-    <%= form.number_field :event_points %>
-  </div>
 
-  <div class="field">
-    <%= form.label :event_description %>
-    <%= form.text_field :event_description %>
-  </div>
+  <div class="contain-blue-box">
+      <div class="blue-box">
+        <div class="center-box">
 
-  <div class="field">
-    <%= form.label :event_passcode %>
-    <%= form.text_field :event_passcode  %>
-  </div>
+            <div class="row justify-content-left">
+              <div class="field">
+                <%= form.label :event_points , class: "form-text" %>
+                <%= form.number_field :event_points, class: "form-input" %>
+              </div>
+            </div>
 
-  <div class="field">
-    <%= form.label :event_start %>
-    <%= form.datetime_select :event_start %>
-  </div>
+            <div class="row justify-content-left">
+              <div class="field">
+                <%= form.label :event_description, class: "form-text" %>
+                <%= form.text_field :event_description, class: "form-input" %>
+              </div>
+            </div>
+            
+            <div class="row justify-content-left">
+              <div class="field">
+                <%= form.label :event_passcode, class: "form-text" %>
+                <%= form.text_field :event_passcode, class: "form-input"  %>
+              </div>
+            </div>                        
 
-  <div class="field">
-    <%= form.label :event_end %>
-    <%= form.datetime_select :event_end %>
-  </div>
+            <div class="row justify-content-left">
+              <div class="field">
+                <%= form.label :event_start, class: "form-text" %>
+                <%= form.datetime_select :event_start, class: "form-input" %>
+              </div>
+            </div>
 
-  <div class="field">
-    <%= form.label :event_title %>
-    <%= form.text_field :event_title %>
-  </div>
+            <div class="row justify-content-left">
+              <div class="field">
+                <%= form.label :event_end, class: "form-text" %>
+                <%= form.datetime_select :event_end, class: "form-input" %>
+              </div>
+            </div>  
+            
+            <div class="row justify-content-left">
+              <div class="field">
+                <%= form.label :event_title, class: "form-text" %>
+                <%= form.text_field :event_title, class: "form-input" %>
+              </div>
+            </div>
 
-  <div class="field">
-    <%= form.label :event_location %>
-    <%= form.text_field :event_location %>
-  </div>
+            <div class="row justify-content-left">
+              <div class="field">
+                <%= form.label :event_location, class: "form-text" %>
+                <%= form.text_field :event_location, class: "form-input" %>
+              </div>
+            </div>                      
 
-  <!-- Makes the event_type_id a dropdown of options in EventType-->
-  <div class="field">
-    <%= form.label :event_type_id %>
-    <%= form.select :event_type_id, EventType.order(:type_name).map { |event_type| [event_type.type_name, event_type.id] }, include_blank: true, id: "id_of_the_event_type_select_box" %>
-  </div>
+            <div class="row justify-content-left last-row-pad" >
+              <!-- Makes the event_type_id a dropdown of options in EventType-->
+              <div class="field">
+                <%= form.label :event_type_id, class: "form-text" %>
+                <%= form.select :event_type_id, EventType.order(:type_name).map { |event_type| [event_type.type_name, event_type.id] }, include_blank: true, id: "id_of_the_event_type_select_box" , class: "form-input" %>
+              </div>
+            </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+            <br>
+
+            <div class="row justify-content-center" style="width: auto;">
+              <%= form.submit class: 'button-style-white' %>
+            </div>
+
+        </div>
+      <div>
+  <div>
+
 <% end %>

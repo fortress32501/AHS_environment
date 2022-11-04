@@ -11,22 +11,39 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :type_name %>
-    <%= form.text_field :type_name %>
-  </div>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_field :description %>
-  </div>
+  <div class="contain-blue-box">
+  <div class="blue-box">
+    <div class="center-box">
 
-  <div class="field">
-    <%= form.label :color %>
-    <%= form.color_field :color %>
-  </div>
+        <div class="row justify-content-left">
+          <div class="field">
+            <%= form.label :type_name , class: "form-text" %>
+            <%= form.text_field :type_name , class: "form-input"  %>
+          </div>          
+        </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+        <div class="row justify-content-left">
+          <div class="field">
+            <%= form.label :description , class: "form-text" %>
+            <%= form.text_field :description , class: "form-input"  %>
+          </div>          
+        </div>
+
+        <div class="row justify-content-left last-row-pad" >
+          <div class="field">
+            <%= form.label :color , class: "form-text" %>
+            <%= form.color_field :color , class: "form-input"  %>
+          </div>          
+        </div>
+        <br>
+
+        <div class="row justify-content-center" style="width: auto;">
+          <%= form.submit class: 'button-style-white' %>
+        </div>
+
+    </div>
+  <div>
+<div>
+
 <% end %>

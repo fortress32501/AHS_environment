@@ -2,5 +2,8 @@
 
 <%= render 'form', attendance: @attendance %>
 
-<%= link_to 'Show', @attendance %> |
-<%= link_to 'Back', attendances_path %>
+<div class="d-flex justify-content-center">
+    <%= link_to 'Show', @attendance, class: 'button-style-white'  %> |
+    <%= link_to 'Back', attendances_path, class: 'button-style-white'  %>
+</div>
+

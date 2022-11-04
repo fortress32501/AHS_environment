@@ -1,28 +1,53 @@
+<h1>Show Admin Request</h1>
+
 <p id="notice"><%= notice %></p>
+<div class="contain-blue-box">
+<div class="blue-box-show">
+  <div class="center-box-show">
 
-<p>
-  <strong>User:</strong>
-  <%= @admin_request.user_id %>
-</p>
+      <div class="row justify-content-left">
+        <p class="show-text">
+          <strong>User:</strong>
+          <%= @admin_request.user_id %>
+        </p>        
+      </div>
 
-<p>
-  <strong>Request status:</strong>
-  <%= @admin_request.request_status %>
-</p>
+      <div class="row justify-content-left">
+        <p class="show-text">
+          <strong>Request status:</strong>
+          <%= @admin_request.request_status %>
+        </p>        
+      </div>
 
-<p>
-  <strong>Request reason:</strong>
-  <%= @admin_request.request_reason %>
-</p>
+      <div class="row justify-content-left">
+        <p class="show-text">
+          <strong>Request reason:</strong>
+          <%= @admin_request.request_reason %>
+        </p>        
+      </div>
 
-<p>
-  <strong>Requested at:</strong>
-  <%= @admin_request.created_at %>
-</p>
+      <div class="row justify-content-left last-row-pad" >
+        <p class="show-text">
+          <strong>Requested at:</strong>
+          <%= @admin_request.created_at %>
+        </p>
+      </div>
+
+      <br>
+  </div>
+
+<div>
+<div>
 
 <!--should only give option to Approve/Deny if the request has not yet been processed-->
 <% if (@admin_request.request_status == "REQUESTED") %>
+<div class="d-flex justify-content-center">
     <%= link_to 'Approve', approve_path(@admin_request) %> |
     <%= link_to 'Deny', deny_path(@admin_request) %> |
+</div>
+
 <% end %>
-<%= link_to 'Back', admin_requests_path %>
+
+<div class="d-flex justify-content-center">
+  <%= link_to 'Back', admin_requests_path %>
+</div>
