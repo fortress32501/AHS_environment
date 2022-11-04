@@ -8,13 +8,16 @@
 }
 
 .simple-calendar {
+    overflow-x: scroll;
     table {
         min-height: 60vh;
         min-width: 90vh;
-        overflow-x: auto;
     }
-    .day {
-        size: 500px;
+    thead {
+        position: sticky;
+        top: 0;
+        background-color: #364459;
+        color: #ffffff
     }
 }
 
@@ -62,23 +65,17 @@
 .card {
     overflow: hidden;         /*prevent text from being shown outside the border */
     text-overflow: ellipsis;  /*cut off text with an ellipsis*/
+    overflow-x: scroll;
 }
 
 .simple-calendar .next-month,
 .simple-calendar .prev-month {
     background-color: #ffffff;
 }
-  
-.simple-calendar thead {
-    position: sticky;
-    top: 0;
-    background-color: #364459;
-    color: #ffffff
-}
 
 .simple-calendar th {
     text-align: center;
-  }
+}
   
 .simple-calendar .day a {
     color: #364459;
@@ -90,13 +87,7 @@
 } 
   
 .simple-calendar tbody tr {
-    height: 150px;
     text-align: center;
-}
-  
-.calendar-day-box {
-    height: 110px;
-    overflow: scroll;
 }
 
 .simple-calendar .today {
