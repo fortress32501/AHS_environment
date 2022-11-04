@@ -42,7 +42,7 @@ class User < ApplicationRecord
       # update ranking
       self.update(ranking_id: ranking_found.ids.at(0))
     end
-    # "Ranking is : #{self.ranking_id} !!"
+    # "#{self.ranking_id}"
   end
   
   # https://stackoverflow.com/questions/45252984/how-to-update-specific-column-in-a-activerecord-on-rails
@@ -64,6 +64,7 @@ class User < ApplicationRecord
   def get_ranking_title
     # ranking_found = Ranking.where("point_total <= #{self.point}").order(point_total: :desc)
     # SELECT title FROM Rankings Join Users On Rankings.id=2;
+
     title_found = Ranking.where(id: self.ranking_id).first
     if title_found == nil
       # nothing to do
@@ -72,7 +73,7 @@ class User < ApplicationRecord
     end
   end
 
-  def show_title(value)
+  def show_ranking_title(value)
     # ranking_found = Ranking.where("point_total <= #{self.point}").order(point_total: :desc)
     # SELECT title FROM Rankings Join Users On Rankings.id=2;
     title_found = Ranking.where(id: value).first

@@ -9,6 +9,9 @@
   border-collapse: collapse;
   margin-left: auto;
   margin-right: auto;
+  
+  /* overflow-y: auto;
+  height: 500px; */
 }
 .table-style thead tr {
   background-color: #364459 ;
