@@ -31,7 +31,8 @@ class EventTypesController < ApplicationController
     
     respond_to do |format|
       if !current_user.is_admin
-        redirect_to event_types_url, notice: "You do not have access to create. You can request Administrator Access through Administrator request page."
+        format.html { redirect_to event_types_url, notice: "You do not have access to create. You can request Administrator Access through Administrator request page." }
+        format.json { head :no_content }
       elsif @event_type.save
         format.html { redirect_to event_type_url(@event_type), notice: "Event type was successfully created." }
         format.json { render :show, status: :created, location: @event_type }
@@ -47,7 +48,8 @@ class EventTypesController < ApplicationController
   def update
     respond_to do |format|
       if !current_user.is_admin
-        redirect_to event_types_url, notice: "You do not have access to update. You can request Administrator Access through Administrator request page."
+        format.html { redirect_to event_types_url, notice: "You do not have access to update. You can request Administrator Access through Administrator request page." }
+        format.json { head :no_content }
       elsif @event_type.update(event_type_params)
         format.html { redirect_to event_type_url(@event_type), notice: "Event type was successfully updated." }
         format.json { render :show, status: :ok, location: @event_type }
@@ -64,7 +66,8 @@ class EventTypesController < ApplicationController
 
     respond_to do |format|
       if !current_user.is_admin
-        redirect_to event_types_url, notice: "You do not have access to destroy. You can request Administrator Access through Administrator request page."
+        format.html { redirect_to event_types_url, notice: "You do not have access to destroy. You can request Administrator Access through Administrator request page." }
+        format.json { head :no_content }
       else
         format.html { redirect_to event_types_url, notice: "Event type was successfully destroyed." }
         format.json { head :no_content }

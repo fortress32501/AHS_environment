@@ -72,7 +72,8 @@ class AttendancesController < ApplicationController
   def update
     respond_to do |format|
       if !current_user.is_admin
-        redirect_to events_url, notice: "You do not have access to update this attendance. You can request Administrator Access through Administrator request page."
+        format.html { redirect_to events_url, notice: "You do not have access to update this attendance. You can request Administrator Access through Administrator request page." }
+        format.json { head :no_content }
       elsif @attendance.update(attendance_params)
         format.html { redirect_to attendance_url(@attendance), notice: "Attendance was successfully updated." }
         format.json { render :show, status: :ok, location: @attendance }
@@ -89,7 +90,8 @@ class AttendancesController < ApplicationController
     
     respond_to do |format|
       if !current_user.is_admin
-        redirect_to events_url, notice: "You do not have access to destroy. You can request Administrator Access through Administrator request page."
+        format.html { redirect_to events_url, notice: "You do not have access to destroy this attendance. You can request Administrator Access through Administrator request page." }
+        format.json { head :no_content } 
       else
         format.html { redirect_to attendances_url, notice: "Attendance was successfully destroyed." }
         format.json { head :no_content }

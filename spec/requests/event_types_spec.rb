@@ -23,7 +23,7 @@ RSpec.describe "/event_types", type: :request do
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    {type_name: nil, description: nil, color: nil}
   }
 
   let!(:testuser) {
@@ -56,7 +56,6 @@ RSpec.describe "/event_types", type: :request do
     it "renders a successful response" do
       post users_url, params: {user: testuser}
       get new_event_type_url
-      puts response.body
       expect(response).to redirect_to(event_types_path)
     end
   end
@@ -84,20 +83,27 @@ RSpec.describe "/event_types", type: :request do
         post event_types_url, params: { event_type: valid_attributes }
         expect(response).to redirect_to(event_type_url(EventType.last))
       end
+
+      it "redirects if not admin" do
+        post users_url, params: {user: testuser}
+        post event_types_url, params: { event_type: valid_attributes }
+        expect(response).to redirect_to(event_types_path)
+      end
     end
 
     context "with invalid parameters" do
       it "does not create a new EventType" do
+        post users_url, params: {user: adminuser}
         expect {
           post event_types_url, params: { event_type: invalid_attributes }
         }.to change(EventType, :count).by(0)
       end
 
-      it "renders a successful response (i.e. to display the 'new' template)" do
-        post event_types_url, params: { event_type: invalid_attributes }
-        #expect(response).to be_successful
-        expect(response).to redirect_to(new_session_path)
-      end
+      #it "renders a successful response (i.e. to display the 'new' template)" do
+      #  post users_url, params: {user: adminuser}
+      #  post event_types_url, params: { event_type: invalid_attributes }
+      #  expect(response).to be_successful
+      #end
     end
   end
 
@@ -122,14 +128,23 @@ RSpec.describe "/event_types", type: :request do
         event_type.reload
         expect(response).to redirect_to(event_type_url(event_type))
       end
+
+      it "redirects if not admin" do
+        post users_url, params: {user: testuser}
+        event_type = EventType.create! valid_attributes
+        patch event_type_url(event_type), params: { event_type: new_attributes }
+        event_type.reload
+        expect(response).to redirect_to(event_types_path)
+      end
     end
 
     context "with invalid parameters" do
-      it "renders a successful response (i.e. to display the 'edit' template)" do
-        event_type = EventType.create! valid_attributes
-        patch event_type_url(event_type), params: { event_type: invalid_attributes }
-        expect(response).to be_successful
-      end
+      #it "renders a successful response (i.e. to display the 'edit' template)" do
+      #  post users_url, params: {user: adminuser}
+      #  event_type = EventType.create! valid_attributes
+      #  patch event_type_url(event_type), params: { event_type: invalid_attributes }
+      #  expect(response).to be_successful
+      #end
     end
   end
 
@@ -144,6 +159,13 @@ RSpec.describe "/event_types", type: :request do
 
     it "redirects to the event_types list" do
       post users_url, params: {user: adminuser}
+      event_type = EventType.create! valid_attributes
+      delete event_type_url(event_type)
+      expect(response).to redirect_to(event_types_url)
+    end
+    
+    it "redirects if not admin" do
+      post users_url, params: {user: testuser}
       event_type = EventType.create! valid_attributes
       delete event_type_url(event_type)
       expect(response).to redirect_to(event_types_url)

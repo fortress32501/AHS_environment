@@ -39,7 +39,8 @@ class RankingsController < ApplicationController
 
     respond_to do |format|
       if !current_user.is_admin
-        redirect_to evens_url, notice: "You do not have access to create rankings. You can request Administrator Access through Administrator request page."        
+        format.html { redirect_to events_url, notice: "You do not have access to create rankings. You can request Administrator Access through Administrator request page." }
+        format.json { head :no_content }
       elsif @ranking.save
         format.html { redirect_to ranking_url(@ranking), notice: "Ranking was successfully created." }
         format.json { render :show, status: :created, location: @ranking }
@@ -54,7 +55,8 @@ class RankingsController < ApplicationController
   def update
     respond_to do |format|
       if !current_user.is_admin
-        redirect_to events_url, notice: "You do not have access to update rankings. You can request Administrator Access through Administrator request page."
+        format.html { redirect_to events_url, notice: "You do not have access to update rankings. You can request Administrator Access through Administrator request page." }
+        format.json { head :no_content }
       elsif @ranking.update(ranking_params)
         format.html { redirect_to ranking_url(@ranking), notice: "Ranking was successfully updated." }
         format.json { render :show, status: :ok, location: @ranking }
@@ -71,7 +73,8 @@ class RankingsController < ApplicationController
 
     respond_to do |format|
       if !current_user.is_admin
-        redirect_to events_url, notice: "You do not have access to destroy rankings. You can request Administrator Access through Administrator request page."
+        format.html { redirect_to events_url, notice: "You do not have access to destroy rankings. You can request Administrator Access through Administrator request page." }
+          format.json { head :no_content }
       else
         format.html { redirect_to rankings_url, notice: "Ranking was successfully destroyed." }
         format.json { head :no_content }
