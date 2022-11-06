@@ -2,7 +2,7 @@
 
 <h1>Admin Requests</h1>
 
-<table>
+<table class="table-style">
   <thead>
     <tr>
       <th>User</th>
@@ -25,12 +25,12 @@
             <!--should only be able to review the request if is an admin-->
             <!--should also only be able to review if it's in the REQUESTED state-->
             <% if (current_user.is_admin) %>
-                <td><%= link_to 'Review', admin_request %></td>
+                <td><%= link_to 'Review', admin_request, class: "button-style" %></td>
             <% end %>
             <!--should only be able to edit if this is the current users request-->
             <!--should only be able to edit if is in requested state-->
             <% if (current_user.id == admin_request.user_id && admin_request.request_status == "REQUESTED") %>
-                <td><%= link_to 'Edit', edit_admin_request_path(admin_request) %></td>
+                <td><%= link_to 'Edit', edit_admin_request_path(admin_request), class: "button-style" %></td>
             <% end %>
         </tr>
       <% end %>
@@ -43,5 +43,7 @@
 <!--cannot request admin status if you're already an admin-->
 <!--also cannot request if you've already requested it-->
 <% if (!current_user.is_admin && !@has_request) %>
-    <%= link_to 'New Admin Request', new_admin_request_path %>
+  <div class="d-flex justify-content-center">
+    <%= link_to 'New Admin Request', new_admin_request_path, class: "button-style-blue" %>
+    </div>  
 <% end %>

@@ -1,24 +1,45 @@
 <p id="notice"><%= notice %></p>
+<div class="contain-blue-box">
+<div class="blue-box-show">
+  <div class="center-box-show">
 
-<p>
-  <strong>Type name:</strong>
-  <%= @event_type.type_name %>
-</p>
+      <div class="row justify-content-left">
+        <p class="show-text">
+          <strong>Type name:</strong>
+          <%= @event_type.type_name %>
+        </p>        
+      </div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @event_type.description %>
-</p>
+      <div class="row justify-content-left">
+        <p class="show-text">
+          <strong>Description:</strong>
+          <%= @event_type.description %>
+        </p>        
+      </div>
 
-<p>
-  <strong>Color:</strong>
-  <div style="width:200px; white-space: nowrap;">
-     <div style="width:10px; height:10px; background-color: <%=@event_type.color%>; display: inline-block;"></div>
-     <div style="display: inline-block;"><%= @event_type.color %></div>
-   </div>
-</p>
 
-<% if current_user.is_admin %>
-<%= link_to 'Edit', edit_event_type_path(@event_type) %> |
-<% end %>
-<%= link_to 'Back', event_types_path %>
+      <div class="row justify-content-left last-row-pad" >
+        <p class="show-text">
+          <strong>Color:</strong>
+          <div style="width:200px; white-space: nowrap;">
+            <div style="width:10px; height:10px; background-color: <%=@event_type.color%>; display: inline-block;"></div>
+            <div style="display: inline-block;"><%= @event_type.color %></div>
+          </div>
+        </p>
+      </div>
+
+      <br>
+
+
+  </div>
+
+<div>
+<div>
+
+<div class="d-flex justify-content-center">
+  <% if current_user.is_admin %>
+  <%= link_to 'Edit', edit_event_type_path(@event_type) , class: 'button-style-blue'  %> |
+  <% end %>
+  <%= link_to 'Back', event_types_path , class: 'button-style-blue' %>
+</div>
+

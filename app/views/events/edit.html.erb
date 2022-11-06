@@ -2,5 +2,7 @@
 
 <%= render 'form', event: @event %>
 
-<%= link_to 'Show', @event %> |
-<%= link_to 'Back', events_path %>
+<div class="d-flex justify-content-center">
+    <%= link_to 'Show', @event , class: 'button-style-white' %> |
+    <%= link_to 'Back', events_path, class: 'button-style-white' %>
+</div>
