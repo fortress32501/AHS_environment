@@ -40,7 +40,7 @@ RSpec.describe "/admin_requests", type: :request do
 
   let(:valid_attributes) {
     {
-      user_id: test_user[:id],
+      # add the user_id in test case (need to create user before you know the users id)
       request_status: "REQUESTED",
       request_reason: "new admin"
     }
@@ -52,10 +52,11 @@ RSpec.describe "/admin_requests", type: :request do
 
   describe "GET /index" do
     it "renders a successful response" do
-      # create user to start the session
+      # create the user and log in
       post users_url, params: {user: test_user}
-      # create user in the db
-      # User.create! test_user
+      # get users id and attach to hash for admin request
+      @user = User.all.find_by(email: test_user[:email])
+      valid_attributes[:user_id] = @user.id
       # create admin request in db
       AdminRequest.create! valid_attributes
       # test endpoint
