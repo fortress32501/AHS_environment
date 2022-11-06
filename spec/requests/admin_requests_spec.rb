@@ -47,7 +47,11 @@ RSpec.describe "/admin_requests", type: :request do
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    {
+      user_id: null,
+      request_status: null,
+      request_reason: null
+    }
   }
 
   describe "GET /index" do
@@ -55,8 +59,7 @@ RSpec.describe "/admin_requests", type: :request do
       # create the user and log in
       post users_url, params: {user: test_user}
       # get users id and attach to hash for admin request
-      @user = User.all.find_by(email: test_user[:email])
-      valid_attributes[:user_id] = @user.id
+      valid_attributes[:user_id] = User.last.id
       # create admin request in db
       AdminRequest.create! valid_attributes
       # test endpoint
@@ -65,21 +68,38 @@ RSpec.describe "/admin_requests", type: :request do
     end
   end
 
-#   describe "GET /show" do
-#     it "renders a successful response" do
-#       admin_request = AdminRequest.create! valid_attributes
-#       get admin_request_url(admin_request)
-#       expect(response).to be_successful
-#     end
-#   end
+  describe "GET /show" do
+    # the /show endpoint is where you review an admin_request
+    # only admin can "review" admin requests
+    it "renders a successful response" do
+      # create the user and log in
+      post users_url, params: {user: test_user}
+      # get users id and attach to hash for admin request
+      valid_attributes[:user_id] = User.last.id
+      # create admin request in db
+      admin_request = AdminRequest.create! valid_attributes
+      # test endpoint
+      get admin_request_url(admin_request)
+      expect(response).to redirect_to admin_requests_url
+    end
 
-#   describe "GET /new" do
-#     it "renders a successful response" do
-#       admin_request = AdminRequest.create! valid_attributes
-#       get new_admin_request_url(admin_request)
-#       expect(response).to be_successful
-#     end
-#   end
+    # NOTE: add test for admin show
+  end
+
+  # describe "GET /new" do
+  #   it "renders a successful response" do
+  #     # create the user and log in
+  #     post users_url, params: {user: test_user}
+  #     # get users id and attach to hash for admin request
+  #     valid_attributes[:user_id] = User.last.id
+  #     # create admin request in db
+  #     admin_request = AdminRequest.create! valid_attributes
+  #     get new_admin_request_url(admin_request)
+  #     expect(response).to be_successful
+  #   end
+
+  #   # NOTE: add test for admin new
+  # end
 
 #   describe "GET /edit" do
 #     it "renders a successful response" do
