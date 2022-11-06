@@ -18,7 +18,6 @@ RSpec.describe "/admin_requests", type: :request do
   # adjust the attributes here as well.
   let!(:test_user) {
     {
-      id: 1,
       first_name: Faker::Name.name,
       last_name: Faker::Name.name,
       email: Faker::Internet.email,
@@ -30,7 +29,6 @@ RSpec.describe "/admin_requests", type: :request do
 
   let!(:test_admin) {
     {
-      id: 2,
       first_name: Faker::Name.name,
       last_name: Faker::Name.name,
       email: Faker::Internet.email,
