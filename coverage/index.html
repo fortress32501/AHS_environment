@@ -1344,7 +1344,7 @@
     <h3>app/controllers/admin_requests_controller.rb</h3>
     <h4>
       <span class="red">
-  16.04%
+  19.81%
 </span>
 
       lines covered
@@ -1354,8 +1354,8 @@
 
     <div class="t-line-summary">
       <b>106</b> relevant lines.
-      <span class="green"><b>17</b> lines covered</span> and
-      <span class="red"><b>89</b> lines missed.</span>
+      <span class="green"><b>21</b> lines covered</span> and
+      <span class="red"><b>85</b> lines missed.</span>
     </div>
 
     
@@ -3731,8 +3731,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="214">
-            
+          <li class="covered" data-hits="1" data-linenumber="214">
+            <span class="hits">1</span>
             
 
             
@@ -3827,8 +3827,8 @@
   <div class="header">
     <h3>app/controllers/application_controller.rb</h3>
     <h4>
-      <span class="red">
-  71.43%
+      <span class="green">
+  100.0%
 </span>
 
       lines covered
@@ -3838,8 +3838,8 @@
 
     <div class="t-line-summary">
       <b>7</b> relevant lines.
-      <span class="green"><b>5</b> lines covered</span> and
-      <span class="red"><b>2</b> lines missed.</span>
+      <span class="green"><b>7</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
     </div>
 
     
@@ -35368,8 +35368,8 @@
   <div class="header">
     <h3>spec/requests/admin_requests_spec.rb</h3>
     <h4>
-      <span class="red">
-  66.67%
+      <span class="green">
+  94.12%
 </span>
 
       lines covered
@@ -35606,7 +35606,7 @@
 
             
 
-            <code class="ruby">  let(:valid_attributes) {</code>
+            <code class="ruby">  let!(:test_user) {</code>
           </li>
         </div>
       
@@ -35650,7 +35650,7 @@
 
             
 
-            <code class="ruby">  let(:invalid_attributes) {</code>
+            <code class="ruby">  let!(:test_admin) {</code>
           </li>
         </div>
       
@@ -35661,7 +35661,95 @@
 
             
 
-            <code class="ruby">    skip(&quot;Add a hash of attributes invalid for your model&quot;)</code>
+            <code class="ruby">    {</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="33">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      id: 2,</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="34">
+            
+            
+
+            
+
+            <code class="ruby">      first_name: Faker::Name.name,</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="35">
+            
+            
+
+            
+
+            <code class="ruby">      last_name: Faker::Name.name,</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="36">
+            
+            
+
+            
+
+            <code class="ruby">      email: Faker::Internet.email,</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="37">
+            
+            
+
+            
+
+            <code class="ruby">      password: Faker::Internet.password,</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="38">
+            
+            
+
+            
+
+            <code class="ruby">      point: 0,</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="39">
+            
+            
+
+            
+
+            <code class="ruby">      is_admin: true</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="40">
+            
+            
+
+            
+
+            <code class="ruby">    }</code>
           </li>
         </div>
       
@@ -35694,7 +35782,7 @@
 
             
 
-            <code class="ruby">  describe &quot;GET /index&quot; do</code>
+            <code class="ruby">  let(:valid_attributes) {</code>
           </li>
         </div>
       
@@ -35705,7 +35793,7 @@
 
             
 
-            <code class="ruby">    it &quot;renders a successful response&quot; do</code>
+            <code class="ruby">    {</code>
           </li>
         </div>
       
@@ -35716,7 +35804,7 @@
 
             
 
-            <code class="ruby">      AdminRequest.create! valid_attributes</code>
+            <code class="ruby">      user_id: test_user[:id],</code>
           </li>
         </div>
       
@@ -35727,7 +35815,7 @@
 
             
 
-            <code class="ruby">      get admin_requests_url</code>
+            <code class="ruby">      request_status: &quot;REQUESTED&quot;,</code>
           </li>
         </div>
       
@@ -35738,7 +35826,7 @@
 
             
 
-            <code class="ruby">      expect(response).to be_successful</code>
+            <code class="ruby">      request_reason: &quot;new admin&quot;</code>
           </li>
         </div>
       
@@ -35749,7 +35837,7 @@
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby">    }</code>
           </li>
         </div>
       
@@ -35760,7 +35848,7 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">  }</code>
           </li>
         </div>
       
@@ -35782,7 +35870,7 @@
 
             
 
-            <code class="ruby">  describe &quot;GET /show&quot; do</code>
+            <code class="ruby">  let(:invalid_attributes) {</code>
           </li>
         </div>
       
@@ -37441,7 +37529,7 @@
 
             
 
-            <code class="ruby">#     it &quot;renders a successful response&quot; do</code>
+            <code class="ruby">    skip(&quot;Add a hash of attributes invalid for your model&quot;)</code>
           </li>
         </div>
       
@@ -37452,7 +37540,7 @@
 
             
 
-            <code class="ruby">#       attendance = Attendance.create! valid_attributes</code>
+            <code class="ruby">  }</code>
           </li>
         </div>
       
@@ -37463,29 +37551,29 @@
 
             
 
-            <code class="ruby">#       get edit_attendance_url(attendance)</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="55">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="55">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">#       expect(response).to be_successful</code>
+            
+
+            <code class="ruby">  describe &quot;GET /index&quot; do</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="56">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="56">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">#     end</code>
+            
+
+            <code class="ruby">    it &quot;renders a successful response&quot; do</code>
           </li>
         </div>
       
@@ -37496,62 +37584,62 @@
 
             
 
-            <code class="ruby">#   end</code>
+            <code class="ruby">      # create user to start the session</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="58">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="58">
+            <span class="hits">1</span>
             
 
-            <code class="ruby"></code>
+            
+
+            <code class="ruby">      post users_url, params: {user: test_user}</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="59">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="59">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">#   describe &quot;POST /create&quot; do</code>
+            
+
+            <code class="ruby">      User.create! test_user</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="60">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="60">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">#     context &quot;with valid parameters&quot; do</code>
+            
+
+            <code class="ruby">      AdminRequest.create! valid_attributes</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="61">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="61">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">#       it &quot;creates a new Attendance&quot; do</code>
+            
+
+            <code class="ruby">      get admin_requests_url</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="62">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="62">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">#         expect {</code>
+            
+
+            <code class="ruby">      expect(response).to be_successful</code>
           </li>
         </div>
       
@@ -37562,7 +37650,7 @@
 
             
 
-            <code class="ruby">#           post attendances_url, params: { attendance: valid_attributes }</code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
@@ -37573,7 +37661,7 @@
 
             
 
-            <code class="ruby">#         }.to change(Attendance, :count).by(1)</code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -37584,7 +37672,7 @@
 
             
 
-            <code class="ruby">#       end</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -37595,7 +37683,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">#   describe &quot;GET /show&quot; do</code>
           </li>
         </div>
       
@@ -37606,7 +37694,7 @@
 
             
 
-            <code class="ruby">#       it &quot;redirects to the created attendance&quot; do</code>
+            <code class="ruby">#     it &quot;renders a successful response&quot; do</code>
           </li>
         </div>
       
@@ -37617,7 +37705,7 @@
 
             
 
-            <code class="ruby">#         post attendances_url, params: { attendance: valid_attributes }</code>
+            <code class="ruby">#       admin_request = AdminRequest.create! valid_attributes</code>
           </li>
         </div>
       
@@ -37628,7 +37716,7 @@
 
             
 
-            <code class="ruby">#         expect(response).to redirect_to(attendance_url(Attendance.last))</code>
+            <code class="ruby">#       get admin_request_url(admin_request)</code>
           </li>
         </div>
       
@@ -37639,7 +37727,7 @@
 
             
 
-            <code class="ruby">#       end</code>
+            <code class="ruby">#       expect(response).to be_successful</code>
           </li>
         </div>
       
@@ -37661,7 +37749,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">#   end</code>
           </li>
         </div>
       
@@ -37672,7 +37760,7 @@
 
             
 
-            <code class="ruby">#     context &quot;with invalid parameters&quot; do</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -37683,7 +37771,7 @@
 
             
 
-            <code class="ruby">#       it &quot;does not create a new Attendance&quot; do</code>
+            <code class="ruby">#   describe &quot;GET /new&quot; do</code>
           </li>
         </div>
       
@@ -37694,7 +37782,7 @@
 
             
 
-            <code class="ruby">#         expect {</code>
+            <code class="ruby">#     it &quot;renders a successful response&quot; do</code>
           </li>
         </div>
       
@@ -37705,7 +37793,7 @@
 
             
 
-            <code class="ruby">#           post attendances_url, params: { attendance: invalid_attributes }</code>
+            <code class="ruby">#       admin_request = AdminRequest.create! valid_attributes</code>
           </li>
         </div>
       
@@ -37716,7 +37804,7 @@
 
             
 
-            <code class="ruby">#         }.to change(Attendance, :count).by(0)</code>
+            <code class="ruby">#       get new_admin_request_url(admin_request)</code>
           </li>
         </div>
       
@@ -37727,7 +37815,7 @@
 
             
 
-            <code class="ruby">#       end</code>
+            <code class="ruby">#       expect(response).to be_successful</code>
           </li>
         </div>
       
@@ -37738,7 +37826,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">#     end</code>
           </li>
         </div>
       
@@ -37749,7 +37837,7 @@
 
             
 
-            <code class="ruby">#       it &quot;renders a successful response (i.e. to display the &#39;new&#39; template)&quot; do</code>
+            <code class="ruby">#   end</code>
           </li>
         </div>
       
@@ -37760,7 +37848,7 @@
 
             
 
-            <code class="ruby">#         post attendances_url, params: { attendance: invalid_attributes }</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -37771,7 +37859,7 @@
 
             
 
-            <code class="ruby">#         expect(response).to be_successful</code>
+            <code class="ruby">#   describe &quot;GET /edit&quot; do</code>
           </li>
         </div>
       
@@ -37782,7 +37870,7 @@
 
             
 
-            <code class="ruby">#       end</code>
+            <code class="ruby">#     it &quot;renders a successful response&quot; do</code>
           </li>
         </div>
       
@@ -37793,7 +37881,7 @@
 
             
 
-            <code class="ruby">#     end</code>
+            <code class="ruby">#       admin_request = AdminRequest.create! valid_attributes</code>
           </li>
         </div>
       
@@ -37804,7 +37892,7 @@
 
             
 
-            <code class="ruby">#   end</code>
+            <code class="ruby">#       get edit_admin_request_url(admin_request)</code>
           </li>
         </div>
       
@@ -37815,7 +37903,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">#       expect(response).to be_successful</code>
           </li>
         </div>
       
@@ -37826,7 +37914,7 @@
 
             
 
-            <code class="ruby">#   describe &quot;PATCH /update&quot; do</code>
+            <code class="ruby">#     end</code>
           </li>
         </div>
       
@@ -37837,7 +37925,7 @@
 
             
 
-            <code class="ruby">#     context &quot;with valid parameters&quot; do</code>
+            <code class="ruby">#   end</code>
           </li>
         </div>
       
@@ -37848,7 +37936,7 @@
 
             
 
-            <code class="ruby">#       let(:new_attributes) {</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -37859,7 +37947,7 @@
 
             
 
-            <code class="ruby">#         skip(&quot;Add a hash of attributes valid for your model&quot;)</code>
+            <code class="ruby">#   describe &quot;POST /create&quot; do</code>
           </li>
         </div>
       
@@ -37870,7 +37958,7 @@
 
             
 
-            <code class="ruby">#       }</code>
+            <code class="ruby">#     context &quot;with valid parameters&quot; do</code>
           </li>
         </div>
       
@@ -37881,7 +37969,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">#       it &quot;creates a new AdminRequest&quot; do</code>
           </li>
         </div>
       
@@ -37892,7 +37980,7 @@
 
             
 
-            <code class="ruby">#       it &quot;updates the requested attendance&quot; do</code>
+            <code class="ruby">#         expect {</code>
           </li>
         </div>
       
@@ -37903,7 +37991,7 @@
 
             
 
-            <code class="ruby">#         attendance = Attendance.create! valid_attributes</code>
+            <code class="ruby">#           post admin_requests_url, params: { admin_request: valid_attributes }</code>
           </li>
         </div>
       
@@ -37914,7 +38002,7 @@
 
             
 
-            <code class="ruby">#         patch attendance_url(attendance), params: { attendance: new_attributes }</code>
+            <code class="ruby">#         }.to change(AdminRequest, :count).by(1)</code>
           </li>
         </div>
       
@@ -37925,7 +38013,7 @@
 
             
 
-            <code class="ruby">#         attendance.reload</code>
+            <code class="ruby">#       end</code>
           </li>
         </div>
       
@@ -37936,7 +38024,7 @@
 
             
 
-            <code class="ruby">#         skip(&quot;Add assertions for updated state&quot;)</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -37947,7 +38035,7 @@
 
             
 
-            <code class="ruby">#       end</code>
+            <code class="ruby">#       it &quot;redirects to the created admin_request&quot; do</code>
           </li>
         </div>
       
@@ -37958,7 +38046,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">#         post admin_requests_url, params: { admin_request: valid_attributes }</code>
           </li>
         </div>
       
@@ -37969,7 +38057,7 @@
 
             
 
-            <code class="ruby">#       it &quot;redirects to the attendance&quot; do</code>
+            <code class="ruby">#         expect(response).to redirect_to(admin_request_url(AdminRequest.last))</code>
           </li>
         </div>
       
@@ -37980,7 +38068,7 @@
 
             
 
-            <code class="ruby">#         attendance = Attendance.create! valid_attributes</code>
+            <code class="ruby">#       end</code>
           </li>
         </div>
       
@@ -37991,7 +38079,7 @@
 
             
 
-            <code class="ruby">#         patch attendance_url(attendance), params: { attendance: new_attributes }</code>
+            <code class="ruby">#     end</code>
           </li>
         </div>
       
@@ -38002,7 +38090,7 @@
 
             
 
-            <code class="ruby">#         attendance.reload</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -38013,7 +38101,7 @@
 
             
 
-            <code class="ruby">#         expect(response).to redirect_to(attendance_url(attendance))</code>
+            <code class="ruby">#     context &quot;with invalid parameters&quot; do</code>
           </li>
         </div>
       
@@ -38024,7 +38112,7 @@
 
             
 
-            <code class="ruby">#       end</code>
+            <code class="ruby">#       it &quot;does not create a new AdminRequest&quot; do</code>
           </li>
         </div>
       
@@ -38035,7 +38123,7 @@
 
             
 
-            <code class="ruby">#     end</code>
+            <code class="ruby">#         expect {</code>
           </li>
         </div>
       
@@ -38046,7 +38134,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">#           post admin_requests_url, params: { admin_request: invalid_attributes }</code>
           </li>
         </div>
       
@@ -38057,7 +38145,7 @@
 
             
 
-            <code class="ruby">#     context &quot;with invalid parameters&quot; do</code>
+            <code class="ruby">#         }.to change(AdminRequest, :count).by(0)</code>
           </li>
         </div>
       
@@ -38068,7 +38156,7 @@
 
             
 
-            <code class="ruby">#       it &quot;renders a successful response (i.e. to display the &#39;edit&#39; template)&quot; do</code>
+            <code class="ruby">#       end</code>
           </li>
         </div>
       
@@ -38079,7 +38167,7 @@
 
             
 
-            <code class="ruby">#         attendance = Attendance.create! valid_attributes</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -38090,7 +38178,7 @@
 
             
 
-            <code class="ruby">#         patch attendance_url(attendance), params: { attendance: invalid_attributes }</code>
+            <code class="ruby">#       it &quot;renders a successful response (i.e. to display the &#39;new&#39; template)&quot; do</code>
           </li>
         </div>
       
@@ -38101,7 +38189,7 @@
 
             
 
-            <code class="ruby">#         expect(response).to be_successful</code>
+            <code class="ruby">#         post admin_requests_url, params: { admin_request: invalid_attributes }</code>
           </li>
         </div>
       
@@ -38112,7 +38200,7 @@
 
             
 
-            <code class="ruby">#       end</code>
+            <code class="ruby">#         expect(response).to be_successful</code>
           </li>
         </div>
       
@@ -38123,7 +38211,7 @@
 
             
 
-            <code class="ruby">#     end</code>
+            <code class="ruby">#       end</code>
           </li>
         </div>
       
@@ -38134,7 +38222,7 @@
 
             
 
-            <code class="ruby">#   end</code>
+            <code class="ruby">#     end</code>
           </li>
         </div>
       
@@ -38145,7 +38233,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">#   end</code>
           </li>
         </div>
       
@@ -38156,7 +38244,7 @@
 
             
 
-            <code class="ruby">#   describe &quot;DELETE /destroy&quot; do</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -38167,7 +38255,7 @@
 
             
 
-            <code class="ruby">#     it &quot;destroys the requested attendance&quot; do</code>
+            <code class="ruby">#   describe &quot;PATCH /update&quot; do</code>
           </li>
         </div>
       
@@ -38178,7 +38266,7 @@
 
             
 
-            <code class="ruby">#       attendance = Attendance.create! valid_attributes</code>
+            <code class="ruby">#     context &quot;with valid parameters&quot; do</code>
           </li>
         </div>
       
@@ -38189,7 +38277,7 @@
 
             
 
-            <code class="ruby">#       expect {</code>
+            <code class="ruby">#       let(:new_attributes) {</code>
           </li>
         </div>
       
@@ -38200,7 +38288,7 @@
 
             
 
-            <code class="ruby">#         delete attendance_url(attendance)</code>
+            <code class="ruby">#         skip(&quot;Add a hash of attributes valid for your model&quot;)</code>
           </li>
         </div>
       
@@ -38211,7 +38299,7 @@
 
             
 
-            <code class="ruby">#       }.to change(Attendance, :count).by(-1)</code>
+            <code class="ruby">#       }</code>
           </li>
         </div>
       
@@ -38222,7 +38310,7 @@
 
             
 
-            <code class="ruby">#     end</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -38233,7 +38321,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">#       it &quot;updates the requested admin_request&quot; do</code>
           </li>
         </div>
       
@@ -38244,7 +38332,7 @@
 
             
 
-            <code class="ruby">#     it &quot;redirects to the attendances list&quot; do</code>
+            <code class="ruby">#         admin_request = AdminRequest.create! valid_attributes</code>
           </li>
         </div>
       
@@ -38255,7 +38343,7 @@
 
             
 
-            <code class="ruby">#       attendance = Attendance.create! valid_attributes</code>
+            <code class="ruby">#         patch admin_request_url(admin_request), params: { admin_request: new_attributes }</code>
           </li>
         </div>
       
@@ -38266,7 +38354,7 @@
 
             
 
-            <code class="ruby">#       delete attendance_url(attendance)</code>
+            <code class="ruby">#         admin_request.reload</code>
           </li>
         </div>
       
@@ -38277,7 +38365,7 @@
 
             
 
-            <code class="ruby">#       expect(response).to redirect_to(attendances_url)</code>
+            <code class="ruby">#         skip(&quot;Add assertions for updated state&quot;)</code>
           </li>
         </div>
       
@@ -38288,12 +38376,188 @@
 
             
 
-            <code class="ruby">#     end</code>
+            <code class="ruby">#       end</code>
           </li>
         </div>
       
         <div>
           <li class="never" data-hits="" data-linenumber="130">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="131">
+            
+            
+
+            
+
+            <code class="ruby">#       it &quot;redirects to the admin_request&quot; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="132">
+            
+            
+
+            
+
+            <code class="ruby">#         admin_request = AdminRequest.create! valid_attributes</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="133">
+            
+            
+
+            
+
+            <code class="ruby">#         patch admin_request_url(admin_request), params: { admin_request: new_attributes }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="134">
+            
+            
+
+            
+
+            <code class="ruby">#         admin_request.reload</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="135">
+            
+            
+
+            
+
+            <code class="ruby">#         expect(response).to redirect_to(admin_request_url(admin_request))</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="136">
+            
+            
+
+            
+
+            <code class="ruby">#       end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="137">
+            
+            
+
+            
+
+            <code class="ruby">#     end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="138">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="139">
+            
+            
+
+            
+
+            <code class="ruby">#     context &quot;with invalid parameters&quot; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="140">
+            
+            
+
+            
+
+            <code class="ruby">#       it &quot;renders a successful response (i.e. to display the &#39;edit&#39; template)&quot; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="141">
+            
+            
+
+            
+
+            <code class="ruby">#         admin_request = AdminRequest.create! valid_attributes</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="142">
+            
+            
+
+            
+
+            <code class="ruby">#         patch admin_request_url(admin_request), params: { admin_request: invalid_attributes }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="143">
+            
+            
+
+            
+
+            <code class="ruby">#         expect(response).to be_successful</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="144">
+            
+            
+
+            
+
+            <code class="ruby">#       end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="145">
+            
+            
+
+            
+
+            <code class="ruby">#     end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="146">
             
             
 
@@ -38368,7 +38632,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="3">
+          <li class="never" data-hits="" data-linenumber="148">
             
             
 
@@ -38379,7 +38643,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="4">
+          <li class="never" data-hits="" data-linenumber="149">
             
             
 
@@ -38390,7 +38654,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="5">
+          <li class="never" data-hits="" data-linenumber="150">
             
             
 
@@ -38401,7 +38665,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="6">
+          <li class="never" data-hits="" data-linenumber="151">
             
             
 
@@ -38412,7 +38676,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="7">
+          <li class="never" data-hits="" data-linenumber="152">
             
             
 
@@ -38423,7 +38687,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="8">
+          <li class="never" data-hits="" data-linenumber="153">
             
             
 
@@ -38434,7 +38698,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="9">
+          <li class="never" data-hits="" data-linenumber="154">
             
             
 

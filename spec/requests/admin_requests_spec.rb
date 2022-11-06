@@ -13,27 +13,39 @@ require 'rails_helper'
 # sticking to rails and rspec-rails APIs to keep things simple and stable.
 
 RSpec.describe "/admin_requests", type: :request do
-  before(:each) do
-      @test_user1 = User.create!(
-        first_name: Faker::Name.name,
-        last_name: Faker::Name.name,
-        email: Faker::Internet.email,
-        password: Faker::Internet.password,
-        point: 0,
-        is_admin: false,
-      )
-  end
-
   # This should return the minimal set of attributes required to create a valid
   # AdminRequest. As you add validations to AdminRequest, be sure to
   # adjust the attributes here as well.
+  let!(:test_user) {
+    {
+      id: 1,
+      first_name: Faker::Name.name,
+      last_name: Faker::Name.name,
+      email: Faker::Internet.email,
+      password: Faker::Internet.password,
+      point: 0,
+      is_admin: false
+    }
+  }
+
+  let!(:test_admin) {
+    {
+      id: 2,
+      first_name: Faker::Name.name,
+      last_name: Faker::Name.name,
+      email: Faker::Internet.email,
+      password: Faker::Internet.password,
+      point: 0,
+      is_admin: true
+    }
+  }
+
   let(:valid_attributes) {
-    skip("add a hash of attributes valid for your model")
-    Hash[
-      :user_id => @test_user1.id,
-      :request_status => "REQUESTED",
-      :request_reason => "new admin"
-    ]
+    {
+      user_id: test_user[:id],
+      request_status: "REQUESTED",
+      request_reason: "new admin"
+    }
   }
 
   let(:invalid_attributes) {
@@ -42,106 +54,109 @@ RSpec.describe "/admin_requests", type: :request do
 
   describe "GET /index" do
     it "renders a successful response" do
+      # create user to start the session
+      post users_url, params: {user: test_user}
+      User.create! test_user
       AdminRequest.create! valid_attributes
       get admin_requests_url
       expect(response).to be_successful
     end
   end
 
-  describe "GET /show" do
-    it "renders a successful response" do
-      admin_request = AdminRequest.create! valid_attributes
-      get admin_request_url(admin_request)
-      expect(response).to be_successful
-    end
-  end
+#   describe "GET /show" do
+#     it "renders a successful response" do
+#       admin_request = AdminRequest.create! valid_attributes
+#       get admin_request_url(admin_request)
+#       expect(response).to be_successful
+#     end
+#   end
 
-  describe "GET /new" do
-    it "renders a successful response" do
-      admin_request = AdminRequest.create! valid_attributes
-      get new_admin_request_url(admin_request)
-      expect(response).to be_successful
-    end
-  end
+#   describe "GET /new" do
+#     it "renders a successful response" do
+#       admin_request = AdminRequest.create! valid_attributes
+#       get new_admin_request_url(admin_request)
+#       expect(response).to be_successful
+#     end
+#   end
 
-  describe "GET /edit" do
-    it "renders a successful response" do
-      admin_request = AdminRequest.create! valid_attributes
-      get edit_admin_request_url(admin_request)
-      expect(response).to be_successful
-    end
-  end
+#   describe "GET /edit" do
+#     it "renders a successful response" do
+#       admin_request = AdminRequest.create! valid_attributes
+#       get edit_admin_request_url(admin_request)
+#       expect(response).to be_successful
+#     end
+#   end
 
-  describe "POST /create" do
-    context "with valid parameters" do
-      it "creates a new AdminRequest" do
-        expect {
-          post admin_requests_url, params: { admin_request: valid_attributes }
-        }.to change(AdminRequest, :count).by(1)
-      end
+#   describe "POST /create" do
+#     context "with valid parameters" do
+#       it "creates a new AdminRequest" do
+#         expect {
+#           post admin_requests_url, params: { admin_request: valid_attributes }
+#         }.to change(AdminRequest, :count).by(1)
+#       end
 
-      it "redirects to the created admin_request" do
-        post admin_requests_url, params: { admin_request: valid_attributes }
-        expect(response).to redirect_to(admin_request_url(AdminRequest.last))
-      end
-    end
+#       it "redirects to the created admin_request" do
+#         post admin_requests_url, params: { admin_request: valid_attributes }
+#         expect(response).to redirect_to(admin_request_url(AdminRequest.last))
+#       end
+#     end
 
-    context "with invalid parameters" do
-      it "does not create a new AdminRequest" do
-        expect {
-          post admin_requests_url, params: { admin_request: invalid_attributes }
-        }.to change(AdminRequest, :count).by(0)
-      end
+#     context "with invalid parameters" do
+#       it "does not create a new AdminRequest" do
+#         expect {
+#           post admin_requests_url, params: { admin_request: invalid_attributes }
+#         }.to change(AdminRequest, :count).by(0)
+#       end
 
-      it "renders a successful response (i.e. to display the 'new' template)" do
-        post admin_requests_url, params: { admin_request: invalid_attributes }
-        expect(response).to be_successful
-      end
-    end
-  end
+#       it "renders a successful response (i.e. to display the 'new' template)" do
+#         post admin_requests_url, params: { admin_request: invalid_attributes }
+#         expect(response).to be_successful
+#       end
+#     end
+#   end
 
-  describe "PATCH /update" do
-    context "with valid parameters" do
-      let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
-      }
+#   describe "PATCH /update" do
+#     context "with valid parameters" do
+#       let(:new_attributes) {
+#         skip("Add a hash of attributes valid for your model")
+#       }
 
-      it "updates the requested admin_request" do
-        admin_request = AdminRequest.create! valid_attributes
-        patch admin_request_url(admin_request), params: { admin_request: new_attributes }
-        admin_request.reload
-        skip("Add assertions for updated state")
-      end
+#       it "updates the requested admin_request" do
+#         admin_request = AdminRequest.create! valid_attributes
+#         patch admin_request_url(admin_request), params: { admin_request: new_attributes }
+#         admin_request.reload
+#         skip("Add assertions for updated state")
+#       end
 
-      it "redirects to the admin_request" do
-        admin_request = AdminRequest.create! valid_attributes
-        patch admin_request_url(admin_request), params: { admin_request: new_attributes }
-        admin_request.reload
-        expect(response).to redirect_to(admin_request_url(admin_request))
-      end
-    end
+#       it "redirects to the admin_request" do
+#         admin_request = AdminRequest.create! valid_attributes
+#         patch admin_request_url(admin_request), params: { admin_request: new_attributes }
+#         admin_request.reload
+#         expect(response).to redirect_to(admin_request_url(admin_request))
+#       end
+#     end
 
-    context "with invalid parameters" do
-      it "renders a successful response (i.e. to display the 'edit' template)" do
-        admin_request = AdminRequest.create! valid_attributes
-        patch admin_request_url(admin_request), params: { admin_request: invalid_attributes }
-        expect(response).to be_successful
-      end
-    end
-  end
+#     context "with invalid parameters" do
+#       it "renders a successful response (i.e. to display the 'edit' template)" do
+#         admin_request = AdminRequest.create! valid_attributes
+#         patch admin_request_url(admin_request), params: { admin_request: invalid_attributes }
+#         expect(response).to be_successful
+#       end
+#     end
+#   end
 
-  describe "DELETE /destroy" do
-    it "destroys the requested admin_request" do
-      admin_request = AdminRequest.create! valid_attributes
-      expect {
-        delete admin_request_url(admin_request)
-      }.to change(AdminRequest, :count).by(-1)
-    end
+#   describe "DELETE /destroy" do
+#     it "destroys the requested admin_request" do
+#       admin_request = AdminRequest.create! valid_attributes
+#       expect {
+#         delete admin_request_url(admin_request)
+#       }.to change(AdminRequest, :count).by(-1)
+#     end
 
-    it "redirects to the admin_requests list" do
-      admin_request = AdminRequest.create! valid_attributes
-      delete admin_request_url(admin_request)
-      expect(response).to redirect_to(admin_requests_url)
-    end
-  end
+#     it "redirects to the admin_requests list" do
+#       admin_request = AdminRequest.create! valid_attributes
+#       delete admin_request_url(admin_request)
+#       expect(response).to redirect_to(admin_requests_url)
+#     end
+  # end
 end
