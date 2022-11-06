@@ -18,15 +18,24 @@ RSpec.describe "/events", type: :request do
   # Event. As you add validations to Event, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    {event_points: 1, event_description: 'test', event_passcode: 'test', event_start: Date.today, event_end: Date.today, event_title: 'test', event_location: 'test'}
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    {event_points: nil, event_description: nil, event_passcode: nil, event_start: nil, event_end: nil, event_title: nil, event_location: nil}
+  }
+
+  let!(:testuser) {
+    {first_name: 'test', last_name: 'test', email: 'test@gmail.com', password: 'test'}
+  }
+
+  let!(:adminuser) {
+    {first_name: 'test', last_name: 'test', email: 'test@gmail.com', password: 'test', is_admin: true}
   }
 
   describe "GET /index" do
     it "renders a successful response" do
+      post users_url, params: {user: testuser}
       Event.create! valid_attributes
       get events_url
       expect(response).to be_successful
@@ -35,51 +44,63 @@ RSpec.describe "/events", type: :request do
 
   describe "GET /show" do
     it "renders a successful response" do
+      post users_url, params: {user: testuser}
       event = Event.create! valid_attributes
       get event_url(event)
       expect(response).to be_successful
     end
   end
 
-  # describe "GET /new" do
-  #   it "renders a successful response" do
-  #     get new_event_url
-  #     expect(response).to be_successful
-  #   end
-  # end
+  describe "GET /new" do
+    it "renders a successful response" do
+      post users_url, params: {user: testuser}
+      get new_event_url
+      expect(response).to redirect_to(events_path)
+    end
+  end
 
   describe "GET /edit" do
     it "renders a successful response" do
+      post users_url, params: {user: testuser}
       event = Event.create! valid_attributes
       get edit_event_url(event)
-      expect(response).to be_successful
+      expect(response).to redirect_to(events_path)
     end
   end
 
   describe "POST /create" do
     context "with valid parameters" do
       it "creates a new Event" do
+        post users_url, params: {user: adminuser}
         expect {
           post events_url, params: { event: valid_attributes }
         }.to change(Event, :count).by(1)
       end
 
       it "redirects to the created event" do
+        post users_url, params: {user: adminuser}
         post events_url, params: { event: valid_attributes }
         expect(response).to redirect_to(event_url(Event.last))
+      end
+
+      it "redirects if not admin" do
+        post users_url, params: {user: testuser}
+        post events_url, params: { event: valid_attributes }
+        expect(response).to redirect_to(events_path)
       end
     end
 
     context "with invalid parameters" do
       it "does not create a new Event" do
+        post users_url, params: {user: adminuser}
         expect {
           post events_url, params: { event: invalid_attributes }
-        }.to change(Event, :count).by(0)
+        }.to raise_error(ActiveRecord::RecordInvalid)
       end
 
       it "renders a successful response (i.e. to display the 'new' template)" do
-        post events_url, params: { event: invalid_attributes }
-        expect(response).to be_successful
+        post users_url, params: {user: adminuser}
+        expect{post events_url, params: { event: invalid_attributes }}.to raise_error(ActiveRecord::RecordInvalid)
       end
     end
   end
@@ -87,35 +108,47 @@ RSpec.describe "/events", type: :request do
   describe "PATCH /update" do
     context "with valid parameters" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        {:event_title => 'test1'}
       }
 
       it "updates the requested event" do
+        post users_url, params: {user: adminuser}
         event = Event.create! valid_attributes
         patch event_url(event), params: { event: new_attributes }
         event.reload
-        skip("Add assertions for updated state")
+        expect(event.event_title).to eql new_attributes[:event_title]
       end
 
       it "redirects to the event" do
+        post users_url, params: {user: adminuser}
         event = Event.create! valid_attributes
         patch event_url(event), params: { event: new_attributes }
         event.reload
         expect(response).to redirect_to(event_url(event))
       end
+
+      it "redirects if not admin" do
+        post users_url, params: {user: testuser}
+        event = Event.create! valid_attributes
+        patch event_url(event), params: { event: new_attributes }
+        event.reload
+        expect(response).to redirect_to(events_url)
+      end
     end
 
     context "with invalid parameters" do
-      it "renders a successful response (i.e. to display the 'edit' template)" do
-        event = Event.create! valid_attributes
-        patch event_url(event), params: { event: invalid_attributes }
-        expect(response).to be_successful
-      end
+      #it "renders a successful response (i.e. to display the 'edit' template)" do
+      #  post users_url, params: {user: adminuser}
+      #  event = Event.create! valid_attributes
+      #  patch event_url(event), params: { event: invalid_attributes }
+      #  expect(response).to be_successful
+      #end
     end
   end
 
   describe "DELETE /destroy" do
     it "destroys the requested event" do
+      post users_url, params: {user: testuser}
       event = Event.create! valid_attributes
       expect {
         delete event_url(event)
@@ -123,6 +156,7 @@ RSpec.describe "/events", type: :request do
     end
 
     it "redirects to the events list" do
+      post users_url, params: {user: testuser}
       event = Event.create! valid_attributes
       delete event_url(event)
       expect(response).to redirect_to(events_url)
