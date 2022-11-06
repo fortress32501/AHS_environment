@@ -10,6 +10,20 @@
     // max-height: 500px;
 }
 
+.simple-calendar {
+    overflow-x: scroll;
+    table {
+        min-height: 60vh;
+        min-width: 90vh;
+    }
+    thead {
+        position: sticky;
+        top: 0;
+        background-color: #364459;
+        color: #ffffff
+    }
+}
+
 .calendar-title {
     text-align: center;
     font-family: "EB Garamond";
@@ -18,6 +32,8 @@
 }
 
 .calendar-heading {
+    min-width: 90vh;
+    overflow-x: auto;
     display: flex;
     justify-content: space-between;
     padding-bottom: 10px;
@@ -52,21 +68,17 @@
 .card {
     overflow: hidden;         /*prevent text from being shown outside the border */
     text-overflow: ellipsis;  /*cut off text with an ellipsis*/
+    overflow-x: scroll;
 }
 
 .simple-calendar .next-month,
 .simple-calendar .prev-month {
     background-color: #ffffff;
 }
-  
-.simple-calendar thead {
-    background-color: #364459;
-    color: #ffffff
-}
-  
+
 .simple-calendar th {
     text-align: center;
-  }
+}
   
 .simple-calendar .day a {
     color: #364459;
@@ -78,13 +90,7 @@
 } 
   
 .simple-calendar tbody tr {
-    height: 150px;
     text-align: center;
-}
-  
-.calendar-day-box {
-    height: 110px;
-    overflow: scroll;
 }
 
 .simple-calendar .today {
@@ -96,38 +102,4 @@
     letter-spacing: -0.8px;
     margin-top: 8px;
     overflow: hidden;
-}
-  
-@media screen and (max-width: 1100px) {
-    .simple-calendar .day a {
-      font-size: 0.7em;
-      letter-spacing: -0.7px;
-    }
-}
-  
-@media screen and (max-width: 870px) {
-    .simple-calendar tbody tr {
-        height: 130px;
-    }
-    .calendar-day-box {
-        height: 100px;
-    }
-    .simple-calendar tbody td {
-        padding: 3px;
-    }
-}
-  
-@media screen and (max-width: 605px) {
-    .simple-calendar {
-        font-size: 0.8em;
-    }
-    .simple-calendar tbody tr {
-        height: 100px;
-    }
-    .calendar-day-box {
-        height: 80px;
-    }
-    .simple-calendar .day a {
-        font-size: 0.2em;
-    }
 }
