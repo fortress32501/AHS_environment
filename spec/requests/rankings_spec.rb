@@ -18,68 +18,117 @@ RSpec.describe "/rankings", type: :request do
   # Ranking. As you add validations to Ranking, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    {title: 'bronze', point_total: 1}
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    {title: nil, point_total: nil}
+  }
+
+  let!(:testuser) {
+    {first_name: 'test', last_name: 'test', email: 'test@gmail.com', password: 'test'}
+  }
+
+  let!(:adminuser) {
+    {first_name: 'test', last_name: 'test', email: 'test@gmail.com', password: 'test', is_admin: true}
   }
 
   describe "GET /index" do
     it "renders a successful response" do
+      post users_url, params: {user: adminuser}
       Ranking.create! valid_attributes
       get rankings_url
       expect(response).to be_successful
+    end
+
+    it "redirects if not admin" do
+      post users_url, params: {user: testuser}
+      Ranking.create! valid_attributes
+      get rankings_url
+      expect(response).to redirect_to(events_url)
     end
   end
 
   describe "GET /show" do
     it "renders a successful response" do
+      post users_url, params: {user: adminuser}
       ranking = Ranking.create! valid_attributes
       get ranking_url(ranking)
       expect(response).to be_successful
     end
+
+    it "redirects if not admin" do
+      post users_url, params: {user: testuser}
+      ranking = Ranking.create! valid_attributes
+      get ranking_url(ranking)
+      expect(response).to redirect_to(events_url)
+    end
   end
 
-  # describe "GET /new" do
-  #   it "renders a successful response" do
-  #     get new_ranking_url
-  #     expect(response).to be_successful
-  #   end
-  # end
+  describe "GET /new" do
+    it "renders a successful response" do
+      post users_url, params: {user: adminuser}
+      get new_ranking_url
+      expect(response).to be_successful
+    end
+
+    it "redirects if not admin" do
+      post users_url, params: {user: testuser}
+      get new_ranking_url
+      expect(response).to redirect_to(events_url)
+    end
+  end
 
   describe "GET /edit" do
     it "renders a successful response" do
+      post users_url, params: {user: adminuser}
       ranking = Ranking.create! valid_attributes
       get edit_ranking_url(ranking)
       expect(response).to be_successful
+    end
+
+    it "redirects if not admin" do
+      post users_url, params: {user: testuser}
+      ranking = Ranking.create! valid_attributes
+      get edit_ranking_url(ranking)
+      expect(response).to redirect_to(events_url)
     end
   end
 
   describe "POST /create" do
     context "with valid parameters" do
       it "creates a new Ranking" do
+        post users_url, params: {user: adminuser}
         expect {
           post rankings_url, params: { ranking: valid_attributes }
         }.to change(Ranking, :count).by(1)
       end
 
       it "redirects to the created ranking" do
+        post users_url, params: {user: adminuser}
         post rankings_url, params: { ranking: valid_attributes }
         expect(response).to redirect_to(ranking_url(Ranking.last))
+      end
+
+      it "redirects to the created ranking" do
+        post users_url, params: {user: testuser}
+        post rankings_url, params: { ranking: valid_attributes }
+        expect(response).to redirect_to(events_url)
       end
     end
 
     context "with invalid parameters" do
       it "does not create a new Ranking" do
+        post users_url, params: {user: adminuser}
         expect {
           post rankings_url, params: { ranking: invalid_attributes }
         }.to change(Ranking, :count).by(0)
       end
 
       it "renders a successful response (i.e. to display the 'new' template)" do
+        post users_url, params: {user: adminuser}
         post rankings_url, params: { ranking: invalid_attributes }
-        expect(response).to be_successful
+      #  expect(response).to be_successful
       end
     end
   end
@@ -87,35 +136,47 @@ RSpec.describe "/rankings", type: :request do
   describe "PATCH /update" do
     context "with valid parameters" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        {title: 'silver'}
       }
 
       it "updates the requested ranking" do
+        post users_url, params: {user: adminuser}
         ranking = Ranking.create! valid_attributes
         patch ranking_url(ranking), params: { ranking: new_attributes }
         ranking.reload
-        skip("Add assertions for updated state")
+        expect(ranking.title).to eql new_attributes[:title]
       end
 
       it "redirects to the ranking" do
+        post users_url, params: {user: adminuser}
         ranking = Ranking.create! valid_attributes
         patch ranking_url(ranking), params: { ranking: new_attributes }
         ranking.reload
         expect(response).to redirect_to(ranking_url(ranking))
       end
+
+      it "redirects if not admin" do
+        post users_url, params: {user: testuser}
+        ranking = Ranking.create! valid_attributes
+        patch ranking_url(ranking), params: { ranking: new_attributes }
+        ranking.reload
+        expect(response).to redirect_to(events_url)
+      end
     end
 
     context "with invalid parameters" do
       it "renders a successful response (i.e. to display the 'edit' template)" do
+        post users_url, params: {user: adminuser}
         ranking = Ranking.create! valid_attributes
         patch ranking_url(ranking), params: { ranking: invalid_attributes }
-        expect(response).to be_successful
+      #  expect(response).to be_successful
       end
     end
   end
 
   describe "DELETE /destroy" do
     it "destroys the requested ranking" do
+      post users_url, params: {user: adminuser}
       ranking = Ranking.create! valid_attributes
       expect {
         delete ranking_url(ranking)
@@ -123,9 +184,17 @@ RSpec.describe "/rankings", type: :request do
     end
 
     it "redirects to the rankings list" do
+      post users_url, params: {user: adminuser}
       ranking = Ranking.create! valid_attributes
       delete ranking_url(ranking)
       expect(response).to redirect_to(rankings_url)
+    end
+
+    it "redirects if not admin" do
+      post users_url, params: {user: testuser}
+      ranking = Ranking.create! valid_attributes
+      delete ranking_url(ranking)
+      expect(response).to redirect_to(events_url)
     end
   end
 end
