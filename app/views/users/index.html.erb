@@ -1,34 +1,5 @@
 <p id="notice"><%= notice %></p>
-<!--
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Point</th>
-      <th>Ranking</th>
-      <th>Actions</th>
-      <th colspan="7"></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= user.first_name + ' ' + user.last_name %></td>
-        <td><%= user.email %></td>
-        <%= turbo_frame_tag user do %>
-          <td><%= user.point %></td>
-        <% end %>
-        <td><%= user.ranking_id %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<br>
-<%= link_to 'New User', new_user_path %>-->
+
 
 <div>
   <h1> Users <h1>

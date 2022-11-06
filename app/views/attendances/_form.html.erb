@@ -11,44 +11,73 @@
     </div>
   <% end %>
 
-  <% if current_user %>
-      <div class = "field">
-        User: <%= current_user.email %>
-        <%= form.hidden_field :user_id,  :value => current_user.id%>
-      </div>
-  
-  <% end %>
 
-  <div class="field">
-    <%= form.label :event_id %>
-    <%= form.select :event_id, Event.order(:event_title).map { |event| [event.event_title, event.id] }, selected: params[:eventID], id: "id_of_the_event_id_select_box"%>
-  </div>
+  <div class="contain-blue-box">
+      <div class="blue-box">
+        <div class="center-box">
 
+            <div class="row justify-content-left">
+              <% if current_user %>
+                  <div class = "user-text">
+                    User: <%= current_user.email %>
+                    <%= form.hidden_field :user_id,  :value => current_user.id%>
+                  </div>
+              
+              <% end %>              
+            </div>
 
+            <div class="row justify-content-left">
+              <div class="field">
+                <%= form.label :event_id , class: "form-text" %>
+                <%= form.select :event_id, Event.order(:event_title).map { |event| [event.event_title, event.id] }, selected: params[:eventID], id: "id_of_the_event_id_select_box" , class: "form-input" %>
+              </div>              
+            </div>
 
-  <div class="field">
-    <%= form.label :password %>
-    <%= form.text_field :password %>
-  </div>
+            <div class="row justify-content-left last-row-pad" >
+              <div class="field">
+              <%= form.label :password , class: "form-text" %>
+              <%= form.text_field :password , class: "form-input" %>
+            </div>            
+            </div>
+            <br>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+            <div class="row justify-content-center" style="width: auto;">
+              <%= form.submit class: 'button-style-white' %>
+            </div>
+
+        </div>
+      <div>
+  <div>
+
 <% end %>
 
 
 
 
 <% if false %>
-<div class="field">
-<%= form.label :user_id %>
-<%= form.select :user_id, User.order(:email).map { |user| [user.email, user.id] }, include_blank: true, id: "id_of_the_user_id_select_box"%>
-</div>
-  # <div class="field">
-  #   <%= form.label :event_id %>
-  #   <%= form.select :event_id, Event.order(:event_title).map { |event| [event.event_title, event.id] }, include_blank: true, id: "id_of_the_event_id_select_box"%>
-  # </div>
-<% end %>
 
+<div class="contain-blue-box">
+<div class="blue-box">
+  <div class="center-box">
+
+      <div class="row justify-content-left last-row-pad" >
+        <div class="field">
+        <%= form.label :user_id , class: "form-text" %>
+        <%= form.select :user_id, User.order(:email).map { |user| [user.email, user.id] }, include_blank: true, id: "id_of_the_user_id_select_box" , class: "form-input" %>
+        </div>
+          # <div class="field">
+          #   <%= form.label :event_id %>
+          #   <%= form.select :event_id, Event.order(:event_title).map { |event| [event.event_title, event.id] }, include_blank: true, id: "id_of_the_event_id_select_box"%>
+          # </div>        
+      </div>
+      <br>
+
+
+  </div>
+<div>
+<div>
+
+
+<% end %>
 
 
