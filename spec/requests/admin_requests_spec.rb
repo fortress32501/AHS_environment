@@ -56,8 +56,11 @@ RSpec.describe "/admin_requests", type: :request do
     it "renders a successful response" do
       # create user to start the session
       post users_url, params: {user: test_user}
-      User.create! test_user
+      # create user in the db
+      # User.create! test_user
+      # create admin request in db
       AdminRequest.create! valid_attributes
+      # test endpoint
       get admin_requests_url
       expect(response).to be_successful
     end
