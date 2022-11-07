@@ -14,20 +14,14 @@ class EventTypesController < ApplicationController
   def new
     @event_type = EventType.new
     if !current_user.is_admin
-      respond_to do |format|
-        format.html { redirect_to event_types_url, notice: "You do not have access to new. You can request Administrator Access through Administrator request page." }
-        format.json { head :no_content }
-      end
+      redirect_to event_types_url, notice: "You do not have access to new. You can request Administrator Access through Administrator request page."      
     end
   end
 
   # GET /event_types/1/edit
   def edit
     if !current_user.is_admin
-      respond_to do |format|
-        format.html { redirect_to event_types_url, notice: "You do not have access to edit. You can request Administrator Access through Administrator request page." }
-        format.json { head :no_content }
-      end
+      redirect_to event_types_url, notice: "You do not have access to edit. You can request Administrator Access through Administrator request page."
     end
   end
 
