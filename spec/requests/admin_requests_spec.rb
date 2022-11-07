@@ -26,6 +26,7 @@ RSpec.describe "/admin_requests", type: :request do
 
   let(:invalid_attributes) {
     {
+      user_id: 1,
       request_status: "request",
       request_reason: "reason"
     }
@@ -281,14 +282,34 @@ RSpec.describe "/admin_requests", type: :request do
         post admin_requests_url, params: { admin_request: valid_attributes }
         expect(response).to redirect_to(admin_request_url(AdminRequest.last))
       end
+
+      it "redirects if user is admin" do
+        # create the user and log in
+        post users_url, params: {user: test_admin}
+        # get users id and attach to hash for admin request
+        valid_attributes[:user_id] = User.last.id
+        # create admin request
+        post admin_requests_url, params: { admin_request: valid_attributes }
+        expect(response).to redirect_to admin_requests_url
+      end
+
+      it "redirects if user already has admin request" do
+        # create the user and log in
+        post users_url, params: {user: test_user}
+        # get users id and attach to hash for admin request
+        valid_attributes[:user_id] = User.last.id
+        # create admin request
+        post admin_requests_url, params: { admin_request: valid_attributes }
+        # create a second request
+        post admin_requests_url, params: { admin_request: valid_attributes }
+        expect(response).to redirect_to admin_requests_url
+      end
     end
 
     context "with invalid parameters" do
       it "does not create a new AdminRequest" do
         # create the user and log in
         post users_url, params: {user: test_user}
-        # get users id and attach to hash for admin request
-        invalid_attributes[:user_id] = - 1  # something other than a valid id
         # create admin request
         expect {
           post admin_requests_url, params: { admin_request: invalid_attributes }
@@ -298,8 +319,6 @@ RSpec.describe "/admin_requests", type: :request do
       it "renders a successful response (i.e. to display the 'new' template)" do
         # create the user and log in
         post users_url, params: {user: test_user}
-        # get users id and attach to hash for admin request
-        invalid_attributes[:user_id] = - 1  # something other than a valid id
         # create admin request
         post admin_requests_url, params: { admin_request: invalid_attributes }
         expect(response).not_to be_successful
@@ -307,48 +326,76 @@ RSpec.describe "/admin_requests", type: :request do
     end
   end
 
-#   describe "PATCH /update" do
-#     context "with valid parameters" do
-#       let(:new_attributes) {
-#         skip("Add a hash of attributes valid for your model")
-#       }
+  describe "PATCH /update" do
+    context "with valid parameters" do
+      let(:new_attributes) {
+        {
+          request_reason: "update admin request"
+        }
+      }
 
-#       it "updates the requested admin_request" do
-#         admin_request = AdminRequest.create! valid_attributes
-#         patch admin_request_url(admin_request), params: { admin_request: new_attributes }
-#         admin_request.reload
-#         skip("Add assertions for updated state")
-#       end
+      it "updates the requested admin_request" do
+        # create the user and log in
+        post users_url, params: {user: test_user}
+        # get users id and attach to hash for admin request
+        valid_attributes[:user_id] = User.last.id
+        # create admin request
+        admin_request = AdminRequest.create! valid_attributes
+        patch admin_request_url(admin_request), params: { admin_request: new_attributes }
+        admin_request.reload
+      end
 
-#       it "redirects to the admin_request" do
-#         admin_request = AdminRequest.create! valid_attributes
-#         patch admin_request_url(admin_request), params: { admin_request: new_attributes }
-#         admin_request.reload
-#         expect(response).to redirect_to(admin_request_url(admin_request))
-#       end
-#     end
+      it "redirects to the admin_request" do
+        # create the user and log in
+        post users_url, params: {user: test_user}
+        # get users id and attach to hash for admin request
+        valid_attributes[:user_id] = User.last.id
+        # create admin request
+        admin_request = AdminRequest.create! valid_attributes
+        patch admin_request_url(admin_request), params: { admin_request: new_attributes }
+        admin_request.reload
+        expect(response).to redirect_to(admin_request_url(admin_request))
+      end
 
-#     context "with invalid parameters" do
-#       it "renders a successful response (i.e. to display the 'edit' template)" do
-#         admin_request = AdminRequest.create! valid_attributes
-#         patch admin_request_url(admin_request), params: { admin_request: invalid_attributes }
-#         expect(response).to be_successful
-#       end
-#     end
-#   end
+      it "redirects if user did not create request" do
+        # create the user and log in
+        post users_url, params: {user: test_user}
+        # get users id and attach to hash for admin request
+        valid_attributes[:user_id] = User.last.id
+        # create admin request
+        admin_request = AdminRequest.create! valid_attributes
+        # log in with different user
+        post users_url, params: {user: test_admin}
+        patch admin_request_url(admin_request), params: { admin_request: new_attributes }
+        admin_request.reload
+        expect(response).to redirect_to admin_requests_url
+      end
+    end
 
-#   describe "DELETE /destroy" do
-#     it "destroys the requested admin_request" do
-#       admin_request = AdminRequest.create! valid_attributes
-#       expect {
-#         delete admin_request_url(admin_request)
-#       }.to change(AdminRequest, :count).by(-1)
-#     end
+    context "with invalid parameters" do
+      it "renders a successful response (i.e. to display the 'edit' template)" do
+        # create the user and log in
+        post users_url, params: {user: test_user}
+        # get users id and attach to hash for admin request
+        valid_attributes[:user_id] = User.last.id
+        # create admin request
+        admin_request = AdminRequest.create! valid_attributes
+        patch admin_request_url(admin_request), params: { admin_request: invalid_attributes }
+        expect(response).not_to be_successful
+      end
+    end
+  end
 
-#     it "redirects to the admin_requests list" do
-#       admin_request = AdminRequest.create! valid_attributes
-#       delete admin_request_url(admin_request)
-#       expect(response).to redirect_to(admin_requests_url)
-#     end
-  # end
+  describe "DELETE /destroy" do
+    it "requests upon destroy request" do
+      # create the user and log in
+      post users_url, params: {user: test_user}
+      # get users id and attach to hash for admin request
+      valid_attributes[:user_id] = User.last.id
+      # create admin request
+      admin_request = AdminRequest.create! valid_attributes
+      delete admin_request_url(admin_request)
+      expect(response).to redirect_to admin_requests_url
+    end
+  end
 end
