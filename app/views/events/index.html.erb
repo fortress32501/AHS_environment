@@ -24,8 +24,8 @@
             <td><%= event.event_points %></td>
             <td><%= event.event_description %></td>
             <td><%= event.event_passcode %></td>
-            <td><%= event.event_start %></td>
-            <td><%= event.event_end %></td>
+            <td><%= event.event_start.to_s(:short) %></td>
+            <td><%= event.event_end.to_s(:short) %></td>
             <td><%= event.event_title %></td>
             <td><%= event.event_location %></td>
             <td><%= get_event_type(event) %></td>
