@@ -8,7 +8,7 @@ class Ranking < ApplicationRecord
         1+(SELECT count(*) 
         from (select point from Users GROUP BY point) as A 
         WHERE A.point > B.point) as rnk,
-        first_name, last_name, email, point FROM Users as B ORDER BY point desc")
+        first_name, last_name, email, ranking_id, id, point FROM Users as B ORDER BY point desc")
         list_rankings = ActiveRecord::Base.connection.execute(sql)
     end
 
