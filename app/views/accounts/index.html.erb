@@ -3,7 +3,7 @@
   <div class="container">
     <div class="row d-flex justify-content-center mt-8" style="overflow-y: hidden !important;">
       <div class="col col-lg-8">
-        <div class="card profile-card" style="border-radius: .5rem;">
+        <div class="card profile-card" style="border-radius: .5rem; overflow-x: hidden !important;">
           <div class="row g-0">
           
             <!-- Profile (Left section) -->
@@ -96,7 +96,7 @@
                   <hr class="mt-0 mb-3" style="width: 50%; margin:0 auto;">
                   <div class="row pt-1 px-4">
                     <div class="col mb-3 center">
-                    <% if @event.recent_events.blank? %>
+                    <% if Event.recent_events.blank? %>
                       <p class="smaller-text no-hover" style="text-transform: none;"> Currently no events, you can create one <%= link_to "HERE", events_path %></p>
                     <% else %>
                       <!-- table for events -->
@@ -109,7 +109,7 @@
                           </thead>
 
                           <tbody>
-                            <% @event.recent_events.each do |event| %>
+                            <% Event.recent_events.each do |event| %>
                               <tr>
                                 <td class="custom-table"><p class="text-muted smaller-text" style="margin-bottom: 0;"><%= link_to event.event_title, event_path(event.id), class:"no-hover", style:"color: rgb(58, 130, 212); font-weight: bold;" %></p> </td>
                                 <td><p class="text-muted smaller-text" style="margin-bottom: 0;"><%= event.event_start.to_s(:short) %> to <%= event.event_end.to_s(:short) %></p></td>

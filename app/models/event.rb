@@ -7,14 +7,9 @@ class Event < ApplicationRecord
   def attendees
     Attendance.where(:event_id => self.id).all
   end
-  
-  # find user first and last name by id
-  def find_name(user_id)
-    User.find(user_id).last_name + ", " +User.find(user_id).first_name
-  end
-  
+
   # show 3 recent activities on account page
-  def recent_events
+  def self.recent_events
     Event.order('event_start DESC').limit(3)
   end
 
