@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   skip_before_action :require_login, only: [:new, :create]
   before_action :set_user, only: %i[ show edit update destroy ]
-  layout 'login_signup', only: :new
+  layout 'screen_size', only: :new
   
   # GET /users/1 or /users/1.json
   def show
@@ -9,14 +9,13 @@ class UsersController < ApplicationController
   end
   
   # GET /users or /users.json
-  def index
-    
+  def index  
     if current_user.is_admin
       @users = User.all.order('point DESC')
-      current_user.assign_ranking
+      # current_user.assign_ranking
     elsif
       @users = User.where(id: current_user.id)
-      current_user.assign_ranking
+      # current_user.assign_ranking
     end
   end
   

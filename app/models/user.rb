@@ -20,15 +20,25 @@ class User < ApplicationRecord
       "Member"
     end
   end
+    
+  # find user first and last name by id
+  def find_name(user_id)
+    User.find(user_id).last_name + ", " +User.find(user_id).first_name
+  end
+  
+  # show 3 recent attendance records
+  def recent_attendance
+    self.attendance_history.limit(3)
+  end
 
-  # join attendance table with event table
+  # join attendance table with event table on current user
   def attendance_history
-    @attendance_history = Attendance.joins(:event).where(attendances: { user_id: self.id }).order('event_start DESC')
+    Attendance.joins(:event).where(attendances: { user_id: self.id }).order('event_start DESC')
   end
 
   # calculate attendance point of user
   def user_points
-    @user_points = self.attendance_history.sum(:event_points)
+    self.attendance_history.sum(:event_points)
   end
 
   def assign_ranking
@@ -81,7 +91,5 @@ class User < ApplicationRecord
     else 
       "#{ title_found.title }"
     end
-  end
-
-  
+  end 
 end
