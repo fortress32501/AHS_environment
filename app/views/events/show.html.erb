@@ -90,7 +90,7 @@
   <tbody>
     <% @event.attendees.each do |attendee| %>
       <tr>
-        <td><p class="text-muted smaller-text" style="margin-bottom: 0;"><%= @event.find_name(attendee.user_id) %> </p></td>
+        <td><p class="text-muted smaller-text" style="margin-bottom: 0;"><%= current_user.find_name(attendee.user_id) %> </p></td>
       </tr>
     <% end %>
   </tbody>
