@@ -58,9 +58,7 @@ class AttendancesController < ApplicationController
     else 
       respond_to do |format|
         if (@event.nil?)
-          format.html {redirect_to new_attendance_path(eventID: @event.id), notice: "Select an Event"}
-        elsif (@user.nil?)
-          format.html {redirect_to new_session_path, notice: "Please Sign in"}
+          format.html {redirect_to events_path, notice: "Event Sign-in Failure, Event not Selected"}
         else 
           format.html {redirect_to events_path, notice: "Your attendance has already been taken" }
         end
