@@ -45,14 +45,14 @@
 
 h1 {
   color: #bfb87d;
-  font-family: "EB Garamond";
-
+  font-family: "adobe-garamond-pro"; //"EB Garamond";
+  font-size: x-large;
   text-transform: uppercase;
+  text-align: center;
 
   font-weight: 400;
   font-style: normal;
   letter-spacing: 0px;
-  text-transform: none;
   line-height: 1.2em;
 
   display: block;
@@ -192,5 +192,9 @@ body {
   align-items: center;
   justify-content: center;
   background-color: #364459;
+}
+
+th {
+  text-transform: uppercase;
 }
 
