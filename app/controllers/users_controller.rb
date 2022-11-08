@@ -92,8 +92,8 @@ class UsersController < ApplicationController
       else 
         @user.destroy
         session[:user_id] = nil
-        flash[:notice] = "Your account was successfullly deleted."
-        redirect_to new_session_path
+        format.html { redirect_to new_session_path, notice: "Your account was successfullly deleted." }
+        format.json { head :no_content }
       end
     end
   end
