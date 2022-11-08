@@ -65,25 +65,30 @@
   <div>
 <div>
 
-<%= link_to 'Edit', edit_event_path(@event) %>
-<% end %>
-<%= link_to 'Back', events_path %> | 
-<%= link_to 'Sign In For Event', new_attendance_path(eventID: @event.id) %>
+<div class="d-flex justify-content-center">
+  <%= link_to 'Edit', edit_event_path(@event), class: 'button-style-blue' %>
+  <% end %>
+  <%= link_to 'Back', events_path, class: 'button-style-blue' %>  
+  <%= link_to 'Sign In For Event', new_attendance_path(eventID: @event.id), class: 'button-style-blue' %>
+</div>
 
-<hr>
+<hr class="my-3" style="width: 50%; margin: auto;">
 <!-- Show participants per event -->
 <p class="center" style="text-transform: uppercase;">Number of attendees: <%= @event.attendees.count %></p>
-<table class="table-style" style="overflow-y: auto;">
-  <thead>
-    <tr class="mb-4">
-      <th>Attendees</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @event.attendees.each do |attendee| %>
-      <tr>
-        <td><p class="text-muted smaller-text" style="margin-bottom: 0;"><%= current_user.find_name(attendee.user_id) %> </p></td>
+<% if !@event.attendees.blank? %>
+  <table class="table-style" style="overflow-y: auto;">
+    <thead>
+      <tr class="mb-4">
+        <th class="center" style="text-transform: uppercase;">Attendees</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <% @event.attendees.each do |attendee| %>
+        <tr>
+          <td class="center"><p class="text-muted smaller-text" style="margin-bottom: 0;"><%= current_user.find_name(attendee.user_id) %> </p></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
+
