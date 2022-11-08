@@ -49,3 +49,20 @@
 <% end %>
 <%= link_to 'Back', events_path %> | 
 <%= link_to 'Sign In For Event', new_attendance_path(eventID: @event.id) %>
+
+<!-- Show participants per event -->
+<p>Number of attendees: <%= @event.attendees.count %></p>
+<table class="table-sm">
+  <thead>
+    <tr class="mb-4">
+      <th>Attendees</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @event.attendees.each do |attendee| %>
+      <tr>
+        <td><p class="text-muted smaller-text" style="margin-bottom: 0;"><%= @event.find_name(attendee.user_id) %> </p></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
