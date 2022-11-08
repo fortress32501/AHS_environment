@@ -23,3 +23,8 @@
     font-size: 2.1em;
     text-align: center;
   }
+
+  p.show-event-text-header {
+    font-family: "EB Garamond";
+    font-size: 22px;
+  }

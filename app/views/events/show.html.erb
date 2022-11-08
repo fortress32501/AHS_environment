@@ -1,34 +1,76 @@
 <p id="notice"><%= notice %></p>
+<div class="contain-blue-box">
+<div class="blue-box-show">
+  <div class="center-box-show", style="width: 50% !important">
 
-<p>
-  <strong>Event description:</strong>
-  <%= @event.event_description %>
-</p>
+      <div class="row justify-content-left">
+        <p class="show-event-text-header">
+          <strong>Event description:</strong>
+          <%= @event.event_description %>
+        </p>        
+      </div>
 
-<p>
-  <strong>Event passcode:</strong>
-  <%= @event.event_passcode %>
-</p>
+      <div class="row justify-content-left">
+        <p class="show-event-text-header">
+          <strong>Event passcode:</strong>
+          <%= @event.event_passcode %>
+        </p>        
+      </div>
 
-<p>
-  <strong>Event start:</strong>
-  <%= @event.event_start %>
-</p>
+      <div class="row justify-content-left">
+        <p class="show-event-text-header">
+          <strong>Event start:</strong>
+          <%= @event.event_start.to_s(:short) %>
+        </p>        
+      </div>
 
-<p>
-  <strong>Event end:</strong>
-  <%= @event.event_end %>
-</p>
+      <div class="row justify-content-left">
+        <p class="show-event-text-header">
+          <strong>Event end:</strong>
+          <%= @event.event_end.to_s(:short) %>
+        </p>        
+      </div>
 
-<p>
-  <strong>Event title:</strong>
-  <%= @event.event_title %>
-</p>
+      <div class="row justify-content-left">
+        <p class="show-event-text-header">
+          <strong>Event title:</strong>
+          <%= @event.event_title %>
+        </p>        
+      </div>
 
-<p>
-  <strong>Event location:</strong>
-  <%= @event.event_location %>
-</p>
+      <div class="row justify-content-left">
+        <p class="show-event-text-header">
+          <strong>Event location:</strong>
+          <%= @event.event_location %>
+        </p>        
+      </div>
+
+      <div class="row justify-content-left wrapper">
+        
+          <div class="wrapper">
+          <div style="display: inline-block;"><p class="show-event-text-header"> <strong>Event type:</strong> </p></div>
+          
+          <div style="width:20px; height:20px; background-color: <%=get_event_color(@event)%>; display: inline-block;"></div>
+
+          <div style="display: inline-block;"><p class="show-event-text-header"><%= get_event_type(@event) %></p></div>
+      
+          
+          <!-- <div style="width:200px; white-space: nowrap;">
+             <div style="display: inline-block;"><%= get_event_color(@event) %></div> 
+          </div> -->
+        </div>   
+      </div>
+
+      <div class="row justify-content-left" >
+
+        <% if current_user&.is_admin? %>
+          <p class="show-event-text-header">
+            <strong>Event points:</strong>
+            <%= @event.event_points %>
+          </p>
+      </div>
+
+      <br>
 
 
 <p>
@@ -50,9 +92,10 @@
 <%= link_to 'Back', events_path %> | 
 <%= link_to 'Sign In For Event', new_attendance_path(eventID: @event.id) %>
 
+<hr>
 <!-- Show participants per event -->
-<p>Number of attendees: <%= @event.attendees.count %></p>
-<table class="table-sm">
+<p class="center" style="text-transform: uppercase;">Number of attendees: <%= @event.attendees.count %></p>
+<table class="table-style">
   <thead>
     <tr class="mb-4">
       <th>Attendees</th>
