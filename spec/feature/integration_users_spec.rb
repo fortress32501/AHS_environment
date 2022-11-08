@@ -81,13 +81,14 @@ end
 
 #Edit user points
 RSpec.describe 'Edit user points', type: :feature do
+  before(:each) do
+    load "#{Rails.root}/db/seeds_test.rb" 
+  end
   scenario 'valid inputs' do
-    visit new_user_path
-    fill_in 'First name', with: 'Jane'
-    fill_in 'Last name', with: 'Doe'
-    fill_in 'Email', with: 'jane@gmail.com'
-    fill_in 'Password', with: '123'
-    click_on 'submit'
+    visit new_session_path
+    fill_in 'Email', with: 'test@gmail.com'
+    fill_in 'Password', with: 'Test'
+    click_on 'sign in'
     visit users_path
     click_on 'Edit'
     fill_in 'Point', with: 3
@@ -99,13 +100,14 @@ end
 
 #points should not chnage if not edited
 RSpec.describe 'Do not edit user points', type: :feature do
+  before(:each) do
+    load "#{Rails.root}/db/seeds_test.rb" 
+  end
   scenario 'valid inputs' do
-    visit new_user_path
-    fill_in 'First name', with: 'Jane'
-    fill_in 'Last name', with: 'Doe'
-    fill_in 'Email', with: 'jane@gmail.com'
-    fill_in 'Password', with: '123'
-    click_on 'submit'
+    visit new_session_path
+    fill_in 'Email', with: 'test@gmail.com'
+    fill_in 'Password', with: 'Test'
+    click_on 'sign in'
     visit users_path
     click_on 'Edit'
     fill_in 'Point', with: 3

@@ -10,7 +10,7 @@ RSpec.describe 'Routes Access', type: :feature do
         click_on 'sign up'
         fill_in 'First name', with: 'test1'
         fill_in 'Last name', with: 'test2'
-        fill_in 'Email', with: 'test@test.com'
+        fill_in 'Email', with: 'test1@test.com'
         fill_in 'Password', with: 'test'
         click_on 'submit'
         
@@ -33,15 +33,15 @@ RSpec.describe 'Routes Access', type: :feature do
         expect(page).to have_content('test1')
         expect(page).to have_content('test2')
 
-        visit events_path
-        click_on 'Sign Out'
+    end
 
+    scenario 'valid inputs events access' do
+        visit new_session_path
         fill_in 'Email', with: 'test@gmail.com'
         fill_in 'Password', with: 'Test'
         click_on 'sign in'
 
         visit new_event_path
-        save_and_open_page
         fill_in 'title', with: '1st Meeting'
         fill_in 'description', with: 'General Meeting'
         fill_in 'points', with: '5'
@@ -69,12 +69,6 @@ RSpec.describe 'Routes Access', type: :feature do
         fill_in 'Point total', with: '150'
         click_on 'Create Ranking'
 
-        click_on 'Sign Out'
-
-        fill_in 'Email', with: 'test@test.com'
-        fill_in 'Password', with: 'test'
-        click_on 'sign in'
-
         visit events_path
         click_on 'Show'
         click_on 'Sign In For Event'
@@ -82,23 +76,15 @@ RSpec.describe 'Routes Access', type: :feature do
         fill_in 'Password', with: 'Test'
         click_on 'Create Attendance'
 
-        ranking = Ranking.last
-        visit rankings_path(1)
-        expect(page).to have_current_path(events_path)
+        visit rankings_path
+        expect(page).to have_content('test ranking')
+        expect(page).to have_content('150')
+        expect(page).to have_content('test@gmail.com')
+        expect(page).to have_content('5')
 
-        visit edit_ranking_url(ranking)
-        expect(page).to have_current_path(events_path)
+        visit accounts_path
+        expect(page).to have_content('1st Meeting')
+        expect(page).to have_content('test@gmail.com')
 
-        event_type = EventType.last
-        visit edit_event_type_url(event_type)
-        expect(page).to have_current_path(event_types_path)
-
-        attendance = Attendance.last
-        visit edit_attendance_path(attendance)
-        expect(page).to have_current_path(events_path)
-
-        user = User.last
-        visit edit_user_url(user)
-        expect(page).to have_current_path(users_path)
       end
   end

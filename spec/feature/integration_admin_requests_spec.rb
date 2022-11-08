@@ -15,8 +15,7 @@ RSpec.describe 'Creating an Admin Request', type: :feature do
         fill_in 'Request reason', with: 'new officer: test'
         click_on 'Create Admin request'
         visit admin_requests_path
-        expect(page).to have_content('REQUESTED')
-        expect(page).to have_content('new officer: test')
+        expect(page).not_to have_content('Create Admin Request')
         # need to figure out how to see what the date the request ^^ was generated
         # this would vary with every time the test case is run
         # expect(page).to have_content('2020-09-28')
@@ -38,20 +37,10 @@ RSpec.describe 'Creating an Admin Request', type: :feature do
         visit admin_requests_path
         expect(page).to have_content('REQUESTED')
         expect(page).to have_content('new officer: test')
-        # need to figure out how to see what the date the request ^^ was generated
-        # this would vary with every time the test case is run
-        # expect(page).to have_content('2020-09-28')
-        # expect(page).to have_content('01:43')
-
+        #check that user cannot create multiple requests
         visit new_admin_request_path
-        fill_in 'Request reason', with: 'new officer: test 2'
-        click_on 'Create Admin request'
-        visit admin_requests_path
-        # make sure they are both there, not just the new one created 
         expect(page).to have_content('REQUESTED')
         expect(page).to have_content('new officer: test')
-        expect(page).to have_content('REQUESTED')
-        expect(page).to have_content('new officer: test 2')
     end
 end
 
@@ -70,7 +59,6 @@ RSpec.describe 'Show Admin Requests', type: :feature do
         fill_in 'Request reason', with: 'new officer: test'
         click_on 'Create Admin request'
         visit admin_requests_path
-        click_on 'Show'
         expect(page).to have_content('REQUESTED')
         expect(page).to have_content('new officer: test')
         # need to figure out how to see what the date the request ^^ was generated
@@ -79,6 +67,7 @@ RSpec.describe 'Show Admin Requests', type: :feature do
         # expect(page).to have_content('01:43')
     end
 end
+""" No longer allowing users to delete admin request to preserve history of requests made.
 
 RSpec.describe 'Delete Admin Requests', type: :feature do
     scenario 'Delete' do
@@ -94,13 +83,14 @@ RSpec.describe 'Delete Admin Requests', type: :feature do
         fill_in 'Request reason', with: 'new officer: test'
         click_on 'Create Admin request'
         visit admin_requests_path
-        click_on 'Destroy'
+        click_on 'Delete'
     
         visit admin_requests_path
         expect(page).not_to have_content('REQUESTED')
         expect(page).not_to have_content('new officer: test')
     end
 end
+"""
 
 RSpec.describe 'Review Admin Requests', type: :feature do
     scenario 'Review' do
