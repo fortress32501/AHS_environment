@@ -1,43 +1,45 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Events</h1>
-<div class="event-table"> 
-  <table class="table-style" >
-    <thead>
-      <tr>
-        <th>Event points</th>
-        <th>Event description</th>
-        <th>Event passcode</th>
-        <th>Event start</th>
-        <th>Event end</th>
-        <th>Event title</th>
-        <th>Event location</th>
-        <th>Event type</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @events.each do |event| %>
+<% if current_user.is_admin %>
+  <div class="event-table"> 
+    <table class="table-style" >
+      <thead>
         <tr>
-          <td><%= event.event_points %></td>
-          <td><%= event.event_description %></td>
-          <td><%= event.event_passcode %></td>
-          <td><%= event.event_start %></td>
-          <td><%= event.event_end %></td>
-          <td><%= event.event_title %></td>
-          <td><%= event.event_location %></td>
-          <td><%= get_event_type(event) %></td>
-          <td><%= link_to 'Show', event, class: "button-style"  %></td>
-          <% if current_user.is_admin %>
-            <td><%= link_to 'Edit', edit_event_path(event), class: "button-style" %></td>
-            <td><%= button_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' }, class: "button-style" %></td>
-          <% end %>
+          <th>Event points</th>
+          <th>Event description</th>
+          <th>Event passcode</th>
+          <th>Event start</th>
+          <th>Event end</th>
+          <th>Event title</th>
+          <th>Event location</th>
+          <th>Event type</th>
+          <th colspan="3"></th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
+      </thead>
+
+      <tbody>
+        <% @events.each do |event| %>
+          <tr>
+            <td><%= event.event_points %></td>
+            <td><%= event.event_description %></td>
+            <td><%= event.event_passcode %></td>
+            <td><%= event.event_start %></td>
+            <td><%= event.event_end %></td>
+            <td><%= event.event_title %></td>
+            <td><%= event.event_location %></td>
+            <td><%= get_event_type(event) %></td>
+            <td><%= link_to 'Show', event, class: "button-style"  %></td>
+            <% if current_user.is_admin %>
+              <td><%= link_to 'Edit', edit_event_path(event), class: "button-style" %></td>
+              <td><%= button_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' }, class: "button-style" %></td>
+            <% end %>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+<% end %>
 
 
 <br>
@@ -61,7 +63,6 @@
     <div style="padding-bottom:5px;"></div>
   <% end %>
 <% end %>
-
 <!--Renders the table for the Event Types-->
 <!-- Styling is for the color box -->
 <br>
