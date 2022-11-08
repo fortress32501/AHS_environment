@@ -2,20 +2,23 @@
 class User < ApplicationRecord
   has_secure_password
   has_many :events, through: :attendance
+  has_many :attendance
   validates :first_name, :last_name, :email, presence: true
   # https://medium.com/@rmeji1/creating-a-login-with-simple-auth-using-ruby-on-rails-7dd95a03cb7a
-  def welcome
-    "Hello, #{self.first_name} #{self.last_name} !"
-  end
 
   # Check if current user is an admin
   def is_admin?
     self.is_admin
   end
-  
+         
+  # Check if attendee is an admin
+  def is_attendee_admin(user_id)
+    User.find(user_id).is_admin? 
+  end
+
   # Display role type 
-  def role?
-    if is_admin?
+  def role
+    if self.is_admin?
       "Admin"
     else
       "Member"
@@ -24,7 +27,7 @@ class User < ApplicationRecord
     
   # find user first and last name by id
   def find_name(user_id)
-    User.find(user_id).last_name + ", " +User.find(user_id).first_name
+    User.find(user_id).last_name + ", " + User.find(user_id).first_name
   end
   
   # show 3 recent attendance records
@@ -34,7 +37,7 @@ class User < ApplicationRecord
 
   # join attendance table with event table on current user
   def attendance_history
-    Attendance.joins(:event).where(attendances: { user_id: self.id }).order('event_start DESC')
+    Attendance.joins(:event).where(attendances: { user_id: self.id }).order('created_at DESC')
   end
 
   # calculate attendance point of user
