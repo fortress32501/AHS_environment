@@ -1,6 +1,7 @@
-#require 'rails_helper'
+# frozen_string_literal: true
+# require 'rails_helper'
 
-#RSpec.describe "attendances/edit", type: :view do
+# RSpec.describe "attendances/edit", type: :view do
 #  before(:each) do
 #    @attendance = assign(:attendance, Attendance.create!(
 #      user_id: 1,
@@ -21,4 +22,4 @@
 #      assert_select "input[name=?]", "attendance[points]"
 #    end
 #  end
-#end
+# end
