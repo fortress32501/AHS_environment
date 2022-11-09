@@ -1,6 +1,7 @@
-#require 'rails_helper'
+# frozen_string_literal: true
+# require 'rails_helper'
 
-#RSpec.describe "event_types/index", type: :view do
+# RSpec.describe "event_types/index", type: :view do
 #  before(:each) do
 #    assign(:event_types, [
 #     EventType.create!(
@@ -22,4 +23,4 @@
 #    assert_select "tr>td", text: "Description".to_s, count: 2
 #    assert_select "tr>td", text: "Color".to_s, count: 2
 #  end
-#end
+# end

@@ -39,10 +39,11 @@
       </tbody>
     </table>
   </div>
+  <br>
 <% end %>
 
 
-<br>
+
 <% if current_user.is_admin %>
   <div class="d-flex justify-content-center">
     <%= link_to 'New Event', new_event_path, class: "button-style-blue" %>

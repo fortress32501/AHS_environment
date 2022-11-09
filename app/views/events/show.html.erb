@@ -85,7 +85,13 @@
     <tbody>
       <% @event.attendees.each do |attendee| %>
         <tr>
-          <td class="center"><p class="text-muted smaller-text" style="margin-bottom: 0;"><%= current_user.find_name(attendee.user_id) %> </p></td>
+          <td class="center"><p class="text-muted smaller-text" style="margin-bottom: 0;">
+            <%= current_user.find_name(attendee.id) %> 
+              <% if current_user.is_attendee_admin(attendee.id) %> 
+                ( Admin )
+              <% end %>
+            </p>
+          </td>
         </tr>
       <% end %>
     </tbody>

@@ -1,45 +1,50 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
   has_secure_password
   has_many :events, through: :attendance
+  has_many :attendance
   validates :first_name, :last_name, :email, presence: true
 
   # https://medium.com/@rmeji1/creating-a-login-with-simple-auth-using-ruby-on-rails-7dd95a03cb7a
-  def welcome
-    "Hello, #{self.first_name} #{self.last_name} !"
-  end
 
   # Check if current user is an admin
   def is_admin?
-    self.is_admin
+    is_admin
   end
-  
-  # Display role type 
-  def role?
+
+  # Check if attendee is an admin
+  def is_attendee_admin(user_id)
+    User.find(user_id).is_admin?
+  end
+
+  # Display role type
+  def role
     if is_admin?
-      "Admin"
+      'Admin'
     else
-      "Member"
+      'Member'
     end
   end
-    
+
   # find user first and last name by id
   def find_name(user_id)
-    User.find(user_id).last_name + ", " +User.find(user_id).first_name
+    "#{User.find(user_id).last_name}, #{User.find(user_id).first_name}"
   end
-  
+
   # show 3 recent attendance records
   def recent_attendance
-    self.attendance_history.limit(3)
+    attendance_history.limit(3)
   end
 
   # join attendance table with event table on current user
   def attendance_history
-    Attendance.joins(:event).where(attendances: { user_id: self.id }).order('event_start DESC')
+    Attendance.joins(:event).where(attendances: { user_id: id }).order('created_at DESC')
   end
 
   # calculate attendance point of user
   def user_points
-    self.attendance_history.sum(:event_points)
+    attendance_history.sum(:event_points)
   end
 
   # def assign_ranking
@@ -61,11 +66,11 @@ class User < ApplicationRecord
     # ranking_found = Ranking.where("point_total <= #{self.point}").order(point_total: :desc)
     # SELECT title FROM Rankings Join Users On Rankings.id=2;
 
-    title_found = Ranking.where(id: self.ranking_id).first
-    if title_found == nil
+    title_found = Ranking.where(id: ranking_id).first
+    if title_found.nil?
       # nothing to do
-    else 
-      "#{ title_found.title }"
+    else
+      title_found.title.to_s
     end
   end
 
@@ -73,10 +78,10 @@ class User < ApplicationRecord
     # ranking_found = Ranking.where("point_total <= #{self.point}").order(point_total: :desc)
     # SELECT title FROM Rankings Join Users On Rankings.id=2;
     title_found = Ranking.where(id: value).first
-    if title_found == nil
+    if title_found.nil?
       # nothing to do
-    else 
-      "#{ title_found.title }"
+    else
+      title_found.title.to_s
     end
   end 
 
