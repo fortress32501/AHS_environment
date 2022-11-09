@@ -20,7 +20,6 @@
 # Ranking.create(title: "Iron", point_total: "0")
 
 
-
 # Event.create!([
 #   {event_points: 1, event_description: "Event 1 Description", event_passcode: "password", event_start: "2022-10-07 16:22:00", event_end: "2022-10-07 16:22:00", event_title: "Event 1", event_location: "Zoom", event_type_id: "1"},
 #   {event_points: 2, event_description: "Event 2 Description", event_passcode: "password2", event_start: "2022-10-08 16:23:00", event_end: "2022-10-08 16:23:00", event_title: "Event 2", event_location: "Zoom", event_type_id: ""}

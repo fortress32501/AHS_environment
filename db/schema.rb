@@ -68,8 +68,10 @@ ActiveRecord::Schema.define(version: 2022_10_16_231247) do
     t.integer "point", default: 0
     t.boolean "is_admin", default: false
     t.bigint "ranking_id"
+    t.bigint "attendance_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["attendance_id"], name: "index_users_on_attendance_id"
     t.index ["ranking_id"], name: "index_users_on_ranking_id"
   end
 
