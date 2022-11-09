@@ -30,6 +30,8 @@ RSpec.describe "/users", type: :request do
 
   let(:invalid_attributes) {
     {
+      first_name: Faker::Name.name,
+      last_name: Faker::Name.name,
       # leave with no attributes
     }
   }
@@ -56,133 +58,167 @@ RSpec.describe "/users", type: :request do
     }
   }
 
-  describe "GET /index" do
-    it "renders a successful response for admin" do
-      # create the user and log in
-      # must be an admin to view users page
-      post users_url, params: {user: test_admin}
-      # test endpoint
-      get users_url
-      expect(response).to be_successful
-    end
+  # describe "GET /index" do
+  #   it "renders a successful response for admin" do
+  #     # create the user and log in
+  #     # must be an admin to view users page
+  #     post users_url, params: {user: test_admin}
+  #     # test endpoint
+  #     get users_url
+  #     expect(response).to be_successful
+  #   end
 
-    it "redirects for users" do
-      # create the user and log in
-      post users_url, params: {user: test_user}
-      # test endpoint
-      get users_url
-      expect(response).to redirect_to(accounts_path)
-    end
-  end
+  #   it "redirects for users" do
+  #     # create the user and log in
+  #     post users_url, params: {user: test_user}
+  #     # test endpoint
+  #     get users_url
+  #     expect(response).to redirect_to(accounts_path)
+  #   end
+  # end
 
-  describe "GET /show" do
-    it "renders a successful response for admin" do
-      # create the user and log in
-      post users_url, params: {user: test_admin}
-      # get user created and test endpoint
-      get user_url(User.last)
-      expect(response).to be_successful
-    end
+  # describe "GET /show" do
+  #   it "renders a successful response for admin" do
+  #     # create the user and log in
+  #     post users_url, params: {user: test_admin}
+  #     # get user created and test endpoint
+  #     get user_url(User.last)
+  #     expect(response).to be_successful
+  #   end
 
-    it "redirects for users" do
-      # create the user and log in
-      post users_url, params: {user: test_user}
-      # get user created and test endpoint
-      get user_url(User.last)
-      expect(response).to redirect_to(accounts_path)
-    end
-  end
+  #   it "redirects for users" do
+  #     # create the user and log in
+  #     post users_url, params: {user: test_user}
+  #     # get user created and test endpoint
+  #     get user_url(User.last)
+  #     expect(response).to redirect_to(accounts_path)
+  #   end
+  # end
 
-  describe "GET /new" do
-    # don't need to log in for this one because it tests creating a new account
-    it "renders a successful response" do
-      get new_user_url
-      expect(response).to be_successful
-    end
-  end
+  # describe "GET /new" do
+  #   # don't need to log in for this one because it tests creating a new account
+  #   it "renders a successful response" do
+  #     get new_user_url
+  #     expect(response).to be_successful
+  #   end
+  # end
 
-  describe "GET /edit" do
-    it "renders a successful response" do
-      # create the user and log in
-      post users_url, params: {user: test_admin}
-      # test endpoint
-      get edit_user_url(User.last)
-      expect(response).to be_successful
-    end
+  # describe "GET /edit" do
+  #   it "renders a successful response" do
+  #     # create the user and log in
+  #     post users_url, params: {user: test_admin}
+  #     # test endpoint
+  #     get edit_user_url(User.last)
+  #     expect(response).to be_successful
+  #   end
 
-    it "redirects for users" do
-      # create the user and log in
-      post users_url, params: {user: test_user}
-      # test endpoint
-      get edit_user_url(User.last)
-      expect(response).to redirect_to(accounts_path)
-    end
-  end
+  #   it "redirects for users" do
+  #     # create the user and log in
+  #     post users_url, params: {user: test_user}
+  #     # test endpoint
+  #     get edit_user_url(User.last)
+  #     expect(response).to redirect_to(accounts_path)
+  #   end
+  # end
 
-  describe "POST /create" do
-    context "with valid parameters" do
-      it "creates a new User" do
-        expect {
-          post users_url, params: { user: valid_attributes }
-        }.to change(User, :count).by(1)
-      end
-
-      it "redirects to the created user" do
-        post users_url, params: { user: valid_attributes }
-        expect(response).to redirect_to(:root)
-      end
-    end
-
-    context "with invalid parameters" do
-      # it "does not create a new User" do
-      #   expect {
-      #     post users_url, params: { user: invalid_attributes }
-      #   }.to change(User, :count).by(0)
-      # end
-
-      # it "renders a successful response (i.e. to display the 'new' template)" do
-      #   post users_url, params: { user: invalid_attributes }
-      #   expect(response).to be_successful
-      # end
-    end
-  end
-
-  # describe "PATCH /update" do
+  # describe "POST /create" do
   #   context "with valid parameters" do
-  #     let(:new_attributes) {
-  #       {
-  #         first_name: Faker::Name.name,
-  #         last_name: Faker::Name.name,
-  #         email: Faker::Internet.email,
-  #         password: Faker::Internet.password,
-  #         point: 0,
-  #         is_admin: false,
-  #       }
-  #     }
-
-  #     it "updates the requested user" do
-  #       user = User.create! valid_attributes
-  #       patch user_url(user), params: { user: new_attributes }
-  #       user.reload
-  #       skip("Add assertions for updated state")
+  #     it "creates a new User" do
+  #       expect {
+  #         post users_url, params: { user: valid_attributes }
+  #       }.to change(User, :count).by(1)
   #     end
 
-  #     it "redirects to the user" do
-  #       user = User.create! valid_attributes
-  #       patch user_url(user), params: { user: new_attributes }
-  #       user.reload
-  #       expect(response).to redirect_to(user_url(user))
+  #     it "redirects to the created user" do
+  #       post users_url, params: { user: valid_attributes }
+  #       expect(response).to redirect_to(:root)
   #     end
   #   end
 
   #   context "with invalid parameters" do
-  #     it "renders a successful response (i.e. to display the 'edit' template)" do
-  #       user = User.create! valid_attributes
-  #       patch user_url(user), params: { user: invalid_attributes }
-  #       expect(response).to be_successful
+  #     it "does not create a new User" do
+  #       expect {
+  #         post users_url, params: { user: invalid_attributes }
+  #       }.to change(User, :count).by(0)
+  #     end
+
+  #     it "renders a successful response (i.e. to display the 'new' template)" do
+  #       post users_url, params: { user: invalid_attributes }
+  #       expect(response).not_to be_successful
+  #     end
+  #   end
+
+  #   context "email already exists" do
+  #     it "does not create a new User" do
+  #      # first create a user
+  #      post users_url, params: { user: test_user } 
+  #      # try to create account with same email
+  #       expect {
+  #         post users_url, params: { user: test_user }
+  #       }.to change(User, :count).by(0)
+  #     end
+
+  #     it "renders a successful response (i.e. to display the 'new' template)" do
+  #       # first create a user
+  #       post users_url, params: { user: test_user } 
+  #       # try to create account with same email
+  #       post users_url, params: { user: test_user }
+  #       expect(response).not_to be_successful
   #     end
   #   end
   # end
+
+  describe "PATCH /update" do
+    # context "with valid parameters" do
+    #   let(:new_attributes) {
+    #     {
+    #       first_name: Faker::Name.name,
+    #       last_name: Faker::Name.name,
+    #       email: Faker::Internet.email,
+    #     }
+    #   }
+
+    #   it "updates the requested user" do
+    #     post users_url, params: { user: test_user }
+    #     user = User.last
+    #     patch user_url(user), params: { user: new_attributes }
+    #     user.reload
+    #     expect(response).to redirect_to users_url
+    #   end
+
+    #   it "updates the requested user" do
+    #     post users_url, params: { user: test_user }
+    #     user = User.last
+    #     patch update_profile_user_url(user), params: { user: new_attributes }
+    #     user.reload
+    #     expect(response).to redirect_to accounts_path
+    #   end
+    # end
+
+    context "with invalid parameters" do
+      let(:new_attributes) {
+        {
+          
+        }
+      }
+
+      it "renders a successful response (i.e. to display the 'edit' template)" do
+        post users_url, params: { user: test_user }
+        user = User.last
+        patch user_url(user), params: { user: new_attributes }
+        user.reload
+        expect(response).not_to be_successful
+      end
+
+      it "updates the requested user" do
+        post users_url, params: { user: test_user }
+        user = User.last
+        patch update_profile_user_url(user), params: { user: new_attributes }
+        user.reload
+        expect(response).not_to be_successful
+      end
+    end
+  end
 
   describe "DELETE /destroy" do
     it "deletes user if request comes from admin" do
