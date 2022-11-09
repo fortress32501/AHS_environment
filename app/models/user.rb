@@ -42,34 +42,20 @@ class User < ApplicationRecord
     self.attendance_history.sum(:event_points)
   end
 
-  def assign_ranking
-    # ranking_found = Ranking.where("point_total <= #{self.point}").order(point_total: :desc)
-    ranking_found = Ranking.where("point_total <= ?", self.point ).order(point_total: :desc)
+  # def assign_ranking
+  #   # ranking_found = Ranking.where("point_total <= #{self.point}").order(point_total: :desc)
+  #   ranking_found = Ranking.where("point_total <= ?", self.point ).order(point_total: :desc)
     
-    if ranking_found.empty? 
-      # nothing to do
-    else 
-      # update ranking
-      self.update(ranking_id: ranking_found.ids.at(0))
-    end
-    # "#{self.ranking_id}"
-  end
+  #   if ranking_found.empty? 
+  #     # nothing to do
+  #   else 
+  #     # update ranking
+  #     self.update(ranking_id: ranking_found.ids.at(0))
+  #   end
+  #   # "#{self.ranking_id}"
+  # end
   
   # https://stackoverflow.com/questions/45252984/how-to-update-specific-column-in-a-activerecord-on-rails
-  def update_all_rankings(value)
-    # ranking_found = Ranking.where("point_total <= #{self.point}").order(point_total: :desc)
-    user = User.find(value)
-    ranking_found = Ranking.where("point_total <= ?", user.point ).order(point_total: :desc).first
-    
-    if ranking_found == nil
-      # nothing to do
-    else 
-      # update ranking
-      user.update(ranking_id: ranking_found.id)
-      "#{user.id}"
-    end
-    # "Ranking is : #{self.ranking_id} !!"
-  end
   
   def get_ranking_title
     # ranking_found = Ranking.where("point_total <= #{self.point}").order(point_total: :desc)
@@ -94,12 +80,26 @@ class User < ApplicationRecord
     end
   end 
 
-  def update_all
 
-    User.all.each do |user|
-      self.update_all_rankings(user.id)
+
+  def update_one_ranking(value)
+    user = User.find(value)
+    ranking_found = Ranking.where("point_total <= ?", user.point ).order(point_total: :desc).first
+    
+    if ranking_found == nil
+      # nothing to do
+    else 
+      # update ranking
+      user.update(ranking_id: ranking_found.id)
+      "#{user.id}"
     end
+    # "Ranking is : #{self.ranking_id} !!"
+  end
 
+  def update_all_rankings
+    User.all.each do |user|
+      self.update_one_ranking(user.id)
+    end
   end
 
 end

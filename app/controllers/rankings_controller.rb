@@ -4,7 +4,7 @@ class RankingsController < ApplicationController
   # GET /rankings or /rankings.json
   def index
     @rankings = Ranking.all
-    
+    current_user.update_all_rankings
     @list_rankings = Ranking.get_ranking_list
     if !current_user.is_admin   
       redirect_to events_url, notice: "You do not have access to view rankings. You can request Administrator Access through Administrator request page."
