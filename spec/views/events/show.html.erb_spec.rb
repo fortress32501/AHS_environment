@@ -1,6 +1,7 @@
-#require 'rails_helper'
+# frozen_string_literal: true
+# require 'rails_helper'
 
-#RSpec.describe "events/show", type: :view do
+# RSpec.describe "events/show", type: :view do
 #  before(:each) do
 #    @event = assign(:event, Event.create!(
 #      event_points: 2,
@@ -10,7 +11,7 @@
 #      event_location: "Event Location",
 #      event_start: DateTime.parse("2022-09-28T01:43:00+07:00"),
 #      event_end: DateTime.parse("2022-09-28T02:43:00+07:00")
-#      
+#
 #    ))
 #  end
 
@@ -24,4 +25,4 @@
 #    expect(rendered).to match(/Event start/)
 #    expect(rendered).to match(/Event end/)
 #  end
-#end
+# end

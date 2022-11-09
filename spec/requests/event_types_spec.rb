@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 require 'support/spec_test_helper'
 
@@ -13,124 +15,124 @@ require 'support/spec_test_helper'
 # of tools you can use to make these specs even more expressive, but we're
 # sticking to rails and rspec-rails APIs to keep things simple and stable.
 
-RSpec.describe "/event_types", type: :request do
+RSpec.describe '/event_types', type: :request do
   include SpecTestHelper
   # This should return the minimal set of attributes required to create a valid
   # EventType. As you add validations to EventType, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) {
-    {type_name: 'test', description: 'test', color: '#FFFFFF'}
-  }
+  let(:valid_attributes) do
+    { type_name: 'test', description: 'test', color: '#FFFFFF' }
+  end
 
-  let(:invalid_attributes) {
-    {type_name: nil, description: nil, color: nil}
-  }
+  let(:invalid_attributes) do
+    { type_name: nil, description: nil, color: nil }
+  end
 
-  let!(:testuser) {
-    {first_name: 'test', last_name: 'test', email: 'test@gmail.com', password: 'test'}
-  }
+  let!(:testuser) do
+    { first_name: 'test', last_name: 'test', email: 'test@gmail.com', password: 'test' }
+  end
 
-  let!(:adminuser) {
-    {first_name: 'test', last_name: 'test', email: 'test@gmail.com', password: 'test', is_admin: true}
-  }
+  let!(:adminuser) do
+    { first_name: 'test', last_name: 'test', email: 'test@gmail.com', password: 'test', is_admin: true }
+  end
 
-  describe "GET /index" do
-    it "renders a successful response" do
-      post users_url, params: {user: testuser}
+  describe 'GET /index' do
+    it 'renders a successful response' do
+      post users_url, params: { user: testuser }
       EventType.create! valid_attributes
       get event_types_url
       expect(response).to be_successful
     end
   end
 
-  describe "GET /show" do
-    it "renders a successful response" do
-      post users_url, params: {user: testuser}
+  describe 'GET /show' do
+    it 'renders a successful response' do
+      post users_url, params: { user: testuser }
       event_type = EventType.create! valid_attributes
       get event_type_url(event_type)
       expect(response).to be_successful
     end
   end
 
-  describe "GET /new" do
-    it "renders a successful response" do
-      post users_url, params: {user: testuser}
+  describe 'GET /new' do
+    it 'renders a successful response' do
+      post users_url, params: { user: testuser }
       get new_event_type_url
       expect(response).to redirect_to(event_types_path)
     end
   end
 
-  describe "GET /edit" do
-    it "renders a successful response" do
-      post users_url, params: {user: testuser}
+  describe 'GET /edit' do
+    it 'renders a successful response' do
+      post users_url, params: { user: testuser }
       event_type = EventType.create! valid_attributes
       get edit_event_type_url(event_type)
       expect(response).to redirect_to(event_types_path)
     end
   end
 
-  describe "POST /create" do
-    context "with valid parameters" do
-      it "creates a new EventType" do
-        post users_url, params: {user: adminuser}
-        expect {
+  describe 'POST /create' do
+    context 'with valid parameters' do
+      it 'creates a new EventType' do
+        post users_url, params: { user: adminuser }
+        expect do
           post event_types_url, params: { event_type: valid_attributes }
-        }.to change(EventType, :count).by(1)
+        end.to change(EventType, :count).by(1)
       end
 
-      it "redirects to the created event_type" do
-        post users_url, params: {user: adminuser}
+      it 'redirects to the created event_type' do
+        post users_url, params: { user: adminuser }
         post event_types_url, params: { event_type: valid_attributes }
         expect(response).to redirect_to(event_type_url(EventType.last))
       end
 
-      it "redirects if not admin" do
-        post users_url, params: {user: testuser}
+      it 'redirects if not admin' do
+        post users_url, params: { user: testuser }
         post event_types_url, params: { event_type: valid_attributes }
         expect(response).to redirect_to(event_types_path)
       end
     end
 
-    context "with invalid parameters" do
-      it "does not create a new EventType" do
-        post users_url, params: {user: adminuser}
-        expect {
+    context 'with invalid parameters' do
+      it 'does not create a new EventType' do
+        post users_url, params: { user: adminuser }
+        expect do
           post event_types_url, params: { event_type: invalid_attributes }
-        }.to change(EventType, :count).by(0)
+        end.to change(EventType, :count).by(0)
       end
 
-      #it "renders a successful response (i.e. to display the 'new' template)" do
+      # it "renders a successful response (i.e. to display the 'new' template)" do
       #  post users_url, params: {user: adminuser}
       #  post event_types_url, params: { event_type: invalid_attributes }
       #  expect(response).to be_successful
-      #end
+      # end
     end
   end
 
-  describe "PATCH /update" do
-    context "with valid parameters" do
-      let(:new_attributes) {
-        {:type_name => 'test1'}
-      }
+  describe 'PATCH /update' do
+    context 'with valid parameters' do
+      let(:new_attributes) do
+        { type_name: 'test1' }
+      end
 
-      it "updates the requested event_type" do
-        post users_url, params: {user: adminuser}
+      it 'updates the requested event_type' do
+        post users_url, params: { user: adminuser }
         event_type = EventType.create! valid_attributes
         patch event_type_url(event_type), params: { event_type: new_attributes }
         event_type.reload
         expect(event_type.type_name).to eql new_attributes[:type_name]
       end
 
-      it "redirects to the event_type" do
-        post users_url, params: {user: adminuser}
+      it 'redirects to the event_type' do
+        post users_url, params: { user: adminuser }
         event_type = EventType.create! valid_attributes
         patch event_type_url(event_type), params: { event_type: new_attributes }
         event_type.reload
         expect(response).to redirect_to(event_type_url(event_type))
       end
 
-      it "redirects if not admin" do
-        post users_url, params: {user: testuser}
+      it 'redirects if not admin' do
+        post users_url, params: { user: testuser }
         event_type = EventType.create! valid_attributes
         patch event_type_url(event_type), params: { event_type: new_attributes }
         event_type.reload
@@ -138,34 +140,34 @@ RSpec.describe "/event_types", type: :request do
       end
     end
 
-    context "with invalid parameters" do
-      #it "renders a successful response (i.e. to display the 'edit' template)" do
+    context 'with invalid parameters' do
+      # it "renders a successful response (i.e. to display the 'edit' template)" do
       #  post users_url, params: {user: adminuser}
       #  event_type = EventType.create! valid_attributes
       #  patch event_type_url(event_type), params: { event_type: invalid_attributes }
       #  expect(response).to be_successful
-      #end
+      # end
     end
   end
 
-  describe "DELETE /destroy" do
-    it "destroys the requested event_type" do
-      post users_url, params: {user: adminuser}
+  describe 'DELETE /destroy' do
+    it 'destroys the requested event_type' do
+      post users_url, params: { user: adminuser }
       event_type = EventType.create! valid_attributes
-      expect {
+      expect do
         delete event_type_url(event_type)
-      }.to change(EventType, :count).by(-1)
+      end.to change(EventType, :count).by(-1)
     end
 
-    it "redirects to the event_types list" do
-      post users_url, params: {user: adminuser}
+    it 'redirects to the event_types list' do
+      post users_url, params: { user: adminuser }
       event_type = EventType.create! valid_attributes
       delete event_type_url(event_type)
       expect(response).to redirect_to(event_types_url)
     end
-    
-    it "redirects if not admin" do
-      post users_url, params: {user: testuser}
+
+    it 'redirects if not admin' do
+      post users_url, params: { user: testuser }
       event_type = EventType.create! valid_attributes
       delete event_type_url(event_type)
       expect(response).to redirect_to(event_types_url)
