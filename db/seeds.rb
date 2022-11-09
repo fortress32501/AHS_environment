@@ -37,12 +37,12 @@
 
 
 
-User.create(first_name: "ruby", last_name: "Jones", email: "ruby@email.com", password: "12345", point: "250", is_admin: false)
-User.create(first_name: "max", last_name: "Jones", email: "max@email.com", password: "12345", point: "50", is_admin: false)
+# User.create(first_name: "ruby", last_name: "Jones", email: "ruby@email.com", password: "12345", point: "250", is_admin: false)
+# User.create(first_name: "max", last_name: "Jones", email: "max@email.com", password: "12345", point: "50", is_admin: false)
 
-User.create(first_name: "caillu", last_name: "Jones", email: "caillou@email.com", password: "12345", point: "750", is_admin: false)
-User.create(first_name: "nemo", last_name: "Jones", email: "nemo@email.com", password: "12345", point: "20", is_admin: false)
-User.create(first_name: "mator", last_name: "Jones", email: "mator@email.com", password: "12345", point: "200", is_admin: false)
+# User.create(first_name: "caillu", last_name: "Jones", email: "caillou@email.com", password: "12345", point: "750", is_admin: false)
+# User.create(first_name: "nemo", last_name: "Jones", email: "nemo@email.com", password: "12345", point: "20", is_admin: false)
+# User.create(first_name: "mator", last_name: "Jones", email: "mator@email.com", password: "12345", point: "200", is_admin: false)
 
 # User.create(first_name: "toe", last_name: "Jones", email: "toe@email.com", password: "12345", point: "950", is_admin: false)
 # User.create(first_name: "sally", last_name: "Jones", email: "sally@email.com", password: "12345", point: "0", is_admin: false)
