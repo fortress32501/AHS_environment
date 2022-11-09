@@ -41,4 +41,7 @@ Rails.application.routes.draw do
   # route to account page
   get "/accounts", to: "accounts#index"
   get "/history", to: "history#index"
+
+  # route to help page
+  get '/help', to: 'help#index'
 end
