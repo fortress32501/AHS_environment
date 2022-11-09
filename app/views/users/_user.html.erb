@@ -11,14 +11,13 @@
 
 
 <tr>
-    <td><%= current_user.update_all_rankings(user.id) %></td>
+    <% current_user.update_all_rankings(user.id) %>
     <td><%= user.first_name %></td>
     <td><%= user.last_name %></td>
     <td><%= turbo_frame_tag user do %>
         <%= user.point %>
     <% end %></td>
-    <td><%= current_user.show_title(user.ranking_id) %></td>
+    <td><%= current_user.show_ranking_title(user.ranking_id) %></td>
     <td><%= link_to "Edit", edit_user_path(user), data: { turbo_frame: dom_id(user) },  class: "button-style"%></td>
     <td><%= button_to "Delete", user, method: :delete, form: { data: { turbo_confirm: "Are you sure?" } },  class: "button-style" %></td>
 </tr>
-
