@@ -95,9 +95,9 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#cce3bfb6d795e699c25e4da2f5a804fdabda76a7" class="src_link" title="app/controllers/application_controller.rb">app/controllers/application_controller.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">12</td>
-            <td class="cell--number">7</td>
-            <td class="cell--number">7</td>
+            <td class="cell--number">95</td>
+            <td class="cell--number">51</td>
+            <td class="cell--number">51</td>
             <td class="cell--number">0</td>
             <td class="cell--number">177.86</td>
             
@@ -3827,8 +3827,8 @@
   <div class="header">
     <h3>app/controllers/application_controller.rb</h3>
     <h4>
-      <span class="red">
-  71.43%
+      <span class="green">
+  100.0%
 </span>
 
       lines covered
@@ -3838,8 +3838,8 @@
 
     <div class="t-line-summary">
       <b>7</b> relevant lines.
-      <span class="green"><b>5</b> lines covered</span> and
-      <span class="red"><b>2</b> lines missed.</span>
+      <span class="green"><b>7</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
     </div>
 
     
@@ -13797,8 +13797,8 @@
   <div class="header">
     <h3>app/controllers/event_types_controller.rb</h3>
     <h4>
-      <span class="red">
-  24.0%
+      <span class="green">
+  95.65%
 </span>
 
       lines covered
@@ -13807,9 +13807,9 @@
     
 
     <div class="t-line-summary">
-      <b>50</b> relevant lines.
-      <span class="green"><b>12</b> lines covered</span> and
-      <span class="red"><b>38</b> lines missed.</span>
+      <b>46</b> relevant lines.
+      <span class="green"><b>44</b> lines covered</span> and
+      <span class="red"><b>2</b> lines missed.</span>
     </div>
 
     
@@ -13875,8 +13875,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="6">
-            
+          <li class="covered" data-hits="1" data-linenumber="6">
+            <span class="hits">1</span>
             
 
             
@@ -13974,8 +13974,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="15">
-            
+          <li class="covered" data-hits="1" data-linenumber="15">
+            <span class="hits">1</span>
             
 
             
@@ -13985,8 +13985,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="16">
-            
+          <li class="covered" data-hits="1" data-linenumber="16">
+            <span class="hits">1</span>
             
 
             
@@ -13996,35 +13996,35 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="17">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="17">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">      respond_to do |format|</code>
+            
+
+            <code class="ruby">      redirect_to event_types_url, notice: &quot;You do not have access to new. You can request Administrator Access through Administrator request page.&quot;      </code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="18">
+          <li class="never" data-hits="" data-linenumber="18">
             
             
 
             
 
-            <code class="ruby">        format.html { redirect_to event_types_url, notice: &quot;You do not have access to new. You can request Administrator Access through Administrator request page.&quot; }</code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="19">
+          <li class="never" data-hits="" data-linenumber="19">
             
             
 
             
 
-            <code class="ruby">        format.json { head :no_content }</code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -14035,7 +14035,7 @@
 
             
 
-            <code class="ruby">      end</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -14046,45 +14046,12 @@
 
             
 
-            <code class="ruby">    end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="22">
-            
-            
-
-            
-
-            <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="23">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="24">
-            
-            
-
-            
-
             <code class="ruby">  # GET /event_types/1/edit</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="25">
+          <li class="covered" data-hits="1" data-linenumber="22">
             <span class="hits">1</span>
             
 
@@ -14095,8 +14062,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="26">
-            
+          <li class="covered" data-hits="1" data-linenumber="23">
+            <span class="hits">1</span>
             
 
             
@@ -14106,51 +14073,18 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="27">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="24">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">      respond_to do |format|</code>
+            
+
+            <code class="ruby">      redirect_to event_types_url, notice: &quot;You do not have access to edit. You can request Administrator Access through Administrator request page.&quot;</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="28">
-            
-            
-
-            
-
-            <code class="ruby">        format.html { redirect_to event_types_url, notice: &quot;You do not have access to edit. You can request Administrator Access through Administrator request page.&quot; }</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="29">
-            
-            
-
-            
-
-            <code class="ruby">        format.json { head :no_content }</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="30">
-            
-            
-
-            
-
-            <code class="ruby">      end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="31">
+          <li class="never" data-hits="" data-linenumber="25">
             
             
 
@@ -14161,7 +14095,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="32">
+          <li class="never" data-hits="" data-linenumber="26">
             
             
 
@@ -14172,7 +14106,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="33">
+          <li class="never" data-hits="" data-linenumber="27">
             
             
 
@@ -14183,7 +14117,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="34">
+          <li class="never" data-hits="" data-linenumber="28">
             
             
 
@@ -14194,7 +14128,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="35">
+          <li class="covered" data-hits="1" data-linenumber="29">
             <span class="hits">1</span>
             
 
@@ -14205,8 +14139,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="36">
-            
+          <li class="covered" data-hits="4" data-linenumber="30">
+            <span class="hits">4</span>
             
 
             
@@ -14216,7 +14150,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="37">
+          <li class="never" data-hits="" data-linenumber="31">
             
             
 
@@ -14227,8 +14161,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="38">
-            
+          <li class="covered" data-hits="4" data-linenumber="32">
+            <span class="hits">4</span>
             
 
             
@@ -14238,8 +14172,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="39">
-            
+          <li class="covered" data-hits="4" data-linenumber="33">
+            <span class="hits">4</span>
             
 
             
@@ -14249,8 +14183,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="40">
-            
+          <li class="covered" data-hits="2" data-linenumber="34">
+            <span class="hits">2</span>
             
 
             
@@ -14260,8 +14194,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="41">
-            
+          <li class="covered" data-hits="1" data-linenumber="35">
+            <span class="hits">1</span>
             
 
             
@@ -14271,8 +14205,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="42">
-            
+          <li class="covered" data-hits="3" data-linenumber="36">
+            <span class="hits">3</span>
             
 
             
@@ -14282,8 +14216,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="43">
-            
+          <li class="covered" data-hits="4" data-linenumber="37">
+            <span class="hits">4</span>
             
 
             
@@ -14293,13 +14227,79 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="44">
-            
+          <li class="covered" data-hits="2" data-linenumber="38">
+            <span class="hits">2</span>
             
 
             
 
             <code class="ruby">        format.json { render :show, status: :created, location: @event_type }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="39">
+            
+            
+
+            
+
+            <code class="ruby">      else</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="40">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">        format.html { render :new, status: :unprocessable_entity }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="41">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        format.json { render json: @event_type.errors, status: :unprocessable_entity }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="42">
+            
+            
+
+            
+
+            <code class="ruby">      end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="43">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="44">
+            
+            
+
+            
+
+            <code class="ruby">    </code>
           </li>
         </div>
       
@@ -14310,78 +14310,12 @@
 
             
 
-            <code class="ruby">      else</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="46">
-            
-            
-
-            
-
-            <code class="ruby">        format.html { render :new, status: :unprocessable_entity }</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="47">
-            
-            
-
-            
-
-            <code class="ruby">        format.json { render json: @event_type.errors, status: :unprocessable_entity }</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="48">
-            
-            
-
-            
-
-            <code class="ruby">      end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="49">
-            
-            
-
-            
-
-            <code class="ruby">    end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="50">
-            
-            
-
-            
-
-            <code class="ruby">    </code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="51">
-            
-            
-
-            
-
             <code class="ruby">  end</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="52">
+          <li class="never" data-hits="" data-linenumber="46">
             
             
 
@@ -14392,7 +14326,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="53">
+          <li class="never" data-hits="" data-linenumber="47">
             
             
 
@@ -14403,7 +14337,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="54">
+          <li class="covered" data-hits="1" data-linenumber="48">
             <span class="hits">1</span>
             
 
@@ -14414,8 +14348,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="55">
-            
+          <li class="covered" data-hits="3" data-linenumber="49">
+            <span class="hits">3</span>
             
 
             
@@ -14425,13 +14359,79 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="56">
-            
+          <li class="covered" data-hits="3" data-linenumber="50">
+            <span class="hits">3</span>
             
 
             
 
             <code class="ruby">      if !current_user.is_admin</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="51">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">        format.html { redirect_to event_types_url, notice: &quot;You do not have access to update. You can request Administrator Access through Administrator request page.&quot; }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="52">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        format.json { head :no_content }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="53">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">      elsif @event_type.update(event_type_params)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="4" data-linenumber="54">
+            <span class="hits">4</span>
+            
+
+            
+
+            <code class="ruby">        format.html { redirect_to event_type_url(@event_type), notice: &quot;Event type was successfully updated.&quot; }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="55">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">        format.json { render :show, status: :ok, location: @event_type }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="56">
+            
+            
+
+            
+
+            <code class="ruby">      else</code>
           </li>
         </div>
       
@@ -14442,7 +14442,7 @@
 
             
 
-            <code class="ruby">        format.html { redirect_to event_types_url, notice: &quot;You do not have access to update. You can request Administrator Access through Administrator request page.&quot; }</code>
+            <code class="ruby">        format.html { render :edit, status: :unprocessable_entity }</code>
           </li>
         </div>
       
@@ -14453,40 +14453,40 @@
 
             
 
-            <code class="ruby">        format.json { head :no_content }</code>
+            <code class="ruby">        format.json { render json: @event_type.errors, status: :unprocessable_entity }</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="59">
+          <li class="never" data-hits="" data-linenumber="59">
             
             
 
             
 
-            <code class="ruby">      elsif @event_type.update(event_type_params)</code>
+            <code class="ruby">      end</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="60">
+          <li class="never" data-hits="" data-linenumber="60">
             
             
 
             
 
-            <code class="ruby">        format.html { redirect_to event_type_url(@event_type), notice: &quot;Event type was successfully updated.&quot; }</code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="61">
+          <li class="never" data-hits="" data-linenumber="61">
             
             
 
             
 
-            <code class="ruby">        format.json { render :show, status: :ok, location: @event_type }</code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -14497,78 +14497,12 @@
 
             
 
-            <code class="ruby">      else</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="63">
-            
-            
-
-            
-
-            <code class="ruby">        format.html { render :edit, status: :unprocessable_entity }</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="64">
-            
-            
-
-            
-
-            <code class="ruby">        format.json { render json: @event_type.errors, status: :unprocessable_entity }</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="65">
-            
-            
-
-            
-
-            <code class="ruby">      end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="66">
-            
-            
-
-            
-
-            <code class="ruby">    end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="67">
-            
-            
-
-            
-
-            <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="68">
-            
-            
-
-            
-
             <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="69">
+          <li class="never" data-hits="" data-linenumber="63">
             
             
 
@@ -14579,7 +14513,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="70">
+          <li class="covered" data-hits="1" data-linenumber="64">
             <span class="hits">1</span>
             
 
@@ -14590,8 +14524,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="71">
-            
+          <li class="covered" data-hits="3" data-linenumber="65">
+            <span class="hits">3</span>
             
 
             
@@ -14601,7 +14535,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="72">
+          <li class="never" data-hits="" data-linenumber="66">
             
             
 
@@ -14612,8 +14546,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="73">
-            
+          <li class="covered" data-hits="3" data-linenumber="67">
+            <span class="hits">3</span>
             
 
             
@@ -14623,8 +14557,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="74">
-            
+          <li class="covered" data-hits="3" data-linenumber="68">
+            <span class="hits">3</span>
             
 
             
@@ -14634,8 +14568,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="75">
-            
+          <li class="covered" data-hits="2" data-linenumber="69">
+            <span class="hits">2</span>
             
 
             
@@ -14645,8 +14579,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="76">
-            
+          <li class="covered" data-hits="1" data-linenumber="70">
+            <span class="hits">1</span>
             
 
             
@@ -14656,7 +14590,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="77">
+          <li class="never" data-hits="" data-linenumber="71">
             
             
 
@@ -14667,8 +14601,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="78">
-            
+          <li class="covered" data-hits="4" data-linenumber="72">
+            <span class="hits">4</span>
             
 
             
@@ -14678,8 +14612,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="79">
-            
+          <li class="covered" data-hits="2" data-linenumber="73">
+            <span class="hits">2</span>
             
 
             
@@ -14689,7 +14623,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="80">
+          <li class="never" data-hits="" data-linenumber="74">
             
             
 
@@ -14700,7 +14634,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="81">
+          <li class="never" data-hits="" data-linenumber="75">
             
             
 
@@ -14711,13 +14645,79 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="82">
+          <li class="never" data-hits="" data-linenumber="76">
             
             
 
             
 
             <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="77">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="78">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  private</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="79">
+            
+            
+
+            
+
+            <code class="ruby">    # Use callbacks to share common setup or constraints between actions.</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="80">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    def set_event_type</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="8" data-linenumber="81">
+            <span class="hits">8</span>
+            
+
+            
+
+            <code class="ruby">      @event_type = EventType.find(params[:id])</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="82">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
           </li>
         </div>
       
@@ -14733,73 +14733,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="84">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">  private</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="85">
-            
-            
-
-            
-
-            <code class="ruby">    # Use callbacks to share common setup or constraints between actions.</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="86">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    def set_event_type</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="87">
-            
-            
-
-            
-
-            <code class="ruby">      @event_type = EventType.find(params[:id])</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="88">
-            
-            
-
-            
-
-            <code class="ruby">    end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="89">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="90">
+          <li class="never" data-hits="" data-linenumber="84">
             
             
 
@@ -14810,7 +14744,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="91">
+          <li class="covered" data-hits="1" data-linenumber="85">
             <span class="hits">1</span>
             
 
@@ -14821,8 +14755,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="92">
-            
+          <li class="covered" data-hits="6" data-linenumber="86">
+            <span class="hits">6</span>
             
 
             
@@ -14832,7 +14766,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="93">
+          <li class="never" data-hits="" data-linenumber="87">
             
             
 
@@ -14843,7 +14777,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="94">
+          <li class="never" data-hits="" data-linenumber="88">
             
             
 
@@ -14862,8 +14796,8 @@
   <div class="header">
     <h3>app/controllers/events_controller.rb</h3>
     <h4>
-      <span class="red">
-  27.27%
+      <span class="yellow">
+  85.48%
 </span>
 
       lines covered
@@ -14872,9 +14806,9 @@
     
 
     <div class="t-line-summary">
-      <b>66</b> relevant lines.
-      <span class="green"><b>18</b> lines covered</span> and
-      <span class="red"><b>48</b> lines missed.</span>
+      <b>62</b> relevant lines.
+      <span class="green"><b>53</b> lines covered</span> and
+      <span class="red"><b>9</b> lines missed.</span>
     </div>
 
     
@@ -14940,8 +14874,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="6">
-            
+          <li class="covered" data-hits="1" data-linenumber="6">
+            <span class="hits">1</span>
             
 
             
@@ -14951,8 +14885,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="7">
-            
+          <li class="covered" data-hits="1" data-linenumber="7">
+            <span class="hits">1</span>
             
 
             
@@ -15050,8 +14984,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="16">
-            
+          <li class="covered" data-hits="1" data-linenumber="16">
+            <span class="hits">1</span>
             
 
             
@@ -15061,8 +14995,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="17">
-            
+          <li class="covered" data-hits="1" data-linenumber="17">
+            <span class="hits">1</span>
             
 
             
@@ -15072,35 +15006,35 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="18">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="18">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">      respond_to do |format|</code>
+            
+
+            <code class="ruby">      redirect_to events_url, notice: &quot;You do not have access to new. You can request Administrator Access through Administrator request page.&quot;</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="19">
+          <li class="never" data-hits="" data-linenumber="19">
             
             
 
             
 
-            <code class="ruby">        format.html { redirect_to events_url, notice: &quot;You do not have access to new. You can request Administrator Access through Administrator request page.&quot; }</code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="20">
+          <li class="never" data-hits="" data-linenumber="20">
             
             
 
             
 
-            <code class="ruby">        format.json { head :no_content }</code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -15111,7 +15045,7 @@
 
             
 
-            <code class="ruby">      end</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -15122,45 +15056,12 @@
 
             
 
-            <code class="ruby">    end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="23">
-            
-            
-
-            
-
-            <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="24">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="25">
-            
-            
-
-            
-
             <code class="ruby">  # GET /events/1/edit</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="26">
+          <li class="covered" data-hits="1" data-linenumber="23">
             <span class="hits">1</span>
             
 
@@ -15171,8 +15072,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="27">
-            
+          <li class="covered" data-hits="1" data-linenumber="24">
+            <span class="hits">1</span>
             
 
             
@@ -15182,51 +15083,18 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="28">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="25">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">      respond_to do |format|</code>
+            
+
+            <code class="ruby">      redirect_to events_url, notice: &quot;You do not have access to edit. You can request Administrator Access through Administrator request page.&quot;</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="29">
-            
-            
-
-            
-
-            <code class="ruby">        format.html { redirect_to events_url, notice: &quot;You do not have access to edit. You can request Administrator Access through Administrator request page.&quot; }</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="30">
-            
-            
-
-            
-
-            <code class="ruby">        format.json { head :no_content }</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="31">
-            
-            
-
-            
-
-            <code class="ruby">      end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="32">
+          <li class="never" data-hits="" data-linenumber="26">
             
             
 
@@ -15237,7 +15105,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="33">
+          <li class="never" data-hits="" data-linenumber="27">
             
             
 
@@ -15248,7 +15116,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="34">
+          <li class="never" data-hits="" data-linenumber="28">
             
             
 
@@ -15259,7 +15127,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="35">
+          <li class="never" data-hits="" data-linenumber="29">
             
             
 
@@ -15270,7 +15138,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="36">
+          <li class="covered" data-hits="1" data-linenumber="30">
             <span class="hits">1</span>
             
 
@@ -15281,8 +15149,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="37">
-            
+          <li class="covered" data-hits="5" data-linenumber="31">
+            <span class="hits">5</span>
             
 
             
@@ -15292,7 +15160,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="38">
+          <li class="never" data-hits="" data-linenumber="32">
             
             
 
@@ -15303,8 +15171,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="39">
-            
+          <li class="covered" data-hits="3" data-linenumber="33">
+            <span class="hits">3</span>
             
 
             
@@ -15314,13 +15182,79 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="40">
-            
+          <li class="covered" data-hits="3" data-linenumber="34">
+            <span class="hits">3</span>
             
 
             
 
             <code class="ruby">      if !current_user.is_admin</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="35">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">        format.html { redirect_to events_url, notice: &quot;You do not have access to create. You can request Administrator Access through Administrator request page.&quot; }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="36">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        format.json { head :no_content }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="37">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">      elsif @event.save</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="4" data-linenumber="38">
+            <span class="hits">4</span>
+            
+
+            
+
+            <code class="ruby">        format.html { redirect_to event_url(@event), notice: &quot;Event was successfully created.&quot; }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="39">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">        format.json { render :show, status: :created, location: @event }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="40">
+            
+            
+
+            
+
+            <code class="ruby">      else</code>
           </li>
         </div>
       
@@ -15331,7 +15265,7 @@
 
             
 
-            <code class="ruby">        format.html { redirect_to events_url, notice: &quot;You do not have access to create. You can request Administrator Access through Administrator request page.&quot; }</code>
+            <code class="ruby">        format.html { render :new, status: :unprocessable_entity }</code>
           </li>
         </div>
       
@@ -15342,40 +15276,40 @@
 
             
 
-            <code class="ruby">        format.json { head :no_content }</code>
+            <code class="ruby">        format.json { render json: @event.errors, status: :unprocessable_entity }</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="43">
+          <li class="never" data-hits="" data-linenumber="43">
             
             
 
             
 
-            <code class="ruby">      elsif @event.save</code>
+            <code class="ruby">      end</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="44">
+          <li class="never" data-hits="" data-linenumber="44">
             
             
 
             
 
-            <code class="ruby">        format.html { redirect_to event_url(@event), notice: &quot;Event was successfully created.&quot; }</code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="45">
+          <li class="never" data-hits="" data-linenumber="45">
             
             
 
             
 
-            <code class="ruby">        format.json { render :show, status: :created, location: @event }</code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -15386,78 +15320,12 @@
 
             
 
-            <code class="ruby">      else</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="47">
-            
-            
-
-            
-
-            <code class="ruby">        format.html { render :new, status: :unprocessable_entity }</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="48">
-            
-            
-
-            
-
-            <code class="ruby">        format.json { render json: @event.errors, status: :unprocessable_entity }</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="49">
-            
-            
-
-            
-
-            <code class="ruby">      end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="50">
-            
-            
-
-            
-
-            <code class="ruby">    end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="51">
-            
-            
-
-            
-
-            <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="52">
-            
-            
-
-            
-
             <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="53">
+          <li class="never" data-hits="" data-linenumber="47">
             
             
 
@@ -15468,7 +15336,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="54">
+          <li class="covered" data-hits="1" data-linenumber="48">
             <span class="hits">1</span>
             
 
@@ -15479,8 +15347,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="55">
-            
+          <li class="covered" data-hits="3" data-linenumber="49">
+            <span class="hits">3</span>
             
 
             
@@ -15490,13 +15358,79 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="56">
-            
+          <li class="covered" data-hits="3" data-linenumber="50">
+            <span class="hits">3</span>
             
 
             
 
             <code class="ruby">      if !current_user.is_admin</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="51">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">        format.html { redirect_to events_url, notice: &quot;You do not have access to update. You can request Administrator Access through Administrator request page.&quot; }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="52">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        format.json { head :no_content }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="53">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">      elsif @event.update(event_params)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="4" data-linenumber="54">
+            <span class="hits">4</span>
+            
+
+            
+
+            <code class="ruby">        format.html { redirect_to event_url(@event), notice: &quot;Event was successfully updated.&quot; }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="55">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">        format.json { render :show, status: :ok, location: @event }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="56">
+            
+            
+
+            
+
+            <code class="ruby">      else</code>
           </li>
         </div>
       
@@ -15507,7 +15441,7 @@
 
             
 
-            <code class="ruby">        format.html { redirect_to event_types_url, notice: &quot;You do not have access to update. You can request Administrator Access through Administrator request page.&quot; }</code>
+            <code class="ruby">        format.html { render :edit, status: :unprocessable_entity }</code>
           </li>
         </div>
       
@@ -15518,40 +15452,40 @@
 
             
 
-            <code class="ruby">        format.json { head :no_content }</code>
+            <code class="ruby">        format.json { render json: @event.errors, status: :unprocessable_entity }</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="59">
+          <li class="never" data-hits="" data-linenumber="59">
             
             
 
             
 
-            <code class="ruby">      elsif @event.update(event_params)</code>
+            <code class="ruby">      end</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="60">
+          <li class="never" data-hits="" data-linenumber="60">
             
             
 
             
 
-            <code class="ruby">        format.html { redirect_to event_url(@event), notice: &quot;Event was successfully updated.&quot; }</code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="61">
+          <li class="never" data-hits="" data-linenumber="61">
             
             
 
             
 
-            <code class="ruby">        format.json { render :show, status: :ok, location: @event }</code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -15562,78 +15496,12 @@
 
             
 
-            <code class="ruby">      else</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="63">
-            
-            
-
-            
-
-            <code class="ruby">        format.html { render :edit, status: :unprocessable_entity }</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="64">
-            
-            
-
-            
-
-            <code class="ruby">        format.json { render json: @event.errors, status: :unprocessable_entity }</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="65">
-            
-            
-
-            
-
-            <code class="ruby">      end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="66">
-            
-            
-
-            
-
-            <code class="ruby">    end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="67">
-            
-            
-
-            
-
-            <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="68">
-            
-            
-
-            
-
             <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="69">
+          <li class="never" data-hits="" data-linenumber="63">
             
             
 
@@ -15644,7 +15512,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="70">
+          <li class="covered" data-hits="1" data-linenumber="64">
             <span class="hits">1</span>
             
 
@@ -15655,8 +15523,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="71">
-            
+          <li class="covered" data-hits="2" data-linenumber="65">
+            <span class="hits">2</span>
             
 
             
@@ -15666,7 +15534,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="72">
+          <li class="never" data-hits="" data-linenumber="66">
             
             
 
@@ -15677,8 +15545,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="73">
-            
+          <li class="covered" data-hits="2" data-linenumber="67">
+            <span class="hits">2</span>
             
 
             
@@ -15688,8 +15556,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="74">
-            
+          <li class="covered" data-hits="2" data-linenumber="68">
+            <span class="hits">2</span>
             
 
             
@@ -15699,8 +15567,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="75">
-            
+          <li class="covered" data-hits="4" data-linenumber="69">
+            <span class="hits">4</span>
             
 
             
@@ -15710,8 +15578,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="76">
-            
+          <li class="covered" data-hits="2" data-linenumber="70">
+            <span class="hits">2</span>
             
 
             
@@ -15721,7 +15589,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="77">
+          <li class="never" data-hits="" data-linenumber="71">
             
             
 
@@ -15732,7 +15600,7 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="78">
+          <li class="missed" data-hits="0" data-linenumber="72">
             
             
 
@@ -15743,7 +15611,7 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="79">
+          <li class="missed" data-hits="0" data-linenumber="73">
             
             
 
@@ -15754,7 +15622,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="80">
+          <li class="never" data-hits="" data-linenumber="74">
             
             
 
@@ -15765,7 +15633,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="81">
+          <li class="never" data-hits="" data-linenumber="75">
             
             
 
@@ -15776,13 +15644,79 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="82">
+          <li class="never" data-hits="" data-linenumber="76">
             
             
 
             
 
             <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="77">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="78">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  private</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="79">
+            
+            
+
+            
+
+            <code class="ruby">    # Use callbacks to share common setup or constraints between actions.</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="80">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    def set_event</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="7" data-linenumber="81">
+            <span class="hits">7</span>
+            
+
+            
+
+            <code class="ruby">      @event = Event.find(params[:id])</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="82">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
           </li>
         </div>
       
@@ -15798,73 +15732,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="84">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">  private</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="85">
-            
-            
-
-            
-
-            <code class="ruby">    # Use callbacks to share common setup or constraints between actions.</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="86">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    def set_event</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="87">
-            
-            
-
-            
-
-            <code class="ruby">      @event = Event.find(params[:id])</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="88">
-            
-            
-
-            
-
-            <code class="ruby">    end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="89">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="90">
+          <li class="never" data-hits="" data-linenumber="84">
             
             
 
@@ -15875,7 +15743,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="91">
+          <li class="covered" data-hits="1" data-linenumber="85">
             <span class="hits">1</span>
             
 
@@ -15886,8 +15754,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="92">
-            
+          <li class="covered" data-hits="2" data-linenumber="86">
+            <span class="hits">2</span>
             
 
             
@@ -15897,7 +15765,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="93">
+          <li class="never" data-hits="" data-linenumber="87">
             
             
 
@@ -15908,7 +15776,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="94">
+          <li class="never" data-hits="" data-linenumber="88">
             
             
 
@@ -15919,7 +15787,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="95">
+          <li class="covered" data-hits="1" data-linenumber="89">
             <span class="hits">1</span>
             
 
@@ -15930,8 +15798,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="96">
-            
+          <li class="covered" data-hits="1" data-linenumber="90">
+            <span class="hits">1</span>
             
 
             
@@ -15941,8 +15809,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="97">
-            
+          <li class="covered" data-hits="1" data-linenumber="91">
+            <span class="hits">1</span>
             
 
             
@@ -15952,7 +15820,7 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="98">
+          <li class="missed" data-hits="0" data-linenumber="92">
             
             
 
@@ -15963,7 +15831,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="99">
+          <li class="never" data-hits="" data-linenumber="93">
             
             
 
@@ -15974,8 +15842,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="100">
-            
+          <li class="covered" data-hits="1" data-linenumber="94">
+            <span class="hits">1</span>
             
 
             
@@ -15985,7 +15853,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="101">
+          <li class="never" data-hits="" data-linenumber="95">
             
             
 
@@ -15996,7 +15864,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="102">
+          <li class="never" data-hits="" data-linenumber="96">
             
             
 
@@ -16007,7 +15875,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="103">
+          <li class="never" data-hits="" data-linenumber="97">
             
             
 
@@ -16018,7 +15886,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="104">
+          <li class="covered" data-hits="1" data-linenumber="98">
             <span class="hits">1</span>
             
 
@@ -16029,8 +15897,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="105">
-            
+          <li class="covered" data-hits="2" data-linenumber="99">
+            <span class="hits">2</span>
             
 
             
@@ -16040,8 +15908,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="106">
-            
+          <li class="covered" data-hits="2" data-linenumber="100">
+            <span class="hits">2</span>
             
 
             
@@ -16051,7 +15919,7 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="107">
+          <li class="missed" data-hits="0" data-linenumber="101">
             
             
 
@@ -16062,7 +15930,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="108">
+          <li class="never" data-hits="" data-linenumber="102">
             
             
 
@@ -16073,8 +15941,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="109">
-            
+          <li class="covered" data-hits="2" data-linenumber="103">
+            <span class="hits">2</span>
             
 
             
@@ -16084,7 +15952,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="110">
+          <li class="never" data-hits="" data-linenumber="104">
             
             
 
@@ -16095,7 +15963,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="111">
+          <li class="never" data-hits="" data-linenumber="105">
             
             
 
@@ -16106,7 +15974,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="112">
+          <li class="never" data-hits="" data-linenumber="106">
             
             
 
@@ -16117,7 +15985,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="113">
+          <li class="covered" data-hits="1" data-linenumber="107">
             <span class="hits">1</span>
             
 
@@ -16128,7 +15996,7 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="114">
+          <li class="missed" data-hits="0" data-linenumber="108">
             
             
 
@@ -16139,7 +16007,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="115">
+          <li class="never" data-hits="" data-linenumber="109">
             
             
 
@@ -16150,7 +16018,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="116">
+          <li class="never" data-hits="" data-linenumber="110">
             
             
 
@@ -16161,7 +16029,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="117">
+          <li class="covered" data-hits="1" data-linenumber="111">
             <span class="hits">1</span>
             
 
@@ -16172,7 +16040,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="118">
+          <li class="covered" data-hits="1" data-linenumber="112">
             <span class="hits">1</span>
             
 
@@ -16183,7 +16051,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="119">
+          <li class="covered" data-hits="1" data-linenumber="113">
             <span class="hits">1</span>
             
 
@@ -16194,7 +16062,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="120">
+          <li class="never" data-hits="" data-linenumber="114">
             
             
 
@@ -16213,8 +16081,8 @@
   <div class="header">
     <h3>app/controllers/rankings_controller.rb</h3>
     <h4>
-      <span class="red">
-  20.34%
+      <span class="green">
+  100.0%
 </span>
 
       lines covered
@@ -16223,9 +16091,9 @@
     
 
     <div class="t-line-summary">
-      <b>59</b> relevant lines.
-      <span class="green"><b>12</b> lines covered</span> and
-      <span class="red"><b>47</b> lines missed.</span>
+      <b>51</b> relevant lines.
+      <span class="green"><b>51</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
     </div>
 
     
@@ -16291,8 +16159,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="6">
-            
+          <li class="covered" data-hits="2" data-linenumber="6">
+            <span class="hits">2</span>
             
 
             
@@ -16313,8 +16181,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="8">
-            
+          <li class="covered" data-hits="2" data-linenumber="8">
+            <span class="hits">2</span>
             
 
             
@@ -16324,46 +16192,46 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="9">
-            
-            
-
+          <li class="covered" data-hits="2" data-linenumber="9">
+            <span class="hits">2</span>
             
 
-            <code class="ruby">    if !current_user.is_admin</code>
+            
+
+            <code class="ruby">    if !current_user.is_admin   </code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="10">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="10">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">      respond_to do |format|</code>
+            
+
+            <code class="ruby">      redirect_to events_url, notice: &quot;You do not have access to view rankings. You can request Administrator Access through Administrator request page.&quot;</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="11">
+          <li class="never" data-hits="" data-linenumber="11">
             
             
 
             
 
-            <code class="ruby">        format.html { redirect_to events_url, notice: &quot;You do not have access to rankings. You can request Administrator Access through Administrator request page.&quot; }</code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="12">
+          <li class="never" data-hits="" data-linenumber="12">
             
             
 
             
 
-            <code class="ruby">        format.json { head :no_content }</code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -16374,7 +16242,7 @@
 
             
 
-            <code class="ruby">        end</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -16385,45 +16253,12 @@
 
             
 
-            <code class="ruby">    end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="15">
-            
-            
-
-            
-
-            <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="16">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="17">
-            
-            
-
-            
-
             <code class="ruby">  # GET /rankings/1 or /rankings/1.json</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="18">
+          <li class="covered" data-hits="1" data-linenumber="15">
             <span class="hits">1</span>
             
 
@@ -16434,8 +16269,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="19">
-            
+          <li class="covered" data-hits="2" data-linenumber="16">
+            <span class="hits">2</span>
             
 
             
@@ -16445,51 +16280,18 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="20">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="17">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">      respond_to do |format|</code>
+            
+
+            <code class="ruby">      redirect_to events_url, notice: &quot;You do not have access to show rankings. You can request Administrator Access through Administrator request page.&quot;</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="21">
-            
-            
-
-            
-
-            <code class="ruby">        format.html { redirect_to events_url, notice: &quot;You do not have access to show. You can request Administrator Access through Administrator request page.&quot; }</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="22">
-            
-            
-
-            
-
-            <code class="ruby">        format.json { head :no_content }</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="23">
-            
-            
-
-            
-
-            <code class="ruby">      end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="24">
+          <li class="never" data-hits="" data-linenumber="18">
             
             
 
@@ -16500,7 +16302,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="25">
+          <li class="never" data-hits="" data-linenumber="19">
             
             
 
@@ -16511,7 +16313,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="26">
+          <li class="never" data-hits="" data-linenumber="20">
             
             
 
@@ -16522,7 +16324,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="27">
+          <li class="never" data-hits="" data-linenumber="21">
             
             
 
@@ -16533,7 +16335,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="28">
+          <li class="covered" data-hits="1" data-linenumber="22">
             <span class="hits">1</span>
             
 
@@ -16544,8 +16346,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="29">
-            
+          <li class="covered" data-hits="2" data-linenumber="23">
+            <span class="hits">2</span>
             
 
             
@@ -16555,8 +16357,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="30">
-            
+          <li class="covered" data-hits="2" data-linenumber="24">
+            <span class="hits">2</span>
             
 
             
@@ -16566,51 +16368,18 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="31">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="25">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">      respond_to do |format|</code>
+            
+
+            <code class="ruby">      redirect_to events_url, notice: &quot;You do not have access to create rankings. You can request Administrator Access through Administrator request page.&quot;</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="32">
-            
-            
-
-            
-
-            <code class="ruby">        format.html { redirect_to events_url, notice: &quot;You do not have access to create rankings. You can request Administrator Access through Administrator request page.&quot; }</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="33">
-            
-            
-
-            
-
-            <code class="ruby">        format.json { head :no_content }</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="34">
-            
-            
-
-            
-
-            <code class="ruby">      end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="35">
+          <li class="never" data-hits="" data-linenumber="26">
             
             
 
@@ -16621,7 +16390,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="36">
+          <li class="never" data-hits="" data-linenumber="27">
             
             
 
@@ -16632,7 +16401,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="37">
+          <li class="never" data-hits="" data-linenumber="28">
             
             
 
@@ -16643,7 +16412,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="38">
+          <li class="never" data-hits="" data-linenumber="29">
             
             
 
@@ -16654,7 +16423,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="39">
+          <li class="covered" data-hits="1" data-linenumber="30">
             <span class="hits">1</span>
             
 
@@ -16665,8 +16434,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="40">
-            
+          <li class="covered" data-hits="2" data-linenumber="31">
+            <span class="hits">2</span>
             
 
             
@@ -16676,51 +16445,18 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="41">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="32">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">      respond_to do |format|</code>
+            
+
+            <code class="ruby">      redirect_to events_url, notice: &quot;You do not have access to edit rankings. You can request Administrator Access through Administrator request page.&quot;</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="42">
-            
-            
-
-            
-
-            <code class="ruby">        format.html { redirect_to events_url, notice: &quot;You do not have access to edit rankings. You can request Administrator Access through Administrator request page.&quot; }</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="43">
-            
-            
-
-            
-
-            <code class="ruby">        format.json { head :no_content }</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="44">
-            
-            
-
-            
-
-            <code class="ruby">      end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="45">
+          <li class="never" data-hits="" data-linenumber="33">
             
             
 
@@ -16731,7 +16467,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="46">
+          <li class="never" data-hits="" data-linenumber="34">
             
             
 
@@ -16742,7 +16478,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="47">
+          <li class="never" data-hits="" data-linenumber="35">
             
             
 
@@ -16753,7 +16489,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="48">
+          <li class="never" data-hits="" data-linenumber="36">
             
             
 
@@ -16764,7 +16500,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="49">
+          <li class="covered" data-hits="1" data-linenumber="37">
             <span class="hits">1</span>
             
 
@@ -16775,13 +16511,145 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="50">
-            
+          <li class="covered" data-hits="5" data-linenumber="38">
+            <span class="hits">5</span>
             
 
             
 
             <code class="ruby">    @ranking = Ranking.new(ranking_params)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="39">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="5" data-linenumber="40">
+            <span class="hits">5</span>
+            
+
+            
+
+            <code class="ruby">    respond_to do |format|</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="5" data-linenumber="41">
+            <span class="hits">5</span>
+            
+
+            
+
+            <code class="ruby">      if !current_user.is_admin</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="42">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">        format.html { redirect_to events_url, notice: &quot;You do not have access to create rankings. You can request Administrator Access through Administrator request page.&quot; }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="43">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        format.json { head :no_content }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="4" data-linenumber="44">
+            <span class="hits">4</span>
+            
+
+            
+
+            <code class="ruby">      elsif @ranking.save</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="4" data-linenumber="45">
+            <span class="hits">4</span>
+            
+
+            
+
+            <code class="ruby">        format.html { redirect_to ranking_url(@ranking), notice: &quot;Ranking was successfully created.&quot; }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="46">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">        format.json { render :show, status: :created, location: @ranking }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="47">
+            
+            
+
+            
+
+            <code class="ruby">      else</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="4" data-linenumber="48">
+            <span class="hits">4</span>
+            
+
+            
+
+            <code class="ruby">        format.html { render :new, status: :unprocessable_entity }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="49">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">        format.json { render json: @ranking.errors, status: :unprocessable_entity }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="50">
+            
+            
+
+            
+
+            <code class="ruby">      end</code>
           </li>
         </div>
       
@@ -16792,144 +16660,12 @@
 
             
 
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="52">
-            
-            
-
-            
-
-            <code class="ruby">    respond_to do |format|</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="53">
-            
-            
-
-            
-
-            <code class="ruby">      if !current_user.is_admin</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="54">
-            
-            
-
-            
-
-            <code class="ruby">        format.html { redirect_to evens_url, notice: &quot;You do not have access to create rankings. You can request Administrator Access through Administrator request page.&quot; }</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="55">
-            
-            
-
-            
-
-            <code class="ruby">        format.json { head :no_content }</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="56">
-            
-            
-
-            
-
-            <code class="ruby">      elsif @ranking.save</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="57">
-            
-            
-
-            
-
-            <code class="ruby">        format.html { redirect_to ranking_url(@ranking), notice: &quot;Ranking was successfully created.&quot; }</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="58">
-            
-            
-
-            
-
-            <code class="ruby">        format.json { render :show, status: :created, location: @ranking }</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="59">
-            
-            
-
-            
-
-            <code class="ruby">      else</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="60">
-            
-            
-
-            
-
-            <code class="ruby">        format.html { render :new, status: :unprocessable_entity }</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="61">
-            
-            
-
-            
-
-            <code class="ruby">        format.json { render json: @ranking.errors, status: :unprocessable_entity }</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="62">
-            
-            
-
-            
-
-            <code class="ruby">      end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="63">
-            
-            
-
-            
-
             <code class="ruby">    end</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="64">
+          <li class="never" data-hits="" data-linenumber="52">
             
             
 
@@ -16940,7 +16676,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="65">
+          <li class="never" data-hits="" data-linenumber="53">
             
             
 
@@ -16951,7 +16687,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="66">
+          <li class="never" data-hits="" data-linenumber="54">
             
             
 
@@ -16962,7 +16698,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="67">
+          <li class="covered" data-hits="1" data-linenumber="55">
             <span class="hits">1</span>
             
 
@@ -16973,8 +16709,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="68">
-            
+          <li class="covered" data-hits="4" data-linenumber="56">
+            <span class="hits">4</span>
             
 
             
@@ -16984,8 +16720,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="69">
-            
+          <li class="covered" data-hits="4" data-linenumber="57">
+            <span class="hits">4</span>
             
 
             
@@ -16995,8 +16731,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="70">
-            
+          <li class="covered" data-hits="2" data-linenumber="58">
+            <span class="hits">2</span>
             
 
             
@@ -17006,8 +16742,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="71">
-            
+          <li class="covered" data-hits="1" data-linenumber="59">
+            <span class="hits">1</span>
             
 
             
@@ -17017,8 +16753,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="72">
-            
+          <li class="covered" data-hits="3" data-linenumber="60">
+            <span class="hits">3</span>
             
 
             
@@ -17028,8 +16764,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="73">
-            
+          <li class="covered" data-hits="4" data-linenumber="61">
+            <span class="hits">4</span>
             
 
             
@@ -17039,8 +16775,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="74">
-            
+          <li class="covered" data-hits="2" data-linenumber="62">
+            <span class="hits">2</span>
             
 
             
@@ -17050,7 +16786,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="75">
+          <li class="never" data-hits="" data-linenumber="63">
             
             
 
@@ -17061,8 +16797,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="76">
-            
+          <li class="covered" data-hits="2" data-linenumber="64">
+            <span class="hits">2</span>
             
 
             
@@ -17072,8 +16808,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="77">
-            
+          <li class="covered" data-hits="1" data-linenumber="65">
+            <span class="hits">1</span>
             
 
             
@@ -17083,7 +16819,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="78">
+          <li class="never" data-hits="" data-linenumber="66">
             
             
 
@@ -17094,7 +16830,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="79">
+          <li class="never" data-hits="" data-linenumber="67">
             
             
 
@@ -17105,7 +16841,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="80">
+          <li class="never" data-hits="" data-linenumber="68">
             
             
 
@@ -17116,7 +16852,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="81">
+          <li class="never" data-hits="" data-linenumber="69">
             
             
 
@@ -17127,7 +16863,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="82">
+          <li class="never" data-hits="" data-linenumber="70">
             
             
 
@@ -17138,7 +16874,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="83">
+          <li class="covered" data-hits="1" data-linenumber="71">
             <span class="hits">1</span>
             
 
@@ -17149,8 +16885,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="84">
-            
+          <li class="covered" data-hits="3" data-linenumber="72">
+            <span class="hits">3</span>
             
 
             
@@ -17160,7 +16896,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="85">
+          <li class="never" data-hits="" data-linenumber="73">
             
             
 
@@ -17171,8 +16907,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="86">
-            
+          <li class="covered" data-hits="3" data-linenumber="74">
+            <span class="hits">3</span>
             
 
             
@@ -17182,8 +16918,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="87">
-            
+          <li class="covered" data-hits="3" data-linenumber="75">
+            <span class="hits">3</span>
             
 
             
@@ -17193,8 +16929,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="88">
-            
+          <li class="covered" data-hits="2" data-linenumber="76">
+            <span class="hits">2</span>
             
 
             
@@ -17204,18 +16940,18 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="89">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="77">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">        format.json { head :no_content }</code>
+            
+
+            <code class="ruby">          format.json { head :no_content }</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="90">
+          <li class="never" data-hits="" data-linenumber="78">
             
             
 
@@ -17226,8 +16962,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="91">
-            
+          <li class="covered" data-hits="4" data-linenumber="79">
+            <span class="hits">4</span>
             
 
             
@@ -17237,8 +16973,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="92">
-            
+          <li class="covered" data-hits="2" data-linenumber="80">
+            <span class="hits">2</span>
             
 
             
@@ -17248,13 +16984,145 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="93">
+          <li class="never" data-hits="" data-linenumber="81">
             
             
 
             
 
             <code class="ruby">      end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="82">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="83">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="84">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="85">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  private</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="86">
+            
+            
+
+            
+
+            <code class="ruby">    # Use callbacks to share common setup or constraints between actions.</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="87">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    def set_ranking</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="11" data-linenumber="88">
+            <span class="hits">11</span>
+            
+
+            
+
+            <code class="ruby">      @ranking = Ranking.find(params[:id])</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="89">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="90">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="91">
+            
+            
+
+            
+
+            <code class="ruby">    # Only allow a list of trusted parameters through.</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="92">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    def ranking_params</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="8" data-linenumber="93">
+            <span class="hits">8</span>
+            
+
+            
+
+            <code class="ruby">      params.require(:ranking).permit(:title, :point_total)</code>
           </li>
         </div>
       
@@ -17271,138 +17139,6 @@
       
         <div>
           <li class="never" data-hits="" data-linenumber="95">
-            
-            
-
-            
-
-            <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="96">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="97">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">  private</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="98">
-            
-            
-
-            
-
-            <code class="ruby">    # Use callbacks to share common setup or constraints between actions.</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="99">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    def set_ranking</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="100">
-            
-            
-
-            
-
-            <code class="ruby">      @ranking = Ranking.find(params[:id])</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="101">
-            
-            
-
-            
-
-            <code class="ruby">    end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="102">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="103">
-            
-            
-
-            
-
-            <code class="ruby">    # Only allow a list of trusted parameters through.</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="104">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    def ranking_params</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="105">
-            
-            
-
-            
-
-            <code class="ruby">      params.require(:ranking).permit(:title, :point_total)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="106">
-            
-            
-
-            
-
-            <code class="ruby">    end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="107">
             
             
 
@@ -19019,7 +18755,7 @@
 
             
 
-            <code class="ruby">  def index</code>
+            <code class="ruby">  def index  </code>
           </li>
         </div>
       
@@ -19596,7 +19332,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="65">
+          <li class="never" data-hits="" data-linenumber="53">
             
             
 
@@ -19882,7 +19618,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="100">
+          <li class="never" data-hits="" data-linenumber="89">
             
             
 
@@ -19970,7 +19706,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="107">
+          <li class="never" data-hits="" data-linenumber="96">
             
             
 
@@ -20999,7 +20735,7 @@
 
             
 
-            <code class="ruby">    belongs_to :user</code>
+            <code class="ruby">  belongs_to :user</code>
           </li>
         </div>
       
@@ -21010,23 +20746,12 @@
 
             
 
-            <code class="ruby">    belongs_to :event</code>
+            <code class="ruby">  belongs_to :event</code>
           </li>
         </div>
       
         <div>
           <li class="never" data-hits="" data-linenumber="4">
-            
-            
-
-            
-
-            <code class="ruby">    </code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="5">
             
             
 
@@ -21045,8 +20770,8 @@
   <div class="header">
     <h3>app/models/event.rb</h3>
     <h4>
-      <span class="green">
-  100.0%
+      <span class="yellow">
+  88.89%
 </span>
 
       lines covered
@@ -21055,9 +20780,9 @@
     
 
     <div class="t-line-summary">
-      <b>4</b> relevant lines.
-      <span class="green"><b>4</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
+      <b>9</b> relevant lines.
+      <span class="green"><b>8</b> lines covered</span> and
+      <span class="red"><b>1</b> lines missed.</span>
     </div>
 
     
@@ -21085,7 +20810,7 @@
 
             
 
-            <code class="ruby">	belongs_to :event_type, :optional =&gt; true</code>
+            <code class="ruby">  belongs_to :event_type, :optional =&gt; true</code>
           </li>
         </div>
       
@@ -21096,7 +20821,7 @@
 
             
 
-            <code class="ruby">    has_many :users, through: :attendance </code>
+            <code class="ruby">  has_many :users, through: :attendance </code>
           </li>
         </div>
       
@@ -21107,18 +20832,205 @@
 
             
 
-            <code class="ruby">    validates :event_points, :event_description, :event_passcode, :event_start, :event_end, :event_title, :event_location, presence: true</code>
+            <code class="ruby">  has_many :attendance</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="5">
+          <li class="covered" data-hits="1" data-linenumber="5">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  validates :event_points, :event_description, :event_passcode, :event_start, :event_end, :event_title, :event_location, presence: true</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="6">
+            
+            
+
+            
+
+            <code class="ruby">  </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="7">
+            
+            
+
+            
+
+            <code class="ruby">  # find attendance for current event and sort attendees by roles (admin comes first)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="8">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def attendees</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="9">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">    User.joins(:attendance).where(attendances: { event_id: self.id }).order(&quot;is_admin DESC&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="10">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="11">
+            
+            
+
+            
+
+            <code class="ruby">  </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="12">
+            
+            
+
+            
+
+            <code class="ruby">  # show 3 recent activities on account page</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="13">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def self.recent_events</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="14">
+            
+            
+
+            
+
+            <code class="ruby">    Event.order(&#39;event_start DESC&#39;).limit(3)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="15">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="16">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="17">
             
             
 
             
 
             <code class="ruby">end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="18">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="19">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="20">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="21">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="22">
+            
+            
+
+            
+
+            <code class="ruby">    </code>
           </li>
         </div>
       
@@ -21345,7 +21257,7 @@
 
             
 
-            <code class="ruby">        first_name, last_name, email, point FROM Users as B ORDER BY point desc&quot;)</code>
+            <code class="ruby">        first_name, last_name, email, ranking_id, id, point FROM Users as B ORDER BY point desc&quot;)</code>
           </li>
         </div>
       
@@ -21601,7 +21513,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="15">
+          <li class="never" data-hits="" data-linenumber="12">
             
             
 
@@ -21618,7 +21530,7 @@
 
             
 
-            <code class="ruby">  def role?</code>
+            <code class="ruby">  def role</code>
           </li>
         </div>
       
@@ -21662,7 +21574,7 @@
 
             
 
-            <code class="ruby">      &quot;Member&quot;</code>
+            <code class="ruby">      &quot;Admin&quot;</code>
           </li>
         </div>
       
@@ -21689,7 +21601,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="23">
+          <li class="missed" data-hits="0" data-linenumber="23">
             
             
 
@@ -21755,7 +21667,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="29">
+          <li class="never" data-hits="" data-linenumber="26">
             
             
 
@@ -21816,7 +21728,7 @@
 
             
 
-            <code class="ruby">  def user_points</code>
+            <code class="ruby">  def attendance_history</code>
           </li>
         </div>
       
@@ -21827,7 +21739,7 @@
 
             
 
-            <code class="ruby">    # ranking_found = Ranking.where(&quot;point_total &lt;= #{self.point}&quot;).order(point_total: :desc)</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -21838,7 +21750,7 @@
 
             
 
-            <code class="ruby">    ranking_found = Ranking.where(&quot;point_total &lt;= ?&quot;, self.point ).order(point_total: :desc)</code>
+            <code class="ruby">  # calculate attendance point of user</code>
           </li>
         </div>
       
@@ -21849,7 +21761,7 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">    if ranking_found.empty? </code>
           </li>
         </div>
       
@@ -21948,7 +21860,7 @@
 
             
 
-            <code class="ruby">  </code>
+            <code class="ruby">      # nothing to do</code>
           </li>
         </div>
       
@@ -22217,7 +22129,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="62">
+          <li class="never" data-hits="" data-linenumber="54">
             
             
 
@@ -22228,13 +22140,13 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="63">
+          <li class="missed" data-hits="0" data-linenumber="55">
             
             
 
             
 
-            <code class="ruby">      user.update(ranking_id: ranking_found.id)</code>
+            <code class="ruby">      self.update(ranking_id: ranking_found.ids.at(0))</code>
           </li>
         </div>
       
@@ -22267,7 +22179,7 @@
 
             
 
-            <code class="ruby">    # &quot;Ranking is : #{self.ranking_id} !!&quot;</code>
+            <code class="ruby">    # &quot;#{self.ranking_id}&quot;</code>
           </li>
         </div>
       
@@ -22503,18 +22415,29 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="69">
+          <li class="never" data-hits="" data-linenumber="60">
+            
+            
+
+            
+
+            <code class="ruby">  # https://stackoverflow.com/questions/45252984/how-to-update-specific-column-in-a-activerecord-on-rails</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="61">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">  def get_ranking_title</code>
+            <code class="ruby">  def update_all_rankings(value)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="70">
+          <li class="never" data-hits="" data-linenumber="62">
             
             
 
@@ -22525,40 +22448,51 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="71">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="63">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">    # SELECT title FROM Rankings Join Users On Rankings.id=2;</code>
+            
+
+            <code class="ruby">    user = User.find(value)</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="72">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="64">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">    title_found = Ranking.where(id: self.ranking_id).first</code>
+            
+
+            <code class="ruby">    ranking_found = Ranking.where(&quot;point_total &lt;= ?&quot;, user.point ).order(point_total: :desc).first</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="73">
+          <li class="never" data-hits="" data-linenumber="65">
             
             
 
             
 
-            <code class="ruby">    if title_found == nil</code>
+            <code class="ruby">    </code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="74">
+          <li class="covered" data-hits="1" data-linenumber="66">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    if ranking_found == nil</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="67">
             
             
 
@@ -22569,7 +22503,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="75">
+          <li class="never" data-hits="" data-linenumber="68">
             
             
 
@@ -22580,18 +22514,40 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="76">
+          <li class="never" data-hits="" data-linenumber="69">
             
             
 
             
 
-            <code class="ruby">      &quot;#{ title_found.title }&quot;</code>
+            <code class="ruby">      # update ranking</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="77">
+          <li class="missed" data-hits="0" data-linenumber="70">
+            
+            
+
+            
+
+            <code class="ruby">      user.update(ranking_id: ranking_found.id)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="71">
+            
+            
+
+            
+
+            <code class="ruby">      &quot;#{user.id}&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="72">
             
             
 
@@ -22602,13 +22558,68 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="78">
+          <li class="never" data-hits="" data-linenumber="73">
+            
+            
+
+            
+
+            <code class="ruby">    # &quot;Ranking is : #{self.ranking_id} !!&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="74">
             
             
 
             
 
             <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="75">
+            
+            
+
+            
+
+            <code class="ruby">  </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="76">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def get_ranking_title</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="77">
+            
+            
+
+            
+
+            <code class="ruby">    # ranking_found = Ranking.where(&quot;point_total &lt;= #{self.point}&quot;).order(point_total: :desc)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="78">
+            
+            
+
+            
+
+            <code class="ruby">    # SELECT title FROM Rankings Join Users On Rankings.id=2;</code>
           </li>
         </div>
       
@@ -22624,51 +22635,18 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="80">
-            <span class="hits">1</span>
+          <li class="missed" data-hits="0" data-linenumber="80">
+            
             
 
             
 
-            <code class="ruby">  def show_title(value)</code>
+            <code class="ruby">    title_found = Ranking.where(id: self.ranking_id).first</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="81">
-            
-            
-
-            
-
-            <code class="ruby">    # ranking_found = Ranking.where(&quot;point_total &lt;= #{self.point}&quot;).order(point_total: :desc)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="82">
-            
-            
-
-            
-
-            <code class="ruby">    # SELECT title FROM Rankings Join Users On Rankings.id=2;</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="83">
-            
-            
-
-            
-
-            <code class="ruby">    title_found = Ranking.where(id: value).first</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="84">
+          <li class="missed" data-hits="0" data-linenumber="81">
             
             
 
@@ -22679,7 +22657,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="85">
+          <li class="never" data-hits="" data-linenumber="82">
             
             
 
@@ -22690,7 +22668,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="86">
+          <li class="never" data-hits="" data-linenumber="83">
             
             
 
@@ -22701,7 +22679,7 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="87">
+          <li class="missed" data-hits="0" data-linenumber="84">
             
             
 
@@ -22712,7 +22690,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="88">
+          <li class="never" data-hits="" data-linenumber="85">
             
             
 
@@ -22723,7 +22701,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="89">
+          <li class="never" data-hits="" data-linenumber="86">
             
             
 
@@ -22734,7 +22712,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="90">
+          <li class="never" data-hits="" data-linenumber="87">
             
             
 
@@ -22745,18 +22723,117 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="91">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="88">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">  </code>
+            
+
+            <code class="ruby">  def show_ranking_title(value)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="92">
+          <li class="never" data-hits="" data-linenumber="89">
+            
+            
+
+            
+
+            <code class="ruby">    # ranking_found = Ranking.where(&quot;point_total &lt;= #{self.point}&quot;).order(point_total: :desc)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="90">
+            
+            
+
+            
+
+            <code class="ruby">    # SELECT title FROM Rankings Join Users On Rankings.id=2;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="91">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    title_found = Ranking.where(id: value).first</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="92">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    if title_found == nil</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="93">
+            
+            
+
+            
+
+            <code class="ruby">      # nothing to do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="94">
+            
+            
+
+            
+
+            <code class="ruby">    else </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="95">
+            
+            
+
+            
+
+            <code class="ruby">      &quot;#{ title_found.title }&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="96">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="97">
+            
+            
+
+            
+
+            <code class="ruby">  end </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="98">
             
             
 
@@ -26493,18 +26570,7 @@
     <ol>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="1">
-            
-            
-
-            
-
-            <code class="ruby"># location: spec/feature/integration_spec.rb</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="2">
+          <li class="covered" data-hits="1" data-linenumber="1">
             <span class="hits">1</span>
             
 
@@ -26515,7 +26581,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="3">
+          <li class="never" data-hits="" data-linenumber="2">
             
             
 
@@ -26526,7 +26592,117 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="4">
+          <li class="never" data-hits="" data-linenumber="3">
+            
+            
+
+            
+
+            <code class="ruby"># Specs in this file have access to a helper object that includes</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="4">
+            
+            
+
+            
+
+            <code class="ruby"># the AdminRequestsHelper. For example:</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="5">
+            
+            
+
+            
+
+            <code class="ruby">#</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="6">
+            
+            
+
+            
+
+            <code class="ruby"># describe AdminRequestsHelper do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="7">
+            
+            
+
+            
+
+            <code class="ruby">#   describe &quot;string concat&quot; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="8">
+            
+            
+
+            
+
+            <code class="ruby">#     it &quot;concats two strings with spaces&quot; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="9">
+            
+            
+
+            
+
+            <code class="ruby">#       expect(helper.concat_strings(&quot;this&quot;,&quot;that&quot;)).to eq(&quot;this that&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="10">
+            
+            
+
+            
+
+            <code class="ruby">#     end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="11">
+            
+            
+
+            
+
+            <code class="ruby">#   end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="12">
+            
+            
+
+            
+
+            <code class="ruby"># end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="13">
             <span class="hits">1</span>
             
 
