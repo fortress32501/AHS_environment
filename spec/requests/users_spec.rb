@@ -194,30 +194,6 @@ RSpec.describe "/users", type: :request do
         expect(response).to redirect_to accounts_path
       end
     end
-
-  #   context "with invalid parameters" do
-  #     let(:new_attributes) {
-  #       {
-          
-  #       }
-  #     }
-
-  #     it "renders a successful response (i.e. to display the 'edit' template)" do
-  #       post users_url, params: { user: test_user }
-  #       user = User.last
-  #       patch user_url(user), params: { user: new_attributes }
-  #       user.reload
-  #       expect(response).not_to be_successful
-  #     end
-
-  #     it "updates the requested user" do
-  #       post users_url, params: { user: test_user }
-  #       user = User.last
-  #       patch update_profile_user_url(user), params: { user: new_attributes }
-  #       user.reload
-  #       expect(response).not_to be_successful
-  #     end
-  #   end
   end
 
   describe "DELETE /destroy" do
