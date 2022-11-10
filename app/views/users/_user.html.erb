@@ -11,6 +11,7 @@
 
 
 <tr>
+    <% current_user.update_all_rankings(user.id) %>
     <td><%= user.first_name %></td>
     <td><%= user.last_name %></td>
     <td><%= turbo_frame_tag user do %>
