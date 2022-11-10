@@ -4,42 +4,42 @@
     <div class="center-box-show", style="width: 50% !important">
 
         <div class="row justify-content-left">
-          <p class="show-event-text-header">
+          <p class="show-text-header">
             <strong>Event description:</strong>
             <%= @event.event_description %>
           </p>        
         </div>
 
         <div class="row justify-content-left">
-          <p class="show-event-text-header">
+          <p class="show-text-header">
             <strong>Event passcode:</strong>
             <%= @event.event_passcode %>
           </p>        
         </div>
 
         <div class="row justify-content-left">
-          <p class="show-event-text-header">
+          <p class="show-text-header">
             <strong>Event start:</strong>
             <%= @event.event_start.to_s(:short) %>
           </p>        
         </div>
 
         <div class="row justify-content-left">
-          <p class="show-event-text-header">
+          <p class="show-text-header">
             <strong>Event end:</strong>
             <%= @event.event_end.to_s(:short) %>
           </p>        
         </div>
 
         <div class="row justify-content-left">
-          <p class="show-event-text-header">
+          <p class="show-text-header">
             <strong>Event title:</strong>
             <%= @event.event_title %>
           </p>        
         </div>
 
         <div class="row justify-content-left">
-          <p class="show-event-text-header">
+          <p class="show-text-header">
             <strong>Event location:</strong>
             <%= @event.event_location %>
           </p>        
@@ -47,15 +47,15 @@
 
         <div class="row justify-content-left wrapper">       
           <div class="wrapper">
-            <div style="display: inline-block;"><p class="show-event-text-header"> <strong>Event type:</strong> </p></div>
+            <div style="display: inline-block;"><p class="show-text-header"> <strong>Event type:</strong> </p></div>
             <div style="width:20px; height:20px; background-color: <%=get_event_color(@event)%>; display: inline-block;"></div>
-            <div style="display: inline-block;"><p class="show-event-text-header"><%= get_event_type(@event) %></p></div>
+            <div style="display: inline-block;"><p class="show-text-header"><%= get_event_type(@event) %></p></div>
           </div>   
         </div>
 
         <div class="row justify-content-left" >
           <% if current_user&.is_admin? %>
-            <p class="show-event-text-header">
+            <p class="show-text-header">
               <strong>Event points:</strong>
               <%= @event.event_points %>
             </p>
