@@ -31,3 +31,7 @@
 # User.create!([
 #   {first_name: "Pear", last_name: "Ratano", email: "pear@gmail.com", password: "123", point: 0, is_admin: false, ranking_id: nil}
 # ])
+
+
+# User.create(first_name: "max", last_name: "Jones", email: "max@email.com", password: "12345", point: "200", is_admin: true)
+# User.create(first_name: "ruby", last_name: "White", email: "ruby@email.com", password: "123", point: "1000", is_admin: false)

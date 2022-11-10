@@ -10,7 +10,7 @@ class CreateUsers < ActiveRecord::Migration[6.1]
       t.integer :point, default: 0
       t.boolean :is_admin, default: false
 
-      t.belongs_to :ranking
+      t.belongs_to :ranking, default: nil
 
       t.timestamps
     end
