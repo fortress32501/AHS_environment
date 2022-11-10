@@ -59,7 +59,7 @@
   <!-- Render the events and gets colors and makes it half transparent -->
   <% events.each do |event| %>
     <div class="card" style="background-color: <%=get_event_color(event)%>; overflow-x: hidden;">
-        <p class="card-text no-hover"> <%= link_to event.event_title, event %></p>
+        <p class="card-text"> <%= link_to event.event_title, event, class:"no-hover" %></p>
     </div>
     <div style="padding-bottom:5px;"></div>
   <% end %>
