@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<p class="center" id="notice"><%= notice %></p>
 <div class="contain-blue-box">
 <div class="blue-box-show" style="margin-top: 60px;">
   <div class="center-box-show", style="width: 50% !important; word-wrap: break-word;">
@@ -27,12 +27,14 @@
         </p>
       </div>
 
-      <div class="row justify-content-left" >
-        <p class="show-text-header" style="font-size: 30px;">
-          <strong>Points:</strong>
-          <%= @attendance.points %>
-        </p>
-      </div>
+      <% if current_user.is_admin %>
+        <div class="row justify-content-left" >
+          <p class="show-text-header" style="font-size: 30px;">
+            <strong>Points:</strong>
+            <%= @attendance.points %>
+          </p>
+        </div>
+      <% end %>
 
       <br>
 
