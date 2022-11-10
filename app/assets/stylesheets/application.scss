@@ -182,15 +182,11 @@ body {
   padding-bottom: 9.5rem;    /* Footer height */
 }
 
-@media screen and ( max-width:749px ){
-  /* mobile footer */
-  #content-wrap {
-    padding-bottom: 15rem;    /* Footer height */
-  }
-}
-
 #footer {
   position: absolute;
+    /* bottom: 0; */
+    /* width: 100%; */
+  // height: 2.5rem;
   bottom: 0;
   left: 0;
   width: 100vw;
@@ -203,5 +199,4 @@ body {
 th {
   text-transform: uppercase;
 }
-
 
