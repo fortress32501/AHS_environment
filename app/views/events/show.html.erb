@@ -69,7 +69,10 @@
   <%= link_to 'Edit', edit_event_path(@event), class: 'button-style-blue' %>
   <% end %>
   <%= link_to 'Back', events_path, class: 'button-style-blue' %>  
-  <%= link_to 'Sign In For Event', new_attendance_path(eventID: @event.id), class: 'button-style-blue' %>
+  <!-- the button is invisible if the attendance exist -->
+  <% if @event.attendance_exist(current_user.id).blank? %>
+    <%= link_to 'Sign In For Event', new_attendance_path(eventID: @event.id), class: 'button-style-blue' %>
+  <% end %>
 </div>
 
 <!-- Show participants per event to only admin -->

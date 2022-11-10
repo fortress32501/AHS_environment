@@ -9,11 +9,10 @@ class Event < ApplicationRecord
     User.joins(:attendance).where(attendances: { event_id: self.id }).order("is_admin DESC")
   end
   
-  # show 3 recent activities on account page
-  def self.recent_events
-    Event.order('event_start DESC').limit(3)
+  # check whether user is already signed up for event
+  def attendance_exist(user_id)
+    Attendance.where(event_id: self.id, user_id: user_id)
   end
-
 end
 
 
