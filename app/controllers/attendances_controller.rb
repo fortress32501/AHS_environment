@@ -1,19 +1,17 @@
-# frozen_string_literal: true
-
 class AttendancesController < ApplicationController
-  before_action :set_attendance, only: %i[show edit update destroy]
+  before_action :set_attendance, only: %i[ show edit update destroy ]
 
   # GET /attendances or /attendances.json
   def index
     @attendances = Attendance.all
-    unless current_user.is_admin
-      redirect_to events_url,
-                  notice: 'You do not have access to see attendances. You can request Administrator Access through Administrator request page.'
+    if !current_user.is_admin
+      redirect_to events_url, notice: "You do not have access to see attendances. You can request Administrator Access through Administrator request page."
     end
   end
 
   # GET /attendances/1 or /attendances/1.json
-  def show; end
+  def show
+  end
 
   # GET /attendances/new
   def new
@@ -22,9 +20,8 @@ class AttendancesController < ApplicationController
 
   # GET /attendances/1/edit
   def edit
-    unless current_user.is_admin
-      redirect_to events_url,
-                  notice: 'You do not have access to edit this attendance. You can request Administrator Access through Administrator request page.'
+    if !current_user.is_admin
+      redirect_to events_url, notice: "You do not have access to edit this attendance. You can request Administrator Access through Administrator request page."
     end
   end
 
@@ -33,39 +30,37 @@ class AttendancesController < ApplicationController
     @attendance = Attendance.find_by(user_id: attendance_params[:user_id], event_id: attendance_params[:event_id])
     @user = User.find_by(id: attendance_params[:user_id])
     @event = Event.find_by(id: attendance_params[:event_id])
-    # only run if the attendance value doesn't exist
-    if @attendance.nil? && !(@user.nil? || @event.nil?)
-      # Create new attendance
+    #only run if the attendance value doesn't exist
+    if (@attendance.nil? and !(@user.nil? or @event.nil?))
+      #Create new attendance
       @attendance = Attendance.new(attendance_params)
-
+      
       # User point update
       @user.point = @user.point + @event.event_points
       @attendance.points = @event.event_points
-
+      
       respond_to do |format|
-        if @event.event_passcode == attendance_params[:password]
-          if @attendance.save && @user.save &&
-             format.html { redirect_to attendance_url(@attendance), notice: 'Attendance was successfully created.' }
+        if (@event.event_passcode == attendance_params[:password])
+          if @attendance.save and @user.save and 
+            format.html { redirect_to attendance_url(@attendance), notice: "Attendance was successfully created." }
             format.json { render :show, status: :created, location: @attendance }
-
+          
           else
             format.html { render :new, status: :unprocessable_entity }
             format.json { render json: @attendance.errors, status: :unprocessable_entity }
           end
-        else
+        else 
           format.html { redirect_to new_attendance_path(eventID: @event.id), notice: 'Password Incorrect' }
         end
       end
 
-      # If attendance already exists goes here
-    else
+      #If attendance already exists goes here 
+    else 
       respond_to do |format|
-        if @event.nil?
-          format.html { redirect_to new_attendance_path(eventID: @event.id), notice: 'Select an Event' }
-        elsif @user.nil?
-          format.html { redirect_to new_session_path, notice: 'Please Sign in' }
-        else
-          format.html { redirect_to events_path, notice: 'Your attendance has already been taken' }
+        if (@event.nil?)
+          format.html {redirect_to events_path, notice: "Event Sign-in Failure, Event not Selected"}
+        else 
+          format.html {redirect_to events_path, notice: "Your attendance has already been taken" }
         end
       end
     end
@@ -75,13 +70,10 @@ class AttendancesController < ApplicationController
   def update
     respond_to do |format|
       if !current_user.is_admin
-        format.html do
-          redirect_to events_url,
-                      notice: 'You do not have access to update this attendance. You can request Administrator Access through Administrator request page.'
-        end
+        format.html { redirect_to events_url, notice: "You do not have access to update this attendance. You can request Administrator Access through Administrator request page." }
         format.json { head :no_content }
       elsif @attendance.update(attendance_params)
-        format.html { redirect_to attendance_url(@attendance), notice: 'Attendance was successfully updated.' }
+        format.html { redirect_to attendance_url(@attendance), notice: "Attendance was successfully updated." }
         format.json { render :show, status: :ok, location: @attendance }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -93,29 +85,26 @@ class AttendancesController < ApplicationController
   # DELETE /attendances/1 or /attendances/1.json
   def destroy
     @attendance.destroy
-
+    
     respond_to do |format|
       if !current_user.is_admin
-        format.html do
-          redirect_to events_url,
-                      notice: 'You do not have access to destroy this attendance. You can request Administrator Access through Administrator request page.'
-        end
+        format.html { redirect_to events_url, notice: "You do not have access to destroy this attendance. You can request Administrator Access through Administrator request page." }
+        format.json { head :no_content } 
       else
-        format.html { redirect_to attendances_url, notice: 'Attendance was successfully destroyed.' }
+        format.html { redirect_to attendances_url, notice: "Attendance was successfully destroyed." }
+        format.json { head :no_content }
       end
-      format.json { head :no_content }
     end
   end
 
   private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_attendance
+      @attendance = Attendance.find(params[:id])
+    end
 
-  # Use callbacks to share common setup or constraints between actions.
-  def set_attendance
-    @attendance = Attendance.find(params[:id])
-  end
-
-  # Only allow a list of trusted parameters through.
-  def attendance_params
-    params.require(:attendance).permit(:user_id, :event_id, :points, :password)
-  end
+    # Only allow a list of trusted parameters through.
+    def attendance_params
+      params.require(:attendance).permit(:user_id, :event_id, :points, :password)
+    end
 end
