@@ -48,7 +48,7 @@ class UsersController < ApplicationController
         redirect_to new_user_path
       end
     else
-      format.html { redirect_to new_session_path, notice: 'User with that Email already exists' }
+      redirect_to new_session_path, notice: 'User with that Email already exists'
     end
   end
 
