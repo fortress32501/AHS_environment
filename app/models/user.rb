@@ -47,18 +47,18 @@ class User < ApplicationRecord
     attendance_history.sum(:event_points)
   end
 
-  # def assign_ranking
-  #   # ranking_found = Ranking.where("point_total <= #{self.point}").order(point_total: :desc)
-  #   ranking_found = Ranking.where("point_total <= ?", self.point ).order(point_total: :desc)
+  def assign_ranking
+    # ranking_found = Ranking.where("point_total <= #{self.point}").order(point_total: :desc)
+    ranking_found = Ranking.where("point_total <= ?", self.point ).order(point_total: :desc)
     
-  #   if ranking_found.empty? 
-  #     # nothing to do
-  #   else 
-  #     # update ranking
-  #     self.update(ranking_id: ranking_found.ids.at(0))
-  #   end
-  #   # "#{self.ranking_id}"
-  # end
+    if ranking_found.empty? 
+      # nothing to do
+    else 
+      # update ranking
+      self.update(ranking_id: ranking_found.ids.at(0))
+    end
+    # "#{self.ranking_id}"
+  end
   
   # https://stackoverflow.com/questions/45252984/how-to-update-specific-column-in-a-activerecord-on-rails
   
