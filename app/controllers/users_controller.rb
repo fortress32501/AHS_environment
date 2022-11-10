@@ -14,9 +14,9 @@ class UsersController < ApplicationController
   def index
     if current_user.is_admin
       @users = User.all.order('point DESC')
-      current_user.update_all_rankings
+      # current_user.assign_ranking
     elsif @users = User.where(id: current_user.id)
-      current_user.update_all_rankings
+      # current_user.assign_ranking
     end
   end
 
@@ -48,7 +48,7 @@ class UsersController < ApplicationController
         redirect_to new_user_path
       end
     else
-      format.html { redirect_to new_session_path, notice: 'User with that Email already exists' }
+      redirect_to new_session_path, notice: 'User with that Email already exists'
     end
   end
 

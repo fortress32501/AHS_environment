@@ -6,7 +6,7 @@ class RankingsController < ApplicationController
   # GET /rankings or /rankings.json
   def index
     @rankings = Ranking.all
-    current_user.update_all_rankings
+
     @list_rankings = Ranking.get_ranking_list
     unless current_user.is_admin
       redirect_to events_url,
