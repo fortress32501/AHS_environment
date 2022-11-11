@@ -7,10 +7,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# User.create(first_name: "Tim", last_name: "Jones", email: "tim@email.com", password: "12345", point: "200", is_admin: true)
-# User.create(first_name: "Jane", last_name: "White", email: "jane@email.com", password: "123", point: "1000", is_admin: false)
-# User.create(first_name: "John", last_name: "Jones", email: "john@email.com", password: "123456", point: "500", is_admin: true)
-# User.create(first_name: "James", last_name: "White", email: "james@email.com", password: "1234", point: "800", is_admin: false)
 
 # Ranking.create(title: "Diamond", point_total: "1000")
 # Ranking.create(title: "Gold", point_total: "700")
@@ -35,3 +31,13 @@
 
 # User.create(first_name: "max", last_name: "Jones", email: "max@email.com", password: "12345", point: "200", is_admin: true)
 # User.create(first_name: "ruby", last_name: "White", email: "ruby@email.com", password: "123", point: "1000", is_admin: false)
+# User.create(first_name: "Tim", last_name: "Jones", email: "tim@email.com", password: "12345", point: "200", is_admin: true)
+# User.create(first_name: "Jane", last_name: "White", email: "jane@email.com", password: "123", point: "1000", is_admin: false)
+# User.create(first_name: "John", last_name: "Jones", email: "john@email.com", password: "123456", point: "500", is_admin: true)
+# User.create(first_name: "James", last_name: "White", email: "james@email.com", password: "1234", point: "800", is_admin: false)
+User.create(first_name: "max", last_name: "Jones", email: "max@email.com", password: "12345", point: "700", is_admin: true)
+User.create(first_name: "ruby", last_name: "White", email: "ruby@email.com", password: "123", point: "1400", is_admin: false)
+User.create(first_name: "Tim", last_name: "Jones", email: "tim@email.com", password: "12345", point: "100", is_admin: true)
+User.create(first_name: "Jane", last_name: "White", email: "jane@email.com", password: "123", point: "100", is_admin: false)
+User.create(first_name: "John", last_name: "Jones", email: "john@email.com", password: "123456", point: "900", is_admin: true)
+User.create(first_name: "James", last_name: "White", email: "james@email.com", password: "1234", point: "800", is_admin: false)
