@@ -82,7 +82,7 @@ end
 # Edit user points
 RSpec.describe 'Edit user points', type: :feature do
   before(:each) do
-    load "#{Rails.root}/db/seeds_test.rb" 
+    load "#{Rails.root}/db/seeds_test.rb"
   end
   scenario 'valid inputs' do
     visit new_session_path
@@ -100,7 +100,7 @@ end
 # points should not chnage if not edited
 RSpec.describe 'Do not edit user points', type: :feature do
   before(:each) do
-    load "#{Rails.root}/db/seeds_test.rb" 
+    load "#{Rails.root}/db/seeds_test.rb"
   end
   scenario 'valid inputs' do
     visit new_session_path
@@ -139,14 +139,14 @@ end
 
 RSpec.describe 'User viewable point testing', type: :feature do
   before(:each) do
-    load "#{Rails.root}/db/seeds_test.rb" 
-  end 
+    load "#{Rails.root}/db/seeds_test.rb"
+  end
   scenario 'valid inputs' do
     visit new_event_type_path
     fill_in 'Email', with: 'test@gmail.com'
     fill_in 'Password', with: 'Test'
     click_on 'sign in'
-    
+
     # Create event
     click_on 'Events'
     click_on 'New Event'
@@ -155,18 +155,18 @@ RSpec.describe 'User viewable point testing', type: :feature do
     fill_in 'points', with: '5'
     fill_in 'passcode', with: 'Test'
     fill_in 'location', with: 'ZACH'
-    select '2022', :from => 'event_event_start_1i'
-    select 'September', :from => 'event_event_start_2i'
-    select '28', :from => 'event_event_start_3i'
-    select '01', :from => 'event_event_start_4i'
-    select '43', :from => 'event_event_start_5i'
-    select Date.today.year, :from => 'event_event_end_1i'                     # year
-    select Date::MONTHNAMES[Date.today.month] , :from => 'event_event_end_2i' # month
-    select Date.today.day, :from => 'event_event_end_3i'                      # date
-    select '02', :from => 'event_event_end_4i'
-    select '43', :from => 'event_event_end_5i'
-    click_on 'Create Event'  
-    
+    select '2022', from: 'event_event_start_1i'
+    select 'September', from: 'event_event_start_2i'
+    select '28', from: 'event_event_start_3i'
+    select '01', from: 'event_event_start_4i'
+    select '43', from: 'event_event_start_5i'
+    select Date.today.year, from: 'event_event_end_1i' # year
+    select Date::MONTHNAMES[Date.today.month], from: 'event_event_end_2i' # month
+    select Date.today.day, from: 'event_event_end_3i' # date
+    select '02', from: 'event_event_end_4i'
+    select '43', from: 'event_event_end_5i'
+    click_on 'Create Event'
+
     click_on 'Sign Out'
 
     click_on 'sign up'
@@ -179,7 +179,7 @@ RSpec.describe 'User viewable point testing', type: :feature do
     click_on 'Events'
     visit new_attendance_path(1)
     # Create attendance
-    #click_on 'Sign In For Event'
+    # click_on 'Sign In For Event'
     fill_in 'attendance_password', with: 'Test'
     click_on 'Create Attendance'
 
@@ -187,8 +187,8 @@ RSpec.describe 'User viewable point testing', type: :feature do
     click_on 'account'
     expect(page).to have_content('Attendance points')
     expect(page).to have_content('Attendance points: 5')
-    expect(page).not_to have_content('Attendance points: 0')  
-    
+    expect(page).not_to have_content('Attendance points: 0')
+
     # Test attendance history
     click_on 'full attendance history'
     expect(page).to have_content('1st Meeting')
