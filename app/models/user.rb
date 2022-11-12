@@ -5,6 +5,7 @@ class User < ApplicationRecord
   has_many :events, through: :attendance
   has_many :attendance
   validates :first_name, :last_name, :email, presence: true
+  belongs_to :ranking, optional: true
   # https://medium.com/@rmeji1/creating-a-login-with-simple-auth-using-ruby-on-rails-7dd95a03cb7a
 
   # Check if current user is an admin
@@ -60,7 +61,7 @@ class User < ApplicationRecord
   end
 
   # https://stackoverflow.com/questions/45252984/how-to-update-specific-column-in-a-activerecord-on-rails
-  def update_all_rankings(value)
+  def update_one_ranking(value)
     # ranking_found = Ranking.where("point_total <= #{self.point}").order(point_total: :desc)
     user = User.find(value)
     ranking_found = Ranking.where('point_total <= ?', user.point).order(point_total: :desc).first
@@ -97,4 +98,11 @@ class User < ApplicationRecord
       title_found.title.to_s
     end
   end
+
+  def update_all_rankings
+    User.all.each do |user|
+      self.update_one_ranking(user.id)
+    end
+  end
+
 end
