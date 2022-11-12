@@ -18,7 +18,10 @@
       <!--only display if admin OR if user and is users admin request-->
       <% if (@current_user.is_admin || @current_user.id == admin_request.user_id) %>
         <tr>
-            <td><%= admin_request.user_id %></td>
+            <!--get user by id to output name-->
+            <% user = User.find(admin_request.user_id) %>
+            <!--display user info-->
+            <td><%= user.first_name + " " + user.last_name %></td>
             <td><%= admin_request.request_status %></td>
             <td><%= admin_request.request_reason %></td>
             <td><%= admin_request.created_at %></td>

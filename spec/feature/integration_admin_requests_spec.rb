@@ -68,28 +68,6 @@ RSpec.describe 'Show Admin Requests', type: :feature do
     # expect(page).to have_content('01:43')
   end
 end
-''" No longer allowing users to delete admin request to preserve history of requests made.
-RSpec.describe 'Delete Admin Requests', type: :feature do
-    scenario 'Delete' do
-        visit new_admin_request_path
-        click_on 'sign up'
-        fill_in 'First name', with: 'test'
-        fill_in 'Last name', with: 'test'
-        fill_in 'Email', with: 'test@test.com'
-        fill_in 'Password', with: 'test'
-        click_on 'submit'
-        visit new_admin_request_path
-        fill_in 'Request reason', with: 'new officer: test'
-        click_on 'Create Admin request'
-        visit admin_requests_path
-        click_on 'Delete'
-
-        visit admin_requests_path
-        expect(page).not_to have_content('REQUESTED')
-        expect(page).not_to have_content('new officer: test')
-    end
-end
-"''
 
 RSpec.describe 'Review Admin Requests', type: :feature do
   scenario 'Review' do
