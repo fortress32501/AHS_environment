@@ -1,0 +1,15 @@
+<h1>Help Page</h1>
+
+<div class="d-flex justify-content-center">
+    <%= link_to "User Guide", asset_path("/User_Documentation.pdf"), class: "button-style-blue", target: "_blank" %>
+    
+    <br>
+    
+    <% if current_user.is_admin %>
+    <%= link_to "Admin Guide", asset_path("/Admin_Documentation.pdf"), class: "button-style-blue",  target: "_blank" %>
+    <% end %>
+
+    <br>
+    
+    <%= link_to "Report Bugs", "https://docs.google.com/forms/d/e/1FAIpQLSfPCqtX-F8TZtL_rjVIRLTB_bdU9lOcP1_yCWqIWQSQlHPKjw/viewform", class: "button-style-blue", target: "_blank" %>
+</div>

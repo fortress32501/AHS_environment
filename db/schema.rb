@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -12,67 +10,67 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_221_016_231_247) do
+ActiveRecord::Schema.define(version: 2022_10_16_231247) do
+
   # These are extensions that must be enabled in order to support this database
-  enable_extension 'plpgsql'
+  enable_extension "plpgsql"
 
-  create_table 'admin_requests', force: :cascade do |t|
-    t.integer 'user_id'
-    t.string 'request_status'
-    t.datetime 'created_at', precision: 6, null: false
-    t.datetime 'updated_at', precision: 6, null: false
-    t.string 'request_reason'
+  create_table "admin_requests", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "request_status"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "request_reason"
   end
 
-  create_table 'attendances', force: :cascade do |t|
-    t.integer 'user_id'
-    t.integer 'event_id'
-    t.integer 'points'
-    t.string 'password'
-    t.datetime 'created_at', precision: 6, null: false
-    t.datetime 'updated_at', precision: 6, null: false
+  create_table "attendances", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "event_id"
+    t.integer "points"
+    t.string "password"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table 'event_types', force: :cascade do |t|
-    t.string 'type_name'
-    t.string 'description'
-    t.string 'color'
-    t.datetime 'created_at', precision: 6, null: false
-    t.datetime 'updated_at', precision: 6, null: false
+  create_table "event_types", force: :cascade do |t|
+    t.string "type_name"
+    t.string "description"
+    t.string "color"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table 'events', force: :cascade do |t|
-    t.integer 'event_points'
-    t.string 'event_description'
-    t.string 'event_passcode'
-    t.datetime 'event_start'
-    t.datetime 'event_end'
-    t.string 'event_title'
-    t.string 'event_location'
-    t.datetime 'created_at', precision: 6, null: false
-    t.datetime 'updated_at', precision: 6, null: false
-    t.string 'event_type_id'
+  create_table "events", force: :cascade do |t|
+    t.integer "event_points"
+    t.string "event_description"
+    t.string "event_passcode"
+    t.datetime "event_start"
+    t.datetime "event_end"
+    t.string "event_title"
+    t.string "event_location"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "event_type_id"
   end
 
-  create_table 'rankings', force: :cascade do |t|
-    t.string 'title'
-    t.integer 'point_total'
-    t.datetime 'created_at', precision: 6, null: false
-    t.datetime 'updated_at', precision: 6, null: false
+  create_table "rankings", force: :cascade do |t|
+    t.string "title"
+    t.integer "point_total"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table 'users', force: :cascade do |t|
-    t.string 'first_name'
-    t.string 'last_name'
-    t.string 'email'
-    t.string 'password_digest'
-    t.integer 'point', default: 0
-    t.boolean 'is_admin', default: false
-    t.bigint 'ranking_id'
-    t.bigint 'attendance_id'
-    t.datetime 'created_at', precision: 6, null: false
-    t.datetime 'updated_at', precision: 6, null: false
-    t.index ['attendance_id'], name: 'index_users_on_attendance_id'
-    t.index ['ranking_id'], name: 'index_users_on_ranking_id'
+  create_table "users", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "email"
+    t.string "password_digest"
+    t.integer "point", default: 0
+    t.boolean "is_admin", default: false
+    t.bigint "ranking_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["ranking_id"], name: "index_users_on_ranking_id"
   end
+
 end
