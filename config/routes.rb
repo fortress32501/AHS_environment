@@ -1,11 +1,12 @@
-# frozen_string_literal: true
-
 Rails.application.routes.draw do
+
+
   resources :admin_requests
   resources :event_types
   resources :attendances
   resources :rankings
-  root to: 'main#index'
+  root to: "main#index"
+
 
   resources :events
 
@@ -20,24 +21,27 @@ Rails.application.routes.draw do
       put :update_profile
     end
   end
-
-  # resources :users, only: [:new, :create, :index, :show, :edit, :update, :destroy]
-  resources :sessions, only: %i[new create destroy delete]
-
-  get '/sessions/create', to: 'sessions#new'
-  get '/sessions/destroy', to: 'sessions#new'
-  get '/users/edit', to: 'sessions#new'
-  # get "/users/edit/profile", to: "users#profile"
+  
+  #resources :users, only: [:new, :create, :index, :show, :edit, :update, :destroy]
+  resources :sessions, only: [:new, :create, :destroy, :delete]
+  
+  get "/sessions/create", to: "sessions#new"  
+  get "/sessions/destroy", to: "sessions#new"
+  get "/users/edit", to: "sessions#new"
+  #get "/users/edit/profile", to: "users#profile"
   # get "/users/destroy", to: "sessions#new"
   # get "/users/update", to: "sessions#new"
   # get "/users/new", to: "sessions#new"
   # get "/users/show", to: "sessions#new"
 
   # routes for admin requests
-  get '/admin_requests/:id/approve', to: 'admin_requests#approve', as: 'approve'
-  get '/admin_requests/:id/deny', to: 'admin_requests#deny', as: 'deny'
+  get "/admin_requests/:id/approve", to: "admin_requests#approve", as: "approve"
+  get "/admin_requests/:id/deny", to: "admin_requests#deny", as: "deny"
 
   # route to account page
-  get '/accounts', to: 'accounts#index'
-  get '/history', to: 'history#index'
+  get "/accounts", to: "accounts#index"
+  get "/history", to: "history#index"
+
+  # route to help page
+  get '/help', to: 'help#index'
 end
