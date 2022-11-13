@@ -25,6 +25,28 @@ RSpec.describe 'Creating a User', type: :feature do
   end
 end
 
+# Sign Up/ Login Integration Test
+RSpec.describe 'Login', type: :feature do
+  scenario 'invalid inputs' do
+    # Test Sign Up
+    visit new_user_path
+    fill_in 'First name', with: 'Jane'
+    fill_in 'Last name', with: 'Doe'
+    fill_in 'Email', with: 'jane@gmail.com'
+    fill_in 'Password', with: '123'
+    click_on 'submit'
+    expect(page).to have_content('Welcome')
+    click_on 'account'
+    click_on 'Sign Out'
+
+    # Test Login
+    fill_in 'Email', with: 'jane@gmail.com'
+    fill_in 'Password', with: '1234'
+    click_on 'sign in'
+    expect(page).to have_content('Login failed! Please check your email or password.')
+  end
+end
+
 # Show user
 RSpec.describe 'Show user', type: :feature do
   scenario 'valid inputs' do
