@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/csce431/ahs/AHS_environment/spec/feature/integration_access_spec.rb": {
+      "/AHS_app/AHS_environment/spec/feature/integration_access_spec.rb": {
         "lines": [
           null,
           null,
@@ -96,7 +96,7 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/spec/rails_helper.rb": {
+      "/AHS_app/AHS_environment/spec/rails_helper.rb": {
         "lines": [
           null,
           null,
@@ -168,7 +168,7 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/config/environment.rb": {
+      "/AHS_app/AHS_environment/config/environment.rb": {
         "lines": [
           null,
           null,
@@ -179,7 +179,7 @@
           1
         ]
       },
-      "/csce431/ahs/AHS_environment/config/application.rb": {
+      "/AHS_app/AHS_environment/config/application.rb": {
         "lines": [
           null,
           null,
@@ -211,7 +211,7 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/config/boot.rb": {
+      "/AHS_app/AHS_environment/config/boot.rb": {
         "lines": [
           null,
           null,
@@ -221,7 +221,7 @@
           1
         ]
       },
-      "/csce431/ahs/AHS_environment/config/environments/test.rb": {
+      "/AHS_app/AHS_environment/config/environments/test.rb": {
         "lines": [
           null,
           null,
@@ -287,7 +287,7 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/config/initializers/application_controller_renderer.rb": {
+      "/AHS_app/AHS_environment/config/initializers/application_controller_renderer.rb": {
         "lines": [
           null,
           null,
@@ -300,7 +300,7 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/config/initializers/assets.rb": {
+      "/AHS_app/AHS_environment/config/initializers/assets.rb": {
         "lines": [
           null,
           null,
@@ -320,7 +320,7 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/config/initializers/backtrace_silencers.rb": {
+      "/AHS_app/AHS_environment/config/initializers/backtrace_silencers.rb": {
         "lines": [
           null,
           null,
@@ -334,7 +334,7 @@
           1
         ]
       },
-      "/csce431/ahs/AHS_environment/config/initializers/content_security_policy.rb": {
+      "/AHS_app/AHS_environment/config/initializers/content_security_policy.rb": {
         "lines": [
           null,
           null,
@@ -369,7 +369,7 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/config/initializers/cookies_serializer.rb": {
+      "/AHS_app/AHS_environment/config/initializers/cookies_serializer.rb": {
         "lines": [
           null,
           null,
@@ -380,7 +380,7 @@
           1
         ]
       },
-      "/csce431/ahs/AHS_environment/config/initializers/filter_parameter_logging.rb": {
+      "/AHS_app/AHS_environment/config/initializers/filter_parameter_logging.rb": {
         "lines": [
           null,
           null,
@@ -392,7 +392,7 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/config/initializers/inflections.rb": {
+      "/AHS_app/AHS_environment/config/initializers/inflections.rb": {
         "lines": [
           null,
           null,
@@ -413,7 +413,7 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/config/initializers/mime_types.rb": {
+      "/AHS_app/AHS_environment/config/initializers/mime_types.rb": {
         "lines": [
           null,
           null,
@@ -422,7 +422,7 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/config/initializers/permissions_policy.rb": {
+      "/AHS_app/AHS_environment/config/initializers/permissions_policy.rb": {
         "lines": [
           null,
           null,
@@ -438,7 +438,7 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/config/initializers/wrap_parameters.rb": {
+      "/AHS_app/AHS_environment/config/initializers/wrap_parameters.rb": {
         "lines": [
           null,
           null,
@@ -458,7 +458,7 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/config/routes.rb": {
+      "/AHS_app/AHS_environment/config/routes.rb": {
         "lines": [
           null,
           null,
@@ -505,7 +505,7 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/app/helpers/admin_requests_helper.rb": {
+      "/AHS_app/AHS_environment/app/helpers/admin_requests_helper.rb": {
         "lines": [
           null,
           null,
@@ -513,7 +513,7 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/app/helpers/application_helper.rb": {
+      "/AHS_app/AHS_environment/app/helpers/application_helper.rb": {
         "lines": [
           null,
           null,
@@ -528,7 +528,7 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/app/helpers/attendances_helper.rb": {
+      "/AHS_app/AHS_environment/app/helpers/attendances_helper.rb": {
         "lines": [
           null,
           null,
@@ -536,7 +536,7 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/app/helpers/event_types_helper.rb": {
+      "/AHS_app/AHS_environment/app/helpers/event_types_helper.rb": {
         "lines": [
           null,
           null,
@@ -544,7 +544,7 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/app/helpers/events_helper.rb": {
+      "/AHS_app/AHS_environment/app/helpers/events_helper.rb": {
         "lines": [
           null,
           null,
@@ -552,7 +552,7 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/app/helpers/rankings_helper.rb": {
+      "/AHS_app/AHS_environment/app/helpers/rankings_helper.rb": {
         "lines": [
           null,
           null,
@@ -560,7 +560,7 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/app/helpers/sessions_helper.rb": {
+      "/AHS_app/AHS_environment/app/helpers/sessions_helper.rb": {
         "lines": [
           null,
           null,
@@ -568,7 +568,7 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/app/helpers/users_helper.rb": {
+      "/AHS_app/AHS_environment/app/helpers/users_helper.rb": {
         "lines": [
           null,
           null,
@@ -576,7 +576,7 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/spec/support/factory_girl.rb": {
+      "/AHS_app/AHS_environment/spec/support/factory_girl.rb": {
         "lines": [
           null,
           null,
@@ -587,7 +587,7 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/spec/factories/user_spec_factory.rb": {
+      "/AHS_app/AHS_environment/spec/factories/user_spec_factory.rb": {
         "lines": [
           null,
           null,
@@ -603,7 +603,7 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/app/models/user.rb": {
+      "/AHS_app/AHS_environment/app/models/user.rb": {
         "lines": [
           null,
           null,
@@ -612,11 +612,12 @@
           1,
           1,
           1,
+          1,
           null,
           null,
           null,
           1,
-          249,
+          254,
           null,
           null,
           null,
@@ -669,10 +670,10 @@
           null,
           1,
           null,
-          18,
-          18,
+          22,
+          22,
           null,
-          18,
+          22,
           null,
           null,
           null,
@@ -704,10 +705,17 @@
           0,
           null,
           null,
+          null,
+          1,
+          20,
+          22,
+          null,
+          null,
+          null,
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/app/models/application_record.rb": {
+      "/AHS_app/AHS_environment/app/models/application_record.rb": {
         "lines": [
           null,
           null,
@@ -716,7 +724,7 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/spec/feature/integration_admin_requests_spec.rb": {
+      "/AHS_app/AHS_environment/spec/feature/integration_admin_requests_spec.rb": {
         "lines": [
           null,
           1,
@@ -847,509 +855,7 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/spec/feature/integration_event_types_spec.rb": {
-        "lines": [
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/csce431/ahs/AHS_environment/spec/feature/integration_events_spec.rb": {
-        "lines": [
-          null,
-          null,
-          null,
-          1,
-          null,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/csce431/ahs/AHS_environment/spec/feature/integration_rankings_spec.rb": {
+      "/AHS_app/AHS_environment/spec/feature/integration_event_types_spec.rb": {
         "lines": [
           null,
           null,
@@ -1363,6 +869,508 @@
           null,
           1,
           1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/AHS_app/AHS_environment/spec/feature/integration_events_spec.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/AHS_app/AHS_environment/spec/feature/integration_rankings_spec.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
           1,
           1,
           1,
@@ -1458,7 +1466,7 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/spec/feature/integration_users_spec.rb": {
+      "/AHS_app/AHS_environment/spec/feature/integration_users_spec.rb": {
         "lines": [
           null,
           null,
@@ -1658,28 +1666,7 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/spec/helpers/admin_requests_helper_spec.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          1,
-          null
-        ]
-      },
-      "/csce431/ahs/AHS_environment/spec/helpers/attendances_helper_spec.rb": {
+      "/AHS_app/AHS_environment/spec/helpers/admin_requests_helper_spec.rb": {
         "lines": [
           null,
           null,
@@ -1700,7 +1687,7 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/spec/helpers/event_types_helper_spec.rb": {
+      "/AHS_app/AHS_environment/spec/helpers/attendances_helper_spec.rb": {
         "lines": [
           null,
           null,
@@ -1721,7 +1708,7 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/spec/helpers/events_helper_spec.rb": {
+      "/AHS_app/AHS_environment/spec/helpers/event_types_helper_spec.rb": {
         "lines": [
           null,
           null,
@@ -1742,7 +1729,7 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/spec/helpers/rankings_helper_spec.rb": {
+      "/AHS_app/AHS_environment/spec/helpers/events_helper_spec.rb": {
         "lines": [
           null,
           null,
@@ -1763,7 +1750,7 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/spec/helpers/sessions_helper_spec.rb": {
+      "/AHS_app/AHS_environment/spec/helpers/rankings_helper_spec.rb": {
         "lines": [
           null,
           null,
@@ -1784,7 +1771,7 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/spec/helpers/users_helper_spec.rb": {
+      "/AHS_app/AHS_environment/spec/helpers/sessions_helper_spec.rb": {
         "lines": [
           null,
           null,
@@ -1805,7 +1792,28 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/spec/models/admin_request_spec.rb": {
+      "/AHS_app/AHS_environment/spec/helpers/users_helper_spec.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/AHS_app/AHS_environment/spec/models/admin_request_spec.rb": {
         "lines": [
           null,
           null,
@@ -1816,7 +1824,7 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/app/models/admin_request.rb": {
+      "/AHS_app/AHS_environment/app/models/admin_request.rb": {
         "lines": [
           null,
           null,
@@ -1851,7 +1859,7 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/spec/models/attendance_spec.rb": {
+      "/AHS_app/AHS_environment/spec/models/attendance_spec.rb": {
         "lines": [
           null,
           null,
@@ -1862,7 +1870,7 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/app/models/attendance.rb": {
+      "/AHS_app/AHS_environment/app/models/attendance.rb": {
         "lines": [
           null,
           null,
@@ -1872,7 +1880,7 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/spec/models/event_spec.rb": {
+      "/AHS_app/AHS_environment/spec/models/event_spec.rb": {
         "lines": [
           null,
           null,
@@ -1883,7 +1891,7 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/app/models/event.rb": {
+      "/AHS_app/AHS_environment/app/models/event.rb": {
         "lines": [
           null,
           null,
@@ -1906,7 +1914,7 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/spec/models/event_type_spec.rb": {
+      "/AHS_app/AHS_environment/spec/models/event_type_spec.rb": {
         "lines": [
           null,
           null,
@@ -1917,7 +1925,7 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/app/models/event_type.rb": {
+      "/AHS_app/AHS_environment/app/models/event_type.rb": {
         "lines": [
           null,
           null,
@@ -1927,7 +1935,7 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/spec/models/ranking_spec.rb": {
+      "/AHS_app/AHS_environment/spec/models/ranking_spec.rb": {
         "lines": [
           null,
           null,
@@ -1938,7 +1946,7 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/app/models/ranking.rb": {
+      "/AHS_app/AHS_environment/app/models/ranking.rb": {
         "lines": [
           null,
           null,
@@ -1958,7 +1966,7 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/spec/models/user_spec.rb": {
+      "/AHS_app/AHS_environment/spec/models/user_spec.rb": {
         "lines": [
           null,
           null,
@@ -1969,7 +1977,7 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/spec/requests/admin_requests_spec.rb": {
+      "/AHS_app/AHS_environment/spec/requests/admin_requests_spec.rb": {
         "lines": [
           null,
           null,
@@ -2376,8 +2384,9 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/spec/requests/attendances_spec.rb": {
+      "/AHS_app/AHS_environment/spec/requests/attendances_spec.rb": {
         "lines": [
+          1,
           null,
           null,
           null,
@@ -2391,50 +2400,65 @@
           null,
           null,
           null,
+          1,
           null,
           null,
           null,
           null,
+          1,
           null,
+          14,
           null,
           null,
           null,
           null,
           null,
+          1,
           null,
+          2,
           null,
           null,
           null,
           null,
           null,
+          1,
           null,
+          1,
           null,
           null,
           null,
           null,
           null,
+          1,
           null,
+          1,
           null,
           null,
           null,
           null,
           null,
           null,
+          1,
           null,
+          1,
           null,
           null,
           null,
           null,
           null,
           null,
+          1,
           null,
+          14,
           null,
           null,
           null,
           null,
           null,
           null,
+          1,
           null,
+          14,
           null,
           null,
           null,
@@ -2442,7 +2466,9 @@
           null,
           null,
           null,
+          1,
           null,
+          14,
           null,
           null,
           null,
@@ -2451,8 +2477,23 @@
           null,
           null,
           null,
+          1,
+          14,
+          14,
+          14,
+          14,
           null,
+          1,
+          1,
+          1,
+          1,
+          1,
           null,
+          1,
+          1,
+          1,
+          1,
+          1,
           null,
           null,
           null,
@@ -2460,51 +2501,103 @@
           null,
           null,
           null,
+          1,
+          1,
+          1,
+          1,
+          1,
           null,
           null,
           null,
+          1,
+          1,
+          1,
+          1,
           null,
           null,
           null,
+          1,
+          1,
+          1,
+          1,
+          1,
           null,
+          1,
+          1,
+          1,
+          1,
+          1,
           null,
           null,
           null,
           null,
           null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
           null,
           null,
           null,
+          1,
+          1,
           null,
+          1,
+          1,
           null,
           null,
           null,
           null,
           null,
+          1,
+          1,
+          1,
           null,
           null,
           null,
           null,
+          1,
+          1,
+          1,
           null,
           null,
           null,
           null,
           null,
           null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
           null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
           null,
           null,
           null,
           null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
           null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
+          1,
+          1,
+          1,
+          1,
+          1,
           null,
           null,
           null,
@@ -2512,7 +2605,7 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/spec/requests/event_types_spec.rb": {
+      "/AHS_app/AHS_environment/spec/requests/event_types_spec.rb": {
         "lines": [
           null,
           null,
@@ -2692,7 +2785,7 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/spec/support/spec_test_helper.rb": {
+      "/AHS_app/AHS_environment/spec/support/spec_test_helper.rb": {
         "lines": [
           null,
           null,
@@ -2710,7 +2803,7 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/spec/requests/events_spec.rb": {
+      "/AHS_app/AHS_environment/spec/requests/events_spec.rb": {
         "lines": [
           null,
           null,
@@ -2882,7 +2975,7 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/spec/requests/rankings_spec.rb": {
+      "/AHS_app/AHS_environment/spec/requests/rankings_spec.rb": {
         "lines": [
           null,
           null,
@@ -3087,7 +3180,7 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/spec/requests/sessions_spec.rb": {
+      "/AHS_app/AHS_environment/spec/requests/sessions_spec.rb": {
         "lines": [
           null,
           null,
@@ -3117,7 +3210,7 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/spec/requests/users_spec.rb": {
+      "/AHS_app/AHS_environment/spec/requests/users_spec.rb": {
         "lines": [
           1,
           null,
@@ -3340,7 +3433,7 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/spec/routing/admin_requests_routing_spec.rb": {
+      "/AHS_app/AHS_environment/spec/routing/admin_requests_routing_spec.rb": {
         "lines": [
           null,
           null,
@@ -3383,7 +3476,7 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/app/controllers/admin_requests_controller.rb": {
+      "/AHS_app/AHS_environment/app/controllers/admin_requests_controller.rb": {
         "lines": [
           null,
           null,
@@ -3634,7 +3727,7 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/app/controllers/application_controller.rb": {
+      "/AHS_app/AHS_environment/app/controllers/application_controller.rb": {
         "lines": [
           null,
           null,
@@ -3643,16 +3736,16 @@
           1,
           null,
           1,
-          329,
+          358,
           null,
           null,
           1,
-          982,
+          1026,
           null,
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/spec/routing/attendances_routing_spec.rb": {
+      "/AHS_app/AHS_environment/spec/routing/attendances_routing_spec.rb": {
         "lines": [
           null,
           null,
@@ -3695,132 +3788,121 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/app/controllers/attendances_controller.rb": {
+      "/AHS_app/AHS_environment/app/controllers/attendances_controller.rb": {
         "lines": [
-          null,
-          null,
           1,
           1,
           null,
           null,
           1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          1,
-          5,
-          null,
-          null,
-          null,
-          1,
-          0,
-          0,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          4,
-          4,
-          4,
-          null,
-          4,
-          null,
-          3,
-          null,
-          null,
           3,
           3,
-          null,
-          3,
-          3,
-          3,
-          3,
-          3,
-          null,
-          null,
-          0,
-          0,
-          null,
-          null,
-          0,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          1,
-          0,
-          1,
-          0,
-          null,
           2,
           null,
           null,
           null,
           null,
+          1,
+          null,
           null,
           null,
           1,
-          0,
-          0,
-          0,
-          0,
+          6,
           null,
           null,
-          0,
-          0,
-          0,
-          0,
           null,
-          0,
-          0,
-          null,
+          1,
+          2,
+          1,
           null,
           null,
           null,
           null,
           1,
-          0,
+          9,
+          9,
+          9,
+          null,
+          9,
+          null,
+          4,
+          null,
+          null,
+          4,
+          4,
+          null,
+          4,
+          4,
+          4,
+          4,
+          4,
+          null,
           null,
           0,
           0,
-          0,
-          0,
-          null,
           null,
           null,
           0,
           null,
+          null,
+          null,
+          null,
+          null,
+          5,
+          5,
+          6,
+          null,
+          4,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          2,
+          2,
+          2,
+          1,
+          1,
           0,
+          0,
+          null,
+          2,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          2,
+          null,
+          2,
+          2,
+          2,
+          1,
+          null,
+          2,
+          1,
+          null,
           null,
           null,
           null,
           1,
           null,
+          1,
+          10,
+          null,
+          null,
           null,
           1,
-          3,
-          null,
-          null,
-          null,
-          1,
-          22,
+          45,
           null,
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/spec/routing/event_types_routing_spec.rb": {
+      "/AHS_app/AHS_environment/spec/routing/event_types_routing_spec.rb": {
         "lines": [
           null,
           null,
@@ -3863,7 +3945,7 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/app/controllers/event_types_controller.rb": {
+      "/AHS_app/AHS_environment/app/controllers/event_types_controller.rb": {
         "lines": [
           null,
           null,
@@ -3966,7 +4048,7 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/spec/routing/events_routing_spec.rb": {
+      "/AHS_app/AHS_environment/spec/routing/events_routing_spec.rb": {
         "lines": [
           null,
           null,
@@ -4009,7 +4091,7 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/app/controllers/events_controller.rb": {
+      "/AHS_app/AHS_environment/app/controllers/events_controller.rb": {
         "lines": [
           null,
           null,
@@ -4044,19 +4126,19 @@
           null,
           null,
           1,
-          15,
+          29,
           null,
           null,
-          13,
-          13,
+          27,
+          27,
           1,
           1,
           null,
           null,
           1,
-          12,
-          24,
-          12,
+          26,
+          52,
+          26,
           null,
           0,
           0,
@@ -4123,11 +4205,11 @@
           null,
           null,
           1,
-          40,
-          40,
+          46,
+          46,
           1,
           null,
-          39,
+          45,
           null,
           null,
           null,
@@ -4141,7 +4223,7 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/spec/routing/rankings_routing_spec.rb": {
+      "/AHS_app/AHS_environment/spec/routing/rankings_routing_spec.rb": {
         "lines": [
           null,
           null,
@@ -4184,7 +4266,7 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/app/controllers/rankings_controller.rb": {
+      "/AHS_app/AHS_environment/app/controllers/rankings_controller.rb": {
         "lines": [
           null,
           null,
@@ -4194,7 +4276,7 @@
           null,
           1,
           10,
-          null,
+          10,
           10,
           10,
           2,
@@ -4298,7 +4380,7 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/spec/routing/users_routing_spec.rb": {
+      "/AHS_app/AHS_environment/spec/routing/users_routing_spec.rb": {
         "lines": [
           null,
           null,
@@ -4341,7 +4423,7 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/app/controllers/users_controller.rb": {
+      "/AHS_app/AHS_environment/app/controllers/users_controller.rb": {
         "lines": [
           null,
           null,
@@ -4359,9 +4441,9 @@
           1,
           10,
           9,
-          null,
+          9,
           1,
-          null,
+          1,
           null,
           null,
           null,
@@ -4382,12 +4464,12 @@
           null,
           null,
           1,
-          107,
-          107,
-          105,
-          105,
-          103,
-          103,
+          125,
+          125,
+          123,
+          123,
+          121,
+          121,
           null,
           2,
           2,
@@ -4442,12 +4524,12 @@
           null,
           null,
           1,
-          218,
+          254,
           null,
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/spec/unit/unit_spec.rb": {
+      "/AHS_app/AHS_environment/spec/unit/unit_spec.rb": {
         "lines": [
           null,
           null,
@@ -4767,7 +4849,7 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/spec/views/admin_requests/edit.html.erb_spec.rb": {
+      "/AHS_app/AHS_environment/spec/views/admin_requests/edit.html.erb_spec.rb": {
         "lines": [
           null,
           null,
@@ -4805,7 +4887,7 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/spec/views/admin_requests/index.html.erb_spec.rb": {
+      "/AHS_app/AHS_environment/spec/views/admin_requests/index.html.erb_spec.rb": {
         "lines": [
           null,
           null,
@@ -4871,7 +4953,7 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/spec/views/admin_requests/new.html.erb_spec.rb": {
+      "/AHS_app/AHS_environment/spec/views/admin_requests/new.html.erb_spec.rb": {
         "lines": [
           null,
           null,
@@ -4912,7 +4994,7 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/spec/views/admin_requests/show.html.erb_spec.rb": {
+      "/AHS_app/AHS_environment/spec/views/admin_requests/show.html.erb_spec.rb": {
         "lines": [
           null,
           null,
@@ -4945,7 +5027,7 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/spec/views/attendances/edit.html.erb_spec.rb": {
+      "/AHS_app/AHS_environment/spec/views/attendances/edit.html.erb_spec.rb": {
         "lines": [
           null,
           null,
@@ -4974,37 +5056,7 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/spec/views/attendances/index.html.erb_spec.rb": {
-        "lines": [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/csce431/ahs/AHS_environment/spec/views/attendances/new.html.erb_spec.rb": {
+      "/AHS_app/AHS_environment/spec/views/attendances/index.html.erb_spec.rb": {
         "lines": [
           null,
           null,
@@ -5034,59 +5086,7 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/spec/views/attendances/show.html.erb_spec.rb": {
-        "lines": [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/csce431/ahs/AHS_environment/spec/views/event_types/edit.html.erb_spec.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          1,
-          null,
-          1,
-          null,
-          null,
-          null
-        ]
-      },
-      "/csce431/ahs/AHS_environment/spec/views/event_types/index.html.erb_spec.rb": {
+      "/AHS_app/AHS_environment/spec/views/attendances/new.html.erb_spec.rb": {
         "lines": [
           null,
           null,
@@ -5116,7 +5116,30 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/spec/views/event_types/new.html.erb_spec.rb": {
+      "/AHS_app/AHS_environment/spec/views/attendances/show.html.erb_spec.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/AHS_app/AHS_environment/spec/views/event_types/edit.html.erb_spec.rb": {
         "lines": [
           null,
           null,
@@ -5145,100 +5168,8 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/spec/views/event_types/show.html.erb_spec.rb": {
+      "/AHS_app/AHS_environment/spec/views/event_types/index.html.erb_spec.rb": {
         "lines": [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/csce431/ahs/AHS_environment/spec/views/events/edit.html.erb_spec.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          1,
-          null,
-          1,
-          null,
-          1,
-          null,
-          1,
-          null,
-          1,
-          null,
-          1,
-          null,
-          1,
-          null,
-          1,
-          null,
-          1,
-          null,
-          1,
-          null,
-          1,
-          null,
-          1,
-          null,
-          1,
-          null,
-          1,
-          null,
-          null,
-          null
-        ]
-      },
-      "/csce431/ahs/AHS_environment/spec/views/events/index.html.erb_spec.rb": {
-        "lines": [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
           null,
           null,
           null,
@@ -5267,7 +5198,59 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/spec/views/events/new.html.erb_spec.rb": {
+      "/AHS_app/AHS_environment/spec/views/event_types/new.html.erb_spec.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/AHS_app/AHS_environment/spec/views/event_types/show.html.erb_spec.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/AHS_app/AHS_environment/spec/views/events/edit.html.erb_spec.rb": {
         "lines": [
           null,
           null,
@@ -5324,69 +5307,8 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/spec/views/events/show.html.erb_spec.rb": {
+      "/AHS_app/AHS_environment/spec/views/events/index.html.erb_spec.rb": {
         "lines": [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/csce431/ahs/AHS_environment/spec/views/rankings/edit.html.erb_spec.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          1,
-          null,
-          null,
-          null
-        ]
-      },
-      "/csce431/ahs/AHS_environment/spec/views/rankings/index.html.erb_spec.rb": {
-        "lines": [
-          null,
-          null,
-          null,
           null,
           null,
           null,
@@ -5427,7 +5349,7 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/spec/views/rankings/new.html.erb_spec.rb": {
+      "/AHS_app/AHS_environment/spec/views/events/new.html.erb_spec.rb": {
         "lines": [
           null,
           null,
@@ -5441,10 +5363,41 @@
           null,
           null,
           null,
+          null,
+          null,
+          null,
+          null,
+          null,
           1,
           1,
           null,
           1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
           1,
           null,
           1,
@@ -5453,69 +5406,8 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/spec/views/rankings/show.html.erb_spec.rb": {
+      "/AHS_app/AHS_environment/spec/views/events/show.html.erb_spec.rb": {
         "lines": [
-          null,
-          null,
-          1,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/csce431/ahs/AHS_environment/spec/views/sessions/create.html.erb_spec.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null,
-          1,
-          1,
-          null
-        ]
-      },
-      "/csce431/ahs/AHS_environment/spec/views/sessions/destroy.html.erb_spec.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null,
-          1,
-          1,
-          null
-        ]
-      },
-      "/csce431/ahs/AHS_environment/spec/views/sessions/new.html.erb_spec.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null,
-          1,
-          1,
-          null
-        ]
-      },
-      "/csce431/ahs/AHS_environment/spec/views/users/edit.html.erb_spec.rb": {
-        "lines": [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
           null,
           null,
           null,
@@ -5546,7 +5438,33 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/spec/views/users/index.html.erb_spec.rb": {
+      "/AHS_app/AHS_environment/spec/views/rankings/edit.html.erb_spec.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/AHS_app/AHS_environment/spec/views/rankings/index.html.erb_spec.rb": {
         "lines": [
           null,
           null,
@@ -5584,10 +5502,95 @@
           null,
           null,
           null,
+          null,
+          null,
+          null,
+          null,
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/spec/views/users/new.html.erb_spec.rb": {
+      "/AHS_app/AHS_environment/spec/views/rankings/new.html.erb_spec.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/AHS_app/AHS_environment/spec/views/rankings/show.html.erb_spec.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/AHS_app/AHS_environment/spec/views/sessions/create.html.erb_spec.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/AHS_app/AHS_environment/spec/views/sessions/destroy.html.erb_spec.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/AHS_app/AHS_environment/spec/views/sessions/new.html.erb_spec.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/AHS_app/AHS_environment/spec/views/users/edit.html.erb_spec.rb": {
         "lines": [
           null,
           null,
@@ -5625,7 +5628,86 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/spec/views/users/show.html.erb_spec.rb": {
+      "/AHS_app/AHS_environment/spec/views/users/index.html.erb_spec.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/AHS_app/AHS_environment/spec/views/users/new.html.erb_spec.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/AHS_app/AHS_environment/spec/views/users/show.html.erb_spec.rb": {
         "lines": [
           null,
           null,
@@ -5654,7 +5736,7 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/db/seeds_test.rb": {
+      "/AHS_app/AHS_environment/db/seeds_test.rb": {
         "lines": [
           null,
           null,
@@ -5682,7 +5764,7 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/app/controllers/sessions_controller.rb": {
+      "/AHS_app/AHS_environment/app/controllers/sessions_controller.rb": {
         "lines": [
           null,
           null,
@@ -5717,7 +5799,7 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/app/controllers/main_controller.rb": {
+      "/AHS_app/AHS_environment/app/controllers/main_controller.rb": {
         "lines": [
           null,
           null,
@@ -5729,7 +5811,7 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/app/controllers/accounts_controller.rb": {
+      "/AHS_app/AHS_environment/app/controllers/accounts_controller.rb": {
         "lines": [
           null,
           null,
@@ -5739,7 +5821,7 @@
           null
         ]
       },
-      "/csce431/ahs/AHS_environment/app/controllers/history_controller.rb": {
+      "/AHS_app/AHS_environment/app/controllers/history_controller.rb": {
         "lines": [
           null,
           null,
@@ -5752,6 +5834,6 @@
         ]
       }
     },
-    "timestamp": 1668104832
+    "timestamp": 1668356260
   }
 }

@@ -1,96 +1,13 @@
-<!--<%= form_with(model: user) do |form| %>
-  <% if user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
-      <ul>
-        <% user.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+<%= form_with model: user do |f| %>
+  <div class="input-group mb-3">
+    <%= f.label :point, class:"invisible" %>
+    <%= f.number_field :point, class: "form-control form-control-sm", style:"width:auto;"%>
+    <div class="input-group-append">
+    <%= f.button class: "btn btn-outline-secondary" %>
     </div>
-  <% end %>
+    <div class="input-group-append">
+    <%= link_to "Cancel", users_path, class: "btn btn-outline-secondary" %>
+    </div>
+  </div>
+<% end %>
 
-  <div class="contain-blue-box">
-      <div class="blue-box">
-        <div class="center-box">
-
-            <div class="row justify-content-left">
-              <div class="field">
-                <div class="field">
-                  <%= form.label :first_name , class: "form-text"  %>
-                  <%= form.text_field :first_name %>
-                </div>                
-              </div>
-            </div>
-
-            <div class="row justify-content-left">
-              <div class="field">
-                <div class="field">
-                  <%= form.label :last_name , class: "form-text"  %>
-                  <%= form.text_field :last_name %>
-                </div>                
-              </div>
-            </div>
-
-            <div class="row justify-content-left">
-              <div class="field">
-                <div class="field">
-                  <%= form.label :email , class: "form-text"  %>
-                  <%= form.text_field :email, class: "form-input"  %>
-                </div>                
-              </div>
-            </div>
-
-            <div class="row justify-content-left">
-              <div class="field">
-                <div class="field">
-                  <%= form.label :point , class: "form-text" %>
-                  <%= form.number_field :point, class: "form-input"  %>
-                </div>                
-              </div>
-            </div>
-
-            <div class="row justify-content-left last-row-pad" >
-              <div class="field">
-                <!--<div class="field">
-                  <%= form.label :is_admin , class: "form-text" %>
-                  <%= form.select :is_admin, ['false', 'true'], class: "form-input"  %>
-                </div>                
-              </div>
-            </div>
-            <br>
-
-            <div class="row justify-content-center" style="width: auto;">
-              <%= form.submit class: 'button-style-white' %>
-            </div>
-
-        </div>
-      <div>
-  <div>
-<% end %>-->
-
-<div class="product-card">
-  <%= form_with model: user do |f| %>
-
-    <div class="contain-blue-box">
-      <div class="blue-box-user">
-        <div class="center-box">
-
-            <div class="row justify-content-center last-row-pad user-point-input" style="margin: auto;">
-              <div class="field">
-                <%= f.label :point, class: "form-text" %>
-                <%= f.number_field :point , class: "form-input", style: "text-align: center;"%>
-              </div>
-            </div>
-
-            <div class="row justify-content-center" style="width: auto;margin-top:5%;">
-            <%= f.button class: "button-style-white" %>
-            <%= link_to "Cancel", users_path, class: "button-style-white" %>
-            </div>
-
-        </div>
-      <div>
-    <div>
-  <% end %>
-</div>
