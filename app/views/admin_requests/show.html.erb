@@ -42,12 +42,12 @@
 <!--should only give option to Approve/Deny if the request has not yet been processed-->
 <% if (@admin_request.request_status == "REQUESTED") %>
 <div class="d-flex justify-content-center">
-    <%= link_to 'Approve', approve_path(@admin_request) %> |
-    <%= link_to 'Deny', deny_path(@admin_request) %> |
+    <%= link_to 'Approve', approve_path(@admin_request), class: 'button-style-blue' %> |
+    <%= link_to 'Deny', deny_path(@admin_request), class: 'button-style-blue' %> |
 </div>
 
 <% end %>
 
 <div class="d-flex justify-content-center">
-  <%= link_to 'Back', admin_requests_path %>
+  <%= link_to 'Back', admin_requests_path, class: 'button-style-blue' %>
 </div>
