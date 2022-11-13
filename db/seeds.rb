@@ -31,3 +31,4 @@
 # User.create!([
 #   {first_name: "Pear", last_name: "Ratano", email: "pear@gmail.com", password: "123", point: 0, is_admin: false, ranking_id: nil}
 # ])
+
