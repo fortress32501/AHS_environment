@@ -4,8 +4,13 @@
 <div>
   <h1> Users <h1>
 </div>
-<div>
-<table class="table-style" style="width:auto;">
+
+<div class="d-flex justify-content-center">
+  <%= button_to "Rank", "", { :onclick => "history.go(0)", :class => "button-style" } %>
+</div>
+
+<div style="overflow-x:auto;">
+<table class="table-style">
   <thead>
     <tr>
       <th scope="col">First Name</th>
@@ -19,8 +24,5 @@
   <tbody>
     <%= render @users %>
   </tbody>
-</div>
-
-<div class="d-flex justify-content-center">
-  <%= button_to "Rank", "", { :onclick => "history.go(0)", :class => "button-style" } %>
+</table>
 </div>
