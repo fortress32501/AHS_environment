@@ -21,7 +21,7 @@
             <td><%= admin_request.user_id %></td>
             <td><%= admin_request.request_status %></td>
             <td><%= admin_request.request_reason %></td>
-            <td><%= admin_request.created_at %></td>
+            <td><%= admin_request.created_at.to_s(:long) %></td>
             <!--should only be able to review the request if is an admin-->
             <!--should also only be able to review if it's in the REQUESTED state-->
             <% if (@current_user.is_admin) %> 
