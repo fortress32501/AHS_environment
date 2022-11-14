@@ -1,33 +1,33 @@
-<h1>Show Admin Request</h1>
+<h1>Admin Request</h1>
 
 <p id="notice"><%= notice %></p>
 <div class="contain-blue-box">
 <div class="blue-box-show", style="margin-top: 30px !important;">
-  <div class="center-box-show", style="width: 70% !important; word-wrap: break-word;">
+  <div class="center-box-show">
 
       <div class="row justify-content-left">
-        <p class="show-text">
+        <p class="show-text-header">
           <strong>User:</strong>
           <%= @admin_request.user_id %>
         </p>        
       </div>
 
       <div class="row justify-content-left">
-        <p class="show-text">
+        <p class="show-text-header">
           <strong>Request status:</strong>
           <%= @admin_request.request_status %>
         </p>        
       </div>
 
       <div class="row justify-content-left">
-        <p class="show-text">
+        <p class="show-text-header">
           <strong>Request reason:</strong>
           <%= @admin_request.request_reason %>
         </p>        
       </div>
 
       <div class="row justify-content-left" >
-        <p class="show-text">
+        <p class="show-text-header">
           <strong>Requested at:</strong>
           <%= @admin_request.created_at.to_s(:long) %>
         </p>
