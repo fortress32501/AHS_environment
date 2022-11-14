@@ -33,7 +33,7 @@ class User < ApplicationRecord
   end
 
   # first name last name format
-  def get_name
+  def full_name
     self.first_name + " " + self.last_name
   end 
   
