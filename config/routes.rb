@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :event_types
   resources :attendances
   resources :rankings
+  resources :password_resets
   root to: "main#index"
 
 
