@@ -32,6 +32,11 @@ class User < ApplicationRecord
     "#{User.find(user_id).last_name}, #{User.find(user_id).first_name}"
   end
 
+  # first name last name format
+  def get_name
+    self.first_name + " " + self.last_name
+  end 
+  
   # show 3 recent attendance records
   def recent_attendance
     attendance_history.limit(3)

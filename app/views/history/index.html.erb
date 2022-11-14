@@ -1,5 +1,5 @@
 <h1> List of event attended </h1>
-<table class="table-style">
+<table class="table-style" style="word-wrap: break-word">
   <thead>
     <tr>
       <th>Event</th>
@@ -11,7 +11,7 @@
     <%# Display attendance history of user %> 
     <% current_user.attendance_history.order('event_start DESC').each do |attendance| %>
       <tr>
-        <td><%= link_to Event.where(id: attendance.event_id).last.event_title, event_path(attendance.event_id), class: "button-style" %></td>
+        <td><%= link_to Event.where(id: attendance.event_id).last.event_title, event_path(attendance.event_id), class: "no-hover custom-hover-blue", style:"color: rgb(58, 130, 212); font-weight: bold; font-size: 16px;" %></td>
         <td><%= Event.where(id: attendance.event_id).last.event_start.to_s(:short) %> to <%= Event.where(id: attendance.event_id).last.event_end.to_s(:short) %></td>
       </tr>
     <% end %>

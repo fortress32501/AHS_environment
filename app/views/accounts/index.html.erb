@@ -10,8 +10,8 @@
             <div class="col-md-4 d-flex gradient-custom text-center justify-content-center align-items-center"
               style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
               <div class="row d-flex justify-content-center align-items-center">
-                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp"
-                  alt="Avatar" class="img-fluid" style="width: 80px;" />
+                <!-- image source: https://www.bing.com/images/search?view=detailV2&ccid=c5KXw%2bwP&id=3F1EA52A5EC49B2AFC8F7016A8C39427B032E0FF&thid=OIP.c5KXw-wPcnwyyBNayoXfFQHaHa&mediaurl=https%3a%2f%2fcdn.icon-icons.com%2ficons2%2f1378%2fPNG%2f512%2favatardefault_92824.png&cdnurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.739297c3ec0f727c32c8135aca85df15%3frik%3d%252f%252bAysCeUw6gWcA%26pid%3dImgRaw%26r%3d0&exph=512&expw=512&q=User+Avatar+Icons&simid=608039864937312967&FORM=IRPRST&ck=9E104F4638C3E18FDE1A52D96394F9BC&selectedIndex=33&ajaxhist=0&ajaxserp=0 -->
+                <%= image_tag("user_avatar.png", alt:"Avatar", class:"img-fluid", style:"width: 60%;") %>                
                 <h2 class="ahs-text my-2" style="font-size: 20px !important;"> <%= current_user.first_name %> <%= current_user.last_name %></h2>
                 <%= link_to " Edit Profile", profile_user_path(current_user), class: "far fa-edit mb-5 btn-default ahs-text no-hover", id: "Edit Profile"%>
               </div>
@@ -60,15 +60,15 @@
                 <% if !current_user.is_admin %>
                   <h6 class="mb-4" style="padding-left: 36px;">Attendance points: <%= current_user.user_points %></h6>  
                 <% end %>               
-                  <h6 class="center">Recent Events Attended</h6>
-                  <hr class="mt-0 mb-2 mx-6" style="width: 50%; margin:0 auto;">
+                  <h6>Recent Events Attended</h6>
+                  <hr class="mt-0 mb-2 mx-6">
                   <div class="row pt-1 justify-content-center align-items-center">
                     <div class="col mb-3 center">
                       <% if current_user.recent_attendance.blank? %>
                         <p class="smaller-text no-hover" style="text-transform: none;"> No current events attended, you can sign up for event <%= link_to "HERE", events_path, class:"no-hover", style:"color: rgb(58, 130, 212); font-weight: bold;" %></p> 
                       <% else %>
                         <!-- table for events -->
-                          <table class="table-sm">
+                          <table class="table-sm" style="width:100%; table-layout:fixed; word-wrap: break-word;">
                             <thead>
                               <tr class="mb-4" style="font-size: 16px !important;">
                                 <th class="custom-table">Event</th>
@@ -79,7 +79,7 @@
                             <tbody>
                               <% current_user.recent_attendance.each do |attendance| %>
                                 <tr>
-                                  <td class="custom-table"><p class="text-muted smaller-text" style="margin-bottom: 0;"><%= link_to Event.where(id: attendance.event_id).last.event_title, event_path(attendance.event_id), class:"no-hover", style:"color: rgb(58, 130, 212); font-weight: bold;" %></p> </td>
+                                  <td class="custom-table"><p class="text-muted smaller-text" style="margin-bottom: 0;"><%= link_to Event.where(id: attendance.event_id).last.event_title, event_path(attendance.event_id), class:"no-hover hover-underline-animation", style:"color: rgb(58, 130, 212); font-weight: bold;" %></p> </td>
                                   <td><p class="text-muted smaller-text" style="margin-bottom: 0;"><%= Event.where(id: attendance.event_id).last.event_start.to_s(:short) %> to <%= Event.where(id: attendance.event_id).last.event_end.to_s(:short) %></p></td>
                                 </tr>
                               <% end %>
