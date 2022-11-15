@@ -11,21 +11,35 @@
     </div>
   <% end %>
 
-  <div class = "filed">
-    User: <%= current_user.email %>
-    <%= form.hidden_field :user_id,  :value => current_user.id%>
-  </div>
+  <div class="contain-blue-box">
+      <div class="blue-box">
+        <div class="center-box">
+            <div class="row justify-content-left">
+              <div class = "user-text">
+                User: <%= @current_user.email  %> 
+                <%= form.hidden_field :user_id,  :value => @current_user.id, class: "form-input" %>
+              </div>              
+            </div>
 
-  <div class = "filed">
-    <%= form.hidden_field :request_status,  :value => "REQUESTED"%>
-  </div>
+            <div class="row justify-content-left">
+              <div class = "filed">
+                <%= form.hidden_field :request_status,  :value => "REQUESTED", class: "form-input" %>
+              </div>              
+            </div>
 
+            <div class="row justify-content-left last-row-pad" >
+              <div>
+                <%= form.label :request_reason, class: "form-text"  %> <br>
+                <%= form.text_field :request_reason, class: "form-input"  %>
+              </div>              
+            </div>
+
+            <br>
+            <div class="row justify-content-center" style="width: auto;">
+              <%= form.submit class: 'button-style-white' %>
+            </div>
+
+        </div>
+      <div>
   <div>
-    <%= form.label :request_reason %>
-    <%= form.text_field :request_reason %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 <% end %>

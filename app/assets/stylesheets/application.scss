@@ -16,14 +16,188 @@
  */
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome";
+@import 'table';
+@import 'button';
+@import 'show';
 // source: https://mdbootstrap.com/docs/standard/extended/profiles/ 
 .gradient-custom {
   /* fallback for old browsers */
   background: #f6d365;
   
   /* Chrome 10-25, Safari 5.1-6 */
-  background: -webkit-linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1));
-  
+  //background: -webkit-linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1));
+  background: -webkit-linear-gradient(to right bottom, rgba(6, 100, 181, 1), rgba(54, 68, 89, 1));
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1))
+  //background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1))
+  background: linear-gradient(to right bottom, rgba(6, 100, 181, 1), rgba(54, 68, 89, 1))
 }
+
+// blue color: #364459
+// yellow color: #bfb87d
+// text color: rgba(26,26,26,.86)
+// text font: EB Garamond
+// text blue color: #425b76
+
+.intro {
+  text-align: center;
+  font-family: "EB Garamond";
+}
+
+h1 {
+  color: #bfb87d;
+  font-family: "adobe-garamond-pro"; //"EB Garamond";
+  font-size: x-large;
+  text-transform: uppercase;
+  text-align: center;
+
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0px;
+  line-height: 1.2em;
+
+  display: block;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  margin-bottom: 0;
+  margin-top: 26px;
+}
+
+h2 {
+  color: #364459;
+  font-family: "EB Garamond";
+
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0px;
+  text-transform: none;
+  line-height: 1.2em;
+
+  display: block;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+p {
+  font-weight: 400;
+  font-family: "EB Garamond";
+
+  font-style: normal;
+  font-size: 18px;
+  letter-spacing: .06px;
+  line-height: 1.5em;
+  color: rgba(26,26,26,.86);
+}
+
+
+a {
+  text-decoration: none;
+  font-family: "EB Garamond";
+}
+
+.blue-box {
+  background-color: #364459;
+}
+
+// Navigation bar
+.ahs-color {
+  background: #364459;
+}
+
+.ahs-text {
+  color: #f5f8fc !important;
+  font-family: EB Garamond;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase; 
+  text-decoration: none;
+  line-height: 1em;
+}
+
+.ahs-text-black {
+  color: black !important;
+  font-family: EB Garamond;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase; 
+  text-decoration: none;
+  line-height: 1em;
+}
+
+.no-hover:hover {
+  background-color: transparent !important;
+}
+
+// Footer
+.social-button {
+  border-radius: 50%;
+  color: white !important;
+  text-align: center; 
+  text-decoration: none;
+}
+
+.neon-blue:hover {
+  background-color: #4cc9f0;
+  -webkit-box-shadow: 10px 10px 99px 6px rgba(76,201,240,1);
+  -moz-box-shadow: 10px 10px 99px 6px rgba(76,201,240,1);
+  box-shadow: 10px 10px 99px 6px rgba(76,201,240,1);
+}
+
+// footer {
+//   position: fixed;
+//   // height: 150;
+//   bottom: 0;
+//   width: 100%;
+// }
+.neon-blue-button:hover {
+  background-color: #62afdf !important;
+}
+
+// body
+body {
+  margin: 0;
+  overflow-x: hidden;
+  // margin-bottom: 150px;
+  clear: both;
+}
+
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+#content-wrap {
+  padding-bottom: 15.5rem;    /* Footer height */
+}
+
+
+#footer {
+  position: absolute;
+    /* bottom: 0; */
+    /* width: 100%; */
+  // height: 2.5rem;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #364459;
+}
+
+th {
+  text-transform: uppercase;
+}
+

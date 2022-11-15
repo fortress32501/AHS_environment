@@ -1,14 +1,37 @@
+<h1>Show Ranking</h1>
+
 <p id="notice"><%= notice %></p>
+<div class="contain-blue-box">
+<div class="blue-box-show">
+  <div class="center-box-show">
 
-<p>
-  <strong>Title:</strong>
-  <%= @ranking.title %>
-</p>
+      <div class="row justify-content-left">
+        
+          <p class="show-text">
+            <strong>Title:</strong>
+            <%= @ranking.title %>
+          </p>
 
-<p>
-  <strong>Point total:</strong>
-  <%= @ranking.point_total %>
-</p>
+      </div>
 
-<%= link_to 'Edit', edit_ranking_path(@ranking) %> |
-<%= link_to 'Back', rankings_path %>
+      <div class="row justify-content-left last-row-pad" >
+          <p class="show-text">
+            <strong>Point total:</strong>
+            <%= @ranking.point_total %>
+          </p>
+
+      </div>
+
+      <br>
+
+
+  </div>
+
+<div>
+<div>
+
+<div class="d-flex justify-content-center">
+  <%= link_to 'Edit', edit_ranking_path(@ranking), class: 'button-style-blue' %> |
+  <%= link_to 'Back', rankings_path, class: 'button-style-blue' %>
+</div>
+

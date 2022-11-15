@@ -1,4 +1,6 @@
+# frozen_string_literal: true
+
 class AccountsController < ApplicationController
-  def index
-  end
+  layout 'screen_size', only: :index
+  def index; end
 end

@@ -1,3 +1,111 @@
 // Place all the styles related to the Events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+.event-table {
+    overflow-x: auto;
+
+    // overflow-y: auto;
+    // max-height: 500px;
+}
+
+.simple-calendar {
+    overflow-x: scroll;
+    table {
+        min-height: 60vh;
+        min-width: 90vh;
+    }
+    thead {
+        position: sticky;
+        top: 0;
+        background-color: #364459;
+        color: #ffffff
+    }
+}
+
+.calendar-title {
+    text-align: center;
+    font-family: "EB Garamond";
+    color: #bfb87d;
+    font-size: 25px;
+}
+
+.calendar-heading {
+    min-width: 90vh;
+    overflow-x: auto;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+}
+
+.calendar-heading a{
+    border-radius: 30px;
+    background-color: rgba(156, 156, 156, 0.9);
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    font-size: 1.0em;
+    font-family: "EB Garamond";
+    margin: 1% 2%;
+    cursor: pointer;
+}
+
+.calendar-heading a :hover{
+    border-radius: 30px;
+    background-color: #364459;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    font-size: 1.0em;
+    font-family: "EB Garamond";
+    margin: 1% 2%;
+    cursor: pointer;
+}
+
+.card {
+    overflow: hidden;         /*prevent text from being shown outside the border */
+    text-overflow: ellipsis;  /*cut off text with an ellipsis*/
+    overflow-x: scroll;
+}
+
+.simple-calendar .next-month,
+.simple-calendar .prev-month {
+    background-color: #ffffff;
+}
+
+.simple-calendar th {
+    text-align: center;
+}
+  
+.simple-calendar .day a {
+    color: #364459;
+    font-size: 0.8em;
+}
+
+.simple-calendar .day {
+    background: transparent;
+} 
+  
+.simple-calendar tbody tr {
+    text-align: center;
+}
+
+.simple-calendar .today {
+    background: #364459;
+}
+  
+.calendar-title-box {
+    line-height: 0.8em;
+    letter-spacing: -0.8px;
+    margin-top: 8px;
+    overflow: hidden;
+}
+
+.event-type-table td {
+    padding: 12px 15px;
+    font-family: "EB Garamond";
+    text-align: center;
+}

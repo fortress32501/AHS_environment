@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Alexander Hamilton Society</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" rel="stylesheet">
+  </head>
+  
+  <body>
+    <!-- Navbar -->
+    <%= render partial: "shared/navbar" %>
+
+    <!-- Contents go here -->
+    <div class="container .align-item-center">
+      <%= yield %>
+    </div>
+
+    <!-- footer -->
+    <%= render partial: "shared/footer" unless action_name == "/sessions/new" %>
+
+  </body>
+  
+</html>

@@ -1,3 +1,53 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+// Account Page
+.profile-card {
+  box-shadow: 0 4px 8px 0 rgba(7, 137, 243, 0.2), 0 6px 20px 0 rgba(128, 160, 229, 0.19);
+}
+
+.smaller-text {
+  font-size: medium;
+}
+
+td.account-td {
+  //margin-bottom: 8px !important;
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.button {
+  background-color: #364459; 
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 13px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.custom-button-blue {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #364459;
+}
+
+.custom-button-blue:hover {
+  background-color: #364459;
+  color: white;
+}
+
+th.custom-table, td.custom-table {
+  //padding-left: 30px !important;
+  padding-right: 40px !important;
+  word-wrap: break-word;
+}
+
+.custom-hover-blue {
+  color:aqua;
+}

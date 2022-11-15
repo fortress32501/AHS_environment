@@ -11,19 +11,31 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title , autofocus: true, placeholder: "Title", :required => 'required'  %>
-  </div>
+  <div class="contain-blue-box">
+      <div class="blue-box">
+        <div class="center-box">
 
-  <div class="field">
-    <%= form.label :point_total %>
-    <%= form.number_field :point_total,  autofocus: true, placeholder: "Point Total", :required => 'required'  %>
-  </div>
+            <div class="row justify-content-left">
+              <div class="field">
+                <%= form.label :title, class: "form-text" %> <br>
+                <%= form.text_field :title , autofocus: true,  :required => 'required', class: "form-input"  %>
+              </div>
+            </div>
 
-  
+            <div class="row justify-content-left last-row-pad" >
+              <div class="field">
+                <%= form.label :point_total, class: "form-text" %> <br>
+                <%= form.number_field :point_total,  autofocus: true,  :required => 'required', class: "form-input"  %>
+              </div>
+            </div>
+            <br>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+            <div class="row justify-content-center" style="width: auto;">
+              <%= form.submit class: 'button-style-white' %>
+            </div>
+
+        </div>
+      <div>
+  <div>
+
 <% end %>

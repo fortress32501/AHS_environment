@@ -1,3 +1,64 @@
 // Place all the styles related to the sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+// Login page
+.divider:after,
+.divider:before {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #eee;
+}
+
+.custom-button {
+  background-color: #fff !important;
+  border-color: rgb(0, 162, 255);
+  color: #fff;
+  //box-shadow: 0 4px 9px -4px #3b71ca;
+  box-shadow: 0 4px 9px -4px #364459;
+}
+
+.link-to-color {
+  color: #fff !important;
+  text-decoration: none;
+}
+
+.login-container {
+  min-width : 100vw;
+  position: relative;
+  left: calc(-50vw + 50%);
+  height: 76.8vh !important;
+  background-color: #364459;
+}
+
+.login-card {
+  background-color: #364459 !important;
+  box-shadow: 0 4px 8px 0 rgba(7, 137, 243, 0.2), 0 6px 20px 0 rgba(128, 160, 229, 0.19);
+//   text-align: center;
+}
+
+.login-field {
+  border-radius: 15px !important;
+}
+
+.break-line {
+  margin-top: 0rem;
+  padding-top: 0rem;
+  color: whitesmoke;
+}
+
+.custom-card {
+  padding-top: 0rem !important;
+}
+
+.login-title {
+    text-align: center;
+    font-size: 40px !important;
+}
+
+.thick {
+    font-weight: bolder !important;
+}
+

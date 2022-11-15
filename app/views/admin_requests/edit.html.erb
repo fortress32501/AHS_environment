@@ -1,6 +1,8 @@
-<h1>Editing Admin Request</h1>
+<h1 class='mb-3'>Edit Admin Request</h1>
 
 <%= render 'form', admin_request: @admin_request %>
 
-<%= link_to 'Show', @admin_request %> |
-<%= link_to 'Back', admin_requests_path %>
+
+<div class='d-flex justify-content-center'>
+    <%= link_to 'Back', admin_requests_path , class: 'button-style-white' %>
+</div>

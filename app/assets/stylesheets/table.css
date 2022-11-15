@@ -1,0 +1,56 @@
+
+.table-style {
+  border-radius: 15px;
+  margin: 25px 0;
+  font-size: 0.9em;
+  font-family: "EB Garamond";
+  /* min-width: 400px; */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  
+  display: block;
+  overflow-y: auto;
+  justify-content: center;
+  width: fit-content;
+  max-height: 500px;
+  
+  /* overflow-y: auto;
+  height: 500px; */
+}
+.table-style thead tr {
+  background-color: #364459 ;
+  color: #ffffff;
+  text-align: left;
+}
+.table-style th,
+.table-style td {
+    padding: 12px 15px;
+    font-family: "EB Garamond";
+}
+/*gets shading for every other line */
+.table-style tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+/* top left border curve */
+.table-style thead tr th:first-child {
+  border-radius: 15px 0px 0px 0px;
+}
+/* top right border curve */
+.table-style thead tr th:last-child {
+  border-radius: 0px 15px 0px 0px;
+}
+/* bottom left border curve*/
+.table-style tr:last-child td:first-child {
+  border-radius: 0px 0px 0px 15px;
+}
+/* bottom right border curve*/
+.table-style tr:last-child td:last-child {
+  border-radius: 0px 0px 15px 0px;
+}
+/* change color when hovering over row*/
+.table-style tr:hover td {
+  background-color: #596b7e8d ;
+}

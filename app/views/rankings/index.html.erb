@@ -1,50 +1,28 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Rankings</h1>
+<h1>User Rankings</h1>
 
-<table>
+<table class="table-style">
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Point total</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @rankings.each do |ranking| %>
-      <tr>
-        <td><%= ranking.title %></td>
-        <td><%= ranking.point_total %></td>
-        <td><%= link_to 'Show', ranking %></td>
-        <td><%= link_to 'Edit', edit_ranking_path(ranking) %></td>
-        <td><%= link_to 'Destroy', ranking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-<table>
-  <thead>
-    <tr>
+      <th>Place</th>
       <th>First Name</th>
       <th>Last name</th>
       <th>Email</th>
       <th>Points</th>
       <th>Rank</th>
-      <th colspan="4"></th>
     </tr>
   </thead>
-
+  
   <tbody>
       <% @list_rankings.each do |row| %>
         <tr>
+          <td><%= row['rnk']  %></td>
           <td><%= row['first_name'] %></td>
           <td><%= row['last_name']  %></td>
           <td><%= row['email']  %></td>
           <td><%= row['point']  %></td>
-          <td><%= row['rnk']  %></td>
+          <td><%= current_user.show_ranking_title(row['ranking_id'])  %></td>
         </tr>
       <% end %>
     </tbody>
@@ -55,4 +33,35 @@
 
 <br>
 
-<%= link_to 'New Ranking', new_ranking_path %>
+<h1 style="margin-top: 0;">Ranking Types</h1> 
+
+
+<table class="table-style">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Point total</th>
+      <th colspan="3" style="text-align: center;">Action</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rankings.each do |ranking| %>
+      <tr>
+        <td><%= ranking.title %></td>
+        <td><%= ranking.point_total %></td>
+        <td ><%= link_to 'Show', ranking , class: "button-style"%></td>
+        <td ><%= link_to 'Edit', edit_ranking_path(ranking), class: "button-style"%></td>
+        <td ><%= button_to 'Destroy', ranking, method: :delete, data: { confirm: 'Are you sure?' } , class: "button-style"%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="d-flex justify-content-center">
+  <%= link_to 'New Ranking', new_ranking_path, class: "button-style-blue" %>
+</div>
+
+<br>
+
+

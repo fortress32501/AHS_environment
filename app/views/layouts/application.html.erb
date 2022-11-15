@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TestApp</title>
+    <title>Alexander Hamilton Society</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,10 +11,25 @@
     <link href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" rel="stylesheet">
   </head>
   
+
+
   <body>
-    <%= render partial: "shared/navbar" %>
-    <div class="container .align-items-center">
-      <%= yield %>
+    <div id="page-container">
+      <div id="content-wrap">
+        <!-- Navbar -->
+        <%= render partial: "shared/navbar" %>
+    
+        <!-- Contents go here -->
+        <div class="container .align-item-center min-vh-100">
+          <%= yield %>
+        </div>
+      </div>
+      <footer id="footer">
+      <%= render partial: "shared/footer" %>
+      </footer>
     </div>
   </body>
+
+  
+  
 </html>

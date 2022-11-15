@@ -18,30 +18,69 @@ RSpec.describe "/users", type: :request do
   # User. As you add validations to User, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    {
+      first_name: Faker::Name.name,
+      last_name: Faker::Name.name,
+      email: Faker::Internet.email,
+      password: Faker::Internet.password,
+      point: 0,
+      is_admin: false,
+    }
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    {
+      first_name: Faker::Name.name,
+      last_name: Faker::Name.name,
+      # leave with no attributes
+    }
+  }
+
+  let!(:test_user) {
+    {
+      first_name: Faker::Name.name,
+      last_name: Faker::Name.name,
+      email: Faker::Internet.email,
+      password: Faker::Internet.password,
+      point: 0,
+      is_admin: false,
+    }
+  }
+
+  let!(:test_admin) {
+    {
+      first_name: Faker::Name.name,
+      last_name: Faker::Name.name,
+      email: Faker::Internet.email,
+      password: Faker::Internet.password,
+      point: 0,
+      is_admin: true,
+    }
   }
 
   describe "GET /index" do
-    it "renders a successful response" do
-      User.create! valid_attributes
+    it "renders a successful response for admin" do
+      # create the user and log in
+      # must be an admin to view users page
+      post users_url, params: {user: test_admin}
+      # test endpoint
       get users_url
       expect(response).to be_successful
     end
   end
 
   describe "GET /show" do
-    it "renders a successful response" do
-      user = User.create! valid_attributes
-      get user_url(user)
+    it "renders a successful response for admin" do
+      # create the user and log in
+      post users_url, params: {user: test_admin}
+      # get user created and test endpoint
+      get user_url(User.last)
       expect(response).to be_successful
     end
   end
 
   describe "GET /new" do
+    # don't need to log in for this one because it tests creating a new account
     it "renders a successful response" do
       get new_user_url
       expect(response).to be_successful
@@ -50,9 +89,19 @@ RSpec.describe "/users", type: :request do
 
   describe "GET /edit" do
     it "renders a successful response" do
-      user = User.create! valid_attributes
-      get edit_user_url(user)
+      # create the user and log in
+      post users_url, params: {user: test_admin}
+      # test endpoint
+      get edit_user_url(User.last)
       expect(response).to be_successful
+    end
+
+    it "redirects for users" do
+      # create the user and log in
+      post users_url, params: {user: test_user}
+      # test endpoint
+      get edit_user_url(User.last)
+      expect(response).to redirect_to(users_path)
     end
   end
 
@@ -66,7 +115,7 @@ RSpec.describe "/users", type: :request do
 
       it "redirects to the created user" do
         post users_url, params: { user: valid_attributes }
-        expect(response).to redirect_to(user_url(User.last))
+        expect(response).to redirect_to(:root)
       end
     end
 
@@ -79,7 +128,26 @@ RSpec.describe "/users", type: :request do
 
       it "renders a successful response (i.e. to display the 'new' template)" do
         post users_url, params: { user: invalid_attributes }
-        expect(response).to be_successful
+        expect(response).not_to be_successful
+      end
+    end
+
+    context "email already exists" do
+      it "does not create a new User" do
+       # first create a user
+       post users_url, params: { user: test_user } 
+       # try to create account with same email
+        expect {
+          post users_url, params: { user: test_user }
+        }.to change(User, :count).by(0)
+      end
+
+      it "renders a successful response (i.e. to display the 'new' template)" do
+        # first create a user
+        post users_url, params: { user: test_user } 
+        # try to create account with same email
+        post users_url, params: { user: test_user }
+        expect(response).not_to be_successful
       end
     end
   end
@@ -87,45 +155,65 @@ RSpec.describe "/users", type: :request do
   describe "PATCH /update" do
     context "with valid parameters" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        {
+          first_name: Faker::Name.name,
+          last_name: Faker::Name.name,
+          email: Faker::Internet.email,
+        }
       }
 
       it "updates the requested user" do
-        user = User.create! valid_attributes
+        post users_url, params: { user: test_user }
+        user = User.last
         patch user_url(user), params: { user: new_attributes }
         user.reload
-        skip("Add assertions for updated state")
+        expect(response).to redirect_to users_url
       end
 
-      it "redirects to the user" do
-        user = User.create! valid_attributes
-        patch user_url(user), params: { user: new_attributes }
+      it "updates the requested user" do
+        post users_url, params: { user: test_user }
+        user = User.last
+        patch update_profile_user_url(user), params: { user: new_attributes }
         user.reload
-        expect(response).to redirect_to(user_url(user))
-      end
-    end
-
-    context "with invalid parameters" do
-      it "renders a successful response (i.e. to display the 'edit' template)" do
-        user = User.create! valid_attributes
-        patch user_url(user), params: { user: invalid_attributes }
-        expect(response).to be_successful
+        expect(response).to redirect_to accounts_path
       end
     end
   end
 
   describe "DELETE /destroy" do
-    it "destroys the requested user" do
-      user = User.create! valid_attributes
+    it "deletes user if request comes from admin" do
+      # create the user and log in
+      post users_url, params: {user: test_admin}
+      # create user to delete
+      User.create!(test_user)
+      # get user
+      user = User.last
+      # test endpoint
+      delete user_url(user)
+      expect(response).to redirect_to(users_path)
+    end
+
+    it "redirects if user makes request" do
+      # create the user and log in
+      post users_url, params: {user: test_user}
+      # get user
+      user = User.last
+      # test endpoint
+      delete user_url(user)
+      expect(response).to redirect_to(new_session_path)
+    end
+
+    it "deletes the user if admin makes request" do
+      # create the user and log in
+      post users_url, params: {user: test_admin}
+      # create user to delete
+      User.create!(test_user)
+      # get user
+      user = User.last
+      # test endpoint
       expect {
         delete user_url(user)
       }.to change(User, :count).by(-1)
-    end
-
-    it "redirects to the users list" do
-      user = User.create! valid_attributes
-      delete user_url(user)
-      expect(response).to redirect_to(users_url)
     end
   end
 end
