@@ -54,18 +54,19 @@ The application can be seen using a browser and navigating to http://localhost:3
 
 ## Environmental Variables/Files ##
 
-** N/A
+N/A
 
 ## Deployment ##
 
-** TBD
+Heroku App with link given to customer
 
 
 ## CI/CD ##
 
-TBD
+CI: Github Actions to run checks
+CD: Heroku with review pipeline
 
 ## Support ##
 
 Admins looking for support should first look at the application help page.
-Users looking for help seek out assistance from the customer.
+Users looking for help seek out assistance from the customer or look at the help page.
