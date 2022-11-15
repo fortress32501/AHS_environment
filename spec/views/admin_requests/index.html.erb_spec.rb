@@ -51,8 +51,8 @@ RSpec.describe 'admin_requests/index', type: :view do
   it 'renders a list of admin_requests for admin to review' do
     render
     # user id's for request
-    assert_select 'tr>td', text: @test_user2.id.to_s, count: 1
-    assert_select 'tr>td', text: @test_user3.id.to_s, count: 1
+    assert_select 'tr>td', text: @test_user3.first_name.to_s + " " + @test_user3.last_name.to_s, count: 1
+    assert_select 'tr>td', text: @test_user2.first_name.to_s + " " + @test_user2.last_name.to_s, count: 1
     # request status'
     assert_select 'tr>td', text: 'REQUESTED'.to_s, count: 2
     # request reasons
