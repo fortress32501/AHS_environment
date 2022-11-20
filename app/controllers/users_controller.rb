@@ -37,18 +37,23 @@ class UsersController < ApplicationController
 
   # POST /users or /users.json
   def create
-    @user = User.find_by(email: user_params[:email].downcase)
-    if @user.nil?
-      @user = User.create(user_params)
-      if @user.valid?
-        session[:user_id] = @user.id
-        redirect_to :root
-      else
-        flash[:error] = 'Creation failed, try again'
-        redirect_to new_user_path
-      end
+    if user_params[:email] == nil
+      flash[:error] = 'Please enter email address'
+      redirect_to new_user_path
     else
-      redirect_to new_session_path, notice: 'User with that Email already exists'
+      @user = User.find_by(email: user_params[:email].downcase)
+      if @user.nil?
+        @user = User.create(user_params)
+        if @user.valid?
+          session[:user_id] = @user.id
+          redirect_to :root
+        else
+          flash[:error] = 'Creation failed, try again'
+          redirect_to new_user_path
+        end
+      else
+        redirect_to new_session_path, notice: 'User with that Email already exists'
+      end
     end
   end
 
