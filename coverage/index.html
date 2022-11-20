@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2022-11-14T17:38:15+00:00">2022-11-14T17:38:15+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2022-11-20T00:07:58+00:00">2022-11-20T00:07:58+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -43,8 +43,8 @@
   </div>
 
   <div class="t-line-summary">
-    <b>2491</b> relevant lines,
-    <span class="green"><b>2464</b> lines covered</span> and
+    <b>2492</b> relevant lines,
+    <span class="green"><b>2465</b> lines covered</span> and
     <span class="red"><b>27</b> lines missed. </span>
     (<span class="green">
   98.92%
@@ -99,7 +99,7 @@
             <td class="cell--number">7</td>
             <td class="cell--number">7</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">206.57</td>
+            <td class="cell--number">204.29</td>
             
           </tr>
         
@@ -132,7 +132,7 @@
             <td class="cell--number">64</td>
             <td class="cell--number">60</td>
             <td class="cell--number">4</td>
-            <td class="cell--number">9.09</td>
+            <td class="cell--number">9.66</td>
             
           </tr>
         
@@ -358,12 +358,12 @@
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#8a64cf7e62237007006a4d2c206bea71862bec9d" class="src_link" title="app/models/user.rb">app/models/user.rb</a></td>
-            <td class="yellow strong cell--number t-file__coverage">84.44 %</td>
-            <td class="cell--number">113</td>
-            <td class="cell--number">45</td>
-            <td class="cell--number">38</td>
+            <td class="yellow strong cell--number t-file__coverage">84.78 %</td>
+            <td class="cell--number">117</td>
+            <td class="cell--number">46</td>
+            <td class="cell--number">39</td>
             <td class="cell--number">7</td>
-            <td class="cell--number">13.36</td>
+            <td class="cell--number">12.93</td>
             
           </tr>
         
@@ -4279,8 +4279,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1080" data-linenumber="12">
-            <span class="hits">1080</span>
+          <li class="covered" data-hits="1064" data-linenumber="12">
+            <span class="hits">1064</span>
             
 
             
@@ -7936,8 +7936,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="48" data-linenumber="113">
-            <span class="hits">48</span>
+          <li class="covered" data-hits="60" data-linenumber="113">
+            <span class="hits">60</span>
             
 
             
@@ -7947,8 +7947,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="48" data-linenumber="114">
-            <span class="hits">48</span>
+          <li class="covered" data-hits="60" data-linenumber="114">
+            <span class="hits">60</span>
             
 
             
@@ -7980,8 +7980,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="47" data-linenumber="117">
-            <span class="hits">47</span>
+          <li class="covered" data-hits="59" data-linenumber="117">
+            <span class="hits">59</span>
             
 
             
@@ -9760,7 +9760,7 @@
 
             
 
-            <code class="ruby">    @user = User.find_by(email: session_params[:email])</code>
+            <code class="ruby">    @user = User.find_by(email: session_params[:email].downcase)</code>
           </li>
         </div>
       
@@ -12954,7 +12954,7 @@
     <h3>app/models/user.rb</h3>
     <h4>
       <span class="yellow">
-  84.44%
+  84.78%
 </span>
 
       lines covered
@@ -12963,8 +12963,8 @@
     
 
     <div class="t-line-summary">
-      <b>45</b> relevant lines.
-      <span class="green"><b>38</b> lines covered</span> and
+      <b>46</b> relevant lines.
+      <span class="green"><b>39</b> lines covered</span> and
       <span class="red"><b>7</b> lines missed.</span>
     </div>
 
@@ -13042,13 +13042,13 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="7">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="7">
+            
             
 
             
 
-            <code class="ruby">  validates :first_name, :last_name, :email, presence: true</code>
+            <code class="ruby">  #validates :email, uniqueness: { case_sensitive: false }, presence: true</code>
           </li>
         </div>
       
@@ -13059,18 +13059,18 @@
 
             
 
-            <code class="ruby">  belongs_to :ranking, optional: true</code>
+            <code class="ruby">  validates :email, :uniqueness =&gt; {:case_sensitive =&gt; false}, presence: true</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="9">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="9">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">  # https://medium.com/@rmeji1/creating-a-login-with-simple-auth-using-ruby-on-rails-7dd95a03cb7a</code>
+            
+
+            <code class="ruby">  validates :first_name, :last_name, presence: true</code>
           </li>
         </div>
       
@@ -13086,35 +13086,35 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="11">
-            
-            
-
-            
-
-            <code class="ruby">  # Check if current user is an admin</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="12">
+          <li class="covered" data-hits="1" data-linenumber="11">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">  def is_admin?</code>
+            <code class="ruby">  belongs_to :ranking, optional: true</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="258" data-linenumber="13">
-            <span class="hits">258</span>
+          <li class="never" data-hits="" data-linenumber="12">
+            
             
 
             
 
-            <code class="ruby">    is_admin</code>
+            <code class="ruby">  # https://medium.com/@rmeji1/creating-a-login-with-simple-auth-using-ruby-on-rails-7dd95a03cb7a</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="13">
+            
+            
+
+            
+
+            <code class="ruby"> </code>
           </li>
         </div>
       
@@ -13125,7 +13125,7 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -13136,40 +13136,40 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">  # Check if current user is an admin</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="16">
-            
-            
-
-            
-
-            <code class="ruby">  # Check if attendee is an admin</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="17">
+          <li class="covered" data-hits="1" data-linenumber="16">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">  def is_attendee_admin(user_id)</code>
+            <code class="ruby">  def is_admin?</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="18">
+          <li class="covered" data-hits="258" data-linenumber="17">
+            <span class="hits">258</span>
+            
+
+            
+
+            <code class="ruby">    is_admin</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="18">
             
             
 
             
 
-            <code class="ruby">    User.find(user_id).is_admin?</code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -13180,7 +13180,7 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -13191,51 +13191,51 @@
 
             
 
+            <code class="ruby">  # Check if attendee is an admin</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="21">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def is_attendee_admin(user_id)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="22">
+            
+            
+
+            
+
+            <code class="ruby">    User.find(user_id).is_admin?</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="23">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="24">
+            
+            
+
+            
+
             <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="21">
-            
-            
-
-            
-
-            <code class="ruby">  # Display role type</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="22">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">  def role</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="9" data-linenumber="23">
-            <span class="hits">9</span>
-            
-
-            
-
-            <code class="ruby">    if is_admin?</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="24">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">      &#39;Admin&#39;</code>
           </li>
         </div>
       
@@ -13246,40 +13246,40 @@
 
             
 
-            <code class="ruby">    else</code>
+            <code class="ruby">  # Display role type</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="8" data-linenumber="26">
-            <span class="hits">8</span>
+          <li class="covered" data-hits="1" data-linenumber="26">
+            <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">      &#39;Member&#39;</code>
+            <code class="ruby">  def role</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="27">
-            
-            
-
+          <li class="covered" data-hits="9" data-linenumber="27">
+            <span class="hits">9</span>
             
 
-            <code class="ruby">    end</code>
+            
+
+            <code class="ruby">    if is_admin?</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="28">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="28">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">  end</code>
+            
+
+            <code class="ruby">      &#39;Admin&#39;</code>
           </li>
         </div>
       
@@ -13290,40 +13290,40 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">    else</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="30">
-            
-            
-
+          <li class="covered" data-hits="8" data-linenumber="30">
+            <span class="hits">8</span>
             
 
-            <code class="ruby">  # find user first and last name by id</code>
+            
+
+            <code class="ruby">      &#39;Member&#39;</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="31">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="31">
+            
             
 
             
 
-            <code class="ruby">  def find_name(user_id)</code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="32">
+          <li class="never" data-hits="" data-linenumber="32">
             
             
 
             
 
-            <code class="ruby">    &quot;#{User.find(user_id).last_name}, #{User.find(user_id).first_name}&quot;</code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -13334,7 +13334,7 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -13345,40 +13345,40 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">  # find user first and last name by id</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="35">
-            
-            
-
-            
-
-            <code class="ruby">  # first name last name format</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="36">
+          <li class="covered" data-hits="1" data-linenumber="35">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">  def full_name</code>
+            <code class="ruby">  def find_name(user_id)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="19" data-linenumber="37">
-            <span class="hits">19</span>
+          <li class="missed" data-hits="0" data-linenumber="36">
+            
             
 
             
 
-            <code class="ruby">    self.first_name + &quot; &quot; + self.last_name</code>
+            <code class="ruby">    &quot;#{User.find(user_id).last_name}, #{User.find(user_id).first_name}&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="37">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -13389,7 +13389,7 @@
 
             
 
-            <code class="ruby">  end </code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -13400,40 +13400,40 @@
 
             
 
-            <code class="ruby">  </code>
+            <code class="ruby">  # first name last name format</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="40">
-            
-            
-
-            
-
-            <code class="ruby">  # show 3 recent attendance records</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="41">
+          <li class="covered" data-hits="1" data-linenumber="40">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">  def recent_attendance</code>
+            <code class="ruby">  def full_name</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="20" data-linenumber="42">
-            <span class="hits">20</span>
+          <li class="covered" data-hits="8" data-linenumber="41">
+            <span class="hits">8</span>
             
 
             
 
-            <code class="ruby">    attendance_history.limit(3)</code>
+            <code class="ruby">    self.first_name + &quot; &quot; + self.last_name</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="42">
+            
+            
+
+            
+
+            <code class="ruby">  end </code>
           </li>
         </div>
       
@@ -13444,7 +13444,7 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">  </code>
           </li>
         </div>
       
@@ -13455,40 +13455,40 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">  # show 3 recent attendance records</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="45">
-            
-            
-
-            
-
-            <code class="ruby">  # join attendance table with event table on current user</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="46">
+          <li class="covered" data-hits="1" data-linenumber="45">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">  def attendance_history</code>
+            <code class="ruby">  def recent_attendance</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="29" data-linenumber="47">
-            <span class="hits">29</span>
+          <li class="covered" data-hits="20" data-linenumber="46">
+            <span class="hits">20</span>
             
 
             
 
-            <code class="ruby">    Attendance.joins(:event).where(attendances: { user_id: id }).order(&#39;created_at DESC&#39;)</code>
+            <code class="ruby">    attendance_history.limit(3)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="47">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -13499,7 +13499,7 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -13510,45 +13510,34 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">  # join attendance table with event table on current user</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="50">
-            
-            
-
-            
-
-            <code class="ruby">  # calculate attendance point of user</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="51">
+          <li class="covered" data-hits="1" data-linenumber="50">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">  def user_points</code>
+            <code class="ruby">  def attendance_history</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="8" data-linenumber="52">
-            <span class="hits">8</span>
+          <li class="covered" data-hits="30" data-linenumber="51">
+            <span class="hits">30</span>
             
 
             
 
-            <code class="ruby">    attendance_history.sum(:event_points)</code>
+            <code class="ruby">    Attendance.joins(:event).where(attendances: { user_id: id }).order(&#39;created_at DESC&#39;)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="53">
+          <li class="never" data-hits="" data-linenumber="52">
             
             
 
@@ -13559,7 +13548,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="54">
+          <li class="never" data-hits="" data-linenumber="53">
             
             
 
@@ -13570,35 +13559,46 @@
         </div>
       
         <div>
+          <li class="never" data-hits="" data-linenumber="54">
+            
+            
+
+            
+
+            <code class="ruby">  # calculate attendance point of user</code>
+          </li>
+        </div>
+      
+        <div>
           <li class="covered" data-hits="1" data-linenumber="55">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">  def assign_ranking</code>
+            <code class="ruby">  def user_points</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="56">
-            
-            
-
+          <li class="covered" data-hits="9" data-linenumber="56">
+            <span class="hits">9</span>
             
 
-            <code class="ruby">    # ranking_found = Ranking.where(&quot;point_total &lt;= #{self.point}&quot;).order(point_total: :desc)</code>
+            
+
+            <code class="ruby">    attendance_history.sum(:event_points)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="35" data-linenumber="57">
-            <span class="hits">35</span>
+          <li class="never" data-hits="" data-linenumber="57">
+            
             
 
             
 
-            <code class="ruby">    ranking_found = Ranking.where(&#39;point_total &lt;= ?&#39;, point).order(point_total: :desc)</code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -13614,13 +13614,13 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="35" data-linenumber="59">
-            <span class="hits">35</span>
+          <li class="covered" data-hits="1" data-linenumber="59">
+            <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">    if ranking_found.empty?</code>
+            <code class="ruby">  def assign_ranking</code>
           </li>
         </div>
       
@@ -13631,18 +13631,18 @@
 
             
 
-            <code class="ruby">      # nothing to do</code>
+            <code class="ruby">    # ranking_found = Ranking.where(&quot;point_total &lt;= #{self.point}&quot;).order(point_total: :desc)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="61">
-            
-            
-
+          <li class="covered" data-hits="35" data-linenumber="61">
+            <span class="hits">35</span>
             
 
-            <code class="ruby">    else</code>
+            
+
+            <code class="ruby">    ranking_found = Ranking.where(&#39;point_total &lt;= ?&#39;, point).order(point_total: :desc)</code>
           </li>
         </div>
       
@@ -13653,18 +13653,18 @@
 
             
 
-            <code class="ruby">      # update ranking</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="63">
-            
-            
-
+          <li class="covered" data-hits="35" data-linenumber="63">
+            <span class="hits">35</span>
             
 
-            <code class="ruby">      update(ranking_id: ranking_found.ids.at(0))</code>
+            
+
+            <code class="ruby">    if ranking_found.empty?</code>
           </li>
         </div>
       
@@ -13675,7 +13675,7 @@
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby">      # nothing to do</code>
           </li>
         </div>
       
@@ -13686,7 +13686,7 @@
 
             
 
-            <code class="ruby">    # &quot;#{self.ranking_id}&quot;</code>
+            <code class="ruby">    else</code>
           </li>
         </div>
       
@@ -13697,18 +13697,18 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">      # update ranking</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="67">
+          <li class="missed" data-hits="0" data-linenumber="67">
             
             
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">      update(ranking_id: ranking_found.ids.at(0))</code>
           </li>
         </div>
       
@@ -13719,18 +13719,18 @@
 
             
 
-            <code class="ruby">  # https://stackoverflow.com/questions/45252984/how-to-update-specific-column-in-a-activerecord-on-rails</code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="69">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="69">
+            
             
 
             
 
-            <code class="ruby">  def update_one_ranking(value)</code>
+            <code class="ruby">    # &quot;#{self.ranking_id}&quot;</code>
           </li>
         </div>
       
@@ -13741,12 +13741,56 @@
 
             
 
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="71">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="72">
+            
+            
+
+            
+
+            <code class="ruby">  # https://stackoverflow.com/questions/45252984/how-to-update-specific-column-in-a-activerecord-on-rails</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="73">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def update_one_ranking(value)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="74">
+            
+            
+
+            
+
             <code class="ruby">    # ranking_found = Ranking.where(&quot;point_total &lt;= #{self.point}&quot;).order(point_total: :desc)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="22" data-linenumber="71">
+          <li class="covered" data-hits="22" data-linenumber="75">
             <span class="hits">22</span>
             
 
@@ -13757,7 +13801,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="22" data-linenumber="72">
+          <li class="covered" data-hits="22" data-linenumber="76">
             <span class="hits">22</span>
             
 
@@ -13768,7 +13812,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="73">
+          <li class="never" data-hits="" data-linenumber="77">
             
             
 
@@ -13779,7 +13823,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="22" data-linenumber="74">
+          <li class="covered" data-hits="22" data-linenumber="78">
             <span class="hits">22</span>
             
 
@@ -13790,7 +13834,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="75">
+          <li class="never" data-hits="" data-linenumber="79">
             
             
 
@@ -13801,7 +13845,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="76">
+          <li class="never" data-hits="" data-linenumber="80">
             
             
 
@@ -13812,7 +13856,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="77">
+          <li class="never" data-hits="" data-linenumber="81">
             
             
 
@@ -13823,7 +13867,7 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="78">
+          <li class="missed" data-hits="0" data-linenumber="82">
             
             
 
@@ -13834,7 +13878,7 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="79">
+          <li class="missed" data-hits="0" data-linenumber="83">
             
             
 
@@ -13845,7 +13889,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="80">
+          <li class="never" data-hits="" data-linenumber="84">
             
             
 
@@ -13856,7 +13900,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="81">
+          <li class="never" data-hits="" data-linenumber="85">
             
             
 
@@ -13867,57 +13911,13 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="82">
-            
-            
-
-            
-
-            <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="83">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="84">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">  def get_ranking_title</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="85">
-            
-            
-
-            
-
-            <code class="ruby">    # ranking_found = Ranking.where(&quot;point_total &lt;= #{self.point}&quot;).order(point_total: :desc)</code>
-          </li>
-        </div>
-      
-        <div>
           <li class="never" data-hits="" data-linenumber="86">
             
             
 
             
 
-            <code class="ruby">    # SELECT title FROM Rankings Join Users On Rankings.id=2;</code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -13933,106 +13933,18 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="8" data-linenumber="88">
-            <span class="hits">8</span>
-            
-
-            
-
-            <code class="ruby">    title_found = Ranking.where(id: ranking_id).first</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="8" data-linenumber="89">
-            <span class="hits">8</span>
-            
-
-            
-
-            <code class="ruby">    if title_found.nil?</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="90">
-            
-            
-
-            
-
-            <code class="ruby">      # nothing to do</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="91">
-            
-            
-
-            
-
-            <code class="ruby">    else</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="92">
-            
-            
-
-            
-
-            <code class="ruby">      title_found.title.to_s</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="93">
-            
-            
-
-            
-
-            <code class="ruby">    end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="94">
-            
-            
-
-            
-
-            <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="95">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="96">
+          <li class="covered" data-hits="1" data-linenumber="88">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">  def show_ranking_title(value)</code>
+            <code class="ruby">  def get_ranking_title</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="97">
+          <li class="never" data-hits="" data-linenumber="89">
             
             
 
@@ -14043,7 +13955,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="98">
+          <li class="never" data-hits="" data-linenumber="90">
             
             
 
@@ -14054,19 +13966,30 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="18" data-linenumber="99">
-            <span class="hits">18</span>
+          <li class="never" data-hits="" data-linenumber="91">
+            
             
 
             
 
-            <code class="ruby">    title_found = Ranking.where(id: value).first</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="18" data-linenumber="100">
-            <span class="hits">18</span>
+          <li class="covered" data-hits="9" data-linenumber="92">
+            <span class="hits">9</span>
+            
+
+            
+
+            <code class="ruby">    title_found = Ranking.where(id: ranking_id).first</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="9" data-linenumber="93">
+            <span class="hits">9</span>
             
 
             
@@ -14076,7 +13999,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="101">
+          <li class="never" data-hits="" data-linenumber="94">
             
             
 
@@ -14087,7 +14010,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="102">
+          <li class="never" data-hits="" data-linenumber="95">
             
             
 
@@ -14098,7 +14021,7 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="103">
+          <li class="missed" data-hits="0" data-linenumber="96">
             
             
 
@@ -14109,13 +14032,90 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="104">
+          <li class="never" data-hits="" data-linenumber="97">
             
             
 
             
 
             <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="98">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="99">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="100">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def show_ranking_title(value)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="101">
+            
+            
+
+            
+
+            <code class="ruby">    # ranking_found = Ranking.where(&quot;point_total &lt;= #{self.point}&quot;).order(point_total: :desc)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="102">
+            
+            
+
+            
+
+            <code class="ruby">    # SELECT title FROM Rankings Join Users On Rankings.id=2;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="18" data-linenumber="103">
+            <span class="hits">18</span>
+            
+
+            
+
+            <code class="ruby">    title_found = Ranking.where(id: value).first</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="18" data-linenumber="104">
+            <span class="hits">18</span>
+            
+
+            
+
+            <code class="ruby">    if title_found.nil?</code>
           </li>
         </div>
       
@@ -14126,7 +14126,7 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">      # nothing to do</code>
           </li>
         </div>
       
@@ -14137,45 +14137,23 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">    else</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="107">
-            <span class="hits">1</span>
+          <li class="missed" data-hits="0" data-linenumber="107">
+            
             
 
             
 
-            <code class="ruby">  def update_all_rankings</code>
+            <code class="ruby">      title_found.title.to_s</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="20" data-linenumber="108">
-            <span class="hits">20</span>
-            
-
-            
-
-            <code class="ruby">    User.all.each do |user|</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="22" data-linenumber="109">
-            <span class="hits">22</span>
-            
-
-            
-
-            <code class="ruby">      self.update_one_ranking(user.id)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="110">
+          <li class="never" data-hits="" data-linenumber="108">
             
             
 
@@ -14186,7 +14164,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="111">
+          <li class="never" data-hits="" data-linenumber="109">
             
             
 
@@ -14197,7 +14175,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="112">
+          <li class="never" data-hits="" data-linenumber="110">
             
             
 
@@ -14208,7 +14186,73 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="113">
+          <li class="covered" data-hits="1" data-linenumber="111">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def update_all_rankings</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="20" data-linenumber="112">
+            <span class="hits">20</span>
+            
+
+            
+
+            <code class="ruby">    User.all.each do |user|</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="22" data-linenumber="113">
+            <span class="hits">22</span>
+            
+
+            
+
+            <code class="ruby">      self.update_one_ranking(user.id)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="114">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="115">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="116">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="117">
             
             
 
@@ -56373,7 +56417,7 @@
 
             
 
-            <code class="ruby">    assert_select &#39;tr&gt;td&#39;, text: @test_user2.id.to_s, count: 1</code>
+            <code class="ruby">    assert_select &#39;tr&gt;td&#39;, text: @test_user3.first_name.to_s + &quot; &quot; + @test_user3.last_name.to_s, count: 1</code>
           </li>
         </div>
       
@@ -56384,7 +56428,7 @@
 
             
 
-            <code class="ruby">    assert_select &#39;tr&gt;td&#39;, text: @test_user3.id.to_s, count: 1</code>
+            <code class="ruby">    assert_select &#39;tr&gt;td&#39;, text: @test_user2.first_name.to_s + &quot; &quot; + @test_user2.last_name.to_s, count: 1</code>
           </li>
         </div>
       
@@ -57205,7 +57249,7 @@
 
             
 
-            <code class="ruby">    expect(rendered).to match(@test_user.id.to_s)</code>
+            <code class="ruby">    expect(rendered).to match(@test_user.first_name.to_s)</code>
           </li>
         </div>
       

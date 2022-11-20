@@ -26,12 +26,12 @@
                       <div class="field ahs-text">
                         <%= f.label :email, "Email Address" %>
                         <%= f.text_field :email,  
-                        class: "form-control form-control-lg login-field mt-2" %>
+                        class: "form-control form-control-lg login-field mt-2", required:'true' %>
                       </div>
                       <div class="field ahs-text">
                         <%= f.label :password, "Password" %>
                         <%= f.password_field :password, 
-                        class: "form-control form-control-lg login-field mt-2" %>
+                        class: "form-control form-control-lg login-field mt-2", required:'true' %>
                       </div>
                       <br>
                       <div class="d-grid gap-2">

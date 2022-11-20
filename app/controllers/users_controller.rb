@@ -29,7 +29,7 @@ class UsersController < ApplicationController
   def edit
     unless current_user.is_admin
       redirect_to users_path,
-                  notice: 'You do not have access to edit other users. You can request Administrator Access through Administrator request page.'
+      notice: 'You do not have access to edit other users. You can request Administrator Access through Administrator request page.'
     end
   end
 
@@ -37,7 +37,7 @@ class UsersController < ApplicationController
 
   # POST /users or /users.json
   def create
-    @user = User.find_by(email: user_params[:email])
+    @user = User.find_by(email: user_params[:email].downcase)
     if @user.nil?
       @user = User.create(user_params)
       if @user.valid?

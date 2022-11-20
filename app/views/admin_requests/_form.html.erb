@@ -16,7 +16,8 @@
         <div class="center-box">
             <div class="row justify-content-left">
               <div class = "user-text">
-                User: <%= @current_user.full_name  %> 
+              <% user = User.find(@current_user.id) %>
+                User: <%= user.first_name + " " + user.last_name %>
                 <%= form.hidden_field :user_id,  :value => @current_user.id, class: "form-input" %>
               </div>              
             </div>
