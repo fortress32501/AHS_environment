@@ -1,35 +1,36 @@
-<h1>Show Admin Request</h1>
+<h1>Admin Request</h1>
 
 <p id="notice"><%= notice %></p>
 <div class="contain-blue-box">
-<div class="blue-box-show">
+<div class="blue-box-show", style="margin-top: 30px !important;">
   <div class="center-box-show">
 
       <div class="row justify-content-left">
-        <p class="show-text">
+        <p class="show-text-header">
           <strong>User:</strong>
-          <%= @admin_request.user_id %>
+          <% user = User.find(@admin_request.user_id) %>
+          <td><%= user.first_name + " " + user.last_name %></td>
         </p>        
       </div>
 
       <div class="row justify-content-left">
-        <p class="show-text">
+        <p class="show-text-header">
           <strong>Request status:</strong>
           <%= @admin_request.request_status %>
         </p>        
       </div>
 
       <div class="row justify-content-left">
-        <p class="show-text">
+        <p class="show-text-header">
           <strong>Request reason:</strong>
           <%= @admin_request.request_reason %>
         </p>        
       </div>
 
-      <div class="row justify-content-left last-row-pad" >
-        <p class="show-text">
+      <div class="row justify-content-left" >
+        <p class="show-text-header">
           <strong>Requested at:</strong>
-          <%= @admin_request.created_at %>
+          <%= @admin_request.created_at.to_s(:long) %>
         </p>
       </div>
 
@@ -42,8 +43,8 @@
 <!--should only give option to Approve/Deny if the request has not yet been processed-->
 <% if (@admin_request.request_status == "REQUESTED") %>
 <div class="d-flex justify-content-center">
-    <%= link_to 'Approve', approve_path(@admin_request), class: 'button-style-blue' %> |
-    <%= link_to 'Deny', deny_path(@admin_request), class: 'button-style-blue' %> |
+    <%= link_to 'Approve', approve_path(@admin_request), class: 'button-style-blue' %> 
+    <%= link_to 'Deny', deny_path(@admin_request), class: 'button-style-blue' %> 
 </div>
 
 <% end %>

@@ -32,10 +32,8 @@
                   
                   <div class="col-6">
                     <!-- Admin do not need ranking -->
-                    <% if !current_user.is_admin %>
-                      <h6>Ranking</h6>
-                      <p class="text-muted smaller-text"><%= current_user.get_ranking_title %></p>
-                    <% end %>                      
+                    <h6>Ranking</h6>
+                    <p class="text-muted smaller-text"><%= current_user.get_ranking_title %></p>                   
                   </div>
                 </div>
 
@@ -55,40 +53,36 @@
                     <% end %>
                   </div>
                 </div>
-
-                <!-- user view -->
-                <% if !current_user.is_admin %>
-                  <h6 class="mb-4" style="padding-left: 36px;">Attendance points: <%= current_user.user_points %></h6>  
-                <% end %>               
-                  <h6>Recent Events Attended</h6>
-                  <hr class="mt-0 mb-2 mx-6">
-                  <div class="row pt-1 justify-content-center align-items-center">
-                    <div class="col mb-3 center">
-                      <% if current_user.recent_attendance.blank? %>
-                        <p class="smaller-text no-hover" style="text-transform: none;"> No current events attended, you can sign up for event <%= link_to "HERE", events_path, class:"no-hover", style:"color: rgb(58, 130, 212); font-weight: bold;" %></p> 
-                      <% else %>
-                        <!-- table for events -->
-                          <table class="table-sm" style="width:100%; table-layout:fixed; word-wrap: break-word;">
-                            <thead>
-                              <tr class="mb-4" style="font-size: 16px !important;">
-                                <th class="custom-table">Event</th>
-                                <th>Date</th>
+               
+                <h6 class="mb-4" style="padding-left: 36px;">Attendance points: <%= current_user.user_points %></h6>             
+                <h6>Recent Events Attended</h6>
+                <hr class="mt-0 mb-2 mx-6">
+                <div class="row pt-1 justify-content-center align-items-center">
+                  <div class="col mb-3 center">
+                    <% if current_user.recent_attendance.blank? %>
+                      <p class="smaller-text no-hover" style="text-transform: none;"> No current events attended, you can sign up for event <%= link_to "HERE", events_path, class:"no-hover", style:"color: rgb(58, 130, 212); font-weight: bold;" %></p> 
+                    <% else %>
+                      <!-- table for events -->
+                        <table class="table-sm" style="width:100%; table-layout:fixed; word-wrap: break-word;">
+                          <thead>
+                            <tr class="mb-4" style="font-size: 16px !important;">
+                              <th class="custom-table">Event</th>
+                              <th>Date</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <% current_user.recent_attendance.each do |attendance| %>
+                              <tr>
+                                <td class="custom-table"><p class="text-muted smaller-text" style="margin-bottom: 0;"><%= link_to Event.where(id: attendance.event_id).last.event_title, event_path(attendance.event_id), class:"no-hover hover-underline-animation", style:"color: rgb(58, 130, 212); font-weight: bold;" %></p> </td>
+                                <td><p class="text-muted smaller-text" style="margin-bottom: 0;"><%= Event.where(id: attendance.event_id).last.event_start.to_s(:short) %> to <%= Event.where(id: attendance.event_id).last.event_end.to_s(:short) %></p></td>
                               </tr>
-                            </thead>
-
-                            <tbody>
-                              <% current_user.recent_attendance.each do |attendance| %>
-                                <tr>
-                                  <td class="custom-table"><p class="text-muted smaller-text" style="margin-bottom: 0;"><%= link_to Event.where(id: attendance.event_id).last.event_title, event_path(attendance.event_id), class:"no-hover hover-underline-animation", style:"color: rgb(58, 130, 212); font-weight: bold;" %></p> </td>
-                                  <td><p class="text-muted smaller-text" style="margin-bottom: 0;"><%= Event.where(id: attendance.event_id).last.event_start.to_s(:short) %> to <%= Event.where(id: attendance.event_id).last.event_end.to_s(:short) %></p></td>
-                                </tr>
-                              <% end %>
-                            </tbody>
-                          </table>
-                        <!-- end table of events -->
-                      <% end %>
-                    </div>
+                            <% end %>
+                          </tbody>
+                        </table>
+                      <!-- end table of events -->
+                    <% end %>
                   </div>
+                </div>
                 
 
 

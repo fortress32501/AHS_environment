@@ -7,10 +7,10 @@ class SessionsController < ApplicationController
   def new; end
 
   # https://medium.com/@rmeji1/creating-a-login-with-simple-auth-using-ruby-on-rails-7dd95a03cb7a
-  # Unpermitted parameters: :authenticity_token, :commit
+ 
   def create
     session_params = params.permit(:email, :password, :authenticity_token, :commit)
-    @user = User.find_by(email: session_params[:email])
+    @user = User.find_by(email: session_params[:email].downcase)
     if @user&.authenticate(session_params[:password])
       session[:user_id] = @user.id
       # if email and password matches, redirect to homepage

@@ -13,7 +13,7 @@
               <div class="card-body p-4 p-lg-5 text-black ahs-text">
                 <div class="d-flex flex-column flex-row align-items-center justify-content-center">
 
-                  <!-- Sign in form -->
+                  <!-- Sign up form -->
                   <div>
                     <% if flash[:notice] %>
                       <%= content_tag :h2, flash[:notice], class: "ahs-text" %>
@@ -38,25 +38,25 @@
                       <div class="field ahs-text">
                         <%= form.label :first_name %>
                         <%= form.text_field :first_name,  
-                        class: "form-control login-field mt-2"  %>
+                        class: "form-control login-field mt-2", required:'true' %>
                       </div>
                             
                       <div class="field ahs-text">
                         <%= form.label :last_name %>
                         <%= form.text_field :last_name,  
-                        class: "form-control login-field mt-2"  %>
+                        class: "form-control login-field mt-2", required:'true'  %>
                       </div>
                             
                       <div class="field ahs-text">
                         <%= form.label :email %>
                         <%= form.text_field :email,  
-                        class: "form-control login-field mt-2"  %>
+                        class: "form-control login-field mt-2", required:'true'  %>
                       </div>
                             
                       <div class="field ahs-text mb-2">
                         <%= form.label :password %>
                         <%= form.text_field :password,  
-                        class: "form-control login-field mt-2"  %>
+                        class: "form-control login-field mt-2", required:'true'  %>
                       </div>
                             
                             
