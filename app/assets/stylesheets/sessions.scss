@@ -33,6 +33,16 @@
   background-color: #364459;
 }
 
+.profile-container {
+  min-width : 100vw;
+  position: relative;
+  left: calc(-50vw + 50%);
+  // height: 76.8vh !important;
+  background-color: #364459;
+  padding-top: 3%;
+  padding-bottom: 3%;
+}
+
 .login-card {
   background-color: #364459 !important;
   box-shadow: 0 4px 8px 0 rgba(7, 137, 243, 0.2), 0 6px 20px 0 rgba(128, 160, 229, 0.19);
