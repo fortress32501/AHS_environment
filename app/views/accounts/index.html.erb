@@ -1,5 +1,5 @@
 <!-- source: https://mdbootstrap.com/docs/standard/extended/profiles/ -->
-<section class="login-container d-flex justify-content-center align-items-center" style="background-color: white;">
+<section class="profile-container d-flex justify-content-center align-items-center" style="background-color: white;">
   <div class="container">
     <div class="row d-flex justify-content-center mt-8" style="overflow-y: hidden !important;">
       <div class="col col-lg-8">
@@ -20,52 +20,54 @@
             <!-- Right section -->
             <div class="col-md-8 ahs-text-black">
               <div class="card-body p-5">
-                <h6>Information</h6>
+                <h6 class="attendence-text">Information</h6>
                 <hr class="mt-0 mb-4">
                 
                 <!-- first row -->
-                <div class="row pt-1" style="padding: 4px 36px 0px">
+                <div class="row pt-1" style="padding: 4px 20px 0px">
                   <div class="col-6">
-                    <h6>Email</h6>
-                    <p class="text-muted smaller-text" style="text-transform: none !important;"><%= current_user.email %></p>
+                    <h6 class="attendence-text">Email</h6>
+                    <p class="text-muted attendence-text" style="text-transform: none !important;"><%= current_user.email %></p>
                   </div>
-                  
+                </div> 
+
+                <div class="row pt-1" style="padding: 4px 20px 0px">  
                   <div class="col-6">
                     <!-- Admin do not need ranking -->
-                    <h6>Ranking</h6>
-                    <p class="text-muted smaller-text"><%= current_user.get_ranking_title %></p>                   
+                    <h6 class="attendence-text">Rank</h6>
+                    <p class="text-muted attendence-text"><%= current_user.get_ranking_title %></p>                   
                   </div>
                 </div>
 
                 <!-- second row -->
-                <div class="row pt-1" style="padding: 4px 36px 0px"> 
+                <div class="row pt-1" style="padding: 4px 20px 0px"> 
                   <div class="col-6">
-                    <h6>Role</h6>
-                    <p class="text-muted smaller-text"><%= current_user.role %></p>
+                    <h6 class="attendence-text">Role</h6>
+                    <p class="text-muted attendence-text"><%= current_user.role %></p>
                   </div>
                   <div class="col-6">
                     <!-- Only user can submit admin request -->
                     <% if !current_user.is_admin %>
-                      <%= link_to 'Request Admin', new_admin_request_path, class: "button custom-button-blue" %>
+                      <%= link_to 'Request Admins', new_admin_request_path, class: "button custom-button-blue" %>
                     <% end %>
                     <% if current_user.is_admin %>
-                      <%= link_to 'Review Admin', admin_requests_path, class: "button custom-button-blue" %>
+                      <%= link_to 'Admin Reviews', admin_requests_path, class: "button custom-button-blue attendence-text" %>
                     <% end %>
                   </div>
                 </div>
                
-                <h6 class="mb-4" style="padding-left: 36px;">Attendance points: <%= current_user.user_points %></h6>             
-                <h6>Recent Events Attended</h6>
+                <h6 class="mb-4 attendence-text" style="padding-left: 20px;">Attendance points: <%= current_user.user_points %></h6>             
+                <h6 class="attendence-text">Recent Events Attended</h6>
                 <hr class="mt-0 mb-2 mx-6">
                 <div class="row pt-1 justify-content-center align-items-center">
                   <div class="col mb-3 center">
                     <% if current_user.recent_attendance.blank? %>
-                      <p class="smaller-text no-hover" style="text-transform: none;"> No current events attended, you can sign up for event <%= link_to "HERE", events_path, class:"no-hover", style:"color: rgb(58, 130, 212); font-weight: bold;" %></p> 
+                      <p class="attendence-text no-hover" style="text-transform: none;"> No current events attended, you can sign up for event <%= link_to "HERE", events_path, class:"no-hover", style:"color: rgb(58, 130, 212); font-weight: bold;" %></p> 
                     <% else %>
                       <!-- table for events -->
                         <table class="table-sm" style="width:100%; table-layout:fixed; word-wrap: break-word;">
                           <thead>
-                            <tr class="mb-4" style="font-size: 16px !important;">
+                            <tr class="mb-4 attendence-text" >
                               <th class="custom-table">Event</th>
                               <th>Date</th>
                             </tr>
@@ -73,8 +75,8 @@
                           <tbody>
                             <% current_user.recent_attendance.each do |attendance| %>
                               <tr>
-                                <td class="custom-table"><p class="text-muted smaller-text" style="margin-bottom: 0;"><%= link_to Event.where(id: attendance.event_id).last.event_title, event_path(attendance.event_id), class:"no-hover hover-underline-animation", style:"color: rgb(58, 130, 212); font-weight: bold;" %></p> </td>
-                                <td><p class="text-muted smaller-text" style="margin-bottom: 0;"><%= Event.where(id: attendance.event_id).last.event_start.to_s(:short) %> to <%= Event.where(id: attendance.event_id).last.event_end.to_s(:short) %></p></td>
+                                <td class="custom-table"><p class="text-muted attendence-text" style="margin-bottom: 0;"><%= link_to Event.where(id: attendance.event_id).last.event_title, event_path(attendance.event_id), class:"no-hover hover-underline-animation", style:"color: rgb(58, 130, 212); font-weight: bold;" %></p> </td>
+                                <td><p class="text-muted attendence-text" style="margin-bottom: 0;"><%= Event.where(id: attendance.event_id).last.event_start.to_s(:short) %> to <%= Event.where(id: attendance.event_id).last.event_end.to_s(:short) %></p></td>
                               </tr>
                             <% end %>
                           </tbody>
