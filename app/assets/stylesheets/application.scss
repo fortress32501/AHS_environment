@@ -41,6 +41,10 @@
 .intro {
   text-align: center;
   font-family: "EB Garamond";
+  width: 80%;
+}
+.intro h1{
+  padding-bottom: 1%;
 }
 
 h1 {
@@ -179,8 +183,15 @@ body {
 }
 
 #content-wrap {
-  padding-bottom: 15.5rem;    /* Footer height */
+  padding-bottom: 10.5rem;    /* Footer height */
 }
+
+@media only screen and (max-width: 600px) {
+  #content-wrap {
+    padding-bottom: 15.5rem;    /* Footer height */
+  }
+}
+
 
 
 #footer {
@@ -201,3 +212,9 @@ th {
   text-transform: uppercase;
 }
 
+// select {
+//   word-wrap: normal;
+//   width: 100%;
+//   border-radius: 25px;
+//   height: 70%;
+// }
